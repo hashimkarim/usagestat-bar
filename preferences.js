@@ -1,5 +1,5 @@
 import Gio from 'gi://Gio';
-import {PROVIDER_ICON_FILES} from './providerMetadata.js';
+import {providerIcons, resolveProviderIcon} from './providerMetadata.js';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gdk from 'gi://Gdk';
@@ -1719,12 +1719,9 @@ class ProvidersPage extends Adw.PreferencesPage {
         const tierRow = this._usageTierRow(provider);
         row.add_row(tierRow);
         row.add_row(this._providerIconStyleRow(provider));
-        if (baseId === 'codex')
-            row.add_row(this._codexIconSourceRow(provider));
-        if (baseId === 'claude')
-            row.add_row(this._claudeIconSourceRow(provider));
-        if (baseId === 'copilot')
-            row.add_row(this._copilotIconSourceRow(provider));
+        const icon = resolveProviderIcon(baseId);
+        if (icon?.alternatives.length > 1)
+            row.add_row(this._providerIconSourceRow(provider, icon));
         row.add_row(this._usageTrackersRow(provider));
         row.add_row(this._costAndCreditsRow(provider));
 
@@ -1755,64 +1752,17 @@ class ProvidersPage extends Adw.PreferencesPage {
         return row;
     }
 
-    _codexIconSourceRow(provider) {
-        const options = [
-            ['codex', _('Codex')],
-            ['openai', _('OpenAI')],
-        ];
-        const values = options.map(([value]) => value);
-        const labels = options.map(([, label]) => label);
-        const selectedValue = values.includes(this._providerUsageSetting(provider, 'iconSource'))
-            ? this._providerUsageSetting(provider, 'iconSource')
-            : 'codex';
-        const row = combo(labels, labels[values.indexOf(selectedValue)]);
-        row.title = _('Codex icon');
-        row.subtitle = _('Use the Codex logo or the OpenAI logo for this provider.');
+    _providerIconSourceRow(provider, icon) {
+        const values = icon.alternatives;
+        const labels = values.map(id => providerIcons[id].name);
+        const saved = this._providerUsageSetting(provider, 'iconSource');
+        const selected = resolveProviderIcon(icon.id, {variant: saved || icon.id})?.id || icon.id;
+        const row = combo(labels, labels[values.indexOf(selected)]);
+        row.title = _('Provider icon');
+        row.subtitle = _('Choose the product mark for this provider.');
         row.connect('notify::selected', () => {
-            const value = values[row.selected] || 'codex';
-            this._setProviderUsageSetting(provider, 'iconSource', value === 'codex' ? null : value);
-            this._renderProviders(providerKey(provider));
-        });
-        return row;
-    }
-
-    _claudeIconSourceRow(provider) {
-        const options = [
-            ['claude', _('Claude')],
-            ['claudecode', _('Claude Code')],
-        ];
-        const values = options.map(([value]) => value);
-        const labels = options.map(([, label]) => label);
-        const selectedValue = values.includes(this._providerUsageSetting(provider, 'iconSource'))
-            ? this._providerUsageSetting(provider, 'iconSource')
-            : 'claude';
-        const row = combo(labels, labels[values.indexOf(selectedValue)]);
-        row.title = _('Claude icon');
-        row.subtitle = _('Use the Claude logo or the Claude Code logo for this provider.');
-        row.connect('notify::selected', () => {
-            const value = values[row.selected] || 'claude';
-            this._setProviderUsageSetting(provider, 'iconSource', value === 'claude' ? null : value);
-            this._renderProviders(providerKey(provider));
-        });
-        return row;
-    }
-
-    _copilotIconSourceRow(provider) {
-        const options = [
-            ['copilot', _('Microsoft Copilot')],
-            ['githubcopilot', _('GitHub Copilot')],
-        ];
-        const values = options.map(([value]) => value);
-        const labels = options.map(([, label]) => label);
-        const selectedValue = values.includes(this._providerUsageSetting(provider, 'iconSource'))
-            ? this._providerUsageSetting(provider, 'iconSource')
-            : 'copilot';
-        const row = combo(labels, labels[values.indexOf(selectedValue)]);
-        row.title = _('Copilot icon');
-        row.subtitle = _('Use the Microsoft Copilot logo or the GitHub Copilot logo.');
-        row.connect('notify::selected', () => {
-            const value = values[row.selected] || 'copilot';
-            this._setProviderUsageSetting(provider, 'iconSource', value === 'copilot' ? null : value);
+            const value = values[row.selected] || icon.id;
+            this._setProviderUsageSetting(provider, 'iconSource', value === icon.id ? null : value);
             this._renderProviders(providerKey(provider));
         });
         return row;
@@ -1911,13 +1861,7 @@ class ProvidersPage extends Adw.PreferencesPage {
 
         const baseId = providerBaseId(provider);
         const iconSource = this._providerUsageSetting(provider, 'iconSource');
-        const iconId = baseId === 'codex' && iconSource === 'openai'
-            ? 'openai'
-            : baseId === 'claude' && iconSource === 'claudecode'
-                ? 'claudecode'
-                : baseId === 'copilot' && iconSource === 'githubcopilot'
-                    ? 'githubcopilot'
-                    : baseId;
+        const iconId = resolveProviderIcon(baseId, {variant: iconSource || undefined})?.id || baseId;
         const style = this._providerUsageSetting(provider, 'iconStyle') || this._settings.get_string('provider-icon-style');
         if (iconId === baseId) {
             const manifestFile = this._providerManifestIconFile(baseId, style);
@@ -1925,15 +1869,10 @@ class ProvidersPage extends Adw.PreferencesPage {
                 return manifestFile;
         }
 
-        const baseFile = PROVIDER_ICON_FILES[iconId] || `${iconId}.svg`;
-        const colorFile = style === 'color' && baseFile ? baseFile.replace(/\.svg$/, '-color.svg') : null;
-        if (colorFile) {
-            const file = this._providerIconGFile(colorFile);
-            if (file.query_exists(null))
-                return colorFile;
-        }
-        const file = this._providerIconGFile(baseFile);
-        return file.query_exists(null) ? baseFile : null;
+        const icon = resolveProviderIcon(iconId, {style: style === 'color' ? 'color' : 'monochrome'});
+        if (!icon) return null;
+        const file = this._providerIconGFile(icon.file);
+        return file.query_exists(null) ? icon.file : null;
     }
 
     _providerManifestIconFile(baseId, style) {

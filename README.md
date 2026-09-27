@@ -131,3 +131,13 @@ Inspired by and built on ideas from:
 ## License
 
 [MIT](LICENSE)
+
+### Shared provider icons
+
+Provider marks and their colour/product alternatives come from
+[AgenticDriver provider-icons](https://github.com/agenticdriver/provider-icons).
+`assets/provider-icons` is an immutable vendored dependency for GJS/offline
+packaging, not a second editable catalogue. Update the release URL and SHA-256
+in `scripts/update-provider-icons.sh`, run it, and run the contract/package
+checks. Edit/add artwork in the library repository. Its source receipt and
+licence notices ship alongside the SVGs. Dashboard URLs remain app-owned.

@@ -6,7 +6,7 @@ import Pango from 'gi://Pango';
 import PangoCairo from 'gi://PangoCairo';
 import {ROOT, writePrivate} from './settings.js';
 import {clamp, safeColor} from './model.js';
-import {PROVIDER_ICON_FILES} from '../../providerMetadata.js';
+import {resolveProviderIcon} from '../../providerMetadata.js';
 import {providerGlyph} from '../polybar/icons.js';
 
 export const escapeXml = value => String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;')
@@ -19,11 +19,8 @@ function read(path) {
 }
 
 export function logoSvg(provider, appearance) {
-    const id = PROVIDER_ICON_FILES[provider.iconId]?.replace(/\.svg$/, '') || provider.iconId;
-    const safeId = /^[a-z0-9_-]+$/i.test(id) ? id : 'codex';
-    const colorPath = `${ROOT}/assets/provider-icons/${safeId}-color.svg`;
-    const path = provider.iconPath || (provider.iconStyle === 'color' && Gio.File.new_for_path(colorPath).query_exists(null)
-        ? colorPath : `${ROOT}/assets/provider-icons/${safeId}.svg`);
+    const icon = resolveProviderIcon(provider.iconId, {style: provider.iconStyle === 'color' ? 'color' : 'monochrome'});
+    const path = provider.iconPath || (icon ? `${ROOT}/assets/provider-icons/${icon.file}` : '');
     let svg = read(path);
     if (provider.iconPath && !svg.includes('<svg')) {
         try {

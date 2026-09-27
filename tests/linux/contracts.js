@@ -7,12 +7,22 @@ import {assert, equal} from '../assert.js';
 import {settings, ROOT} from '../../platforms/linux/settings.js';
 import {Model, selectedUsage, panelProviders, thresholds, thresholdAt, windows, resetText, safeUrl} from '../../platforms/linux/model.js';
 import {escapeXml, escapePolybar, panelSvg, panelText, waybarOutput, logoSvg, traySvg} from '../../platforms/linux/render.js';
+import {resolveProviderIcon, providerIcons} from '../../providerMetadata.js';
 import {providerGlyph} from '../../platforms/polybar/icons.js';
 
 const tests = [];
 const test = (name, fn) => tests.push([name, fn]);
 const prefs = settings();
 const usage = {primary:{usedPercent:25}, secondary:{usedPercent:80}};
+test('shared icons resolve colour and product alternatives without changing provider identity', () => {
+    equal(Object.keys(providerIcons).length, 155);
+    equal(resolveProviderIcon('codex', {variant:'chatgpt'}).file, 'openai.svg');
+    equal(resolveProviderIcon('claude', {variant:'claude-code',style:'color'}).file, 'claudecode-color.svg');
+    equal(resolveProviderIcon('openai', {style:'color'}).style, 'monochrome');
+    equal(resolveProviderIcon('codex', {variant:'claude'}), undefined);
+    equal(resolveProviderIcon('__proto__'), undefined);
+    assert(logoSvg({iconId:'claudecode',iconStyle:'color'}, {neutral:'#ffffff'}).includes('#D97757'));
+});
 test('the default panel uses the session meter', () => equal(selectedUsage(usage),25));
 test('an explicit automatic panel usage averages standard windows', () => equal(selectedUsage(usage,{panelUsageTier:'auto'}),52.5));
 test('a selected window overrides the automatic mean', () => equal(selectedUsage(usage,{panelUsageTier:'secondary'}),80));

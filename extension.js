@@ -1,5 +1,5 @@
 import Gio from 'gi://Gio';
-import {PROVIDER_ICON_FILES, PROVIDER_DASHBOARD_URLS} from './providerMetadata.js';
+import {resolveProviderIcon, PROVIDER_DASHBOARD_URLS} from './providerMetadata.js';
 import GLib from 'gi://GLib';
 import Pango from 'gi://Pango';
 import St from 'gi://St';
@@ -1930,15 +1930,10 @@ export default class AIUsageBarExtension extends Extension {
                 return manifestFile;
         }
 
-        const baseFile = PROVIDER_ICON_FILES[iconId] || `${iconId}.svg`;
-        const colorFile = style === 'color' && baseFile ? baseFile.replace(/\.svg$/, '-color.svg') : null;
-        if (colorFile) {
-            const file = this._providerIconGFile(colorFile);
-            if (file.query_exists(null))
-                return colorFile;
-        }
-        const file = this._providerIconGFile(baseFile);
-        return file.query_exists(null) ? baseFile : null;
+        const icon = resolveProviderIcon(iconId, {style: style === 'color' ? 'color' : 'monochrome'});
+        if (!icon) return null;
+        const file = this._providerIconGFile(icon.file);
+        return file.query_exists(null) ? icon.file : null;
     }
 
     _providerManifest(providerId) {
@@ -2009,13 +2004,8 @@ export default class AIUsageBarExtension extends Extension {
     }
 
     _providerIconSource(provider, providerId) {
-        if (providerId === 'codex' && this._providerUsageSettings(providerKey(provider)).iconSource === 'openai')
-            return 'openai';
-        if (providerId === 'claude' && this._providerUsageSettings(providerKey(provider)).iconSource === 'claudecode')
-            return 'claudecode';
-        if (providerId === 'copilot' && this._providerUsageSettings(providerKey(provider)).iconSource === 'githubcopilot')
-            return 'githubcopilot';
-        return providerId;
+        const variant = this._providerUsageSettings(providerKey(provider)).iconSource || undefined;
+        return resolveProviderIcon(providerId, {variant})?.id || providerId;
     }
 
     _providerIconStyle(provider) {
