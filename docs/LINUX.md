@@ -16,6 +16,9 @@ follow-up changes and how to open each preview.
 The [section-alignment review](reports/linux-section-alignment-fixes-2026-09-11.md)
 records the current native adapters. The [earlier audit](reports/linux-section-alignment-2026-09-11.md)
 explains why the original whole-panel alignment passes were withdrawn.
+The [27 September fix report](reports/linux-port-fixes-2026-09-27.md) covers
+provider-icon validation, custom SVG rendering and Cinnamon tooltip fixes,
+with 388 passing native checks across all 12 Linux profiles.
 
 ## Choose the integration
 

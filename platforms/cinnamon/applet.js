@@ -57,6 +57,9 @@ class UsageStatApplet extends Applet.Applet {
         this.actor.connect('notify::allocation', () => this._publishAnchor());
         this._theme = St.ThemeContext.get_for_stage(global.stage);
         this._scaleSignal = this._theme.connect('notify::scale-factor', () => { if (this._state) this._render(this._state); });
+        this._focusSignal = global.display.connect('notify::focus-window', () => this._syncTooltip());
+        this.actor.connect('enter-event', () => { this._syncTooltip(); return Clutter.EVENT_PROPAGATE; });
+        this._syncTooltip();
         this._watch = Gio.bus_watch_name(Gio.BusType.SESSION, BUS, Gio.BusNameWatcherFlags.AUTO_START,
             () => { this._lastAnchor = null; this._publishAnchor();
                 this._call('GetSnapshot', null, null, value => this._render(JSON.parse(value[0]))); },
@@ -68,6 +71,13 @@ class UsageStatApplet extends Applet.Applet {
                 try { const response = bus.call_finish(result).deep_unpack(); if (!this._closed && done) done(response); }
                 catch (error) { if (!this._closed) this.set_applet_tooltip('UsageStat: ' + error.message); }
             });
+    }
+    _syncTooltip() {
+        // Our popup is a separate GTK window, so Cinnamon's menu manager
+        // cannot suppress the applet tooltip while it is open.
+        const focused = global.display.focus_window?.get_gtk_application_id() === BUS;
+        this._applet_tooltip.preventShow = focused || this._dragging || this._applet_context_menu.isOpen;
+        if (this._applet_tooltip.preventShow) this._applet_tooltip.hide();
     }
     _render(state) {
         if (this._closed) return;
@@ -122,6 +132,7 @@ class UsageStatApplet extends Applet.Applet {
         this._closed = true;
         this._cancellable.cancel();
         this._theme.disconnect(this._scaleSignal);
+        global.display.disconnect(this._focusSignal);
         Gio.DBus.session.signal_unsubscribe(this._subscription);
         Gio.bus_unwatch_name(this._watch);
     }

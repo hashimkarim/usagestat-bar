@@ -6,7 +6,7 @@ import {normalizeBackendSnapshot} from '../../cli.js';
 import {assert, equal} from '../assert.js';
 import {settings, ROOT} from '../../platforms/linux/settings.js';
 import {Model, selectedUsage, panelProviders, thresholds, thresholdAt, windows, resetText, safeUrl} from '../../platforms/linux/model.js';
-import {escapeXml, escapePolybar, panelSvg, panelText, waybarOutput, logoSvg, traySvg} from '../../platforms/linux/render.js';
+import {escapeXml, escapePolybar, panelSvg, verticalPanelSvg, panelText, waybarOutput, logoSvg, traySvg, svgPixels, renderFiles} from '../../platforms/linux/render.js';
 import {resolveProviderIcon, providerIcons} from '../../providerMetadata.js';
 import {providerGlyph} from '../../platforms/polybar/icons.js';
 
@@ -22,6 +22,35 @@ test('shared icons resolve colour and product alternatives without changing prov
     equal(resolveProviderIcon('codex', {variant:'claude'}), undefined);
     equal(resolveProviderIcon('__proto__'), undefined);
     assert(logoSvg({iconId:'claudecode',iconStyle:'color'}, {neutral:'#ffffff'}).includes('#D97757'));
+});
+test('Linux snapshots validate saved product marks while preserving provider identity and usage', () => {
+    const model = new Model(prefs);
+    const saved = prefs.get_string('provider-usage-settings');
+    try {
+        model.usage.set('codex:fixture-work', {usage});
+        const before = model.snapshot().providers;
+        for (const [codex, claude, expectedCodex, expectedClaude] of [
+            ['chatgpt', 'claude-code', 'openai', 'claudecode'],
+            ['openai-api', 'anthropic', 'openai', 'anthropic'],
+            ['claude', 'codex', 'codex', 'claude'],
+            ['missing-product', '__proto__', 'codex', 'claude'],
+            ['', '', 'codex', 'claude'],
+        ]) {
+            prefs.set_string('provider-usage-settings', JSON.stringify({
+                'codex:fixture-work': {iconSource: codex, iconStyle: 'color'},
+                claude: {iconSource: claude},
+            }));
+            const after = model.snapshot().providers;
+            equal(after.find(provider => provider.key === 'codex:fixture-work').iconId, expectedCodex);
+            equal(after.find(provider => provider.key === 'claude').iconId, expectedClaude);
+            equal(after.find(provider => provider.key === 'codex').iconId, 'codex');
+            const identityAndUsage = ({key, id, parent, source, used}) => ({key, id, parent, source, used});
+            equal(after.map(identityAndUsage), before.map(identityAndUsage));
+        }
+    } finally {
+        model.close();
+        prefs.set_string('provider-usage-settings', saved);
+    }
 });
 test('the default panel uses the session meter', () => equal(selectedUsage(usage),25));
 test('an explicit automatic panel usage averages standard windows', () => equal(selectedUsage(usage,{panelUsageTier:'auto'}),52.5));
@@ -100,6 +129,38 @@ test('custom raster icons load and every fill mode rasterizes in the combined SV
             loader.write(new TextEncoder().encode(panelSvg({providers:[provider],panel:['a'],appearance}))); loader.close();
             const rendered = loader.get_pixbuf();
             assert(rendered.get_width() > 20 && rendered.get_pixels().some(value => value > 0));
+        }
+    } finally { Gio.File.new_for_path(path).delete(null); }
+});
+test('a malformed custom SVG cannot stop panel, tray or provider rendering', () => {
+    const path = `${GLib.get_tmp_dir()}/usagestat-broken-icon-${GLib.uuid_string_random()}.svg`;
+    GLib.file_set_contents(path, '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M1 1h20v20H1z"/></svg>');
+    const provider = {key:'custom',name:'Custom',iconId:'custom',iconPath:path,percent:25,color:'#123456'};
+    const appearance = {components:['logo'],neutral:'#23262e',fill:'full',spacing:4};
+    try {
+        for (const fill of ['full','horizontal','vertical','pie']) {
+            const state = renderFiles({providers:[{...provider}],panel:['custom'],appearance:{...appearance,fill}});
+            for (const file of [state.panelImagePng, state.panelImageVerticalPng, state.providers[0].logo]) {
+                const pixels = GdkPixbuf.Pixbuf.new_from_file(file);
+                assert(pixels.get_pixels().some(value => value > 0), 'Fallback icon must stay visible');
+            }
+            svgPixels(traySvg(provider, {...appearance,style:'logo-fill',fill}),32);
+        }
+    } finally { Gio.File.new_for_path(path).delete(null); }
+});
+test('custom SVGs with intrinsic dimensions render without a viewBox', () => {
+    const path = `${GLib.get_tmp_dir()}/usagestat-sized-icon-${GLib.uuid_string_random()}.svg`;
+    GLib.file_set_contents(path, '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="10"><rect width="20" height="10" fill="currentColor"/></svg>');
+    const provider = {key:'custom',iconId:'custom',iconPath:path,percent:25};
+    try {
+        for (const neutral of ['#ff0000','#00ff00']) {
+            const state = {providers:[provider],panel:['custom'],appearance:{components:['logo'],neutral,fill:'full',spacing:4}};
+            for (const svg of [panelSvg(state), verticalPanelSvg(state), traySvg(provider,{neutral,style:'logo'})]) {
+                const pixels = svgPixels(svg,64);
+                const data = pixels.get_pixels(), channels = pixels.get_n_channels();
+                const colorChannel = neutral === '#ff0000' ? 0 : 1;
+                assert(data.some((value,index) => index % channels === colorChannel && value > 200), 'Custom logo and theme color must be visible');
+            }
         }
     } finally { Gio.File.new_for_path(path).delete(null); }
 });

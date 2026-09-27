@@ -18,19 +18,37 @@ function read(path) {
     try { return new TextDecoder().decode(Gio.File.new_for_path(path).load_contents(null)[1]); } catch { return ''; }
 }
 
+function customLogo(path, neutral) {
+    try {
+        let svg = read(path), pixels;
+        if (/<svg\b/.test(svg)) {
+            svg = svg.replaceAll('currentColor', neutral);
+            const handle = Rsvg.Handle.new_from_data(new TextEncoder().encode(svg));
+            const [hasSize, width, height] = handle.get_intrinsic_size_in_pixels();
+            const [, , , , hasViewBox, box] = handle.get_intrinsic_dimensions();
+            const w = hasSize ? width : hasViewBox ? box.width : 0;
+            const h = hasSize ? height : hasViewBox ? box.height : 0;
+            if (!(w > 0 && h > 0)) return '';
+            // Preserve intrinsic coordinates before giving a dimension-only
+            // SVG the bounded size used by all native panel/tray renderers.
+            if (!hasViewBox) svg = svg.replace('<svg', `<svg viewBox="0 0 ${w} ${h}"`);
+            const scale = 128 / Math.max(w, h);
+            pixels = svgPixels(svg, Math.max(1, Math.round(w * scale)), Math.max(1, Math.round(h * scale)));
+        } else {
+            pixels = GdkPixbuf.Pixbuf.new_from_file_at_scale(path, 128, 128, true);
+        }
+        // Isolate custom namespaces, definitions and invalid XML from the
+        // combined panel. One broken icon must not stop every provider.
+        const [, bytes] = pixels.save_to_bufferv('png', [], []);
+        const width = pixels.get_width(), height = pixels.get_height();
+        return `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image width="${width}" height="${height}" xlink:href="data:image/png;base64,${GLib.base64_encode(bytes)}"/></svg>`;
+    } catch { return ''; }
+}
+
 export function logoSvg(provider, appearance) {
     const icon = resolveProviderIcon(provider.iconId, {style: provider.iconStyle === 'color' ? 'color' : 'monochrome'});
-    const path = provider.iconPath || (icon ? `${ROOT}/assets/provider-icons/${icon.file}` : '');
-    let svg = read(path);
-    if (provider.iconPath && !svg.includes('<svg')) {
-        try {
-            // Embed a bounded raster so Qt/GTK render the same self-contained
-            // image, including alpha and the selected quota-fill geometry.
-            const pixels = GdkPixbuf.Pixbuf.new_from_file_at_scale(path, 128, 128, true);
-            const [, bytes] = pixels.save_to_bufferv('png', [], []);
-            svg = `<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image x="0" y="0" width="128" height="128" preserveAspectRatio="xMidYMid meet" xlink:href="data:image/png;base64,${GLib.base64_encode(bytes)}"/></svg>`;
-        } catch { /* A missing/unreadable custom icon gets the fallback below. */ }
-    }
+    let svg = provider.iconPath ? customLogo(provider.iconPath, appearance.neutral)
+        : read(icon ? `${ROOT}/assets/provider-icons/${icon.file}` : '');
     if (!svg.includes('<svg')) svg = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="currentColor"/></svg>';
     svg = svg.replaceAll('currentColor', appearance.neutral);
     // Many bundled logos use 1em dimensions. Give file-based GTK/Qt loaders a

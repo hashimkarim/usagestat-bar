@@ -225,14 +225,17 @@ def painted_popup():
     return None
 
 
-def cinnamon_geometry():
-    script='''(() => { const a=imports.ui.appletManager.get_object_for_uuid("usagestat-bar@hashimkarim","usagestat-bar@hashimkarim");
-        const [x,y]=a.actor.get_transformed_position(); const [w,h]=a.actor.get_transformed_size();
-        const s=imports.gi.St.Side; return {x,y,w,h,edge:{[s.TOP]:"top",[s.BOTTOM]:"bottom",[s.LEFT]:"left",[s.RIGHT]:"right"}[a._orientation]}; })()'''
+def cinnamon_eval(script):
     ok,output=bus.call_sync('org.Cinnamon','/org/Cinnamon','org.Cinnamon','Eval',GLib.Variant('(s)',(script,)),
         None,Gio.DBusCallFlags.NONE,5000,None).unpack()
-    if not ok: raise RuntimeError('Cinnamon indicator is not mapped')
+    if not ok: raise RuntimeError('Cinnamon applet inspection failed: '+output)
     return json.loads(output)
+
+
+def cinnamon_geometry():
+    return cinnamon_eval('''(() => { const a=imports.ui.appletManager.get_object_for_uuid("usagestat-bar@hashimkarim","usagestat-bar@hashimkarim");
+        const [x,y]=a.actor.get_transformed_position(); const [w,h]=a.actor.get_transformed_size();
+        const s=imports.gi.St.Side; return {x,y,w,h,edge:{[s.TOP]:"top",[s.BOTTOM]:"bottom",[s.LEFT]:"left",[s.RIGHT]:"right"}[a._orientation]}; })()''')
 
 
 def panel():
@@ -528,13 +531,18 @@ def placement_checks():
     positions={}
     def at_position(edge,region,index):
         position(edge,region,index)
-        indicator=point(); click(*indicator); actual=wait(popup)
+        indicator=point(); click(*indicator)
         positions[(edge,region,index)]=indicator
-        bar=panel()
-        if edge=='top': assert actual['y']<150, f'Popup drifted from top panel: {actual}'
-        if edge=='bottom': assert actual['y']+actual['h']>bar['y']-65, f'Popup drifted from bottom panel: {actual}'
-        if edge=='left': assert actual['x']<bar['x']+bar['w']+65, f'Popup drifted from left panel: {actual}'
-        if edge=='right': assert abs(actual['x']+actual['w']-bar['x'])<65, f'Popup drifted from right panel: {actual}'
+        def positioned_popup():
+            actual=popup()
+            if not actual: return None
+            bar=panel()
+            if edge=='top': assert actual['y']<150, f'Popup drifted from top panel: {actual}'
+            if edge=='bottom': assert actual['y']+actual['h']>bar['y']-65, f'Popup drifted from bottom panel: {actual}'
+            if edge=='left': assert actual['x']<bar['x']+bar['w']+65, f'Popup drifted from left panel: {actual}'
+            if edge=='right': assert abs(actual['x']+actual['w']-bar['x'])<65, f'Popup drifted from right panel: {actual}'
+            return actual,bar
+        actual,bar=wait(positioned_popup)
         return dict(edge=edge,region=region,index=index,panel=bar,indicator=indicator,popup=actual)
     for region in ['left','center','right']:
         step('panel-region-'+region,lambda region=region:at_position('top',region,0))
@@ -551,17 +559,21 @@ def placement_checks():
     def alignment(value, edge='top'):
         position(edge,'center',0); setting('popup-alignment',value)
         log=OUT/'section-anchor.log'; offset=log.stat().st_size if log.exists() else 0
-        click(*point()); actual=wait(popup)
+        click(*point()); wait(popup)
         anchor=section_anchor(offset)
         assert anchor, 'The integration did not supply measurable UsageStat section bounds; panel bounds are not accepted.'
         # Native popup hosts clamp flush to the work-area boundary; the
         # shared GTK layer/X11 window uses its own eight-pixel inset.
         inset = 0 if TARGET=='plasma' or (TARGET=='cosmic' and not TRAY) else 8
-        observation=assert_section_alignment(actual,anchor['rect'],anchor['work'],anchor['edge'],value,inset=inset)
+        # Native hosts can map before their opening/placement animation ends.
+        # Retry the same section bounds until positioning finishes.
+        def measured_alignment():
+            return assert_section_alignment(wait(popup),anchor['rect'],anchor['work'],anchor['edge'],value,inset=inset)
+        observation=wait(measured_alignment)
+        actual=observation['popup']
         desktop_click(); wait(lambda:not popup())
-        click(*point()); repeated=wait(popup)
+        click(*point()); repeated=wait(measured_alignment)['popup']
         assert abs(actual['x']-repeated['x'])<5 and abs(actual['y']-repeated['y'])<5,f'Reopening changed the popup anchor: {actual} → {repeated}'
-        assert_section_alignment(repeated,anchor['rect'],anchor['work'],anchor['edge'],value,inset=inset)
         return observation
     aligned={}
     for value in ['left','center','right']:
@@ -699,6 +711,22 @@ def main():
         return rect
     step('click-opens-popup',opening)
     step('popup-painted',lambda:wait(painted_popup))
+    if TARGET=='cinnamon':
+        def popup_tooltip():
+            def visible():
+                return cinnamon_eval('imports.ui.appletManager.get_object_for_uuid("usagestat-bar@hashimkarim","usagestat-bar@hashimkarim")._applet_tooltip.visible')
+            def hover_open():
+                x,y=point()
+                move(x-3,y); move(x+3,y)
+                time.sleep(.7)  # Beyond Cinnamon's 300 ms hover delay.
+                assert not visible(), 'The panel tooltip covers the open popup'
+            hover_open()
+            desktop_click(); wait(lambda:not popup())
+            move(*point()); wait(visible)
+            click(*point()); wait(popup)
+            hover_open()
+            return 'Tooltip stays hidden over an open popup and returns after dismissal.'
+        step('popup-does-not-show-panel-tooltip',popup_tooltip)
     def popup_scroll():
         rect=wait(popup); call('Select','(s)',('claude',)); before=state()['active']
         wheel(-1,rect['x']+100,rect['y']+100)
