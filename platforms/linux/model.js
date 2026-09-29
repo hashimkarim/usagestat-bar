@@ -290,7 +290,7 @@ export class Model {
                     || manifest.dashboardUrl || PROVIDER_DASHBOARD_URLS[config.id] || '') : '',
                 statusUrl: settings.get_boolean('show-status-link') ? safeUrl(snapshot?.statusPageUrl || manifest.statusPageUrl || '') : '',
                 iconPath: config.iconPath || '',
-                iconId: selectedProviderIcon(config.id, options.iconSource)?.id || config.id,
+                iconId: selectedProviderIcon(config.id, options.iconSource, 'monochrome', manifest)?.id || config.id,
                 iconStyle: options.iconStyle || settings.get_string('provider-icon-style')};
             return view;
         });

@@ -61,6 +61,27 @@ app.connect('activate', () => {
         const page = all(window).find(w => w instanceof Adw.PreferencesPage && w.title === 'Providers');
         window.set_visible_page(page);
         await wait(() => page._manifests.size === 2);
+        const originalIcons = prefs.get_string('provider-usage-settings');
+        const pluginIcon = `${ROOT}/assets/provider-icons/codex.svg`;
+        page._manifests.set('typesafe', {name: 'TypeSafe', icon: {path: pluginIcon}});
+        page._manifests.set('fixture-plugin', {name: 'Unknown fixture plugin', icon: {path: pluginIcon}});
+        try {
+            equal(page._providerIconFile({id: 'typesafe'}), 'typesafeai.svg');
+            equal(page._providerIconFile({id: 'typesafe', instanceId: 'typesafe:work', displayName: 'Claude'}), 'typesafeai.svg');
+            equal(page._providerIconFile({id: 'fixture-plugin'}), pluginIcon);
+            page._manifests.get('fixture-plugin').name = 'Command Code';
+            equal(page._providerIconFile({id: 'fixture-plugin'}), 'commandcode.svg');
+            prefs.set_string('provider-usage-settings', JSON.stringify({typesafe: {iconSource: 'openrouter'}}));
+            equal(page._providerIconFile({id: 'typesafe'}), 'openrouter.svg');
+            assert(page._providerIconFile({id: 'typesafe', iconPath: pluginIcon}).includes('/custom-icons/'));
+            prefs.set_string('provider-usage-settings', originalIcons);
+            equal(page._providerIconFile({id: 'typesafe', iconPath: '/missing/image.svg'}), 'typesafeai.svg');
+            checks.push('new library defaults replace plugin artwork while custom choices and unknown-plugin fallbacks remain');
+        } finally {
+            prefs.set_string('provider-usage-settings', originalIcons);
+            page._manifests.delete('typesafe');
+            page._manifests.delete('fixture-plugin');
+        }
         const choose = async (key, query, id) => {
             button(row(provider(page, key), 'Icon library')).emit('clicked');
             const picker = page._iconPicker;

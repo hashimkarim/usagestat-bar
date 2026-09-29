@@ -1942,18 +1942,11 @@ class ProvidersPage extends Adw.PreferencesPage {
 
         const baseId = providerBaseId(provider);
         const iconSource = this._providerUsageSetting(provider, 'iconSource');
-        const iconId = selectedProviderIcon(baseId, iconSource)?.id || baseId;
         const style = this._providerUsageSetting(provider, 'iconStyle') || this._settings.get_string('provider-icon-style');
-        if (!resolveProviderIcon(iconSource)) {
-            const manifestFile = this._providerManifestIconFile(baseId, style);
-            if (manifestFile)
-                return manifestFile;
-        }
-
-        const icon = resolveProviderIcon(iconId, {style: style === 'color' ? 'color' : 'monochrome'});
-        if (!icon) return null;
-        const file = this._providerIconGFile(icon.file);
-        return file.query_exists(null) ? icon.file : null;
+        const icon = selectedProviderIcon(baseId, iconSource, style === 'color' ? 'color' : 'monochrome', this._manifest(baseId));
+        if (icon && this._providerIconGFile(icon.file).query_exists(null))
+            return icon.file;
+        return this._providerManifestIconFile(baseId, style);
     }
 
     _providerManifestIconFile(baseId, style) {

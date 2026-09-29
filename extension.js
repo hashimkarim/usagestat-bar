@@ -1936,16 +1936,10 @@ export default class AIUsageBarExtension extends Extension {
 
         const iconId = this._providerIconSource(provider, providerId);
         const style = this._providerIconStyle(provider);
-        if (!resolveProviderIcon(this._providerUsageSettings(providerKey(provider)).iconSource)) {
-            const manifestFile = this._providerManifestIconFile(providerId, style);
-            if (manifestFile)
-                return manifestFile;
-        }
-
         const icon = resolveProviderIcon(iconId, {style: style === 'color' ? 'color' : 'monochrome'});
-        if (!icon) return null;
-        const file = this._providerIconGFile(icon.file);
-        return file.query_exists(null) ? icon.file : null;
+        if (icon && this._providerIconGFile(icon.file).query_exists(null))
+            return icon.file;
+        return this._providerManifestIconFile(providerId, style);
     }
 
     _providerManifest(providerId) {
@@ -2017,7 +2011,7 @@ export default class AIUsageBarExtension extends Extension {
 
     _providerIconSource(provider, providerId) {
         const variant = this._providerUsageSettings(providerKey(provider)).iconSource || undefined;
-        return selectedProviderIcon(providerId, variant)?.id || providerId;
+        return selectedProviderIcon(providerId, variant, 'monochrome', this._providerManifest(providerId))?.id || providerId;
     }
 
     _providerIconStyle(provider) {

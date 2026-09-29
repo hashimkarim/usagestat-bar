@@ -156,6 +156,28 @@ export default class BaselineDriver extends Extension {
             assert(app._usageFilledProviderIconSvg(source, 'pie', 25).includes('<path d="M '));
             assert(app._usageFilledProviderIconSvg(source, 'pie', 0).includes('<rect width="0" height="0"/>'));
         });
+        await check('new library icons automatically replace GNOME plugin defaults without overriding custom choices', () => {
+            const settings = app._settings.get_string('provider-usage-settings');
+            const manifests = new Map(app._manifests);
+            const pluginIcon = `${app.path}/assets/provider-icons/codex.svg`;
+            app._manifests.set('typesafe', {name: 'TypeSafe', icon: {path: pluginIcon}});
+            app._manifests.set('fixture-plugin', {name: 'Unknown fixture plugin', icon: {path: pluginIcon}});
+            try {
+                equal(app._providerIconFile({id: 'typesafe'}, 'typesafe'), 'typesafeai.svg');
+                equal(app._providerIconFile({id: 'typesafe', instanceId: 'typesafe:work', displayName: 'Claude'}, 'typesafe'), 'typesafeai.svg');
+                equal(app._providerIconFile({id: 'fixture-plugin'}, 'fixture-plugin'), pluginIcon);
+                app._manifests.get('fixture-plugin').name = 'Command Code';
+                equal(app._providerIconFile({id: 'fixture-plugin'}, 'fixture-plugin'), 'commandcode.svg');
+                app._settings.set_string('provider-usage-settings', JSON.stringify({typesafe: {iconSource: 'openrouter'}}));
+                equal(app._providerIconFile({id: 'typesafe'}, 'typesafe'), 'openrouter.svg');
+                assert(app._providerIconFile({id: 'typesafe', iconPath: pluginIcon}, 'typesafe').includes('/custom-icons/'));
+                app._settings.set_string('provider-usage-settings', settings);
+                equal(app._providerIconFile({id: 'typesafe', iconPath: '/missing/image.svg'}, 'typesafe'), 'typesafeai.svg');
+            } finally {
+                app._manifests = manifests;
+                app._settings.set_string('provider-usage-settings', settings);
+            }
+        });
         await check('library and raster overrides preserve built-in provider identity and GNOME logo fills', async () => {
             const {configPath, loadConfig, saveConfig} = await import(`file://${app.path}/config.js`);
             const {svgPixels} = await import(`file://${app.path}/customIcons.js`);

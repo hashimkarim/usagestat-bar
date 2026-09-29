@@ -78,6 +78,9 @@ sources, and select **Icon library → Choose…**. Search by provider or produc
 name, then select a mark. The picker shows the bundled version and mark count.
 The AgenticDriver library works offline;
 **Icon style** controls its colour or monochrome variant.
+Providers using the default automatically adopt matching icons added by later
+library updates, including TypeSafe. Custom image and library selections remain
+in effect until you clear them.
 
 Use **Custom image → Browse** to override the icon with a local SVG, PNG, JPEG
 or WebP. Keep that file at its selected path. Clearing the image restores the

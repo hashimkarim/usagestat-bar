@@ -7,6 +7,21 @@ The picker searches upstream aliases, localized names and model names and shows
 the bundled version and mark count. Marks and SVG files have different counts:
 one mark can have monochrome, color, brand and wordmark variants.
 
+Default provider icons are resolved from that catalog on each app start. A new
+matching mark is adopted after updating the app, without choosing it manually or
+resetting provider settings. Matching uses canonical IDs, upstream aliases and
+unambiguous names, allowing differences in spacing, dots, hyphens and underscores.
+Plugin manifest names are also checked when the provider ID has no match; account
+display names do not affect the icon. The backend's `typesafe` ID maps to the
+library's `typesafeai` mark. There is no separate list of supported icon providers.
+
+Custom images and explicitly selected library marks take priority. Clearing those
+overrides restores the current automatic default. GNOME and preference previews
+prefer the matching library icon over artwork shipped by the backend plugin,
+keeping plugin artwork as a fallback when no library mark matches. Linux graphical
+frontends and the generated Polybar font use the same catalog resolver. Matching
+does not use fuzzy search or infer a brand from part of a provider name.
+
 `assets/provider-icons/source.json` pins the exact archive URL and SHA-256;
 `package.json` records its version. Builds and installed applications use that
 committed snapshot offline. Rebuilding an older commit preserves its icon version.

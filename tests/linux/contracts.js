@@ -69,6 +69,61 @@ test('icon library searches names and aliases and permits custom providers to se
     for (const invalid of ['constructor', '__proto__', '../secret.svg'])
         equal(selectedProviderIcon('codex', invalid).id, 'codex');
 });
+test('default icon matching uses catalog identities without fuzzy provider guesses', () => {
+    for (const name of ['typesafe', 'TypeSafe', 'TypeSafe AI', 'typesafe.ai'])
+        equal(resolveProviderIcon(name).file, 'typesafeai.svg');
+    equal(resolveProviderIcon('command-code').id, 'commandcode');
+    equal(resolveProviderIcon('vertex-ai').id, 'vertexai');
+    equal(selectedProviderIcon('fixture-plugin', null, 'monochrome', {name: 'TypeSafe AI'}).id, 'typesafeai');
+    equal(selectedProviderIcon('codex', null, 'monochrome', {name: 'Claude'}).id, 'codex');
+    equal(selectedProviderIcon('typesafe', 'claude').id, 'claude');
+    for (const name of ['typesafe-fake', 'claud', 'type', '../openai', '', null, '__proto__'])
+        equal(resolveProviderIcon(name), undefined);
+});
+test('every bundled mark automatically becomes a Linux and Polybar default', () => {
+    const model = new Model(prefs);
+    const saved = prefs.get_string('provider-usage-settings');
+    try {
+        prefs.set_string('provider-usage-settings', '{}');
+        // This list grows with each library update; there is no app allowlist.
+        model.providers = Object.keys(providerIcons).map(id => ({id, enabled: true}));
+        for (const provider of model.snapshot().providers) {
+            equal(provider.iconId, provider.id);
+            assert(providerGlyph(provider) !== providerGlyph({}), `Missing default glyph for ${provider.id}`);
+        }
+    } finally {
+        model.close();
+        prefs.set_string('provider-usage-settings', saved);
+    }
+});
+test('TypeSafe defaults follow library updates while account names and overrides stay independent', () => {
+    const model = new Model(prefs);
+    const saved = prefs.get_string('provider-usage-settings');
+    try {
+        const providers = [{id: 'typesafe', enabled: true}, {id: 'typesafe', enabled: true,
+            instanceId: 'typesafe:work', tabParent: 'typesafe', displayName: 'Claude'}];
+        for (const override of [null, 'openrouter', 'missing-mark', null]) {
+            prefs.set_string('provider-usage-settings', JSON.stringify({
+                'typesafe:work': {iconSource: override},
+            }));
+            model.providers = providers;
+            const [base, account] = model.snapshot().providers;
+            equal(base.iconId, 'typesafeai');
+            equal(account.iconId, override === 'openrouter' ? 'openrouter' : 'typesafeai');
+            equal([account.id, account.key, account.parent, account.name], ['typesafe', 'typesafe:work', 'typesafe', 'Claude']);
+            equal(providerGlyph(base), providerGlyph({iconId: 'typesafeai'}));
+            equal(logoSvg(base, {neutral: '#ffffff'}), logoSvg({iconId: 'typesafeai'}, {neutral: '#ffffff'}));
+            equal(JSON.parse(prefs.get_string('provider-usage-settings')), {'typesafe:work': {iconSource: override}});
+        }
+        model.providers = [{id: 'fixture-plugin', enabled: true}];
+        model.manifests.set('fixture-plugin', {name: 'Command Code'});
+        equal(model.snapshot().providers[0].iconId, 'commandcode');
+        equal(providerGlyph({iconId: 'typesafe'}), providerGlyph({iconId: 'typesafeai'}));
+    } finally {
+        model.close();
+        prefs.set_string('provider-usage-settings', saved);
+    }
+});
 test('the default panel uses the session meter', () => equal(selectedUsage(usage),25));
 test('an explicit automatic panel usage averages standard windows', () => equal(selectedUsage(usage,{panelUsageTier:'auto'}),52.5));
 test('a selected window overrides the automatic mean', () => equal(selectedUsage(usage,{panelUsageTier:'secondary'}),80));
