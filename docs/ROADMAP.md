@@ -92,6 +92,13 @@ provisioned isolated runner and a successful Actions dry run. The remaining
 acceptance below, especially VM/login lifecycle and manual review, remains
 separate from the automated native scenario gate.
 
+The [September 29 clean-commit rehearsal](reports/linux-release-rehearsal-2026-09-29.md)
+produced both candidate archives, **388 passes / 5 compatibility skips** across
+all twelve profiles, validated screenshots and twelve decoded videos, and a
+checksummed evidence archive. Fast checks also passed in Ubuntu 24.04 after
+fixing the CI dependency list. This establishes a local rehearsal, not native
+Actions runner activation or a published product release.
+
 1. **Automate fast checks and packaging.** Run the existing shared/Linux
    contracts and GNOME/Linux package suites in CI. Build from a clean checkout
    and retain logs and installable artifacts. Define the initial desktop,

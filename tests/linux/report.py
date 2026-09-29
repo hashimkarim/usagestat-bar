@@ -40,7 +40,7 @@ def collect(batches, output, blocked, notes):
         destination = output / target
         destination.mkdir()
         for path in source.iterdir():
-            if path.is_file() and not path.name.startswith('.') and path.suffix in ['.json', '.jsonl', '.png', '.mp4', '.log', '.txt']:
+            if path.is_file() and path.name != 'capture-env.json' and not path.name.startswith('.') and path.suffix in ['.json', '.jsonl', '.png', '.mp4', '.log', '.txt']:
                 shutil.copy2(path, destination / path.name)
         raw = json.loads((source / 'result.json').read_text())
         checks = [classify_check(target, check) for check in raw.get('checks', raw.get('results', []))]

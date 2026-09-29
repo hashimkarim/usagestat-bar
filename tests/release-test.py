@@ -125,6 +125,25 @@ class Gates(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     release.verify(self.root, self.root)
 
+    def test_another_desktops_results_cannot_substitute_for_the_target(self):
+        self.raw['target'] = 'mate'
+        self.env = {'commit': 'a' * 40, 'dirty': False, 'target': 'xfce', 'image': 'lab-image', 'bundleSha256': 'b' * 64}
+        self.manifest['targetArtifacts']['xfce'] = 'gnome.zip'
+        release.write(self.folder / 'result.json', self.raw)
+        release.write(self.folder / 'environment.json', self.env)
+        with self.assertRaises(ValueError):
+            release.validate_target('xfce', self.rules, self.folder, self.manifest)
+
+    def test_broken_results_do_not_copy_process_environment_into_gallery(self):
+        report = release.module('release_report_test', ROOT / 'tests/linux/report.py')
+        (self.folder / 'capture-env.json').write_text('{"PRIVATE":"never upload"}')
+        (self.folder / 'session.log').write_text('setup failure log')
+        (self.folder / 'result.json').write_text('{partial')
+        with self.assertRaises(json.JSONDecodeError):
+            report.collect([self.root], self.root / 'gallery', [], {})
+        self.assertFalse((self.root / 'gallery/gnome/capture-env.json').exists())
+        self.assertEqual((self.root / 'gallery/gnome/session.log').read_text(), 'setup failure log')
+
     def test_gnome_encoder_preserves_observed_timing(self):
         frames = self.root / 'frames'
         frames.mkdir()

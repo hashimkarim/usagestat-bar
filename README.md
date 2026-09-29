@@ -4,6 +4,8 @@ AI provider usage in your Linux panel, using the `usagestat` CLI. The existing G
 
 For other Linux desktops, see [installation and desktop checks](docs/LINUX.md) and the [current roadmap and support coverage](docs/ROADMAP.md). The September 27 native results are **388 passed, 0 failed, 5 compatibility skips**; see the [verification report](docs/reports/linux-port-fixes-2026-09-27.md). [Linux release automation](docs/RELEASING.md) builds candidate packages and requires native screenshots, videos and passing scenarios before publication. The native CI runner is awaiting host selection; the first release is pending. Windows and macOS are later ports.
 
+The [September 29 release rehearsal](docs/reports/linux-release-rehearsal-2026-09-29.md) repeated the full native matrix against clean-commit candidate archives, with the same **388 passes / 5 skips**, validated screenshots and twelve decoded videos.
+
 ## Install
 
 ### Step 1 — Install the `usagestat` CLI

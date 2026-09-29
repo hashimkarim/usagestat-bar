@@ -76,8 +76,8 @@ The package build excludes untracked files (including personal screenshots).
 Install the fast-check dependencies on Ubuntu 24.04:
 
 ```bash
-sudo apt-get install gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 \
-  libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg
+sudo apt-get install gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 \
+  libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync
 ```
 
 Then, from the repository root:
@@ -126,7 +126,9 @@ Update `release.json` and `docs/RELEASE_NOTES.md` together. Use semantic version
 with optional `alpha.N`, `beta.N` or `rc.N`; increment `gnomeVersion` for each
 published GNOME package. Its metadata receives both versions while retaining
 the extension UUID. Runtime archives normalize timestamps/ownership/order for
-deterministic contents from the same source; evidence itself varies between runs.
+deterministic contents from the same source and toolchain; compression-library
+versions can change archive bytes across build hosts even when the extracted
+payload is identical. Evidence itself varies between runs.
 The manifest records the backend fixture reference, last live smoke, icon
 provenance, checks, scope, commit and archive hashes.
 

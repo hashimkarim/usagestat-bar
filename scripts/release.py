@@ -224,6 +224,13 @@ def native(artifacts, output, targets, jobs):
             print(target, outcomes[target], flush=True)
     write(output / 'run.json', {'commit': manifest['commit'], 'manifestSha256': sha(artifacts / 'manifest.json'),
                                 'targets': outcomes})
+    # Copy failure logs before report parsing: an interrupted result.json must
+    # not hide the setup/encoder logs needed to diagnose the failed profile.
+    logs = output / 'logs'
+    logs.mkdir()
+    for target in selected:
+        for path in (raw / target).glob('*.log'):
+            shutil.copy2(path, logs / f'{target}-{path.name}')
     # Only publish fixture evidence, never frozen source trees, frame caches, or process environment dumps.
     gallery = output / 'gallery'
     if list(raw.glob('*/result.json')):
@@ -233,20 +240,12 @@ def native(artifacts, output, targets, jobs):
             if outcomes[run['target']]['status'] != 'completed':
                 run['status'] = 'failed'
                 run['note'] = outcomes[run['target']].get('error', '')
-        for path in gallery.glob('*/capture-env.json'):
-            path.unlink()
         for target in selected:
             path = raw / target / 'archive.sha256'
             if path.exists():
                 shutil.copy2(path, gallery / target / path.name)
         write(gallery / 'summary.json', runs)
         (gallery / 'index.html').write_text(report.render(runs, f'UsageStat Bar {manifest["version"]} · {manifest["commit"][:12]}'))
-    # Retain setup logs for profiles that failed before producing result.json as well.
-    logs = output / 'logs'
-    logs.mkdir()
-    for target in selected:
-        for path in (raw / target).glob('*.log'):
-            shutil.copy2(path, logs / f'{target}-{path.name}')
     if manifest['commit'] != clean_commit() or any(item['status'] != 'completed' for item in outcomes.values()):
         raise ValueError(f'Native run has failures; inspect {output}')
 
@@ -297,7 +296,7 @@ def validate_target(target, rules, folder, manifest):
         artifact_hash = (folder / 'archive.sha256').read_text().split()[0]
     else:
         identity = (env.get('commit') == manifest['commit'] and env.get('dirty') is False
-                    and env.get('target') == target and bool(env.get('image')))
+                    and env.get('target') == target and raw.get('target') == target and bool(env.get('image')))
         artifact_hash = env.get('bundleSha256')
     if not identity or artifact_hash != manifest['artifacts'][manifest['targetArtifacts'][target]]['sha256']:
         raise ValueError(f'{target}: stale source or different candidate archive')
