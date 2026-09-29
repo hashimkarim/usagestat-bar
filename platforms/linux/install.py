@@ -132,6 +132,8 @@ def main():
         incoming = Path(temp) / 'app'
         shutil.copytree(ROOT, incoming)
         # Compile before touching the current installation or its running service.
+        compiler = '/usr/bin/glib-compile-schemas' if Path('/usr/bin/glib-compile-schemas').exists() else 'glib-compile-schemas'
+        subprocess.run([compiler, '--strict', str(incoming / 'platforms/linux/schemas')], check=True)
         for adapter in native:
             if adapter == 'cosmic': continue
             if adapter in ['lxqt', 'polybar']:

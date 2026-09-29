@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 TARGETS = 'cinnamon plasma mate xfce lxqt sway hyprland budgie cosmic i3 bspwm'.split()
 
 
-def run(target, output):
+def run(target, output, bundle=None):
     output.mkdir(parents=True, exist_ok=False)
     podman = ['podman', '--root', os.environ.get('USAGESTAT_PODMAN_ROOT', str(Path.home()/'.local/share/containers/storage'))]
     image = 'localhost/usagestat-hyprland-lab:arch' if target == 'hyprland' else os.environ.get('USAGESTAT_LAB_IMAGE', 'localhost/usagestat-linux-lab:44')
@@ -25,6 +25,8 @@ def run(target, output):
             '-v', f'{output / "source"}:/src:ro', '-v', f'{output}:/out:rw']
     if target in ['cinnamon','sway','hyprland']: args += ['--userns=keep-id:uid=1000,gid=1000']
     if target == 'hyprland': args += ['--device', os.environ.get('USAGESTAT_LAB_RENDER_NODE','/dev/dri/renderD128')]
+    if bundle:
+        args += ['-v', f'{bundle.resolve()}:/release/bundle.tar.gz:ro', '-e', 'USAGESTAT_LAB_BUNDLE=/release/bundle.tar.gz']
     args += [image, 'bash', '/src/tests/linux/session.sh', target]
     sources=sorted(p for folder in ['platforms','tests','schemas','assets'] for p in (ROOT/folder).rglob('*')
         if p.is_file() and '__pycache__' not in p.parts)
@@ -45,6 +47,7 @@ def run(target, output):
         'commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
         'dirty':bool(subprocess.check_output(['git','status','--porcelain','--untracked-files=no'],cwd=ROOT,text=True)),
         'backend':'synthetic fixtures', 'input':'native mouse / wheel events', 'capture':'unedited frames at 5 FPS',
+        'bundleSha256':hashlib.sha256(bundle.read_bytes()).hexdigest() if bundle else None,
         'trayCompanion':target in ['cosmic','lxqt','budgie'] and os.environ.get('USAGESTAT_LAB_TRAY_COMPANION')=='1'},indent=2))
     capture = encoder = None
     with (output/'session.log').open('wb') as log, (output/'capture.log').open('wb') as capture_log:
@@ -62,6 +65,8 @@ def run(target, output):
             capture.stdout.close()
             session.wait(timeout=300+int(os.environ.get('USAGESTAT_LAB_HOLD','0')))
             capture.wait(timeout=15); encoder.wait(timeout=15)
+            if session.returncode or capture.returncode or encoder.returncode:
+                raise RuntimeError(f'{target}: session/capture/encoder failed: {session.returncode}/{capture.returncode}/{encoder.returncode}')
             result=json.loads((output/'result.json').read_text())
             print(target, result['status'], output, flush=True)
             return result
@@ -76,11 +81,12 @@ if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('target',choices=[*TARGETS,'all'])
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--bundle',type=Path,help='Test this built Linux release bundle instead of restaging runtime files')
     args=parser.parse_args()
     targets=TARGETS if args.target=='all' else [args.target]
     failed=False
     for target in targets:
-        try: failed=run(target,args.output.absolute()/target)['status']!='passed' or failed
+        try: failed=run(target,args.output.absolute()/target,args.bundle)['status']!='passed' or failed
         except Exception as error:
             print(str(error),flush=True); failed=True
     raise SystemExit(1 if failed else 0)

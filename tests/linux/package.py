@@ -23,6 +23,9 @@ with tempfile.TemporaryDirectory(prefix='usagestat-linux-install.') as temp:
         assert not any('/tests/' in name or '/screenshots/' in name or '/.git/' in name for name in names)
         package.extractall(base,filter='data')
     app=base/'usagestat-bar'
+    # Portable release archives omit build-host compiled schemas. Installation
+    # must generate them with the destination's GLib before replacing the app.
+    (app/'platforms/linux/schemas/gschemas.compiled').unlink()
     installer=app/'platforms/linux/install.py'
     prefix=base/"prefix with 'quotes' $and `ticks` %value"
     provider=base/'config/usagestat/config.toml'

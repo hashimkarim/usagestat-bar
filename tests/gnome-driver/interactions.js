@@ -46,10 +46,16 @@ export async function runInteractions(driver) {
     };
     const recording=(async () => {
         const start=GLib.get_monotonic_time();
-        while(running) {
-            await capture(`frames/${String(frame++).padStart(5,'0')}`);
-            await delay(Math.max(1,(start+frame*200000-GLib.get_monotonic_time())/1000));
-        }
+        const timing=Gio.File.new_for_path(`${output}/frame-times.jsonl`).replace(null,false,Gio.FileCreateFlags.PRIVATE,null);
+        try {
+            while(running) {
+                const name=`frames/${String(frame++).padStart(5,'0')}`;
+                const seconds=(GLib.get_monotonic_time()-start)/1e6;
+                await capture(name);
+                timing.write_all(new TextEncoder().encode(JSON.stringify({file:`${name}.png`,seconds})+'\n'),null);
+                await delay(Math.max(1,(start+frame*200000-GLib.get_monotonic_time())/1000));
+            }
+        } finally { timing.close(null); }
     })();
     const started=GLib.get_monotonic_time();
     const check=async (name,action) => {

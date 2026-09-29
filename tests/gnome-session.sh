@@ -21,7 +21,16 @@ fi
 export USAGESTAT_LAB_BACKGROUND_ROOT="${USAGESTAT_LAB_BACKGROUND_ROOT:-${XDG_CACHE_HOME:-$HOME/.cache}/usagestat-lab/wallpapers}"
 python3 "$source_dir/tests/linux/fetch-backgrounds.py" --target gnome --root "$USAGESTAT_LAB_BACKGROUND_ROOT"
 mkdir -p "$source_dir/artifacts"
-output_dir="$(mktemp -d "$source_dir/artifacts/gnome.XXXXXX")"
+if [[ -n "${USAGESTAT_TEST_OUTPUT_DIR:-}" ]]; then
+    output_dir="$(python3 -c 'import os,sys; print(os.path.abspath(sys.argv[1]))' "$USAGESTAT_TEST_OUTPUT_DIR")"
+    mkdir -p "$(dirname "$output_dir")"
+    mkdir "$output_dir"
+else
+    output_dir="$(mktemp -d "$source_dir/artifacts/gnome.XXXXXX")"
+fi
+if [[ "${USAGESTAT_TEST_INTERACTIONS:-0}" == 1 ]]; then
+    command -v ffmpeg >/dev/null || { echo 'Interaction recordings require ffmpeg' >&2; exit 1; }
+fi
 test_root="$(mktemp -d -t usagestat-gnome.XXXXXX)"
 cleanup_test_root() {
     # The document portal may still be releasing its FUSE mount after bus exit.
@@ -72,7 +81,12 @@ printf '%s\n' '{"scenario":"normal"}' > "$USAGESTAT_FIXTURE_STATE"
 app_dir="$XDG_DATA_HOME/gnome-shell/extensions/usagestat-bar@hashimkarim"
 driver_dir="$XDG_DATA_HOME/gnome-shell/extensions/usagestat-baseline-test@local"
 mkdir -p "$app_dir" "$driver_dir"
-"$source_dir/build.sh" "$test_root/extension.zip" > "$output_dir/build.log"
+if [[ -n "${USAGESTAT_TEST_EXTENSION_ARCHIVE:-}" ]]; then
+    cp -- "$USAGESTAT_TEST_EXTENSION_ARCHIVE" "$test_root/extension.zip"
+    sha256sum "$test_root/extension.zip" > "$output_dir/archive.sha256"
+else
+    "$source_dir/build.sh" "$test_root/extension.zip" > "$output_dir/build.log"
+fi
 unzip -q "$test_root/extension.zip" -d "$app_dir"
 cp "$source_dir/tests/gnome-driver/"* "$driver_dir/"
 cp "$source_dir/tests/assert.js" "$driver_dir/"
@@ -90,7 +104,7 @@ def command(args):
     return subprocess.check_output(args, text=True).strip()
 data = {
     'sourceCommit': command(['git', '-C', source, 'rev-parse', 'HEAD']),
-    'trackedChanges': bool(subprocess.run(['git', '-C', source, 'diff', '--quiet']).returncode),
+    'trackedChanges': bool(command(['git', '-C', source, 'status', '--porcelain', '--untracked-files=no'])),
     'kernel': platform.release(), 'architecture': platform.machine(),
     'shell': command(['gnome-shell', '--version']), 'gjs': command(['gjs', '--version']),
     'osRelease': pathlib.Path('/etc/os-release').read_text(),
@@ -163,6 +177,9 @@ else
     exit 1
 fi
 SESSION
+if [[ "${USAGESTAT_TEST_INTERACTIONS:-0}" == 1 && -d "$output_dir/frames" ]]; then
+    python3 "$source_dir/tests/encode-gnome.py" "$output_dir" > "$output_dir/encode.log" 2>&1 || session_status=1
+fi
 if (( session_status != 0 )); then
     echo "GNOME session failed (status $session_status); inspect $output_dir/session.log and shell.log" >&2
     exit "$session_status"

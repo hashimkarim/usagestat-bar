@@ -28,7 +28,30 @@ else
     export USAGESTAT_FIXTURE_LOG=/out/backend-commands.jsonl
     printf '%s\n' '{"scenario":"normal"}' > "$USAGESTAT_FIXTURE_STATE"
 fi
-python3 /src/platforms/linux/package.py stage /tmp/usagestat-package
+if [[ -n "${USAGESTAT_LAB_BUNDLE:-}" ]]; then
+    python3 - "$USAGESTAT_LAB_BUNDLE" <<'PY'
+import sys
+import tarfile
+with tarfile.open(sys.argv[1]) as archive:
+    archive.extractall('/tmp/usagestat-release', filter='data')
+PY
+    cp -a /tmp/usagestat-release/usagestat-bar /tmp/usagestat-package
+    if [[ "$target" == i3 || "$target" == bspwm ]]; then
+        # Polybar is a pinned lab dependency. Reject an image whose patched
+        # executable does not correspond to the patch shipped in this candidate.
+        python3 - <<'PY'
+import hashlib
+from pathlib import Path
+records = Path('/usr/share/usagestat-lab/polybar-build.txt').read_text().splitlines()
+for path in [Path('/tmp/usagestat-package/platforms/polybar/section-geometry.patch'), Path('/usr/local/bin/usagestat-polybar')]:
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    if not any(line.split()[0] == digest and Path(line.split()[-1]).name == path.name for line in records):
+        raise SystemExit(f'Lab Polybar dependency differs from the candidate: {path.name}; rebuild the lab image')
+PY
+    fi
+else
+    python3 /src/platforms/linux/package.py stage /tmp/usagestat-package
+fi
 native_options=()
 if [[ "$target" == xfce ]]; then native_options=(--native xfce); fi
 if [[ "$target" == lxqt || "$target" == budgie || "$target" == cosmic ]]; then native_options=(--native "$target"); fi

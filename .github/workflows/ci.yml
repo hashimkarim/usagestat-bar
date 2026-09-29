@@ -1,0 +1,44 @@
+name: Linux checks and packages
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        default: ''
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+          persist-credentials: false
+      - name: Install check dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg
+      - name: Contracts, package lifecycle and release gate tests
+        run: python3 scripts/release.py check --output artifacts/ci-checks
+      - name: Build versioned candidates from the tested commit
+        run: python3 scripts/release.py build --checks artifacts/ci-checks --output artifacts/candidate
+      - name: Upload candidate packages
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: linux-candidate
+          path: artifacts/candidate/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Retain check logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: linux-check-logs
+          path: artifacts/ci-checks/
+          retention-days: 30

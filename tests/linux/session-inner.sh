@@ -168,7 +168,7 @@ font-0 = DejaVu Sans:size=11;2
 font-1 = UsageStat Provider Icons:pixelsize=20;3
 modules-left = usagestat
 CONFIG
-        cat /src/platforms/polybar/config.ini >> /tmp/polybar.ini
+        cat /tmp/usagestat-prefix/share/usagestat-bar/platforms/polybar/config.ini >> /tmp/polybar.ini
         if [[ "${USAGESTAT_LAB_INTERACTIONS:-0}" == 1 ]]; then
             printf '\nformat-background = #2f3e52\n' >> /tmp/polybar.ini
         fi
@@ -298,7 +298,7 @@ if os.environ['USAGESTAT_LAB_TARGET'] == 'hyprland' and os.environ.get('USAGESTA
               'tray': {'spacing': 8}})
 Path('/tmp/waybar.json').write_text(json.dumps(p))
 PY
-        cp /src/platforms/waybar/style.css /tmp/waybar.css
+        cp /tmp/usagestat-prefix/share/usagestat-bar/platforms/waybar/style.css /tmp/waybar.css
         if [[ "$target" == hyprland && "${USAGESTAT_LAB_INTERACTIVE:-0}" == 1 ]]; then
             cat >> /tmp/waybar.css <<'CSS'
 #custom-apps, #custom-terminal, #custom-files, #clock, #tray { padding: 0 10px; }

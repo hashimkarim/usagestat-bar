@@ -80,10 +80,17 @@ panel-placement skips does not automatically accept every visual difference.
 
 ## Next: a repeatable Linux release candidate (#17)
 
-There are currently no GitHub Actions workflows or published GitHub releases.
-Shared models, preferences, native adapters, offline fixtures, interactive
-previews and desktop/VM runners already exist. Reuse these; a large framework
-migration is not a prerequisite.
+The [Linux release workflow](RELEASING.md) now defines hosted fast checks and
+versioned package builds, a unified native lab with automatic screenshots and
+videos, and publication gates for the candidate's exact commit and archives.
+`release.json` defines the initial x86_64 prerelease scope and the required
+scenarios. The native CI runner is deliberately awaiting host selection;
+`LINUX_LAB_ENABLED` remains unset. No product release has been published.
+
+Local lab execution can rehearse the complete pipeline. Activation requires a
+provisioned isolated runner and a successful Actions dry run. The remaining
+acceptance below, especially VM/login lifecycle and manual review, remains
+separate from the automated native scenario gate.
 
 1. **Automate fast checks and packaging.** Run the existing shared/Linux
    contracts and GNOME/Linux package suites in CI. Build from a clean checkout

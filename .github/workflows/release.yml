@@ -1,0 +1,119 @@
+name: Linux release evidence
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing version tag (leave empty to rehearse this branch)
+        type: string
+        default: ''
+      targets:
+        description: Native profiles (all or comma-separated IDs); publication requires all
+        type: string
+        default: all
+      dry_run:
+        description: Prepare evidence without publishing
+        type: boolean
+        default: true
+permissions:
+  contents: read
+concurrency:
+  group: linux-release-${{ inputs.tag || github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    uses: ./.github/workflows/ci.yml
+    with:
+      ref: ${{ inputs.tag || github.ref }}
+  lab-readiness:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Require an explicitly provisioned native lab
+        env:
+          ENABLED: ${{ vars.LINUX_LAB_ENABLED }}
+        run: |
+          if [ "$ENABLED" != true ]; then
+            echo '::error::Native lab is not enabled. Choose and provision the isolated usagestat-linux-lab runner described in docs/RELEASING.md, then set LINUX_LAB_ENABLED=true. No release will be published.'
+            exit 1
+          fi
+  native:
+    needs: lab-readiness
+    runs-on: [self-hosted, linux, x64, usagestat-linux-lab]
+    timeout-minutes: 60
+    # This job never runs on a pull_request event and receives no publishing token.
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.tag || github.ref }}
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: linux-candidate
+          path: artifacts/candidate
+      - name: Test candidate archives and record native interactions
+        env:
+          TARGETS: ${{ inputs.targets || 'all' }}
+        run: python3 scripts/release.py native --artifacts artifacts/candidate --output artifacts/native --targets "$TARGETS" --jobs 2
+      - name: Retain screenshots, video, environment identities and failure logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: linux-native-evidence
+          path: |
+            artifacts/native/gallery/
+            artifacts/native/run.json
+            artifacts/native/logs/
+            artifacts/native/gnome-launch.log
+          if-no-files-found: error
+          retention-days: 30
+  verify:
+    needs: native
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    if: ${{ (inputs.targets || 'all') == 'all' }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.tag || github.ref }}
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: linux-candidate
+          path: artifacts/candidate
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: linux-native-evidence
+          path: artifacts/native
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Check every scenario and decode media before assembling
+        run: python3 scripts/release.py assemble --artifacts artifacts/candidate --evidence artifacts/native --output artifacts/release
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: linux-verified-release
+          path: artifacts/release/
+          if-no-files-found: error
+          retention-days: 30
+  publish:
+    needs: verify
+    if: ${{ github.event_name == 'push' || (inputs.dry_run == false && inputs.tag != '') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.tag || github.ref }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: linux-verified-release
+          path: artifacts/release
+      - name: Publish verified assets without moving tags or replacing assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
+        run: python3 scripts/publish-release.py --directory artifacts/release --tag "$RELEASE_TAG" --publish
