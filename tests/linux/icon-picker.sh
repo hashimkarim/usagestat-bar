@@ -24,11 +24,18 @@ python3 "$source_dir/platforms/linux/package.py" stage "$test_root/app"
 export USAGESTAT_BAR_SCHEMA_DIR="$test_root/app/platforms/linux/schemas"
 Xvfb -displayfd 3 -screen 0 1400x1000x24 -nolisten tcp 3>"$test_root/display" >"$USAGESTAT_ICON_TEST_OUTPUT/display.log" 2>&1 &
 display_pid=$!
-for _ in $(seq 1 100); do
+# Allow virtual display startup on slower shared CI runners.
+# Wait for Xvfb's readiness notification, and stop early if the server exits.
+for _ in $(seq 1 300); do
     [[ -s "$test_root/display" ]] && break
-    sleep 0.05
+    kill -0 "$display_pid" 2>/dev/null || break
+    sleep 0.1
 done
-[[ -s "$test_root/display" ]] || { echo 'Xvfb did not start' >&2; exit 1; }
+if [[ ! -s "$test_root/display" ]]; then
+    echo 'Xvfb did not become ready (maximum wait: 30s)' >&2
+    cat "$USAGESTAT_ICON_TEST_OUTPUT/display.log" >&2
+    exit 1
+fi
 export DISPLAY=":$(cat "$test_root/display")"
 echo "Icon picker evidence: $USAGESTAT_ICON_TEST_OUTPUT"
 dbus-run-session -- bash -c '
