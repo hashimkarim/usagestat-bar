@@ -23,10 +23,11 @@ cmap = font.getBestCmap()
 size = 1000  # Compare outlines without small-font grid fitting moving thin strokes.
 raster_font = ImageFont.truetype(str(folder/'UsageStatProviderIcons.ttf'), size)
 assert len(set(mapping.values())) == len(mapping)
-assert set(mapping.values()) <= set(cmap)
+catalog = json.loads((ROOT/'assets/provider-icons/manifest.json').read_text())
+paths = sorted({ROOT/'assets/provider-icons'/icon['monochrome'] for icon in catalog['icons'].values()})
+assert {mapping['generic'], *(mapping[path.stem] for path in paths)} <= set(cmap)
 failures = []
-for path in sorted((ROOT/'assets/provider-icons').glob('*.svg')):
-    if '-color' in path.stem: continue
+for path in paths:
     root = ET.parse(path).getroot()
     root.set('width', str(size * 9 // 10)); root.set('height', str(size * 9 // 10))
     # The monochrome font intentionally uses one opacity for the whole logo.
@@ -47,4 +48,4 @@ for path in sorted((ROOT/'assets/provider-icons').glob('*.svg')):
     similarity = intersection / union if union else 0
     if similarity < .93: failures.append((path.name, round(similarity, 4)))
 assert not failures, f'Logo outlines differ from their source SVGs: {failures}'
-print(f'Passed: {len(mapping)-1} provider glyphs, aliases available, source silhouettes and cutouts retained.')
+print(f'Passed: {len(paths)} provider glyphs, aliases available, source silhouettes and cutouts retained.')

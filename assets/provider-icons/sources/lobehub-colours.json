@@ -1,0 +1,2046 @@
+{
+  "repository": "https://github.com/lobehub/lobe-icons",
+  "commit": "329f378cbd1a88f45b60cd096b9111ce16f3ea39",
+  "files": {
+    "ace": {
+      "path": "src/Ace/style.ts",
+      "gitBlob": "f65de4487db32323e238dc5aa9760538a77d324b",
+      "sha256": "ee7e84acb1a9cd785c790ed4a6802a04872cabe06d8294a49ffa307adb12d837",
+      "content": "export const TITLE = 'ace';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "adobe": {
+      "path": "src/Adobe/style.ts",
+      "gitBlob": "53a944b79f51c7a55f6dc2e5468eb51ffa636a91",
+      "sha256": "3edf6c2f597cfc63b7ae494c990de4e5f5d5fe973a3e9c424db79bb9249fab8e",
+      "content": "export const TITLE = 'Adobe';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#EB1000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "adobefirefly": {
+      "path": "src/AdobeFirefly/style.ts",
+      "gitBlob": "96b8160b2da68f470124b5ec0ed83875f7e18f9f",
+      "sha256": "86f5476c69e370e2133560cdee4209d0f93388af859f303cd806d4e06821bea1",
+      "content": "export const TITLE = 'AdobeFirefly';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#EB1000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "agentvoice": {
+      "path": "src/AgentVoice/style.ts",
+      "gitBlob": "c253d2eb3f8ff75cf78386fe7dc3ab9a8c186106",
+      "sha256": "f07653218a0ab2c7fe8cdb67b9981444d4a1d551778bb8992f9a6684d9602f66",
+      "content": "export const TITLE = 'AgentVoice';\nexport const COLOR_PRIMARY = '#0f6fff';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#ffffff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "agnesai": {
+      "path": "src/AgnesAI/style.ts",
+      "gitBlob": "f8bf63fd8d6f8289302fa667fffa2014f259298a",
+      "sha256": "692405c8ff6c66ba9454abc0d0328bc6553ebcdcee743c42c88897a072db5583",
+      "content": "export const TITLE = 'Agnes AI';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "agui": {
+      "path": "src/Agui/style.ts",
+      "gitBlob": "2213186ae46e686c42f2a9e80a23809d5d238b1d",
+      "sha256": "7fee6ed565225732fbebba5207d045d1be4f91ee5f66f773c0f4136dec4fee7e",
+      "content": "export const TITLE = 'AG-UI';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "ai2": {
+      "path": "src/Ai2/style.ts",
+      "gitBlob": "935e1e012fb8566e4686dd7d47626d2bde801d9a",
+      "sha256": "b027601a866e5ee8fd9b4f85fb39d846ce49b96c86e06df125d7f456bd6f026f",
+      "content": "export const TITLE = 'Ai2';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#f0529c';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "ai21": {
+      "path": "src/Ai21/style.ts",
+      "gitBlob": "c420cfebb14a5020160025cee9b8c5d45acb1c64",
+      "sha256": "edfc8a592d6c6a6edf8495a71b605c8be631ec81ce624a51589c7fc6a92e4ef6",
+      "content": "export const TITLE = 'AI21';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#E91E63';\nexport const COLOR_GRADIENT = 'linear-gradient(-45deg, #F68CB2,  #E91E63)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "ai302": {
+      "path": "src/Ai302/style.ts",
+      "gitBlob": "2cde8249742f8fce3fff8950d7426c480cca3e0b",
+      "sha256": "38890b4a132bd436d23816b025bdefa5f44f2fdc65aed9e7cf8fe5c99a2cfda4",
+      "content": "export const TITLE = '302.AI';\nexport const COLOR_PRIMARY = '#8E47FF';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#FFF';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "ai360": {
+      "path": "src/Ai360/style.ts",
+      "gitBlob": "04048a056943aaa4e582da2f97503c2814f1358b",
+      "sha256": "f9bd25b62a0500440017a80749cf4e5714c809ed127edd6364be219a6cc0f496",
+      "content": "export const TITLE = 'AI360';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#006ffb';\nexport const COLOR_GRADIENT = 'linear-gradient(to bottom, #12B7FA,  #006ffb)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "aihubmix": {
+      "path": "src/AiHubMix/style.ts",
+      "gitBlob": "92a72dc2571d8b4c7f84b0d3e36ff93270a7a170",
+      "sha256": "60569687f40b9267e113c98d2b7fe77be016f5ad01a612e550167152b42a5468",
+      "content": "export const TITLE = 'AiHubMix';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#006FFB';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "aimass": {
+      "path": "src/AiMass/style.ts",
+      "gitBlob": "20d3bb8aa1a706dd67378813b1118ec29aeb59ed",
+      "sha256": "b0dea31bc39cab1bc4863dc60fec9ba3df3b4276b019db760ac5abc2367b5d1e",
+      "content": "export const TITLE = 'AiMass';\nexport const COMBINE_TEXT_MULTIPLE = 0.65;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "aionlabs": {
+      "path": "src/AionLabs/style.ts",
+      "gitBlob": "6dd484543fccfea7f19a9a766304949a9c89e8e8",
+      "sha256": "575670ed5ea247103a92af3fe13efa169c69f72a9da3ce1e19b37f09695de7b8",
+      "content": "export const TITLE = 'AionLabs';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#0f172a';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#fff';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "airjelly": {
+      "path": "src/AirJelly/style.ts",
+      "gitBlob": "20e0b561843ce7a9fab4d6a7133138ea7ded657d",
+      "sha256": "335fcb4ced5a8fd021d646b224bf209149f4ea9721885e998c43df2a79726e4a",
+      "content": "export const TITLE = 'AirJelly';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#00C8FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "aistudio": {
+      "path": "src/AiStudio/style.ts",
+      "gitBlob": "fcc7aef4a5abb2560f3866dd87e52766d5106eb2",
+      "sha256": "1ed48f02742f4297dc054065b9726846d9f600eff25601b6e120a2673e1c56f7",
+      "content": "export const TITLE = 'Google AI Studio';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "akashchat": {
+      "path": "src/AkashChat/style.ts",
+      "gitBlob": "03ffec49be8f18d490dee549bbdfaa2a0e0abd21",
+      "sha256": "9ce081e47c51b1c58cdac0f7cdfb2550fb772e6e2f1116661a2f15139ff7615d",
+      "content": "export const TITLE = 'AkashChat';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "alephalpha": {
+      "path": "src/AlephAlpha/style.ts",
+      "gitBlob": "de70c2209670a4d707c6266377d956c0d43a94fd",
+      "sha256": "c1676202cf6d7a06a42b9d60606a288f10fd1598bcc61c94f2b78399250c5f47",
+      "content": "export const TITLE = 'AlephAlpha';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "alibaba": {
+      "path": "src/Alibaba/style.ts",
+      "gitBlob": "357d048e2dd4511a19d94c0c86bd3ccd5dcd8503",
+      "sha256": "e88b5b89615c4cf063580f399c7e117bb3835ff540ea19c419e94db85ec788c5",
+      "content": "export const TITLE = 'Alibaba';\nexport const COLOR_PRIMARY = '#FF6003';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "alibabacloud": {
+      "path": "src/AlibabaCloud/style.ts",
+      "gitBlob": "045dac0ac23172e2ab2ccbce0ad79095571ebd34",
+      "sha256": "23127cbb8bc9c85ab9d9e0bad0f01d24846631a7416ab380f03f9b2539e41f31",
+      "content": "export const TITLE = 'AlibabaCloud';\nexport const COMBINE_TEXT_MULTIPLE = 0.65;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FF6A00';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "amdradeoncloud": {
+      "path": "src/AMDRadeonCloud/style.ts",
+      "gitBlob": "623629970d7e03807dd537d073b2cd9174b55ce6",
+      "sha256": "a9c7a924a343ae13754206e8f66730ce7c61770148b04ee7b8386793f2894387",
+      "content": "export const TITLE = 'AMD Radeon Cloud';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#ED1C24';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "amp": {
+      "path": "src/Amp/style.ts",
+      "gitBlob": "aa74f3811d46e1dca701cffcc43fca3a844aa7a6",
+      "sha256": "3f108954f924af9a024d3ac8f5f1633f930162f715a7d2c407419cf088538074",
+      "content": "export const TITLE = 'Amp';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#F34E3F';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "anspire": {
+      "path": "src/Anspire/style.ts",
+      "gitBlob": "5f5170262b6c743c8fc02f2ca97077255bd68422",
+      "sha256": "52607c89e1cf890a98724eafad4958c12c097272a9e8764c86c07248bf18c765",
+      "content": "export const TITLE = 'Anspire';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#514BFD';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "antgroup": {
+      "path": "src/AntGroup/style.ts",
+      "gitBlob": "73c9bdfde1301abb610e08a9634bb64e8bdf91d1",
+      "sha256": "5753e5f51e4821173e138a623e8e78c30cae8808609a90b8a83115a9d523801b",
+      "content": "export const TITLE = 'AntGroup';\nexport const COLOR_PRIMARY = '#1677ff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "anthropic": {
+      "path": "src/Anthropic/style.ts",
+      "gitBlob": "f85e2ab8613ec10dc1b7265b91bbc6597cdb8b65",
+      "sha256": "cfe371b8104d9d878f66b2769076a5556a682f7406b2a81f8a1a9242b5d42ccc",
+      "content": "export const TITLE = 'Anthropic';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#F1F0E8';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#141413';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "antigravity": {
+      "path": "src/Antigravity/style.ts",
+      "gitBlob": "c1c24cddbb72913864b6b744d8c578a5d8e1c2b5",
+      "sha256": "cd13c97351f713ad48f6a021e1f2c3d002b601a29c29f525c670422ebc8cb634",
+      "content": "export const TITLE = 'Antigravity';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "anyscale": {
+      "path": "src/Anyscale/style.ts",
+      "gitBlob": "9d0c019bf0f52c53a3513f2c0f6d2bf3951a33c5",
+      "sha256": "2172f2eae6b5b91f4e0effc044725c28eb6a8e79327e3e0b0aef3fdaba195e0b",
+      "content": "export const TITLE = 'Anyscale';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#0163FB';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "apertis": {
+      "path": "src/Apertis/style.ts",
+      "gitBlob": "b5ab9a33b1e532e0959e9c36550f83a36ae36ad4",
+      "sha256": "9be810789105f917b686e2b0bf28cf7825add18d13f6118c06ed759b6b4810f9",
+      "content": "export const TITLE = 'Apertis';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#0d9488';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "apple": {
+      "path": "src/Apple/style.ts",
+      "gitBlob": "840b3e12fcfd98bc8966420225125942533cdba7",
+      "sha256": "6333ca51ecf636a97d3424b7831eabe016c7c39798ec494911aaab104015e112",
+      "content": "export const TITLE = 'Apple';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "arcee": {
+      "path": "src/Arcee/style.ts",
+      "gitBlob": "a99c04268c7214a0beb2145bbe026f8ba14d949a",
+      "sha256": "9e5d63b43c30e1df744e574586e3c2c30207959c00ebe24ccc997c70dc380c44",
+      "content": "export const TITLE = 'Arcee';\nexport const COMBINE_TEXT_MULTIPLE = 0.95;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#008C8C';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "askverdict": {
+      "path": "src/AskVerdict/style.ts",
+      "gitBlob": "b314701fb77ddc094b5031588af29f0aad31bfdc",
+      "sha256": "bec70ebbed2c342d060d346e852e6a0421c83d9329f9e9630f35465754ff6713",
+      "content": "export const TITLE = 'AskVerdict';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#E8A317';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#0f0d08';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "assemblyai": {
+      "path": "src/AssemblyAI/style.ts",
+      "gitBlob": "8542b1aaf23b392d47546375e4b5ce9ac869d36c",
+      "sha256": "9ae5682566c4a35f9014ed481d690d15382ee8748c0ddc010c45a6556439726e",
+      "content": "export const TITLE = 'AssemblyAI';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#2545D3';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "atlascloud": {
+      "path": "src/AtlasCloud/style.ts",
+      "gitBlob": "540e94b8d3359d3d734b9480ab9d9e6f72286087",
+      "sha256": "b8964d31027128a1a4be14743f10df36159d5098c40a40e288fadb29d86de9ca",
+      "content": "export const TITLE = 'Atlas Cloud';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#7036F0';\n\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "automatic": {
+      "path": "src/Automatic/style.ts",
+      "gitBlob": "2445cccee8217a6c2e9ebee6fd3af1f16334ee40",
+      "sha256": "0a3ef7f67bb7479abcf42f2a70fe1fd06957c0a9946aaae20304328e35931b88",
+      "content": "export const TITLE = 'Automatic';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#E00054';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "aws": {
+      "path": "src/Aws/style.ts",
+      "gitBlob": "2d9513945fa3bc456670f2efb51bac6e1b923280",
+      "sha256": "e626b5a6981bee67a0e517686d0e0577d4dbc2d47a517df4093cc1fe5eef82df",
+      "content": "export const TITLE = 'AWS';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#222F3E';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "aya": {
+      "path": "src/Aya/style.ts",
+      "gitBlob": "067844b41b3b19f118beadfe958608593a058dde",
+      "sha256": "10545be5292c3e220453081f80fb85f48372614d4db84acbc56b774c595586a4",
+      "content": "export const TITLE = 'Aya';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#416FDC';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "azure": {
+      "path": "src/Azure/style.ts",
+      "gitBlob": "6385ac237d3cce53d67d6159dd10e42f7406f1d9",
+      "sha256": "6ad4d923b45a53e3d0349a14b7d437f6507d08f3caaaa0a4fc8d476608e95ec3",
+      "content": "export const TITLE = 'Azure';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "azureai": {
+      "path": "src/AzureAI/style.ts",
+      "gitBlob": "d0c356d2818fb50c343572e688e0c5758f158e5d",
+      "sha256": "aca89b27fe8258b83c69a0e62426d417c889d0406a7a8df9fbd193c817de8478",
+      "content": "export const TITLE = 'AzureAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "baai": {
+      "path": "src/BAAI/style.ts",
+      "gitBlob": "41c785b2a38f491c21058967872ac01405776112",
+      "sha256": "4d88e8eeb2e2690c731dc41ee2077290e0a0c43794a714898368213f7c8d4491",
+      "content": "export const TITLE = 'BAAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "baichuan": {
+      "path": "src/Baichuan/style.ts",
+      "gitBlob": "45fdaecba3ccc297f449b1bd9d9cbf15b026f074",
+      "sha256": "98e69c458d20d44b2aeae901abbff09f51661307409d17cd0f2bec9e42f63838",
+      "content": "export const TITLE = 'Baichuan';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FF6933';\nexport const COLOR_GRADIENT = 'linear-gradient(-45deg, #FF6933, #FEC13E)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "baidu": {
+      "path": "src/Baidu/style.ts",
+      "gitBlob": "775d672a1a57f8d718db82eb6634cc7310ba3110",
+      "sha256": "f08f0ed722a49d5b9abaf08212c58469c346eadb642934530f9a2dd44c1fbd6f",
+      "content": "export const TITLE = 'Baidu';\nexport const COLOR_PRIMARY = '#2932E1';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "baiducloud": {
+      "path": "src/BaiduCloud/style.ts",
+      "gitBlob": "3d3d28c8741275ac6491080d84cece7f080234fc",
+      "sha256": "b73a05d12c1d353505c7c5f851bea38a7cf59b300f6684340071394eee71b459",
+      "content": "export const TITLE = 'BaiduCloud';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#2468f2';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "bailian": {
+      "path": "src/Bailian/style.ts",
+      "gitBlob": "aa7ce58537cc7dae06863883ba751dbb38b19fc7",
+      "sha256": "7a922bc33f4d8517bd87c1b271de1b41505d7d612476ae30c861af3718a97920",
+      "content": "export const TITLE = 'BaiLian';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#615ced';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#fff';\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "baseten": {
+      "path": "src/Baseten/style.ts",
+      "gitBlob": "425b85d246d438d9a53dbb46fc919e361b7c0ebd",
+      "sha256": "7d3d724a61e35865d979e057ac1e92bcbce14fb0d374e426bb4e0d594f47c11b",
+      "content": "export const TITLE = 'Baseten';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#19E76E';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "bedrock": {
+      "path": "src/Bedrock/style.ts",
+      "gitBlob": "70252453a5de7e3cc39966c1322e125fe09fc49b",
+      "sha256": "3c8267ca32db9eb778bbd898f4fb5205270593e00a2ee64afe866150aa7f24f8",
+      "content": "export const TITLE = 'Bedrock';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#222F3E';\nexport const COLOR_GRADIENT = 'linear-gradient(45deg, #9AD8F8, #3D8FFF, #6350FB)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "bfl": {
+      "path": "src/Bfl/style.ts",
+      "gitBlob": "a05b61daec53bf434f991edd6b2de004ac43fbdb",
+      "sha256": "251955c2c8425574cd651ad6614ba41c38ff5c20c491cc87f1be0a9109f1395e",
+      "content": "export const TITLE = 'Black Forest Labs';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "bilibili": {
+      "path": "src/Bilibili/style.ts",
+      "gitBlob": "51f281f687ffd3752f29669c06806e5446baf236",
+      "sha256": "beb22a356d060fb020ff1086fa73d92f5dd8b68eba2c6452a5058c1f2bf12272",
+      "content": "export const TITLE = 'bilibili';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FB7299';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "bilibiliindex": {
+      "path": "src/BilibiliIndex/style.ts",
+      "gitBlob": "4eae09538870afb73f6ba5e0d5c9dd741a82376e",
+      "sha256": "ef27b4c6847b22f46b8bf53c424ee82921c2c4347c99d922cf66e15fad82e409",
+      "content": "export const TITLE = 'bilibili index';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#5E19B7';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "bing": {
+      "path": "src/Bing/style.ts",
+      "gitBlob": "4bf572e7bcb45522ab091610d831779d54f55000",
+      "sha256": "e86fa4836bb378d5768e6ac9a9bcc24e444e730244f47a7480f0b991e91b78db",
+      "content": "export const TITLE = 'Bing';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#174ae4';\nexport const COLOR_GRADIENT = 'linear-gradient(130deg, #2870EA 20%, #1B4AEF 77.5%)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "bocha": {
+      "path": "src/Bocha/style.ts",
+      "gitBlob": "83a604b1c065f05797a473143c25e97dbaec72ed",
+      "sha256": "5c59dc1d8d80f8ff447eb8d62f0bb2ab1b6c14b105173749132c0d9791608080",
+      "content": "export const TITLE = 'Bocha';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#006EFF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#fff';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "brave": {
+      "path": "src/Brave/style.ts",
+      "gitBlob": "8232c10c70368ecb4d4619aa57f585ba0121aa64",
+      "sha256": "6253741d124f4ed4e8c32832ace459d0beb6a319774db02ac6d254ba8f40f11d",
+      "content": "export const TITLE = 'Brave';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FF4000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#fff';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "briaai": {
+      "path": "src/BriaAI/style.ts",
+      "gitBlob": "99fb94f7ab0b623ecc6d7fe0e91a0052d0d0c343",
+      "sha256": "5573eedf3c6934562d75f17f12ba492f55133fdae94e7e74bd476c446db338f0",
+      "content": "export const TITLE = 'BRIA AI';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#671ECC';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "browserless": {
+      "path": "src/Browserless/style.ts",
+      "gitBlob": "495e69208c37d49db425c8ab13b8c34fa00877be",
+      "sha256": "85a59be2578500cc5d29ebe8994114c9c4ef5be7c70bd86e5771f0eb09c256f7",
+      "content": "export const TITLE = 'Browserless';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "burncloud": {
+      "path": "src/BurnCloud/style.ts",
+      "gitBlob": "63ab4932ed8da965b3bd7d26f4a03f3e8980394f",
+      "sha256": "42989c9c706c3b41aca406f4204c83aca1acc7dd56367367c9ed5e524d793203",
+      "content": "export const TITLE = 'BurnCloud';\nexport const COMBINE_TEXT_MULTIPLE = 0.5;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#E95513';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "bytedance": {
+      "path": "src/ByteDance/style.ts",
+      "gitBlob": "94156e39a59a1b69ba3d8c9650ebdea545a28c87",
+      "sha256": "16305f6f04380179e0fda03f51b82f6b854e990f03fc46d1f52fea32e11568ea",
+      "content": "export const TITLE = 'ByteDance';\nexport const COLOR_PRIMARY = '#325AB4';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "capcut": {
+      "path": "src/CapCut/style.ts",
+      "gitBlob": "6a0d112afe885311489b82194e9d3d89c5d0053a",
+      "sha256": "b55cfad5b03bb320b7cd4ff91f09297a71a4e4bc433e5bc3654b0173ac595274",
+      "content": "export const TITLE = 'CapCut';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "celestoai": {
+      "path": "src/CelestoAI/style.ts",
+      "gitBlob": "0355ba12e1239b637d110df21dff28053a749d46",
+      "sha256": "5fb45444047c1298743fe3e5980de37cf6624b447fd0e71f6bc292dc80d8f763",
+      "content": "export const TITLE = 'CelestoAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "centml": {
+      "path": "src/CentML/style.ts",
+      "gitBlob": "7110dd63043bda6781ace0b3a8f12e442ffb0f30",
+      "sha256": "22ba62941f07a2152883c8e0cce8c8238a8da0fc05e68850126c477da1ecf205",
+      "content": "export const TITLE = 'CentML';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#004331';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "cerebras": {
+      "path": "src/Cerebras/style.ts",
+      "gitBlob": "ce669a26ee16785488d86176e965860c587cc222",
+      "sha256": "3909b951eff9625451bb4c6438afe9f1f9bd7fa4e947c74f5e735e81d57105d8",
+      "content": "export const TITLE = 'Cerebras';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#F15A29';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "chatglm": {
+      "path": "src/ChatGLM/style.ts",
+      "gitBlob": "34cfe9ed1bb03277c7fd7b7f8238df3ec3f65df8",
+      "sha256": "769c0f475efb346d924548d2e9d616350384433fbbe4273a7c8e16d3444bb601",
+      "content": "export const TITLE = 'ChatGLM';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#4268FA';\nexport const COLOR_GRADIENT = 'linear-gradient(-45deg, #3485FF,  #504AF4)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "cherrystudio": {
+      "path": "src/CherryStudio/style.ts",
+      "gitBlob": "eb803a500367f0fd1e0e08e0a66ccfd7ee1182ed",
+      "sha256": "5ca1d3967cc761cfa138f8546e25149d27cdcf56c5235472ad20ffcffbcf0562",
+      "content": "export const TITLE = 'CherryStudio';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#EA5E5D';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "chutes": {
+      "path": "src/Chutes/style.ts",
+      "gitBlob": "29ca811bab9ef5686ce7a215ebf0878dfa1b7c0f",
+      "sha256": "6018225744c02d5315c006884e965a9531c58da2fccaff07533d838702ddb5e5",
+      "content": "export const TITLE = 'Chutes';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#0D0D0D';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "civitai": {
+      "path": "src/Civitai/style.ts",
+      "gitBlob": "93564abf822c252d2df799f748c01e6a2dbf92e4",
+      "sha256": "77600c98d644f91f6460f130a14b9fc18ba19b1b4b5e7d10d7484141d169729b",
+      "content": "export const TITLE = 'Civitai';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "claude": {
+      "path": "src/Claude/style.ts",
+      "gitBlob": "c41a0b6fac71069d8f1115a19e3e9e31c7c3b188",
+      "sha256": "da2a33caddebaf6666a3e60349b447ce9eaf8789318d584f932f72331a5cfd18",
+      "content": "export const TITLE = 'Claude';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#D97757';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "claudecode": {
+      "path": "src/ClaudeCode/style.ts",
+      "gitBlob": "3b020c5b85d0854ddde946b567d5cdeb50f92657",
+      "sha256": "dc8e711e2721ed73a34ed169b8f629dd76d10b5739b0cb258b2bd5db671d2641",
+      "content": "export const TITLE = 'Claude Code';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#D97757';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#09090B';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "cline": {
+      "path": "src/Cline/style.ts",
+      "gitBlob": "6f57d8c9beae6a390a1dbd5e3895cdeea940333d",
+      "sha256": "82f94befc299f48dae143cd000dc4dc602109a67063e23a64c0c3ad133618ed2",
+      "content": "export const TITLE = 'Cline';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#323B43';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "clipdrop": {
+      "path": "src/Clipdrop/style.ts",
+      "gitBlob": "c51ebe7639511f18d1aefd4d8bf4fc0879523af0",
+      "sha256": "e49e2ddc4e97f936db45e5681aa44963e1ab40e2b0fd45c770985142efe7edbc",
+      "content": "export const TITLE = 'Clipdrop';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "cloudflare": {
+      "path": "src/Cloudflare/style.ts",
+      "gitBlob": "7dc734a5d1b5458ca48351682f13d3bae8d53ba5",
+      "sha256": "c6da4a3cef1bd1c5adcbf3a1892ee83b50d8b2fcadf092e5563bd7eb20c46575",
+      "content": "export const TITLE = 'Cloudflare';\nexport const COMBINE_TEXT_MULTIPLE = 0.4;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#F38020';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "codebuddy": {
+      "path": "src/CodeBuddy/style.ts",
+      "gitBlob": "215801cae64f3757ab42f92d25b47e6ee04e18da",
+      "sha256": "a6c1af6bdef7ffd73ee987548bb9f4136b1f9673a2394ec6b07323c8c2882a7d",
+      "content": "export const TITLE = 'CodeBuddy';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#6c4dff';\nexport const COLOR_GRADIENT =\n  'radial-gradient(66.67% 66.67% at 87.5% 102.08%, #2EA99D 0%, #6C4DFF 100%)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 1;\n"
+    },
+    "codeflicker": {
+      "path": "src/CodeFlicker/style.ts",
+      "gitBlob": "426457df14dcbd371c721207087d87ed476ac8f5",
+      "sha256": "7bc82513911f13808f1c21bd5a413becfd0fea2f1a3f9d1ce5e92a82701c85c9",
+      "content": "export const TITLE = 'CodeFlicker';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#32EDDA';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "codegeex": {
+      "path": "src/CodeGeeX/style.ts",
+      "gitBlob": "7585d66f5ba7515752f292f206a24799ad765410",
+      "sha256": "53ff0b0dba7b092363b0af5b6b7d0158606150b552e653784147bf51573c7fe3",
+      "content": "export const TITLE = 'CodeGeeX';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#00e7e7';\nexport const COLOR_GRADIENT = 'linear-gradient(to right, #00E7E7,  #00BFFF)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "codex": {
+      "path": "src/Codex/style.ts",
+      "gitBlob": "a029994ca7e977cac1a231d99350d46ba69244f4",
+      "sha256": "6f07d3a6cf9503ba5a4a21c22d5e4a1b12888715eb1295efa5db84b185fa954c",
+      "content": "export const TITLE = 'Codex';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "cogvideo": {
+      "path": "src/CogVideo/style.ts",
+      "gitBlob": "61b391c299035ae7abe422eb682d1ea0f514529f",
+      "sha256": "92507c5d760e0580057c10b6772451dabc72d99dcde3c9a048e3efe59fead271",
+      "content": "export const TITLE = 'CogVideo';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "cogview": {
+      "path": "src/CogView/style.ts",
+      "gitBlob": "91951501c808883face3ddefd5376b12fc6281d4",
+      "sha256": "01e4238f2542f782a6f0183814e2ba39b750266d24252ec1906a66fbd9357f4d",
+      "content": "export const TITLE = 'CogView';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "cohere": {
+      "path": "src/Cohere/style.ts",
+      "gitBlob": "7da15ec5a898437f2867d7da8470502b314f8901",
+      "sha256": "9d8ea89d13ab17f55a2cecdd5eb9f84aa7f82551ad9bb4119f9668997099e22c",
+      "content": "export const TITLE = 'Cohere';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#39594D';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "colab": {
+      "path": "src/Colab/style.ts",
+      "gitBlob": "5109156e5477e27713e37417bb9d71a9f8863dc7",
+      "sha256": "8a9f6aec32bb70fdd7d9fb6a7750062271103a28402309d800311797a0247924",
+      "content": "export const TITLE = 'Colab';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#F9AB00';\nexport const COLOR_GRADIENT = 'linear-gradient(-45deg, #E8710A, #F9AB00)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "cometapi": {
+      "path": "src/CometAPI/style.ts",
+      "gitBlob": "8a801a261e18aa74aacf5155b8b80324a68723fc",
+      "sha256": "61cef0fd9c1fd296469585bdf3bd83efb031a5e5b2801423808eb0c89de88c5a",
+      "content": "export const TITLE = 'CometAPI';\nexport const COLOR_PRIMARY = '#00ACE2';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#fff';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "comfyui": {
+      "path": "src/ComfyUI/style.ts",
+      "gitBlob": "37361dccdc1353324cd7be115255b663b05db5bc",
+      "sha256": "9ddd7bd7d2e5900376eda6926d7a893c4b11193f4f75a53a43e1c7792863dc98",
+      "content": "export const TITLE = 'ComfyUI';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#F0FF41';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#162DD4';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "commanda": {
+      "path": "src/CommandA/style.ts",
+      "gitBlob": "483f0e9c1c0bfa2235b3b8442ddcd43f7149ee5a",
+      "sha256": "2f1be33b002ef1a36f7b055f089667b11ff67c137e04c5b1dee24b5c51d5736e",
+      "content": "export const TITLE = 'CommandA';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#39594D';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "commandcode": {
+      "path": "src/CommandCode/style.ts",
+      "gitBlob": "a95fe244fe44d9bc3bfa2307227ab757345c1a5f",
+      "sha256": "c51938c237de84dcebed3a0032998a478cbed72227ed1062ae341322497b61cd",
+      "content": "export const TITLE = 'Command Code';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "copilot": {
+      "path": "src/Copilot/style.ts",
+      "gitBlob": "a0b31e93cc475d149d3596579e153d1cd0663e4a",
+      "sha256": "856afda017e4c75028da2dc98fc594b48757b9681a5845b535644a56f379ba0e",
+      "content": "export const TITLE = 'Copilot';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "copilotkit": {
+      "path": "src/CopilotKit/style.ts",
+      "gitBlob": "294f648127b90a4c19847af3457eefc05cf38d37",
+      "sha256": "3c38657414bcfa587cc9fc0daadb79cea4a1654cea22c67d58c41a46d6530fd3",
+      "content": "export const TITLE = 'CopilotKit';\nexport const COMBINE_TEXT_MULTIPLE = 0.95;\nexport const COMBINE_SPACE_MULTIPLE = 0;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "coqui": {
+      "path": "src/Coqui/style.ts",
+      "gitBlob": "d3b8b411e13c3128c5a671827205dd53fac5b16f",
+      "sha256": "b8286179289aeb38f744d28e99e9a7c53775a5e3f2995deb1f61f3a5d17d9339",
+      "content": "export const TITLE = 'Coqui';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#03363D';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#5EAE91';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "coze": {
+      "path": "src/Coze/style.ts",
+      "gitBlob": "9cc774f9960ceb719f7d4fce7e17b5324b1d5c61",
+      "sha256": "169d71935ccf0f7bbfd65e2f1b418acdecbc02ca720970b814ed1fe09fe78a28",
+      "content": "export const TITLE = 'Coze';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#4D53E8';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "crewai": {
+      "path": "src/CrewAI/style.ts",
+      "gitBlob": "59edeb3676f3003d5d87147f1ec779afe2e75abd",
+      "sha256": "f61c0d88ad3bb1a97bb5bce1a616a0592dadbc1f94d2b3bfc1bca5eda4d583d2",
+      "content": "export const TITLE = 'CrewAI';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "crusoe": {
+      "path": "src/Crusoe/style.ts",
+      "gitBlob": "38869af33039265007ae1cb5879fc959f8058945",
+      "sha256": "8128ba10ccc0929ca72092ca74b69be89cbea104b7cda3df41e909f17507cce6",
+      "content": "export const TITLE = 'Crusoe';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "cursor": {
+      "path": "src/Cursor/style.ts",
+      "gitBlob": "218f2113ea23ceb40406e34d7133656b6938c367",
+      "sha256": "763d7ce5bfda257b10cc462ececb6f20be4170125c630c0f3ea3425ee451dd8f",
+      "content": "export const TITLE = 'Cursor';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "cybercut": {
+      "path": "src/CyberCut/style.ts",
+      "gitBlob": "e0e9814badc2d6707394f8e04bbe3d520e7af4e6",
+      "sha256": "77c121a82c87fbeb3f4a6070f547a21974f9ee869f18de87f8d13a1fb97123c0",
+      "content": "export const TITLE = 'CyberCut';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "dalle": {
+      "path": "src/Dalle/style.ts",
+      "gitBlob": "be8205eee880c5cf268dbe37c5b68da162d06211",
+      "sha256": "5cbbf4612e751fe6c26d5ba7ab00004eebee19828c275f4c886d3c80c7611a70",
+      "content": "export const TITLE = 'DALL-E';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\nexport const COLOR_GRADIENT =\n  'conic-gradient(from 180deg, #FFFF67, #43FFFF, #50DA4C, #FF6E3D, #3C46FF)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "dbrx": {
+      "path": "src/Dbrx/style.ts",
+      "gitBlob": "23ed2df48148fc12587b836977ad973181f0ed2e",
+      "sha256": "08163af2e779231a609d6a5c18a36110d5e58ab73f4f8d4d5eea899fd843ad2f",
+      "content": "export const TITLE = 'DBRX';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.4;\nexport const COLOR_PRIMARY = '#EE3D2C';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "decart": {
+      "path": "src/Decart/style.ts",
+      "gitBlob": "7ac7c1df2299254528b475cd7ce41ed5e73dc74e",
+      "sha256": "426e44b4de620bba2ac95cdbb4960a85bb37cb26efab8ac6d2a738a1c09b87a5",
+      "content": "export const TITLE = 'Decart';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#2548F6';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "deepai": {
+      "path": "src/DeepAI/style.ts",
+      "gitBlob": "a15bc1b1761f59c0f0d8e14c837499c88376fc8a",
+      "sha256": "324536db47fdf78671dec68622971c5bcd30ccc1496b44fb5c62a963d628e8b7",
+      "content": "export const TITLE = 'DeepAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "deepcogito": {
+      "path": "src/DeepCogito/style.ts",
+      "gitBlob": "cfbbd1d076186c3466b14181363dd9097b308786",
+      "sha256": "2a0e674cd5204a299678a14515b849351b5ca0622729f0f6397e0341bb87f156",
+      "content": "export const TITLE = 'Deep Cogito';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#4e81ee';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "deepinfra": {
+      "path": "src/DeepInfra/style.ts",
+      "gitBlob": "ecef6444d06a987cc9d72ae656411d80ad4503ad",
+      "sha256": "f9cd0eec4e6e852b00271fff66716d8fb0e9b1b08318f9db9a2c4843b63962e3",
+      "content": "export const TITLE = 'DeepInfra';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "deepl": {
+      "path": "src/DeepL/style.ts",
+      "gitBlob": "1bd7cd4f2d5a5761b898379aaf6fc1bf0d229993",
+      "sha256": "9c11b6386dc9e692ed760f6e9bc14e79d883685b8cb6eede3c4d45666684f3e9",
+      "content": "export const TITLE = 'DeepL';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#0F2B46';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "deepmind": {
+      "path": "src/DeepMind/style.ts",
+      "gitBlob": "c5f73f31f84066429fc376682d24fc2d447ce2e4",
+      "sha256": "29e60fdaf5e22cf372694ef448c5f5b014abf995a8de43686e5ddac54c09445d",
+      "content": "export const TITLE = 'DeepMind';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#4285F4';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "deepseek": {
+      "path": "src/DeepSeek/style.ts",
+      "gitBlob": "19c9f947b0124a5aaf54a571421625d7ec44de37",
+      "sha256": "946e07e2f72078a6722b2d0f4bf27a17a86787360202829d7e4a0b519a6a6015",
+      "content": "export const TITLE = 'DeepSeek';\nexport const COMBINE_TEXT_MULTIPLE = 0.65;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#4D6BFE';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "devin": {
+      "path": "src/Devin/style.ts",
+      "gitBlob": "5a8056e92d981d3bf635d48a9ff98060270a260f",
+      "sha256": "21ba30d79094abbf6c986a5a74e68cd44947aef8347294742d6cc7c50ef36b29",
+      "content": "export const TITLE = 'Devin';\nexport const COMBINE_TEXT_MULTIPLE = 0.55;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "dify": {
+      "path": "src/Dify/style.ts",
+      "gitBlob": "27edf9ab7e09cc2114a1ddb1201bc8cce514c0cc",
+      "sha256": "5b4f1bf517c18d23a0f86c2c989322e7c6f64064de9840f7dee55949c2785bce",
+      "content": "export const TITLE = 'Dify';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#03F';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#fff';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "digitalocean": {
+      "path": "src/DigitalOcean/style.ts",
+      "gitBlob": "c4c8c3c849e4c9708a90af7a49cb20028b109be5",
+      "sha256": "d2f20f19c35859c6cbd6f62da41b2c0adb02a6c3e12c95e747721a6faddb39b7",
+      "content": "export const TITLE = 'DigitalOcean';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "doc2x": {
+      "path": "src/Doc2X/style.ts",
+      "gitBlob": "befb262942ca5342b152848b4146c4c31a49aa3d",
+      "sha256": "621f18842d674e3ff9bf7d7b433d9d86f5d28ca547ccfa503bb5064bd23e9c47",
+      "content": "export const TITLE = 'Doc2X';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "docsearch": {
+      "path": "src/DocSearch/style.ts",
+      "gitBlob": "c97215eee754090164257bfc0df303e3ed10c768",
+      "sha256": "093b3dc5b53164c3ead3e21d21615fac9eafe386b586ec8eab7ff64a914cea7d",
+      "content": "export const TITLE = 'DocSearch';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "dolphin": {
+      "path": "src/Dolphin/style.ts",
+      "gitBlob": "e8a54e85dbbb5e6ff026ede4106b5311bd4e25ba",
+      "sha256": "272c58c05f2d1213304ef825d0f2ca65f967d39d971e14b82fafa0538ac16db7",
+      "content": "export const TITLE = 'Dolphin';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#6186db';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "dotsstudio": {
+      "path": "src/DotsStudio/style.ts",
+      "gitBlob": "bac1ac98102a04cec04748a009989d7937ede22c",
+      "sha256": "50d076d88de4d79ac66059a8630f7877a01c6c71b43e7ddabd7f8e204d3a0727",
+      "content": "export const TITLE = 'Dots Studio';\nexport const TEXT_MULTIPLE = 0.8; // Used in Combine, Adjust as needed\nexport const SPACE_MULTIPLE = 0.1; // Used in Combine, Adjust as needed\nexport const COLOR_PRIMARY = '#a3e6d9'; // Used in Avatar\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "doubao": {
+      "path": "src/Doubao/style.ts",
+      "gitBlob": "13def695bc112537252ceaa8adc4e4f1ba29a49d",
+      "sha256": "7b41ba3b30f9a032c50a57697a8c3b15de67483a2dd3774872601c0c8a6e6b26",
+      "content": "export const TITLE = 'Doubao';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#FFF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "dreammachine": {
+      "path": "src/DreamMachine/style.ts",
+      "gitBlob": "0135d413b12cd01ea8828e9f00c27411ad14edd0",
+      "sha256": "ea9fa5357d2fba8ca1a330b5cd62a70270eab8f46807a09eed1549354fd25052",
+      "content": "export const TITLE = 'DreamMachine';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "elevenlabs": {
+      "path": "src/ElevenLabs/style.ts",
+      "gitBlob": "ec995e8f098e8411d8d4b3875b448766a11b4fad",
+      "sha256": "2a4aac46cbb20096c79dd78525016048ef20a75ad7ee9610dc329496a58346ba",
+      "content": "export const TITLE = 'ElevenLabs';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.5;\n"
+    },
+    "elevenx": {
+      "path": "src/ElevenX/style.ts",
+      "gitBlob": "006f082497bdbb3aaeb4165d01dc45c8b361c81e",
+      "sha256": "d7f26ff5e6c7c5a21a2b0466e24c3e7ad2e054734224b1566556b467c8265b90",
+      "content": "export const TITLE = '11x';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "essentialai": {
+      "path": "src/EssentialAI/style.ts",
+      "gitBlob": "ae59c66cb0a7ee07a8c05b72ecfa6d622ba6c5e0",
+      "sha256": "8753ac4df25ae2d285f569773dac31c47f4d99b522e7c741858f20974fdd9ab0",
+      "content": "export const TITLE = 'Essential AI';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#111322';\nexport const COLOR_GRADIENT = 'linear-gradient(135deg, #5E38A5, #31018C 63%)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "exa": {
+      "path": "src/Exa/style.ts",
+      "gitBlob": "0bd7d00a28980cced68cdf27cbbc47a32f032012",
+      "sha256": "217e83ba5150cdc548472816fc685e2bb58ecbd20e2bfe24208507b6bf19c524",
+      "content": "export const TITLE = 'Exa';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#1f40ed';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "fal": {
+      "path": "src/Fal/style.ts",
+      "gitBlob": "1449bf3b7d30e4794dd817cd3ba9f53349c87c26",
+      "sha256": "4b4ac0f7b03c618c7514922448d36a1f211c771f6c51f0166c1a1d3c5701c30c",
+      "content": "export const TITLE = 'Fal';\nexport const COMBINE_TEXT_MULTIPLE = 1.1;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#EC0648';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "fastgpt": {
+      "path": "src/FastGPT/style.ts",
+      "gitBlob": "fe845788d3cb6d0fa1cbb1d53073677d479785bd",
+      "sha256": "0ce1353101ec85d5aa786d326490e6f212b29c3a7892a317f4b17c22f118382a",
+      "content": "export const TITLE = 'FastGPT';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "featherless": {
+      "path": "src/Featherless/style.ts",
+      "gitBlob": "60a9644cb330b309cd40fff8f08a1d03abb4717e",
+      "sha256": "6958a978278cf62ad5ead6767748dbc952cbe894b69e213ef3a6d89db68c26fe",
+      "content": "export const TITLE = 'featherless.ai';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FFE184';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "figma": {
+      "path": "src/Figma/style.ts",
+      "gitBlob": "e9795b1cea352592cb05ef1e71cf1eba49dde9f6",
+      "sha256": "26aeb524e26f1e743022bacfa0ea89bb21acbd98263c6dd63338172f3cc221a9",
+      "content": "export const TITLE = 'Figma';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "firecrawl": {
+      "path": "src/Firecrawl/style.ts",
+      "gitBlob": "4621f4783b6240f4c5cdabba31686761af90b222",
+      "sha256": "37cd43a4c45076023b6ec74a9f4b1fea8e665b0b166ebe3ad2cb90b17d79d05e",
+      "content": "export const TITLE = 'Firecrawl';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#ff4d00';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "fireworks": {
+      "path": "src/Fireworks/style.ts",
+      "gitBlob": "90f7c84e862f81c0198db088a0efc8ad59f72afc",
+      "sha256": "4bbee8a3110327de0ea760104a0635b167b62945469b58c72640f85c2990f081",
+      "content": "export const TITLE = 'Fireworks';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#5019C5';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "fishaudio": {
+      "path": "src/FishAudio/style.ts",
+      "gitBlob": "de316e76dae153091ccb84334cd7beb89b1e0c69",
+      "sha256": "f5c0b30f28099c9bf5e91383606b017e431aa4440c8942b79a4ce28a1c183faa",
+      "content": "export const TITLE = 'FishAudio';\nexport const COMBINE_TEXT_MULTIPLE = 0.5;\nexport const COMBINE_SPACE_MULTIPLE = 0.4;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "flora": {
+      "path": "src/Flora/style.ts",
+      "gitBlob": "ed52097f6a98565bcfd7ea55cc2f314f76b7dd79",
+      "sha256": "06958a8f9a436caa35e7e6d6970575376caf6576dcecc23d65268f4e86370f57",
+      "content": "export const TITLE = 'Flora';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.11;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "flowith": {
+      "path": "src/Flowith/style.ts",
+      "gitBlob": "47b7daed2e7f1983ab0283acbf4dbf1bee5eaea8",
+      "sha256": "3ac8c9181e710261b163a670bd9ceafcf93cf57692bf37827aa1b47fd57ece20",
+      "content": "export const TITLE = 'Flowith';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "flux": {
+      "path": "src/Flux/style.ts",
+      "gitBlob": "7ce5d156c0c106f14e4c39193e0a26aeaa1c252e",
+      "sha256": "e8ff79eeef1813d6fa6db70a99fdbad09385bafb88b65ae1f70b30ce5aeafebd",
+      "content": "export const TITLE = 'Flux';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "friendli": {
+      "path": "src/Friendli/style.ts",
+      "gitBlob": "1e92ee36448f08a94cbe593af0c9f1f9f8b74f87",
+      "sha256": "a46ffa6d0d68f257105c80e39d6fa099860b46b0cf5c5a881a4d39bf5e4b5b05",
+      "content": "export const TITLE = 'Friendli';\nexport const COMBINE_TEXT_MULTIPLE = 0.95;\nexport const COMBINE_SPACE_MULTIPLE = 0.35;\nexport const COLOR_PRIMARY = '#101723';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#fff';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "gemini": {
+      "path": "src/Gemini/style.ts",
+      "gitBlob": "f3733db0c96abeeae0a92286b90a5551acde8468",
+      "sha256": "804bcbacf4f0508e7164c7e788d847b96283e76c3c33b9b78a9465ffcdeee1eb",
+      "content": "export const TITLE = 'Gemini';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "geminicli": {
+      "path": "src/GeminiCLI/style.ts",
+      "gitBlob": "65f2900be4801051c7d140b38341e6509bd25076",
+      "sha256": "cb32e80ce74ca74fa9f454da201b72f74f5d77f51567ec6e4049886ceebf81d5",
+      "content": "export const TITLE = 'Gemini CLI';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#1E1E2E';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "gemma": {
+      "path": "src/Gemma/style.ts",
+      "gitBlob": "2905cde201d73aa6f7c785dbebb08880c3059f23",
+      "sha256": "7c1f0726216cab9ef96d77066c1ad78963f714e54fdd1d358b296b437371e01b",
+      "content": "export const TITLE = 'Gemma';\nexport const COMBINE_TEXT_MULTIPLE = 0.65;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#2E96FF';\nexport const COLOR_GRADIENT = 'linear-gradient(45deg, #446EFF 14%, #2E96FF 40%, #B1C5FF 73%)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 1;\n"
+    },
+    "giteeai": {
+      "path": "src/GiteeAI/style.ts",
+      "gitBlob": "a47876e8855c9024e45fcc38385220f02afc968a",
+      "sha256": "b26255064329027ca94bf7290aeadb2bcf27a7c03d6463ed13b4e22fb56a996a",
+      "content": "export const TITLE = 'GiteeAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "github": {
+      "path": "src/Github/style.ts",
+      "gitBlob": "f02b309330ff873472ccef8ffc9ae1687e35bfdc",
+      "sha256": "678d6564c9cd6d7a7b57b37ba8f8563210050e0d54bc8f34ddf9bd4f740350ca",
+      "content": "export const TITLE = 'Github';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "githubcopilot": {
+      "path": "src/GithubCopilot/style.ts",
+      "gitBlob": "b99bfbfa9f4b2b1ba0441fe8cfe2ec07ef5789f9",
+      "sha256": "584fba9f535d692704a5aaf75e1eab5427c14f6e80bbcee86783cd5da2d8e54e",
+      "content": "export const TITLE = 'GithubCopilot';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "glama": {
+      "path": "src/Glama/style.ts",
+      "gitBlob": "2ec4677938b87b87062af043555933a7e08876a8",
+      "sha256": "2c599fab74438470bf17a3a352435b37a005cb826ba1fc3a6ac3c974a7331b2a",
+      "content": "export const TITLE = 'Glama';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.9;\n"
+    },
+    "glif": {
+      "path": "src/Glif/style.ts",
+      "gitBlob": "a324ec6ffb75fb9b317e9d162718e7075fbeb823",
+      "sha256": "963c1142fb3308792cf1d23751aebe8f70ec98f58a7aff58eedac6e55667b9e5",
+      "content": "export const TITLE = 'Glif';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "glmv": {
+      "path": "src/GLMV/style.ts",
+      "gitBlob": "e54f31f195cf8059d40798080efc36db93672c15",
+      "sha256": "5bf7b91bba822f5e050b8abe2da074f5ade801008b58b111c8329caf1cbbef5b",
+      "content": "export const TITLE = 'GLM-V';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#0039C6';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "gmicloud": {
+      "path": "src/GmiCloud/style.ts",
+      "gitBlob": "b3d82156be5e152983387812b01087d1343cd718",
+      "sha256": "e98b7e23370081b7b51146c1c5b389b7416a781fdc67c87bf7e0085de1221e80",
+      "content": "export const TITLE = 'GmiCloud';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#0A0A0A';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "google": {
+      "path": "src/Google/style.ts",
+      "gitBlob": "f3e74774ef3ff50375723f6206edb881389f924a",
+      "sha256": "785fe60864af142a1393c6f85befd835dba2efa7b74f99a65d895b8c2cf4af0c",
+      "content": "export const TITLE = 'Google';\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "googlecloud": {
+      "path": "src/GoogleCloud/style.ts",
+      "gitBlob": "8638d8ba178180c8425d0c48f3b1cb713c35b531",
+      "sha256": "8356ee29f59b3c50cf65c904d0e5c64f863967b58dbee3b295d40971e5da8b8d",
+      "content": "export const TITLE = 'GoogleCloud';\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "goose": {
+      "path": "src/Goose/style.ts",
+      "gitBlob": "61def2a9f71d998c7a2637510d45f5f099fcdcbc",
+      "sha256": "5514d79df80716c7fa5f0be2e4c227ab72a78a78b7796e7687f38ec148537466",
+      "content": "export const TITLE = 'Goose';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "gradio": {
+      "path": "src/Gradio/style.ts",
+      "gitBlob": "3b5e16defb35b15aa836cb4b99e5d2c87ab72c05",
+      "sha256": "394dfb7b7ad29d1500833eac1c376dbae4ed46e2d370ad42332751bda1d674c0",
+      "content": "export const TITLE = 'Gradio';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "greptile": {
+      "path": "src/Greptile/style.ts",
+      "gitBlob": "58680af942bcb4416b06979e0d6f45487f80b3a8",
+      "sha256": "3829c197cc4973d362c6c858d137b792ac3fcbfb5fed5ecaefa7af9494af96da",
+      "content": "export const TITLE = 'Greptile';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#44A775';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "grok": {
+      "path": "src/Grok/style.ts",
+      "gitBlob": "4c4f1f12ea1a388ec5f07ce1e503c33b80ad61f4",
+      "sha256": "a867ca4c7312065f10d5ced3f63d98e21160355796040d8da4f63472dddfdb8d",
+      "content": "export const TITLE = 'Grok';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "groq": {
+      "path": "src/Groq/style.ts",
+      "gitBlob": "0acc23958f859665ab1a882795edeb76e18c00c6",
+      "sha256": "bd3f23f4fea51fbc1cdc2657bdf4047fb85230ee7883528d635043c60adde805",
+      "content": "export const TITLE = 'Groq';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#F55036';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "hailuo": {
+      "path": "src/Hailuo/style.ts",
+      "gitBlob": "f17364a9c2ee8e2998ae2761a9d491c27cead1fb",
+      "sha256": "5ae0b94577e670fece69429988c03579e96a29ca407c30112af44cab31c6f31a",
+      "content": "export const TITLE = 'Hailuo';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#fff';\nexport const COLOR_GRADIENT =\n  'linear-gradient(135deg, #FFAB0C, #FF5538, #E9405D, #D266DA, #D584EF)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "haiper": {
+      "path": "src/Haiper/style.ts",
+      "gitBlob": "b01fc3b8e041686461789bdf2e44da40971302d2",
+      "sha256": "1a97f2571adbe7bbae16ff1ad65a084c192d505997e8363c4626d275af513a18",
+      "content": "export const TITLE = 'Haiper';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#9581ff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "happyhorse": {
+      "path": "src/HappyHorse/style.ts",
+      "gitBlob": "71f93fee8bcfd5bbf2240f5ab2f84ce3ddcae8fb",
+      "sha256": "eeca5b100caf9b7e21f888afb2b448e7add9aa9fbfded26b251b22ecf2c71bf0",
+      "content": "export const TITLE = 'Hedra';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "hedra": {
+      "path": "src/Hedra/style.ts",
+      "gitBlob": "71f93fee8bcfd5bbf2240f5ab2f84ce3ddcae8fb",
+      "sha256": "eeca5b100caf9b7e21f888afb2b448e7add9aa9fbfded26b251b22ecf2c71bf0",
+      "content": "export const TITLE = 'Hedra';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "hermesagent": {
+      "path": "src/HermesAgent/style.ts",
+      "gitBlob": "8d130de95ee97dd2e99e296710d2c5122713c217",
+      "sha256": "0e45c0f9f087f9d6efab5a72051abe670935fda9df3d64ddf01764f2cb6decff",
+      "content": "export const TITLE = 'Hermes Agent';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "higress": {
+      "path": "src/Higress/style.ts",
+      "gitBlob": "adb2a73dcf35c64082e4befc87811450dd197c47",
+      "sha256": "e1a5e48d7898b8305be9ba79a4d9c23d91d14f72e0f4f20918a2f4fd1119775e",
+      "content": "export const TITLE = 'Higress';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#3E5CF4';\nexport const COLOR_GRADIENT = 'linear-gradient(to bottom, #0418FF,  #1E8CFE)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "huawei": {
+      "path": "src/Huawei/style.ts",
+      "gitBlob": "1860fed87ac7a11d476a534a09863421d7fd5370",
+      "sha256": "c790066123fd159e2348cb955e3b56234c9a6ff7624288e95be83b2287234443",
+      "content": "export const TITLE = 'Huawei';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#C7000B';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "huaweicloud": {
+      "path": "src/HuaweiCloud/style.ts",
+      "gitBlob": "77d0f6ad1dc3e465d2f8025c784a8adbdfa41b28",
+      "sha256": "603be6df82c1d61239e2b8924ad801fd42bcc7cec2afaa621fc04fe1b152a14d",
+      "content": "export const TITLE = 'HuaweiCloud';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#C7000B';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "huggingface": {
+      "path": "src/HuggingFace/style.ts",
+      "gitBlob": "1e4ec820619d7ebd95f74df3e7fa2ed5b913fc9b",
+      "sha256": "a3a5faa0c5a2c2ca846fbadc0e6c4dcd99ae705ab896c968576fd09958a0f214",
+      "content": "export const TITLE = 'HuggingFace';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "hunyuan": {
+      "path": "src/Hunyuan/style.ts",
+      "gitBlob": "2ec25ca5634dcd4963c90c2a1bf828da2219ea37",
+      "sha256": "959672fa6c33799c9b4d3154558c2930e6799a71c8f911dd2f0e29d77931ca20",
+      "content": "export const TITLE = 'Hunyuan';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#0053e0';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "hyperbolic": {
+      "path": "src/Hyperbolic/style.ts",
+      "gitBlob": "a2714c4a9362f1acfe4679bb30d286718f0ef8da",
+      "sha256": "de281b746ae65036b14abebde55b1ee02bb9929c1ceffde5e4c1d0f24441c6ba",
+      "content": "export const TITLE = 'Hyperbolic';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#594CE9';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "ibm": {
+      "path": "src/IBM/style.ts",
+      "gitBlob": "9b5b49abfaac11b58108d2cc441f8c8b6a9ca88d",
+      "sha256": "fb78310be64ed96950d068db841b2d6b3c5562fda3a7489c841f5f390ef4bf76",
+      "content": "export const TITLE = 'IBM';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0;\nexport const COLOR_PRIMARY = '#0F62FE';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "ideogram": {
+      "path": "src/Ideogram/style.ts",
+      "gitBlob": "ce7a86a0da6c2e761e83be3d1e0dfb0e8eedce1a",
+      "sha256": "65951f062b24d5942d38878ac038f3bb1a963da5bf655b96bcfaffd07cc4c350",
+      "content": "export const TITLE = 'Ideogram';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "iflytekcloud": {
+      "path": "src/IFlyTekCloud/style.ts",
+      "gitBlob": "49e38487c8faddf1579efc39fa6b68cae7bab238",
+      "sha256": "fcbec00fcdd94d089f3c7e11f48c72889ba226b8798f197ed8b1132c681bd51a",
+      "content": "export const TITLE = 'iFlyTekCloud';\nexport const COMBINE_TEXT_MULTIPLE = 0.65;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#2A80E2';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "inception": {
+      "path": "src/Inception/style.ts",
+      "gitBlob": "14d7adc5572653666ccd8294b15aeb839e333704",
+      "sha256": "840cb1cca32b1e5ea2939693aeafbac96e95b3b7404afc9f93bc734a6b374c3c",
+      "content": "export const TITLE = 'Inception';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "inceptron": {
+      "path": "src/Inceptron/style.ts",
+      "gitBlob": "52551b783e177b433f4a06f1ad64dc7045b4e347",
+      "sha256": "33ddb139bcc14c38c926e2c4eab9a9486b56f9868bd759794ab131ab3601ea1a",
+      "content": "export const TITLE = 'Inceptron';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "inference": {
+      "path": "src/Inference/style.ts",
+      "gitBlob": "69d9225712eae45b183b75b12c696daf95f44349",
+      "sha256": "9e42960005db7699f8ee7d10da800c5bf4ebca552485e17fbb045ef49cbd636f",
+      "content": "export const TITLE = 'Inference';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "infermatic": {
+      "path": "src/Infermatic/style.ts",
+      "gitBlob": "2d0cb51ed5efdf78ea463c22bdeffa9ec84bacbe",
+      "sha256": "02dd1943660cbe3b9ce2da42493740889d280028ce44c13dee7ffe75d06798a1",
+      "content": "export const TITLE = 'Infermatic';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#4334F5';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "infinigence": {
+      "path": "src/Infinigence/style.ts",
+      "gitBlob": "d96f893644e042f142670b491afc905edd1444a5",
+      "sha256": "bb2bb25e290f1641b8e7c7260f6a47d88cfee405740c367845cc9d1ad9c3eca6",
+      "content": "export const TITLE = 'Infinigence';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#7952ea';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "inflection": {
+      "path": "src/Inflection/style.ts",
+      "gitBlob": "6be23bde10fa7cf82c10dffd1ecb3e572e75e3a2",
+      "sha256": "63def6847045105eb0d331a852f7546dac260d645a72cc7d0b580f2890a6ba75",
+      "content": "export const TITLE = 'Inflection';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0;\nexport const COLOR_PRIMARY = '#038247';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "internlm": {
+      "path": "src/InternLM/style.ts",
+      "gitBlob": "28bdcec1f2cdb79ddfdb1ee3187edaf5634b6b8d",
+      "sha256": "1fae0d25fd3f1c814ac19c297a6f1cc4f420724448326fc9dec024070cde4e64",
+      "content": "export const TITLE = 'InternLM';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#1B3882';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "ionet": {
+      "path": "src/IoNet/style.ts",
+      "gitBlob": "e00fa555e1316160766141c40a3795486e5429dd",
+      "sha256": "9aebda53cdbe0f45c281524652b93f318903210202c17028eb476f9c070133e7",
+      "content": "export const TITLE = 'IoNet';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#fff';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "jimeng": {
+      "path": "src/Jimeng/style.ts",
+      "gitBlob": "baa67e3f7bc353784ff1ac522f92e37a6bb9906a",
+      "sha256": "5ff07bc89a9f3cf5a312e5023e971652ebc58fdccbe6333bb13655f7f8ca07f7",
+      "content": "export const TITLE = 'Jimeng';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "jina": {
+      "path": "src/Jina/style.ts",
+      "gitBlob": "5c8a64de1e4677450f5772dec1447317605d90a3",
+      "sha256": "4ec0cb736db3ba63282ffa2b9fe68b793f5f5660ade18a5e1a5e8c007f0e8453",
+      "content": "export const TITLE = 'Jina';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "junie": {
+      "path": "src/Junie/style.ts",
+      "gitBlob": "55cfaa45ec646043a538941dd5cb340819f2390c",
+      "sha256": "ee96492e90147b8901701bb468b1a6613452432932dd380db10b49dbaa49a355",
+      "content": "export const TITLE = 'Junie';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#47E054';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "kagi": {
+      "path": "src/Kagi/style.ts",
+      "gitBlob": "31a0d78cd2b3d5c72b44228aa63d4d797484c2ab",
+      "sha256": "c6357b030b849386da9bfd4c37010bae6c77ea4f4f591aac1ee04f67a0f97e25",
+      "content": "export const TITLE = 'Kagi';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#FEB219';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "kilocode": {
+      "path": "src/KiloCode/style.ts",
+      "gitBlob": "d403bbf70d1a71d61b4bb8943a23e0c83e28cf4d",
+      "sha256": "4999b98d5ce8ab546826749c7ab602556ef7ddcd63bae01472a791d21d73a14a",
+      "content": "export const TITLE = 'Kilo Code';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.4;\nexport const COLOR_PRIMARY = '#F8F676';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#1A1A18';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "kimi": {
+      "path": "src/Kimi/style.ts",
+      "gitBlob": "47ca1a3db196dc67e90541122829760b00bee8bb",
+      "sha256": "d6ab15a058de6d9cf5565009cb260ab53661e534e2506fa42ccfb5b478554efd",
+      "content": "export const TITLE = 'Kimi';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "kiro": {
+      "path": "src/Kiro/style.ts",
+      "gitBlob": "058d48e5e64bb8c329e5c355c719bb38492f5706",
+      "sha256": "6b83177f78600848dfcc4839a37e2276534256dbb4e960412c73cf8c8950d3e4",
+      "content": "export const TITLE = 'Kiro';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#9046ff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 1;\n"
+    },
+    "kling": {
+      "path": "src/Kling/style.ts",
+      "gitBlob": "59f4693e096f2cb97ac2ec63e1d53fe98202d688",
+      "sha256": "2e9c0e0cbf10fc393c3943384d6ece861afa2f06223f7871151b8643b2af3728",
+      "content": "export const TITLE = 'Kling';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#000';\nexport const COLOR_GRADIENT = 'linear-gradient(45deg, #FFF959, #0DF35E, #0BF2F9, #04A6F0)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "kluster": {
+      "path": "src/Kluster/style.ts",
+      "gitBlob": "383b59870812d5ccbcf6b7b6c0ed20c0cfdf873e",
+      "sha256": "1e70e502ffe34508710ec069200a96519264dc302b0fa19bea73d718a2fbc201",
+      "content": "export const TITLE = 'Kluster';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#6525F7';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "kolors": {
+      "path": "src/Kolors/style.ts",
+      "gitBlob": "5e9be4ff1376632bc2ea3bd9c2cfb685f8226253",
+      "sha256": "d9a913f8737043e00f03641941e0c45a467a28106767ed0dffe19fc1f9f6598c",
+      "content": "export const TITLE = 'Kolors';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#83FF63';\nexport const COLOR_GRADIENT = 'radial-gradient(#CBFF00,#7EF426)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "krea": {
+      "path": "src/Krea/style.ts",
+      "gitBlob": "b56db7a686a69504c953199ae45c3dbfb4a9da69",
+      "sha256": "bf9400c41bf4c86c90651c78571e6aaa3e13d76a629ef133c4053dfae53a701b",
+      "content": "export const TITLE = 'Krea';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "kwaikat": {
+      "path": "src/KwaiKAT/style.ts",
+      "gitBlob": "ae1fb849a018905bbc8eb455d9d7e3bfb7524e27",
+      "sha256": "7cddce606c8008c9500980109c6046aef74b85cb05cc229c3bdfd5a3b485a73c",
+      "content": "export const TITLE = 'KwaiKAT';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#0A67FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "kwaipilot": {
+      "path": "src/Kwaipilot/style.ts",
+      "gitBlob": "773f344612c06ccb26393a884117a8f4874d2396",
+      "sha256": "461b105a625d59896dc1c02773586bc0cfc74f8b7bdab1f4b192a8896d392717",
+      "content": "export const TITLE = 'Kwaipilot';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "lambda": {
+      "path": "src/Lambda/style.ts",
+      "gitBlob": "4642e262cecbd01460798735e78a9ca013014cb6",
+      "sha256": "95cc74c4c26bcaddf6da25dd854186c127ea988033eedec5446386207d46d510",
+      "content": "export const TITLE = 'Lambda';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "langchain": {
+      "path": "src/LangChain/style.ts",
+      "gitBlob": "7ff68768eb3a9d59e4c0066464263c477cbcf30c",
+      "sha256": "f8c2255e4cbc549933adee0e6cb9944c058976043f4071b909bbd7ef5687d578",
+      "content": "export const TITLE = 'LangChain';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#7FC8FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "langfuse": {
+      "path": "src/Langfuse/style.ts",
+      "gitBlob": "f23c72c3dbbd3520f083ac6de0b6119611a6595a",
+      "sha256": "a05c67a07282c032936c4a908ceb4ef12975dc55513b4dfb5fe4b30570aaef0d",
+      "content": "export const TITLE = 'Langfuse';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#1B1917';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "langgraph": {
+      "path": "src/LangGraph/style.ts",
+      "gitBlob": "0cea6b35c2324b9ce32bd5c839f16c7d2ea1e45d",
+      "sha256": "67c3415e4ece2b53cec34c1cc6d3d58cf5c95dae6cd0b1f7cbb5eb1cd9e4e840",
+      "content": "export const TITLE = 'LangGraph';\nexport const COMBINE_TEXT_MULTIPLE = 0.5;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#1C3C3C';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "langsmith": {
+      "path": "src/LangSmith/style.ts",
+      "gitBlob": "43a8d89e2e56c2623566c5cab0b930ba678fb1cd",
+      "sha256": "80694598903385a62d163c58022ffbac12ee3d90c1cdab352ef100b15a92d0a5",
+      "content": "export const TITLE = 'LangSmith';\nexport const COMBINE_TEXT_MULTIPLE = 0.5;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#1C3C3C';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "leptonai": {
+      "path": "src/LeptonAI/style.ts",
+      "gitBlob": "c2c870ff37f5d4caa73776a14a0cf20f11ea14bb",
+      "sha256": "7c861c44c16abfeac5716306a090f792097c5ba83ad9333f0dac231deaa2e590",
+      "content": "export const TITLE = 'LeptonAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#2F80ED';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "lg": {
+      "path": "src/LG/style.ts",
+      "gitBlob": "53cfae7e779f64a9fa02a1836453e0f8339827b5",
+      "sha256": "ef55b69f0d7d32f1e15afe8fd3bf308d23874d41c214487e363b4de77709e1d2",
+      "content": "export const TITLE = 'LG AI';\nexport const COLOR_PRIMARY = '#C00C3F';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#FFF';\nexport const AVATAR_ICON_MULTIPLE = 1;\n"
+    },
+    "lightricks": {
+      "path": "src/Lightricks/style.ts",
+      "gitBlob": "bba30d94086da535ee1ae677d1149665032ac042",
+      "sha256": "d958937d73d5dcab7cca749cadfb43243d21b646f3467f7ded07e1af4d1b8cd2",
+      "content": "export const TITLE = 'Lightricks';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "liquid": {
+      "path": "src/Liquid/style.ts",
+      "gitBlob": "18858bab86f0ea39a3209a064ef9f7063033868d",
+      "sha256": "2e409f9f719b72e82316496047a5fecc42cee77889c5d079a815ecf3c2959da3",
+      "content": "export const TITLE = 'Liquid';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "livekit": {
+      "path": "src/LiveKit/style.ts",
+      "gitBlob": "50d178acf55d29552a2d0db6099516f88c702deb",
+      "sha256": "7c50494554f865a38010808c53ad6f010f3b3348a81b009322af894e083d7ccb",
+      "content": "export const TITLE = 'LiveKit';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "llamaindex": {
+      "path": "src/LlamaIndex/style.ts",
+      "gitBlob": "259eeed1069f9c5fc0947ef0ea747b991eac3319",
+      "sha256": "5d80ff9ec7079fcd4a49508a1d2f96b6815a66f84b5b78110b31a91659cec6fd",
+      "content": "export const TITLE = 'LlamaIndex';\nexport const COMBINE_TEXT_MULTIPLE = 0.65;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "llava": {
+      "path": "src/LLaVA/style.ts",
+      "gitBlob": "96750079b172189d70aa3a6276f59b0251253419",
+      "sha256": "c0fcda3a43d9f17d0dde23bd98301cf05c328940ac45d62f282a3a8dd8883e15",
+      "content": "export const TITLE = 'LLaVA';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#CB2D30';\nexport const COLOR_GRADIENT = 'linear-gradient(-45deg, #CB2D30, #ED823A)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "llmapi": {
+      "path": "src/LlmApi/style.ts",
+      "gitBlob": "01847318c11ace08d367c8973e72319aa4b9ed0e",
+      "sha256": "25bd7fe5af2053d0cdee7ff01904db97bdbec8176db454aea10060c64d040a57",
+      "content": "export const TITLE = 'LLM API';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#3F35FF';\n\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "lmstudio": {
+      "path": "src/LmStudio/style.ts",
+      "gitBlob": "e5ddc2035ae7b1d81c73fe2b567b67b8037d7385",
+      "sha256": "bbad4d09631f1c0a2fc1ce33016265e43bee498901ab0811cfc82d63df4211d9",
+      "content": "export const TITLE = 'LM Studio';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#4338CA';\nexport const COLOR_GRADIENT = 'linear-gradient(135deg, #6C78EF, #4F14BE)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "lobehub": {
+      "path": "src/LobeHub/style.ts",
+      "gitBlob": "5f88d3180fc4fa9de230d4011fc2bebdff9c3028",
+      "sha256": "2a3116c57840270737ccb88367fae9e41ddae896434d238b13dda376efdbedfa",
+      "content": "export const TITLE = 'LobeHub';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "longcat": {
+      "path": "src/LongCat/style.ts",
+      "gitBlob": "dbcdb68e9887c9c9c4d68272d121057a64cfdb2d",
+      "sha256": "f8d460009ddbdb4b3846df97fb3a32435327eebefddacf2fc44af94e16914366",
+      "content": "export const TITLE = 'LongCat';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "lovable": {
+      "path": "src/Lovable/style.ts",
+      "gitBlob": "0a4b01e5067f81629cf0bf58ab6871f079b73e2a",
+      "sha256": "b76a6136ae1abb9d6a64f13d46475a4eddb7b2a268517991bb6b21dfc6e09e39",
+      "content": "export const TITLE = 'Lovable';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "lovart": {
+      "path": "src/Lovart/style.ts",
+      "gitBlob": "fb4374173a62dd923d5fcd3a1210c1fbf69b1dba",
+      "sha256": "c5dcc7a69bf3587b6aa3c8bc72ec5e641e277cc27c25c1bb043c5f57a022327d",
+      "content": "export const TITLE = 'Lovart';\nexport const COMBINE_TEXT_MULTIPLE = 0.65;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 1;\n"
+    },
+    "luma": {
+      "path": "src/Luma/style.ts",
+      "gitBlob": "22c6ab387def0c5d99345fe40df893c804bc57b7",
+      "sha256": "df65362fa6515dc17bd758141ff83e53b3e075ee8f1b20af5e8250d9c419b035",
+      "content": "export const TITLE = 'Luma';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "magic": {
+      "path": "src/Magic/style.ts",
+      "gitBlob": "3c472151b6dbb522ca023a8cec9905131cedd5dc",
+      "sha256": "beb42563e97fe78921d99978cadfcb9fbee26d30e2ca950372568794e5e560ad",
+      "content": "export const TITLE = 'Magic';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "make": {
+      "path": "src/Make/style.ts",
+      "gitBlob": "c9200b128d34f24b88acee58b625b3dab79c9beb",
+      "sha256": "78b64a7e312d5a9bd22f30671559aee7baf95d20a19b3a5812adadc6dcdfedd9",
+      "content": "export const TITLE = 'Make';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#ff009a';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "manus": {
+      "path": "src/Manus/style.ts",
+      "gitBlob": "83e530632471ddcf9a5027fe5656e4a9e5cb41d5",
+      "sha256": "f849390a926c4f5482870f5101a124bb82ed5e518d74a5b77330edb7c007ea67",
+      "content": "export const TITLE = 'Manus';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "mastra": {
+      "path": "src/Mastra/style.ts",
+      "gitBlob": "0ca5100750efb30022c4d0f7ae06f9445845c4d7",
+      "sha256": "87235c1491b535d389e344a6356e87ad652aac86390dd8f88cc968ea2439c18a",
+      "content": "export const TITLE = 'Mastra';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "mcp": {
+      "path": "src/MCP/style.ts",
+      "gitBlob": "377fb69819a1e8fca064d4351ba0afed59d633fb",
+      "sha256": "d765f952894cab6e9180afb040a9fa02e8968c3b9507b5dd6f6b1f548f8cd6d9",
+      "content": "export const TITLE = 'ModelContextProtocol';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#FFF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "mcpso": {
+      "path": "src/McpSo/style.ts",
+      "gitBlob": "6fd224d44b328ca0aa7def493293b6a1527f49af",
+      "sha256": "600c2c84690530d6fe1e4a31070d2858a2d915854825955f473afdc99866664f",
+      "content": "export const TITLE = 'MCP.so';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#1C3F6B';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#F2F8FE';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "menlo": {
+      "path": "src/Menlo/style.ts",
+      "gitBlob": "6956c32aa16064304bd5db7bb7fe6a32a5917e06",
+      "sha256": "c648f844f4402843dc79808d479159b2c82b46ea511cd7bdca014d3956cad835",
+      "content": "export const TITLE = 'MENLO';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#FF5C00';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "meshy": {
+      "path": "src/Meshy/style.ts",
+      "gitBlob": "943e8e74628e432a5b213277fbd87e40a9ac750e",
+      "sha256": "16ef2d4694994d09115decdef719031dfdc9c6a159f50e190dc920600f574917",
+      "content": "export const TITLE = 'Meshy';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "meta": {
+      "path": "src/Meta/style.ts",
+      "gitBlob": "2f76ea2c997cde06b56782aca3c25380a9550a3e",
+      "sha256": "777a579c380c1cce900de58bd8ce02af527d30bc8f76f4f2a2a7f237d696ad9f",
+      "content": "export const TITLE = 'Meta';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#1d65c1';\nexport const COLOR_GRADIENT = 'linear-gradient(45deg, #007FF8, #0668E1, #007FF8)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "metaai": {
+      "path": "src/MetaAI/style.ts",
+      "gitBlob": "201d5e79a463b19c6540c0ceb897c66e22ba32cb",
+      "sha256": "746a7a256957d675bfc8465f0027fd518e62ca1505660b34cbf5236dfee0cffa",
+      "content": "export const TITLE = 'MetaAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "metagpt": {
+      "path": "src/MetaGPT/style.ts",
+      "gitBlob": "88ae96dcd0b473221bff44f3c6b6b6ae98946b4e",
+      "sha256": "f45d70f41b13222e27019b75159dc320a2feb97b5e6fe969023b8534d86bdacb",
+      "content": "export const TITLE = 'MetaGPT';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "microsoft": {
+      "path": "src/Microsoft/style.ts",
+      "gitBlob": "c11928c4b5812a38cd1299f3fa0a4bfb7b4d1362",
+      "sha256": "ce63f858265d38b9cd7eeceecd0814ccffdd75785cd0af262042d2097583502b",
+      "content": "export const TITLE = 'Azure';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#00A4EF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "midjourney": {
+      "path": "src/Midjourney/style.ts",
+      "gitBlob": "1ae8eb4c3896105e968952f9b6abad26f48020f3",
+      "sha256": "81ee8dda9ade72186c477808d1d329e12fc316c5dd88f4a2275eb0d5e90137f0",
+      "content": "export const TITLE = 'Midjourney';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "minimax": {
+      "path": "src/Minimax/style.ts",
+      "gitBlob": "a7fc5f3a649a3e8044e6c35a6d793d3b45054f1f",
+      "sha256": "dd9f747c0071dd35dc250af58725bb669191d97231c6f955a1e24417d15dffe0",
+      "content": "export const TITLE = 'Minimax';\nexport const COMBINE_TEXT_MULTIPLE = 0.45;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#F23F5D';\nexport const COLOR_GRADIENT = 'linear-gradient(to right, #E2167E,  #FE603C)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "mistral": {
+      "path": "src/Mistral/style.ts",
+      "gitBlob": "0026a67ded74df7b2a2ce1c990c34c929c98a285",
+      "sha256": "941a612d6ed5218adea983924066f29a3c908b24ad52ea2329bb21545ddf270c",
+      "content": "export const TITLE = 'Mistral';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FA520F';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "modelscope": {
+      "path": "src/ModelScope/style.ts",
+      "gitBlob": "2de39fb52b45c73e72c59daecf41c9273eb1cb38",
+      "sha256": "eb551e6eadf5172d61593854d0cc6ab089e40ee69787707589c4564d090f1840",
+      "content": "export const TITLE = 'ModelScope';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#624AFF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "monica": {
+      "path": "src/Monica/style.ts",
+      "gitBlob": "7c9ee967bdc33a9f59fc53b68f2ce4528f747330",
+      "sha256": "ac87168b915693953fbf8152b11b224a8e6b0b42c470d39c301a615884255859",
+      "content": "export const TITLE = 'Monica';\nexport const COMBINE_TEXT_MULTIPLE = 0.65;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#6841ea';\nexport const COLOR_GRADIENT = 'linear-gradient(90deg, #A83FE0, #515FFB, #2BB5DD)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "moonshot": {
+      "path": "src/Moonshot/style.ts",
+      "gitBlob": "01888e6c2d93d0ebe6376031012f137f3bbe6b41",
+      "sha256": "dda3e9e5ad975858e2de927f6d6e71c8d2769d0b0dc35a78096f74efa6d86e16",
+      "content": "export const TITLE = 'MoonshotAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.4;\nexport const COLOR_PRIMARY = '#16191E';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "morph": {
+      "path": "src/Morph/style.ts",
+      "gitBlob": "1635762b6f667a7bc92f61b8a0d4883249988c49",
+      "sha256": "d06ac32bdfc24c48f0ac1f4664cdcad2ecff83b7d6c2ae12c46efdbfa4f4e0a5",
+      "content": "export const TITLE = 'Morph';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#99d52a';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "moxt": {
+      "path": "src/Moxt/style.ts",
+      "gitBlob": "79edb383e38868e23d5988bb6aaadb6daa94fa1a",
+      "sha256": "3693048673c72c6c5d86827582c3586bf0b594e40d3870535f09124fdd93d4b5",
+      "content": "export const TITLE = 'Moxt';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#29C16A';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#fff';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "myshell": {
+      "path": "src/MyShell/style.ts",
+      "gitBlob": "7665157ac216ddaf35c842994634324b5f984087",
+      "sha256": "07e353bd0b25a06ca481526773d0e5dcfb1ddc02c7b1c0fc7bb07ff63b23e13f",
+      "content": "export const TITLE = 'MyShell';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "n8n": {
+      "path": "src/N8n/style.ts",
+      "gitBlob": "50fb4ea0bea1ad061b33990da1eb4e31f509dfe1",
+      "sha256": "49f8e2757abe00b7b922283977db9251b75399e1f9045d65fa31453f2bdc7618",
+      "content": "export const TITLE = 'n8n';\nexport const COMBINE_TEXT_MULTIPLE = 0.5;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#EA4B71';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "nanobanana": {
+      "path": "src/NanoBanana/style.ts",
+      "gitBlob": "16409c6f1466f5f4119fa46d9f319c1cffbdf888",
+      "sha256": "bee8dab6133cb2dbf4857e374409bce2c32b3b314b451d97f2e9c870e0835ddf",
+      "content": "export const TITLE = 'NanoBanana';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FCD53F';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "nebius": {
+      "path": "src/Nebius/style.ts",
+      "gitBlob": "38da3c198611cf93f26dafd4365640c9c1b72ead",
+      "sha256": "939c0ce146fe34b122d30b22b4ea410f4ed13f47e63dad3684b823a473beeaf8",
+      "content": "export const TITLE = 'Nebius';\nexport const COLOR_PRIMARY = '#DAFF33';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#052b42';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "newapi": {
+      "path": "src/NewAPI/style.ts",
+      "gitBlob": "cd7f781f3359bcb51a758da2407dfd1d62cd42e8",
+      "sha256": "b25177b79f2f6edaffc3a7889b17af1baa486d66ededf7176bd4b40cb4905d4e",
+      "content": "export const TITLE = 'New API';\nexport const COLOR_PRIMARY = '#dd2e57';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#fff';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "nextbit": {
+      "path": "src/Nextbit/style.ts",
+      "gitBlob": "f42e7cecb424c9c34fb9d30c53e8b0e646638b19",
+      "sha256": "e022e6001de152ec5a8cd9c7de64e09abb5d98dd37b9ba126939bbc0f64489f6",
+      "content": "export const TITLE = 'Nextbit';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#04D98B';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#0A0A0A';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "notebooklm": {
+      "path": "src/NotebookLM/style.ts",
+      "gitBlob": "bbc16f00f6cb54a5d99d1c1ae7982fc4fdcb3b87",
+      "sha256": "5fbea1bf66d80b95c12e55ce48609b9330bb714a39a4336ca3427d38decd6953",
+      "content": "export const TITLE = 'NotebookLM';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "notion": {
+      "path": "src/Notion/style.ts",
+      "gitBlob": "0ee3c3dda868e86c91f6bdb12d9b43a7b7d17eb8",
+      "sha256": "aea6069e66b4e3dd559665c944883c4536728f724cef64e25f7b154d98aebbd4",
+      "content": "export const TITLE = 'Notion';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "nousresearch": {
+      "path": "src/NousResearch/style.ts",
+      "gitBlob": "654dcb58899e27217c03ca61389c65d5add54cb1",
+      "sha256": "b0b63961dd615f1a27fa4357bbbd5a10bf4731b8e59447c895df33ddfbdabd70",
+      "content": "export const TITLE = 'NousResearch';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "nova": {
+      "path": "src/Nova/style.ts",
+      "gitBlob": "981443554e7ade5edeef94e486c92660e5ed821a",
+      "sha256": "4ff4fbb4e5a2b4ae1bb10ca3f00dee50a6713e9f5582de06d95bf29dc0649b48",
+      "content": "export const TITLE = 'Nova';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#222F3E';\nexport const COLOR_GRADIENT = 'linear-gradient(-45deg, #ff6200, #e433ff 39.9%, #6842ff 96%)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "novelai": {
+      "path": "src/NovelAI/style.ts",
+      "gitBlob": "5dd8b88a8c849c68b2f10299f9e9828173341f6b",
+      "sha256": "bd381d69aafbbffefa603444434aa7ede49203d301ffadfc0a463da271e37b5c",
+      "content": "export const TITLE = 'NovelAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#E1E4FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "novita": {
+      "path": "src/Novita/style.ts",
+      "gitBlob": "cf408d363f7a7a6113294ed48c4ac51025e71968",
+      "sha256": "575ade2d15dc5c1c6cb2174ad14246d6cc94ffcdc7f3c19e8edc7fac5935060a",
+      "content": "export const TITLE = 'Novita AI';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#23D57C';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "nplcloud": {
+      "path": "src/NPLCloud/style.ts",
+      "gitBlob": "364213908cca99e8364b6747f44acdbf660860f0",
+      "sha256": "1b43a11e8f52dc551b5ef940f74c24fefdcbf61ec3cbf0f3f863f98f692a9be5",
+      "content": "export const TITLE = 'NPLCloud';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#00D1B2';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "nvidia": {
+      "path": "src/Nvidia/style.ts",
+      "gitBlob": "b6100375eecdfce2ea6aad3a73906cdbc6441ef9",
+      "sha256": "2a9698fe31fbe5c65d56747930a5fd984a575555c85ec758a2836a100329a47b",
+      "content": "export const TITLE = 'Nvidia';\nexport const COMBINE_TEXT_MULTIPLE = 0.5;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#74B71B';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "obsidian": {
+      "path": "src/Obsidian/style.ts",
+      "gitBlob": "2554fd78442a500300fb906b0bfd97e191ccb651",
+      "sha256": "b980124a8deced48c449d18bc3a7e5f2a817c2d29c8876469f908039cdbf0747",
+      "content": "export const TITLE = 'Obsidian';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#A88BFA';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "ollama": {
+      "path": "src/Ollama/style.ts",
+      "gitBlob": "6f7d71ae9f0b129d56a374ec09573a4fed7fa1ea",
+      "sha256": "443fb3e946f86d143c3a5a974c11abcb68272f49f965b393faf8d1465a30b2ab",
+      "content": "export const TITLE = 'Ollama';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "openai": {
+      "path": "src/OpenAI/style.ts",
+      "gitBlob": "b296fec917472f9d3a838a6818ab5ab941439da9",
+      "sha256": "6f4e706e43e85ca5f9f47d1207b6e84d12723864cd566fe793a4ac5813e1d691",
+      "content": "export const TITLE = 'OpenAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#000';\n\nexport const COLOR_GPT_3 = '#19C37D';\nexport const COLOR_GPT_4 = '#AB68FF';\nexport const COLOR_GPT_5 = '#F86AA4';\nexport const COLOR_O_1 = '#F9C322';\nexport const COLOR_OSS = '#0099FF';\nexport const COLOR_PLATFORM = '#0000FE';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "openchat": {
+      "path": "src/OpenChat/style.ts",
+      "gitBlob": "6bf0ed86f3e511f496d954ed6e3c9fba5fe60e15",
+      "sha256": "568abf5dffe1dc9ef3e2b37b8dcc27af4ea65828a27335f1ab26d5506b9fa21c",
+      "content": "export const TITLE = 'OpenChat';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#4A7FE3';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "openclaw": {
+      "path": "src/OpenClaw/style.ts",
+      "gitBlob": "ce8285de7c264cb08188d5c1565ffa716668c76d",
+      "sha256": "3b053e59b67ba6a2e9b8f664454e15454ec600413776193e34a8d7e708af8aca",
+      "content": "export const TITLE = 'OpenClaw';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#ff4d4d';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "opencode": {
+      "path": "src/OpenCode/style.ts",
+      "gitBlob": "345e45fac087c07f6c9737e8594e928f960645fe",
+      "sha256": "6781544b6a71a0c483c9b5a64eaa18e25e8c6d339c4b3d1898d81f5d2c4cd983",
+      "content": "export const TITLE = 'opencode';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "openhands": {
+      "path": "src/OpenHands/style.ts",
+      "gitBlob": "ab984dff5607786b006e487f5c05786a0c57e3ae",
+      "sha256": "6dd8403079d2c507c73d8336eb1469fbfb99b9f5c1e2d86630754dd46207701c",
+      "content": "export const TITLE = 'OpenHands';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "openhuman": {
+      "path": "src/OpenHuman/style.ts",
+      "gitBlob": "7e1a2726fe75ed9851153c9da07c69e6792cd808",
+      "sha256": "9d2be9882e313e04359f544a1a40c143cc209fe722dfe5d670bde9d97fd63b44",
+      "content": "export const TITLE = 'OpenHuman';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "openrouter": {
+      "path": "src/OpenRouter/style.ts",
+      "gitBlob": "9fb0ecd351aa4d6d6fa34debfe7bbecc9f8bd329",
+      "sha256": "07516abac2fa70de82d969b2d4500d3ce526e7f3fd7ea1d80f54b4dae6f3dfa2",
+      "content": "export const TITLE = 'OpenRouter';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#C8FF00';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "openwebui": {
+      "path": "src/OpenWebUI/style.ts",
+      "gitBlob": "55cbf955482ef4f29bd5950d2e54d9a547b531cf",
+      "sha256": "28a11df345c23e8318b550bb2d6ad06ee78f1f0d736d4684759d5b63aa00bda8",
+      "content": "export const TITLE = 'OpenWebUI';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "palm": {
+      "path": "src/PaLM/style.ts",
+      "gitBlob": "b16d77ab47c0b28edecc2b8f9a7daefacf7b50aa",
+      "sha256": "502917d6e69edb0fc565fb5223806c2af06042b5b360d10dc6339c242a16cab7",
+      "content": "export const TITLE = 'PaLM';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FFF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "parasail": {
+      "path": "src/Parasail/style.ts",
+      "gitBlob": "8496eabe67027bc22d9c788db68ca7c985f4cf59",
+      "sha256": "cd64dc314421ce401ae3f92055d8f342785040933ae810736a6ce3d9fb62f399",
+      "content": "export const TITLE = 'Parasail';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "perceptron": {
+      "path": "src/Perceptron/style.ts",
+      "gitBlob": "34a7104b500605d6d100255ff7451c4acab4724b",
+      "sha256": "d5566b46cd3e92448d8e959d7337247298695fa625f9384de64efba95489b5b1",
+      "content": "export const TITLE = 'Perceptron';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#F8F4EB';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#1E130E';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "perplexity": {
+      "path": "src/Perplexity/style.ts",
+      "gitBlob": "f93aa30ca6bc35e8790b3d168aa016118d8f6b41",
+      "sha256": "a809ebab13c7cbc2e36e768762f874db93ce8010ab57db48d7f5a0d76c00bb27",
+      "content": "export const TITLE = 'Perplexity';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#22B8CD';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "phala": {
+      "path": "src/Phala/style.ts",
+      "gitBlob": "f86d5676bfc73ed1dac0aec4b305ccca3fba9551",
+      "sha256": "376d09d72db2ac0c6d0ed7068ea327373047f5fb9b6e42dccba48d673b768446",
+      "content": "export const TITLE = 'Phala';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#CDFA50';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#0A0A0A';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "phidata": {
+      "path": "src/Phidata/style.ts",
+      "gitBlob": "1eb409430e80aecc7165a231e9eb3c30f85763dc",
+      "sha256": "b622a583b2b39195abd403aa4419304c7a67bbea32fdbe8f8e015aac293d49cb",
+      "content": "export const TITLE = 'Phidata';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FF4017';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "phind": {
+      "path": "src/Phind/style.ts",
+      "gitBlob": "09e9e55274213bbc633439b8c28c477370eb8d88",
+      "sha256": "261990e546d368e7cff6b064403c36d574848fbff46e760ef8bccb0dc2d12aa7",
+      "content": "export const TITLE = 'phind';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "pi": {
+      "path": "src/Pi/style.ts",
+      "gitBlob": "504ba5a17fa452f3a2d87d9fca0ebce2b86a3ca8",
+      "sha256": "ac9d81b1aae2b2abe4e2f3caf71563288c7c9031f1f61754a149a0a20e2d91de",
+      "content": "export const TITLE = 'Pi';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "pika": {
+      "path": "src/Pika/style.ts",
+      "gitBlob": "9cd707bfcd0815a8b5a7e886a9da2c2fad6065f5",
+      "sha256": "d8e3cc407b8c7253acf983c10fefeb2fb3c71c3833d4a61ef5b27bcc4eb1ac33",
+      "content": "export const TITLE = 'Pika';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FDF7EF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "pixverse": {
+      "path": "src/PixVerse/style.ts",
+      "gitBlob": "3b859ea66946e6fff7fd723af6b76c24ae8090ec",
+      "sha256": "6c5799e8856b163c62352c48c97ccdb03f7ef08dc9c53e37cbb3b57578091fd9",
+      "content": "export const TITLE = 'PixVerse';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "player2": {
+      "path": "src/Player2/style.ts",
+      "gitBlob": "d6bde141e6a11339870183f184de4cce6899c31d",
+      "sha256": "5a4f81fdcaaa7b77034e4e6b36c9a01a6d51b080a7293dbf8b4b518945fee7a7",
+      "content": "export const TITLE = 'Player2';\nexport const COMBINE_TEXT_MULTIPLE = 0.68;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#A8A6FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "poe": {
+      "path": "src/Poe/style.ts",
+      "gitBlob": "9e7322ab31f6c353953029c8bacb9656d998d789",
+      "sha256": "fdf9a3069210f26680f6a51bca575195f58adad7c48428c551cbc94e0f5772b6",
+      "content": "export const TITLE = 'Poe';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "pollinations": {
+      "path": "src/Pollinations/style.ts",
+      "gitBlob": "2b981c79990b6b5ec2483d5eaf8d629471acfc58",
+      "sha256": "57c6c6204d5ec38a573ddede8f6e89ae37c24802725d1635493a34861cc605a2",
+      "content": "export const TITLE = 'Pollinations';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "poolside": {
+      "path": "src/Poolside/style.ts",
+      "gitBlob": "26f9e9cf2db2fb750f0f7f4b809bb294ba5190f7",
+      "sha256": "79b16ac62f38378303fc6259446f2cf53901ab06282a6daafc23ce3f8ff46d48",
+      "content": "export const TITLE = 'Poolside';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#4137FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "ppio": {
+      "path": "src/PPIO/style.ts",
+      "gitBlob": "c2abefd32375c9d0b74c26c4e3b3cc45109815ad",
+      "sha256": "ff95c116765499702ea5ef1c2ccb6fe863030a49202071996bb3453cf3fa4956",
+      "content": "export const TITLE = 'PPIO';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#2874ff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "prunaai": {
+      "path": "src/PrunaAI/style.ts",
+      "gitBlob": "5941663f4630ee81fdb3be849deb6c9c30f1709c",
+      "sha256": "21975eadae98cf05d6dbb20bed8c545074091019717f9a61231cd6d7d057de01",
+      "content": "export const TITLE = 'PrunaAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#AC51FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "pydanticai": {
+      "path": "src/PydanticAI/style.ts",
+      "gitBlob": "53a4ac850dc4eb6730c2ab572afb7669ef98ab1b",
+      "sha256": "3dfca48cc5d468b891e6510f64ade488e6baf91c23b5cc4a5d3ca9c256b28da0",
+      "content": "export const TITLE = 'PydanticAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#E92063';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "qingyan": {
+      "path": "src/Qingyan/style.ts",
+      "gitBlob": "e993733b55876c2f236bf9f96f32bf53afeb9711",
+      "sha256": "faac4927cfd85dd98dddf8ac4dec6a43f5152cf35abd4a3850abf42a45345e60",
+      "content": "export const TITLE = 'Qingyan';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#1041F3';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "qiniu": {
+      "path": "src/Qiniu/style.ts",
+      "gitBlob": "b7c5d0b74e1dd0f1efe5667a7c902e017bb31096",
+      "sha256": "9f1d721635310c4a7da182b7c397958d2b98121df444852ed07a0ca07a395fd9",
+      "content": "export const TITLE = 'Qiniu';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#06AEEF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "qoder": {
+      "path": "src/Qoder/style.ts",
+      "gitBlob": "f059e8b785b20f38538f496dd37dd3222427cf3b",
+      "sha256": "3587082f33c13cf9f0b8b31f81414701289e64116af41e75da2d83020ab11bb3",
+      "content": "export const TITLE = 'Qoder';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\nexport const AVATAR_BACKGROUND = '#000000';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "qwen": {
+      "path": "src/Qwen/style.ts",
+      "gitBlob": "37ea3e8785d18382c5e7185b238d28ee1e8b406d",
+      "sha256": "8b845a8cd49ce130d0f84015c93b5fc18cfeaf77e3f3a56f430ef56889bc0207",
+      "content": "export const TITLE = 'Qwen';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#615ced';\nexport const COLOR_GRADIENT = 'linear-gradient(to right, #6336E7,  #6F69F7)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "railway": {
+      "path": "src/Railway/style.ts",
+      "gitBlob": "cb0e7398f0acbabe3f500a116bcadb0550b0093b",
+      "sha256": "7b36940834b9a5c7b9d760c5071cb9af5de4e18ff5347272ec327fa7d3a90039",
+      "content": "export const TITLE = 'Railway';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#853bce';\nexport const COLOR_GRADIENT = 'linear-gradient(to bottom, #A204B4, #6213B9)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "recraft": {
+      "path": "src/Recraft/style.ts",
+      "gitBlob": "978c1f8908849c4b080a0a3b41355c010555e4c9",
+      "sha256": "e478671c13be85e7ae48c6e9f8a0156f9d8aee6337ca1f83109640f14e832692",
+      "content": "export const TITLE = 'Recraft';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "reka": {
+      "path": "src/Reka/style.ts",
+      "gitBlob": "407d6e0663c264d3024fede580c12562f497ebd6",
+      "sha256": "fa62de451989c6a7007ed2fe485c9bcef6af9250aaa048427e424904c00c5ad6",
+      "content": "export const TITLE = 'Reka';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#141414';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "relace": {
+      "path": "src/Relace/style.ts",
+      "gitBlob": "828d9cb38b25ca41fd505863a3d3ecbc7e754d9a",
+      "sha256": "969e2f8ec3018a34ffb35781567ad3501616ee8e75e9005767fe64e0a6a975b3",
+      "content": "export const TITLE = 'Relace';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.66;\n"
+    },
+    "replicate": {
+      "path": "src/Replicate/style.ts",
+      "gitBlob": "208f3de0a73577bea2c93f54c3d0ca5aa96c246b",
+      "sha256": "0ebc89f5b1e38bbedcfe03d60b19543c638b5a6dfbca59f19f147cafe9313d6e",
+      "content": "export const TITLE = 'Replicate';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#EA2805';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "replit": {
+      "path": "src/Replit/style.ts",
+      "gitBlob": "582a36864684bbfd6ce90784434f745f7155a6ae",
+      "sha256": "221edad95d06452f0577f65c414ec81fc1f3d5710ffde12a988f031937a86807",
+      "content": "export const TITLE = 'Replit';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FD5402';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "reve": {
+      "path": "src/Reve/style.ts",
+      "gitBlob": "7152b7f362b2a2d5ac4c48f222ecc90bdfc2ebb5",
+      "sha256": "ed8b5b486fa67b05b2b89f59395038a929ca2c4bcdd9d99ad18a61e23122d6e5",
+      "content": "export const TITLE = 'Reve';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "roocode": {
+      "path": "src/RooCode/style.ts",
+      "gitBlob": "10873f298b0ad00a787b476de1e27d866957da8b",
+      "sha256": "992d12080c6bf8609c6508899bd91fd6285b739886769cc86e6bbd6e24a599f8",
+      "content": "export const TITLE = 'RooCode';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.4;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "rsshub": {
+      "path": "src/RSSHub/style.ts",
+      "gitBlob": "d86a85819fb484a84d0c51fd412f1eb2a06569c7",
+      "sha256": "f5a8cf593623913712e7cce37780035781af82494a18c4cfe08ad92fa5041e09",
+      "content": "export const TITLE = 'RSSHub';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "runway": {
+      "path": "src/Runway/style.ts",
+      "gitBlob": "1f1d879d21f242e455a638de462d98b7b447e492",
+      "sha256": "e280ed2711083dc5438809ed3eef448ad07a46fc8af033c5f84be3fd0a6360a5",
+      "content": "export const TITLE = 'Runway';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "rwkv": {
+      "path": "src/Rwkv/style.ts",
+      "gitBlob": "0b8e8ececb0d6eb6acb7e59a9b642075bb053814",
+      "sha256": "6cc32b3c26518ade3c6dab9f4a1d4f4a1e6a2e5af76e2d46e9d53bdf27926aea",
+      "content": "export const TITLE = 'RWKV';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#3431C3';\nexport const COLOR_GRADIENT = 'linear-gradient(to left, #1D1A5C, #3431C3, #7361F7)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "sakana": {
+      "path": "src/Sakana/style.ts",
+      "gitBlob": "af35a421d761e24c35cbb2e4abb8e44e166d7dfa",
+      "sha256": "732b98857ef8eb1bb3ef72e2a75945cb796bd9a0eb2cb59011902624acc2b2de",
+      "content": "export const TITLE = 'sakana.ai';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#E10600';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#0A0A0A';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "sambanova": {
+      "path": "src/SambaNova/style.ts",
+      "gitBlob": "328c2094d3b310168697b13564ab2d421cbad183",
+      "sha256": "23efa533e5a25038547c4afd1ef9a0f0a478ba678f8549c9557d4d921ecf3737",
+      "content": "export const TITLE = 'SambaNova';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#EE7624';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "search1api": {
+      "path": "src/Search1API/style.ts",
+      "gitBlob": "043dc1537f34729f42db3afcc4d68da6dbd3ea60",
+      "sha256": "6e440f1b368c6eed3fbf6ac1fc384cfee81955c24fd1cf26875767cda52aee7c",
+      "content": "export const TITLE = 'Search1API';\nexport const COMBINE_TEXT_MULTIPLE = 0.65;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#0066FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "searchapi": {
+      "path": "src/SearchApi/style.ts",
+      "gitBlob": "9d23cf5adb3aeb7474dbcaeee334524c393ecff6",
+      "sha256": "c2a682d4f9c5d9d53f43699e80bb2be8d9464269eaed637df9b397a0df30131a",
+      "content": "export const TITLE = 'SearchApi';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#4f46e5';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "searxng": {
+      "path": "src/SearXNG/style.ts",
+      "gitBlob": "282d78541f8fbf752ee1441f712837c72d8b085b",
+      "sha256": "219ca47be94c0b1aaf4476180c8a520c664e1f8eea5981634e749ce145b13aff",
+      "content": "export const TITLE = 'SearXNG';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#3050FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "sensenova": {
+      "path": "src/SenseNova/style.ts",
+      "gitBlob": "8802d4feec65c0f3e6c05f5e0498179b2ee124a9",
+      "sha256": "413faea75fafe309dae70f183e8d332d94aa5506b679a0e7ca67a8dc5224c59b",
+      "content": "export const TITLE = 'SenseNova';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#5B2AD8';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "siliconcloud": {
+      "path": "src/SiliconCloud/style.ts",
+      "gitBlob": "f3f384942502afa1904505732a2a7aa6f0c8bd72",
+      "sha256": "5c724a64f460273a1ae770deedb92075fccf7228a9fdbb2996863b5c00bea297",
+      "content": "export const TITLE = 'SiliconCloud';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#6E29F6';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "sillytavern": {
+      "path": "src/SillyTavern/style.ts",
+      "gitBlob": "fb6635ad0399f8ee0d1453fae6756d83a2bdfa39",
+      "sha256": "59cb3799a1e1d9d934379a0262acc4f224d9b5b5ce3178382be989d536fb131d",
+      "content": "export const TITLE = 'SillyTavern';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#333';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "skywork": {
+      "path": "src/Skywork/style.ts",
+      "gitBlob": "e5186c5c4f729fcdb32f41b92c8117f9ae6a96c1",
+      "sha256": "d994bef92de0214db607d555f6ed2b5a8d811452a7b731b3ed07e188624df542",
+      "content": "export const TITLE = 'Skywork';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "slock": {
+      "path": "src/Slock/style.ts",
+      "gitBlob": "26524b5c7d3f1b78f01244c5070d30c174bcf2f0",
+      "sha256": "a2a422b90e6d3df71c8e944c11a4cba406f1cce314f013936cc1985cce206935",
+      "content": "export const TITLE = 'Slock';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#ffd440';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "smithery": {
+      "path": "src/Smithery/style.ts",
+      "gitBlob": "0c691cc7558b685818121f10d7a3cf047d61a924",
+      "sha256": "bd4ea25da588c63730ff64787e9f0e1a15d35ea16ca3fba4b05a527470e08826",
+      "content": "export const TITLE = 'Smithery';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#EA580C';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#0E0B0B';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "snowflake": {
+      "path": "src/Snowflake/style.ts",
+      "gitBlob": "44bf6b41ed562b69da365660684996dc9c03f3c6",
+      "sha256": "f178dd9ce03f48dd274fccee47f7e3e85f2750319e34d511ded850f685bf9f3b",
+      "content": "export const TITLE = 'Snowflake';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#249EDC';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "sophnet": {
+      "path": "src/SophNet/style.ts",
+      "gitBlob": "483b0cc258e317f3cb15d42c5042b6c2de8b1862",
+      "sha256": "332cf4b23c80615639a9178358539ea97989bffc425754a5cd50afa09177a50e",
+      "content": "export const TITLE = 'SophNet';\nexport const COLOR_PRIMARY = '#6200ee';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#fff';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "sora": {
+      "path": "src/Sora/style.ts",
+      "gitBlob": "8bac7448e33604df70a1f263e0463885102db187",
+      "sha256": "cabf29ddf74113a402d3170f9d34335617ac96d923fb5c24556a9355a9a3f6e7",
+      "content": "export const TITLE = 'Sora';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#0968DA';\nexport const COLOR_GRADIENT = 'linear-gradient(180deg, #012659 0%, #0968DA 100%)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "spark": {
+      "path": "src/Spark/style.ts",
+      "gitBlob": "494c1e7e0613bb9f34bdad6721762d14c4427bcc",
+      "sha256": "49a5f60b62eff3a232b5aa57d0bcd25e5895363525af128a23f8bb70bec7b5cc",
+      "content": "export const TITLE = 'Spark';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#0070f0';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "speedai": {
+      "path": "src/SpeedAI/style.ts",
+      "gitBlob": "56659ff1ef8d4a495e5a396cf3ec7d64206f9680",
+      "sha256": "a12fc72c43681c3718c45b0018dff678d5b8a80959556a80dfbd94608565b550",
+      "content": "export const TITLE = 'SpeedAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#6366F1';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "stability": {
+      "path": "src/Stability/style.ts",
+      "gitBlob": "2849557e31505d642569d81b76f4603f77e4946f",
+      "sha256": "bc2598b18f7aa0ebb00a0008f1482b6dea20c607d14cc4e389ee3b2da0ae8bea",
+      "content": "export const TITLE = 'Stability';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#330066';\nexport const COLOR_GRADIENT = 'linear-gradient(to bottom, #9D39FF,  #A380FF)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "statecloud": {
+      "path": "src/StateCloud/style.ts",
+      "gitBlob": "f56595af47a56354919de7c7e52bb5bbe589f54b",
+      "sha256": "d79215da25137090bb5795ef14dc2ad63ed29d6ce3b6150fcc10a83ea4874463",
+      "content": "export const TITLE = 'StateCloud';\nexport const COMBINE_TEXT_MULTIPLE = 0.65;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#DF0428';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "stepfun": {
+      "path": "src/Stepfun/style.ts",
+      "gitBlob": "52fd44e82d2e004c610e2fa80ffaf8db3834c91b",
+      "sha256": "424f7cfc2ef46ef2925141005588d037a1e85ae891fc601a01d0b39b83d9250f",
+      "content": "export const TITLE = 'StepFun';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#fff';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "straico": {
+      "path": "src/Straico/style.ts",
+      "gitBlob": "6039d9e3c1a4eb72a93325f6bcfb140e6d757bcc",
+      "sha256": "3cfb21c0cf7d2fec96ac98b856c9bf80c34cf5c10291ced2e0514f5c22a97f86",
+      "content": "export const TITLE = 'Straico';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#464bba';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "streamlake": {
+      "path": "src/StreamLake/style.ts",
+      "gitBlob": "c7911a39278eb61bb9be9d1ca88edc5630f1aaac",
+      "sha256": "007a729a9d85a5bcf87c65b1acc6dbc9387f9a48ad4790c14d889273c41a3939",
+      "content": "export const TITLE = 'StreamLake';\nexport const COLOR_PRIMARY = '#1D70FF';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "submodel": {
+      "path": "src/SubModel/style.ts",
+      "gitBlob": "b3034688a1ebd02b3c83e4a645a0918f337e5b7d",
+      "sha256": "c48df7609131f1d01435ee70618084858f3888592159050406b0fb106e6a6367",
+      "content": "export const TITLE = 'SubModel';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "suno": {
+      "path": "src/Suno/style.ts",
+      "gitBlob": "114f77956b5e2ca78d34ab2723f122146875f184",
+      "sha256": "03e519395fe46bdf1ecfdd311ba09f1a2cdb2ebf77ac3f043d048e1558fccd56",
+      "content": "export const TITLE = 'Suno';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "sync": {
+      "path": "src/Sync/style.ts",
+      "gitBlob": "feb680f9179e8f5223656be85b005f56d0e3323f",
+      "sha256": "0a3ad98e2baddb929cc522b7ca9b5cd2ccced29b2f2cc2c9e2e5d9fbe54049b2",
+      "content": "export const TITLE = 'Sync';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#0000FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "targon": {
+      "path": "src/Targon/style.ts",
+      "gitBlob": "e557a24bcf8a21aa3b860a156422c0082d490462",
+      "sha256": "150ef99589faaff50f7906eee9b30c73f9d58a670c9db563164ac8ae4e4df6dc",
+      "content": "export const TITLE = 'Targon';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#68C3FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#191B20';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "tavily": {
+      "path": "src/Tavily/style.ts",
+      "gitBlob": "7beb5a4126d9bedade1d1b5edf772ccfe99e61f2",
+      "sha256": "8781072e96cf0afd17ff505e7baef8c2d82bac0782108f2354238708ed45641b",
+      "content": "export const TITLE = 'Tavily';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "tencent": {
+      "path": "src/Tencent/style.ts",
+      "gitBlob": "585757bd5cb2f7b65ef8c8fe6b6352e842b213c8",
+      "sha256": "03a7e2df120367abb66c83a7529f8a034a0ddc8a4abd47086971b6f4a59ca78a",
+      "content": "export const TITLE = 'Tencent';\nexport const COLOR_PRIMARY = '#0052D9';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "tencentcloud": {
+      "path": "src/TencentCloud/style.ts",
+      "gitBlob": "a9269895cda2ef01bdbdd08ceb0e84fbbc512301",
+      "sha256": "f7ec6e55a9be43b89ffbbbb0289c6a20566345bffef0ff4fe157fd3cc035d5a0",
+      "content": "export const TITLE = 'TencentCloud';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#2151d1';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "tiangong": {
+      "path": "src/Tiangong/style.ts",
+      "gitBlob": "9dd3d8b13ba340015d419bd3d3764430ed4cdfa2",
+      "sha256": "ebd1549dcc470dedd45055ce8c62ef0ee589c474fe48e1356b8b5e5dd52396d8",
+      "content": "export const TITLE = 'Tiangong';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#0057ff';\nexport const COLOR_GRADIENT = 'linear-gradient(to right, #6865FC, #467DF9)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "tii": {
+      "path": "src/TII/style.ts",
+      "gitBlob": "f2ebd839b2e5a5a48c4b42788566050f8c849675",
+      "sha256": "9108e9092be40dad412267bce5312b3d7e92973d6e2f29190675f917c0af6c85",
+      "content": "export const TITLE = 'Technology Innovation Institute';\nexport const COMBINE_TEXT_MULTIPLE = 0.5;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#6400FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "together": {
+      "path": "src/Together/style.ts",
+      "gitBlob": "8c5639e1e541eef3bbf81795f15f4e059f0f98ec",
+      "sha256": "92f98b9079a811c4f6607bee70527aee980ac8ded2811693ffcc20fe4b29ae04",
+      "content": "export const TITLE = 'together.ai';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "topazlabs": {
+      "path": "src/TopazLabs/style.ts",
+      "gitBlob": "8a5e08a9b2c03c9a2de1da1b5a5222b83bc8fbd2",
+      "sha256": "585f708b497444d9258e5b09ae4d4131be67e9005a757e3e80dae736162b1566",
+      "content": "export const TITLE = 'TopazLabs';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.4;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "trae": {
+      "path": "src/Trae/style.ts",
+      "gitBlob": "c2e8126bd0d28cec29297582c128175356ec62a6",
+      "sha256": "71b580293375afbab7fa6edda278f0063e4912107ef1e4704e688aea71660102",
+      "content": "export const TITLE = 'TRAE';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#32F08C';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "tripo": {
+      "path": "src/Tripo/style.ts",
+      "gitBlob": "299a2e0c8c107c2bece9d68381a5b3baf46a460e",
+      "sha256": "97e1410f26caf7238df272bcb6948a65e44df921eefcdb443c1c9d24d032e373",
+      "content": "export const TITLE = 'Tripo';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "turix": {
+      "path": "src/TuriX/style.ts",
+      "gitBlob": "b21ce9e5001e464e94ff8e18b8e2fd4116fb391f",
+      "sha256": "26da03c4b1991f96d536886014dcc638788f5cce2eca2e92a6e8d8b338b8a395",
+      "content": "export const TITLE = 'TuriX';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#F7AD8A';\nexport const COLOR_GRADIENT = 'linear-gradient(-45deg, #FAD076, #F7AD8A, #C768B9)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "udio": {
+      "path": "src/Udio/style.ts",
+      "gitBlob": "f49b18e4613d0c7e2390537efe1a247431e81699",
+      "sha256": "2f49528c9c698e4208575f854b42b58ab253cb2581e7028cbd2b04028680ac46",
+      "content": "export const TITLE = 'Udio';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#e30a5d';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "unionalpha": {
+      "path": "src/UnionAlpha/style.ts",
+      "gitBlob": "bdb54e03b8c0fe5b99cfa646d4ab84380849e5c7",
+      "sha256": "6185102691127875ad0a66743784199c29474448c02b1388b8c536e7292c1dad",
+      "content": "export const TITLE = 'UnionAlpha';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#1A1A1A';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "unsloth": {
+      "path": "src/Unsloth/style.ts",
+      "gitBlob": "f60d2402573523b0230e4c44bfda7dba88c586cb",
+      "sha256": "78659fc322fad4216d1f731fe1b321a4bf5c6278bedaea72299ecc9f31ae03e5",
+      "content": "export const TITLE = 'Unsloth';\nexport const COLOR_PRIMARY = '#16B88A';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = '#FFF';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
+    },
+    "unstructured": {
+      "path": "src/Unstructured/style.ts",
+      "gitBlob": "13269ddf0147e1d1b8394921b41fa2b98d7d3dbb",
+      "sha256": "0c863436dee679ac02a143b8240227da1708871a9cb608c2f5d24080ab40eb98",
+      "content": "export const TITLE = 'Unstructured';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.4;\nexport const COLOR_PRIMARY = '#0ADDF8';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "upstage": {
+      "path": "src/Upstage/style.ts",
+      "gitBlob": "d6010a108aa2d4c047dcc0305a8d9e2b2f9566fa",
+      "sha256": "78363d02649d10cca787465ddc1938175a6726d0bb88837e9c9137e5dc3c339d",
+      "content": "export const TITLE = 'Upsate';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#908AF9';\nexport const COLOR_GRADIENT = 'linear-gradient(to bottom, #AEBCFE,  #805DFA)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "v0": {
+      "path": "src/V0/style.ts",
+      "gitBlob": "fbd1bd14a665030758281560a1c86a8f3d0eff31",
+      "sha256": "400bd7cea8d3215edeb657c62f7888277a29ad715c3b42a47247778d069474a3",
+      "content": "export const TITLE = 'V0';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "vectorizerai": {
+      "path": "src/VectorizerAI/style.ts",
+      "gitBlob": "7ad3e94e76f2e38a03c98622c4bb550682fe2466",
+      "sha256": "0d276eca1121bcf639ab0a5a9a002cd3690372bc86b65e138163247545a9c343",
+      "content": "export const TITLE = 'Vectorizer.AI';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#3659FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "venice": {
+      "path": "src/Venice/style.ts",
+      "gitBlob": "698e0d47b140f649388343f813b2bb87ccd96b04",
+      "sha256": "ec7f7c706eba3164a2747d97baadd607a1cd8e8403ac44cea9dbc2c73afe3966",
+      "content": "export const TITLE = 'Venice';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#E05A2D';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "vercel": {
+      "path": "src/Vercel/style.ts",
+      "gitBlob": "d3558992168e32e00cb6a3797ecbd21b6a6e5621",
+      "sha256": "5b4f41a5b7e5757f8ffb3a9f91eb5846997aa5f49e6bf93e187e79a8535cdaa0",
+      "content": "export const TITLE = 'Vercel';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.05;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "vertexai": {
+      "path": "src/VertexAI/style.ts",
+      "gitBlob": "fb0ff331862d31e5a746974c6c42a91acf3d5c3b",
+      "sha256": "941601705cbf3b1e27ffb5cf26cf211ede4d313481d7bed2aa1cedd2d5337205",
+      "content": "export const TITLE = 'VertexAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#4285F4';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "vidu": {
+      "path": "src/Vidu/style.ts",
+      "gitBlob": "47921d94b91e9458107b041fe9550adac46ad8a6",
+      "sha256": "f5aa1a352e0476c2b10a2bb4351581aaecf28e8227fad7a2d39a20028002c970",
+      "content": "export const TITLE = 'Vidu';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#22D5FF';\nexport const COLOR_GRADIENT = 'linear-gradient(to right, #40EDD8, #22D5FF, #047FFE)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "viggle": {
+      "path": "src/Viggle/style.ts",
+      "gitBlob": "234dcaf1c93fbca5e4cc0ace888446b09692a916",
+      "sha256": "647be1fe4bc3469aa7283d5fabf93fb115107f23c35545dd454f30e08429b60c",
+      "content": "export const TITLE = 'Viggle';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "vllm": {
+      "path": "src/Vllm/style.ts",
+      "gitBlob": "b750c9101a0d8cd52ec45aeef419b3c019261b89",
+      "sha256": "48834a9425ddcbc0ffc43340ad762c22eef61ad48a28555d503a9a239a0e0db8",
+      "content": "export const TITLE = 'vLLM';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "volcengine": {
+      "path": "src/Volcengine/style.ts",
+      "gitBlob": "77457d15fa9e7578a8bee8b5263032421ef799fb",
+      "sha256": "2c6fe20c0d6517a2398f5d5010a91671eca7dce0fc0b76286a7bdeb54ed19463",
+      "content": "export const TITLE = 'Volcengine';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "voyage": {
+      "path": "src/Voyage/style.ts",
+      "gitBlob": "d7da8637a0b8020faa912bdf479c0708c1afd601",
+      "sha256": "ce0d52eeccd36fb6a78f6ddea278a01e426653777e5333a5b7365f47a3ea8bdb",
+      "content": "export const TITLE = 'Voyage';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#012E33';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "wafer": {
+      "path": "src/Wafer/style.ts",
+      "gitBlob": "60ca0a2fed487f3b0e939358b119488a59c3451c",
+      "sha256": "5c1ce0b30421c69247ad25af0e7d345797adf79cc74a3c50117235353a88f776",
+      "content": "export const TITLE = 'Wafer';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "wandb": {
+      "path": "src/Wandb/style.ts",
+      "gitBlob": "6b455f1a9a7e8a546c62fa6ed6435b753e411583",
+      "sha256": "9df48dff30c2c4a6f7736bdc958fe7c2a78c3b47bda7078805a2bd6285579b4a",
+      "content": "export const TITLE = 'Weights & Biases';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#FFCC33';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#171A1F';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "wavespeed": {
+      "path": "src/WaveSpeed/style.ts",
+      "gitBlob": "a281a680aa0ace5e0ac07a0dfdd4ce96f93a7ae2",
+      "sha256": "eafe895bf3248cac71c9d9267760ba574620bd57ec5aca593cc00f06d69389b2",
+      "content": "export const TITLE = 'WaveSpeed';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.15;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "wenxin": {
+      "path": "src/Wenxin/style.ts",
+      "gitBlob": "0e1703643b75b0c78c61ae9f770cb176fe8a3979",
+      "sha256": "f97aab23151f486878f4a34c594fd341a785cda6f4042f1f0ea7c1c215702e16",
+      "content": "export const TITLE = 'Wenxin';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#167ADF';\nexport const COLOR_GRADIENT = 'linear-gradient(to right, #0A51C3,  #23A4FB)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_GRADIENT;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "windsurf": {
+      "path": "src/Windsurf/style.ts",
+      "gitBlob": "085a13b6460058cf29e5ad6e12ad84efcc0df6ac",
+      "sha256": "078d8990f3352859b61874dfcc035407fd3445c5b2d17d366dee6c7355cc66d7",
+      "content": "export const TITLE = 'Windsurf';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "workersai": {
+      "path": "src/WorkersAI/style.ts",
+      "gitBlob": "9d9cdc7fdae28d27943e79b8514d8f190a962ba5",
+      "sha256": "c692df569cb5335554c810e80cc5c8492e3960c5f8636ddc512d0c0182c5203b",
+      "content": "export const TITLE = 'WorkersAI';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#F38020';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "worldrouter": {
+      "path": "src/WorldRouter/style.ts",
+      "gitBlob": "e710d8d1f6eff6a5dbb269b16d830a6440964e93",
+      "sha256": "5b613bbb88567525fd6752cd5549bf72f05d20d8b14d62ea2f1aabbd557f1a48",
+      "content": "export const TITLE = 'WorldRouter';\nexport const COMBINE_TEXT_MULTIPLE = 0.55;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "xai": {
+      "path": "src/XAI/style.ts",
+      "gitBlob": "6e4520f92eed055c3511ca175070b7b6dd7d63f6",
+      "sha256": "bd6c5399f15e1d11fa662e64544cc77ba4dbb86d16706d16280b33cef42a0433",
+      "content": "export const TITLE = 'Grok';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n"
+    },
+    "xiaomimimo": {
+      "path": "src/XiaomiMiMo/style.ts",
+      "gitBlob": "97ddca2d050ea7c63a3479b89cd41d13d7b28ad8",
+      "sha256": "1319d8f37f5d55ba8ca44d260d6cb1fda2283b453086f9aef52b884b8b298183",
+      "content": "export const TITLE = 'XiaomiMiMo';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "xinference": {
+      "path": "src/Xinference/style.ts",
+      "gitBlob": "21c797d42f7f4600e666013e52778ae97b9f0a04",
+      "sha256": "d1fb53dee75be158c323c20a8276320f19c4ed0458c4821c25cb4e247049e56f",
+      "content": "export const TITLE = 'Xinference';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#781ff5';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "xpay": {
+      "path": "src/Xpay/style.ts",
+      "gitBlob": "1dd4f1980c9f03a0bc05eb0d4cbc0e8108989d31",
+      "sha256": "1783e8be0fce8b742b29c70a29831996f21c4c5f0d87ee5916358d7d02d9bb11",
+      "content": "export const TITLE = 'xpay';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.25;\nexport const COLOR_PRIMARY = '#0F1C4D';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "xuanyuan": {
+      "path": "src/Xuanyuan/style.ts",
+      "gitBlob": "8c07fb823251515383c780045fe6969f5c92cd19",
+      "sha256": "a79cdc7521035d53e479003a839e1d32232dc7567a32dab9e2ea6219c9af66e3",
+      "content": "export const TITLE = '\u8f69\u8f95';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "yandex": {
+      "path": "src/Yandex/style.ts",
+      "gitBlob": "0eb4101189b42686133ca58461e2f5a2d99c3bbf",
+      "sha256": "c4a9c20b1a8f2ac4a084ee472c50c059efb76482ceabd15fa4674eff44143c4e",
+      "content": "export const TITLE = 'Yandex';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FB3E1C';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "yi": {
+      "path": "src/Yi/style.ts",
+      "gitBlob": "48f5b1370f9c7a621d7b94f221ea76ffdf8df2ad",
+      "sha256": "005d6cd8e5e7a384e7c475317dbfe309d39383fe1cf606062788fa5ea46f7e94",
+      "content": "export const TITLE = 'Yi';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#003425';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "youmind": {
+      "path": "src/YouMind/style.ts",
+      "gitBlob": "b3fcd223e18e4f88932d9376628d6f4dded2120b",
+      "sha256": "625fe9ddaab3d0cf9e6be7f4a2e303fa6620ac2af2c9342bf10e151f35da180b",
+      "content": "export const TITLE = 'YouMind';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "yuanbao": {
+      "path": "src/Yuanbao/style.ts",
+      "gitBlob": "a09ec3d8765ee8c0bdb5b06d60284cf3899dce4b",
+      "sha256": "2e6143d1b661bd9aff6a39fa34d7057390933719cf98516a607683f008496d15",
+      "content": "export const TITLE = 'Yuanbao';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "zai": {
+      "path": "src/ZAI/style.ts",
+      "gitBlob": "208146a7624830cba7be3af78e59add8292f1f89",
+      "sha256": "e845b542ed9c78f5dda9b756b2126edf5ee21e1acd82e94106c4a071db2ea410",
+      "content": "export const TITLE = 'Z.ai';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "zapier": {
+      "path": "src/Zapier/style.ts",
+      "gitBlob": "aac4b1deff871745de3bfdee35a1c301988ec03f",
+      "sha256": "666c7594aa45acad70786afa7c70d5a6ad38e6e446f4691d2611926582be7232",
+      "content": "export const TITLE = 'Zapier';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = -0.25;\nexport const COLOR_PRIMARY = '#FF4F00';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    },
+    "zeabur": {
+      "path": "src/Zeabur/style.ts",
+      "gitBlob": "22f22b7ba9349f342ce5d4e32d80970a224802e9",
+      "sha256": "ef9d7612ca2e5d0d4661e26cf9b56b8dba6768f352714d1cd51acf9dd67845bc",
+      "content": "export const TITLE = 'Zeabur';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#6300FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "zencoder": {
+      "path": "src/Zencoder/style.ts",
+      "gitBlob": "d4c35bec5a87e6cc50de1b584629dad9fdabc466",
+      "sha256": "6b344f592cbfb0a973024d07221a11a800cffad9aa9999d83ec67d6f033a7cc6",
+      "content": "export const TITLE = 'Zencoder';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#E65C2C';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#000';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "zenmux": {
+      "path": "src/ZenMux/style.ts",
+      "gitBlob": "f67bb59ca034f68ae1c7973581a498657df4ca54",
+      "sha256": "988c23233ff58331882a471013ca0b5c52fa9b911e3f1a7f370747a72237f367",
+      "content": "export const TITLE = 'ZenMux';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
+    "zeroone": {
+      "path": "src/ZeroOne/style.ts",
+      "gitBlob": "c9254f5fd6c30edcce111d409b01929aa6ee7926",
+      "sha256": "b3e0c0b7e795689ef655acd339abf5253c9cb27eff2f07ffbde4a5bbed9aa859",
+      "content": "export const TITLE = '01.AI';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.3;\nexport const COLOR_PRIMARY = '#003425';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+    },
+    "zhipu": {
+      "path": "src/Zhipu/style.ts",
+      "gitBlob": "6ed98468f38c201349700cd352cbfba1717d8909",
+      "sha256": "e4e11fa6b227313326875b34c08330ba107d8eb0b703706afc4108ea041e33f4",
+      "content": "export const TITLE = 'Zhipu';\nexport const COMBINE_TEXT_MULTIPLE = 0.65;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#3859FF';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
+    }
+  }
+}

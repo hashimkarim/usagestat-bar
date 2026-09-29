@@ -21,8 +21,9 @@ from optional product work.
   have native widgets; their earlier tray-only limitations no longer describe
   the native integrations. Polybar has real provider-logo glyphs and a private
   build that exposes module geometry for popup alignment.
-- Provider artwork comes from the pinned AgenticDriver provider-icons
-  `v0.1.0-alpha.1` dependency. Update artwork in that library; keep usage/backend
+- Provider artwork comes from a checksum-pinned AgenticDriver provider-icons
+  release, with [automatic refreshes and a release freshness check](PROVIDER_ICONS.md).
+  Update artwork in that library; keep usage/backend
   integration in the independent `usagestat` project.
 - Linux fixes, adapters and test tooling were integrated into `main` through
   `b671629`; `3809bda` classifies native panel limitations as compatibility skips.

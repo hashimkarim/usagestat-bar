@@ -1,0 +1,70 @@
+name: Refresh bundled provider icons
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: provider-icon-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Install checks and font generation tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync xvfb openbox imagemagick python3-venv python3-gi python3-fonttools python3-pil librsvg2-common potrace
+          /usr/bin/python3 -m venv --system-site-packages "$RUNNER_TEMP/icon-tools"
+          "$RUNNER_TEMP/icon-tools/bin/python" -m pip install -r platforms/polybar/requirements-build.txt
+      - name: Resolve, verify and bundle the latest stable release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: '"$RUNNER_TEMP/icon-tools/bin/python" scripts/update-provider-icons.py'
+      - name: Commit only refreshed assets and font locally
+        id: update
+        run: |
+          git add -- assets/provider-icons platforms/polybar/UsageStatProviderIcons.ttf platforms/polybar/glyphs.json
+          if git diff --cached --quiet; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Refresh bundled provider icons and Polybar font'
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Verify catalog, glyph silhouettes, packages and updater regressions
+        if: steps.update.outputs.changed == 'true'
+        run: python3 scripts/release.py check --output artifacts/icon-refresh-checks
+      - name: Verify the icon picker and image overrides
+        if: steps.update.outputs.changed == 'true'
+        env:
+          USAGESTAT_ICON_TEST_OUTPUT: ${{ github.workspace }}/artifacts/icon-picker
+        run: bash tests/linux/icon-picker.sh
+      - name: Push the tested update and start normal candidate CI
+        if: steps.update.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/update-provider-icons.py --check
+          git -c credential.helper= -c 'credential.helper=!gh auth git-credential' push origin HEAD:main
+          # Pushes with GITHUB_TOKEN do not trigger another push workflow.
+          gh workflow run ci.yml --ref main
+      - name: Retain checks and picker screenshots
+        if: always() && steps.update.outputs.changed == 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: provider-icon-refresh-checks
+          path: |
+            artifacts/icon-refresh-checks/
+            artifacts/icon-picker/
+          retention-days: 30

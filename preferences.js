@@ -1,5 +1,5 @@
 import Gio from 'gi://Gio';
-import {providerIconChoices, resolveProviderIcon, selectedProviderIcon} from './providerMetadata.js';
+import {providerIconChoices, providerIconVersion, resolveProviderIcon, selectedProviderIcon} from './providerMetadata.js';
 import {customIconFile} from './customIcons.js';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
@@ -1809,7 +1809,8 @@ class ProvidersPage extends Adw.PreferencesPage {
         const empty = new Gtk.Label({label: _('No matching icons'), visible: false, margin_bottom: 16});
         content.append(empty);
         const footer = new Gtk.Box({spacing: 12, margin_start: 16, margin_end: 16, margin_bottom: 16});
-        footer.append(new Gtk.Label({label: _('AgenticDriver provider-icons'), xalign: 0, hexpand: true,
+        const choices = providerIconChoices();
+        footer.append(new Gtk.Label({label: _('%d icons · provider-icons %s').format(choices.length, providerIconVersion), xalign: 0, hexpand: true,
             css_classes: ['dim-label']}));
         const reset = new Gtk.Button({label: _('Use default icon')});
         reset.connect('clicked', () => { this._selectProviderIcon(provider, null); dialog.close(); });
@@ -1817,7 +1818,7 @@ class ProvidersPage extends Adw.PreferencesPage {
         content.append(footer);
         const style = this._providerUsageSetting(provider, 'iconStyle') || this._settings.get_string('provider-icon-style');
         const selected = resolveProviderIcon(this._providerUsageSetting(provider, 'iconSource'))?.id;
-        for (const icon of providerIconChoices()) {
+        for (const icon of choices) {
             const resolved = resolveProviderIcon(icon.id, {style: style === 'color' ? 'color' : 'monochrome'});
             const file = this._providerIconGFile(resolved.file);
             const tile = new Gtk.Box({orientation: Gtk.Orientation.VERTICAL, spacing: 6, margin_top: 8, margin_bottom: 8});

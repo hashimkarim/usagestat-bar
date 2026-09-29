@@ -36,8 +36,8 @@ set `USAGESTAT_POLYBAR_SOURCE` to a clean checkout of that exact revision with
 its submodules initialized. The patch also supplies explicit standard integer
 headers and FreeType/Fontconfig linkage needed by newer toolchains.
 
-`UsageStatProviderIcons.ttf` contains 155 monochrome logos derived from the
-existing SVGs in `assets/provider-icons`, plus a neutral fallback for unknown
+`UsageStatProviderIcons.ttf` contains the default monochrome mark for every
+provider in `assets/provider-icons/manifest.json`, plus a neutral fallback for unknown
 icons. `glyphs.json` gives each logo a stable Plane 16 private-use codepoint;
 the renderer resolves provider aliases through `providerMetadata.js`.
 Polybar uses its configured font fallback, so the logo font can occupy any font
@@ -45,14 +45,17 @@ index after the normal text font. No Nerd Font is required.
 
 The font, mapping and runtime adapter ship in the archive. Font generation has
 no runtime dependencies. Maintainers can regenerate it in a Python environment
-with `fonttools==4.62.1` and `skia-pathops==0.9.2`:
+with the pinned packages in `requirements-build.txt`, system PyGObject/librsvg
+and Potrace. See [icon update setup](../../docs/PROVIDER_ICONS.md).
 
 ```bash
 python3 platforms/polybar/build-font.py
 ```
 
 Commit the font and mapping together. Existing codepoints must be retained when
-adding assets. The generator preserves SVG holes, strokes and transforms, and
+adding assets. Removed codepoints remain reserved. The generator preserves SVG
+holes, strokes and transforms; masks and clips are rasterized by librsvg and
+traced by Potrace for the single-opacity font. It
 produces identical bytes on repeated builds. `tests/linux/polybar-font.py`
 compares every rendered glyph against its source silhouette; that development
 check needs fonttools, Pillow, PyGObject and the librsvg pixbuf loader.

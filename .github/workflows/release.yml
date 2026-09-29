@@ -26,6 +26,7 @@ jobs:
     uses: ./.github/workflows/ci.yml
     with:
       ref: ${{ inputs.tag || github.ref }}
+      require_latest_icons: true
   lab-readiness:
     needs: build
     runs-on: ubuntu-24.04

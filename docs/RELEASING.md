@@ -11,6 +11,11 @@ lifecycle suites, release-gate regression tests, then builds from `git archive`
 of the clean tested commit. Logs and candidate packages are downloadable Actions
 artifacts, retained for 30 days. A package build alone does not approve a release.
 
+[Provider icons refresh automatically](PROVIDER_ICONS.md). The release workflow
+requires the committed bundle to match the latest stable icon release before
+building candidates. Refresh and commit icons before creating the version tag;
+the check does not mutate tagged source or fetch artwork at application runtime.
+
 The [release evidence workflow](../.github/workflows/release.yml) runs on version
 tags or manual requests. It adds the full native lab, verifies media and results,
 then assembles checksummed assets. Manual runs default to **dry run**. Tag pushes
@@ -77,7 +82,8 @@ Install the fast-check dependencies on Ubuntu 24.04:
 
 ```bash
 sudo apt-get install gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 \
-  libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync
+  libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync \
+  python3-fonttools python3-pil python3-gi librsvg2-common
 ```
 
 Then, from the repository root:

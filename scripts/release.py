@@ -26,7 +26,9 @@ ROOT = Path(__file__).resolve().parents[1]
 SEMVER = r'(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-(?:alpha|beta|rc)\.[1-9]\d*)?'
 SUITES = {'shared': ['bash', 'tests/run.sh'], 'linux': ['bash', 'tests/linux/run.sh'],
           'gnome-package': ['bash', 'tests/package.sh'], 'linux-package': ['python3', 'tests/linux/package.py'],
-          'release-tools': ['python3', 'tests/release-test.py']}
+          'release-tools': ['python3', 'tests/release-test.py'],
+          'provider-icons': ['python3', 'tests/provider-icons-test.py'],
+          'polybar-font': ['/usr/bin/python3', 'tests/linux/polybar-font.py']}
 
 
 def read(path):

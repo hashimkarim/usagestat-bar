@@ -102,6 +102,21 @@ Set `USAGESTAT_ICON_TEST_OUTPUT` to choose a different evidence directory.
 GitHub CI runs this before building candidates and retains the same evidence
 in `linux-check-logs`. Review screenshots alongside the assertions.
 
+## Icon bundle and font checks
+
+```bash
+python3 tests/provider-icons-test.py
+/usr/bin/python3 tests/linux/polybar-font.py
+```
+
+The updater regressions use synthetic archives and mocked release metadata;
+they verify stale-release failures, checksums and rollback without network
+access. Font checks compare every catalog mark with the actual bundled glyph,
+including holes and masks. They need system Python with fonttools, Pillow,
+PyGObject and the librsvg pixbuf loader (`python3-fonttools python3-pil
+python3-gi librsvg2-common` on Ubuntu). Both run in the ordinary CI release checks.
+See [icon updates](PROVIDER_ICONS.md) for the separate refresh/build toolchain.
+
 ## Packaging checks
 
 ```bash

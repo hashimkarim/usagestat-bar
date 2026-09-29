@@ -5,11 +5,14 @@ remain open.
 - GNOME extension plus a shared Linux runtime/source bundle for Plasma,
   Cinnamon, MATE, Xfce, LXQt, Budgie, COSMIC, Waybar (Sway/Hyprland), and
   Polybar (i3/bspwm).
-- Provider icons from AgenticDriver provider-icons v0.1.0-alpha.1, with shared
+- Bundled AgenticDriver provider-icons, with shared
   usage presentation, preferences, pinning, scrolling and popup placement.
-- Search all 155 bundled marks for any built-in provider, custom provider or
+- Search the full bundled catalog for any built-in provider, custom provider or
   grouped account. Local SVG, PNG, JPEG and WebP images can override the choice;
   unavailable images fall back to the selected library/default icon.
+- Icon releases are refreshed and checksum-pinned automatically. Release builds
+  verify that the bundle matches the latest stable upstream release; the picker
+  shows its version and mark count, and release manifests record its provenance.
 - Archives, native screenshots, interaction videos, environment/package
   identities, scenario results and checksums are produced from one commit.
 - GNOME's fixed top panel and Polybar's horizontal-only panels account for five

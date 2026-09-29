@@ -6,6 +6,7 @@ import GdkPixbuf from 'gi://GdkPixbuf';
 import {fillPreferencesWindow} from '../../preferences.js';
 import {settings, ROOT} from '../../platforms/linux/settings.js';
 import {loadConfig, providerKey} from '../../config.js';
+import {providerIcons} from '../../providerMetadata.js';
 import {assert, equal} from '../assert.js';
 
 String.prototype.format ??= imports.format.format;
@@ -66,7 +67,7 @@ app.connect('activate', () => {
             assert(picker?.visible, 'Picker did not open');
             const search = all(picker).find(w => w instanceof Gtk.SearchEntry);
             const cells = all(picker).filter(w => w instanceof Gtk.FlowBoxChild);
-            equal(cells.length, 155);
+            equal(cells.map(w => w._iconId).sort(), Object.keys(providerIcons).sort());
             search.set_text(query);
             await wait(() => cells.find(w => w._iconId === id)?.get_child_visible() && cells.some(w => !w.get_child_visible()));
             cells.find(w => w._iconId === id).get_child().emit('clicked');

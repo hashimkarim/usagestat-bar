@@ -68,14 +68,15 @@ If the CLI is in a non-standard location, set `USAGESTAT_CLI=/path/to/usagestat`
 - Configurable normal, warning, danger, and neutral colors.
 - Uses the installed `usagestat` CLI — provider support follows the backend plugin set.
 - Toggle and reorder providers from preferences.
-- Choose from 155 bundled provider/product icons or use your own image for any provider or account.
+- Search the bundled provider/product icon library or use your own image for any provider or account.
 - Keeps config private when saving.
 
 ### Choose a provider icon
 
 Open **Preferences → Providers**, expand a provider or one of its grouped
 sources, and select **Icon library → Choose…**. Search by provider or product
-name, then select a mark. The bundled AgenticDriver library works offline;
+name, then select a mark. The picker shows the bundled version and mark count.
+The AgenticDriver library works offline;
 **Icon style** controls its colour or monochrome variant.
 
 Use **Custom image → Browse** to override the icon with a local SVG, PNG, JPEG
@@ -161,7 +162,9 @@ Inspired by and built on ideas from:
 Provider marks and their colour/product alternatives come from
 [AgenticDriver provider-icons](https://github.com/agenticdriver/provider-icons).
 `assets/provider-icons` is an immutable vendored dependency for GJS/offline
-packaging, not a second editable catalogue. Update the release URL and SHA-256
-in `scripts/update-provider-icons.sh`, run it, and run the contract/package
-checks. Edit/add artwork in the library repository. Its source receipt and
-licence notices ship alongside the SVGs. Dashboard URLs remain app-owned.
+packaging, not a second editable catalogue. A daily workflow refreshes it from
+the latest stable release, verifies SHA-256, rebuilds the Polybar font and tests
+the result before committing to main. Release builds check freshness again.
+See [icon updates](docs/PROVIDER_ICONS.md) for manual refreshes and reproducible
+pins. Edit/add artwork in the library repository. Its source receipt and licence
+notices ship alongside the SVGs. Dashboard URLs remain app-owned.

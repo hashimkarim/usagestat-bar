@@ -1,24 +1,14 @@
 // Shared presentation defaults for the desktop frontends.
 // Immutable dependency snapshot; update using scripts/update-provider-icons.sh.
-export {PROVIDER_ICON_FILES, providerIcons, resolveProviderIcon} from './assets/provider-icons/index.js';
-import {providerIcons, providerAliases, resolveProviderIcon} from './assets/provider-icons/index.js';
+export {PROVIDER_ICON_FILES, providerIcons, providerIconVersion, resolveProviderIcon,
+    searchProviderIcons as providerIconChoices} from './assets/provider-icons/index.js';
+import {resolveProviderIcon} from './assets/provider-icons/index.js';
 
 // An app-level artwork override may select any library mark. It never changes
 // the provider/account ID sent to the backend. The library's variant contract
 // remains restricted to related products for other consumers.
 export function selectedProviderIcon(providerId, iconSource, style = 'monochrome') {
     return resolveProviderIcon(iconSource, {style}) || resolveProviderIcon(providerId, {style});
-}
-
-export function providerIconChoices(query = '') {
-    const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
-    return Object.entries(providerIcons).map(([id, icon]) => ({id, ...icon}))
-        .filter(icon => {
-            const aliases = Object.entries(providerAliases).filter(([, id]) => id === icon.id).map(([alias]) => alias);
-            const text = [icon.id, icon.name, ...aliases].join(' ').toLowerCase();
-            return terms.every(term => text.includes(term));
-        })
-        .sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export const PROVIDER_DASHBOARD_URLS = {

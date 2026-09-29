@@ -240,7 +240,7 @@ Keep your own text font and other modules. The installer registers the bundled
 font under `~/.local/share/fonts/`; restart Polybar after installing or upgrading.
 For a custom installation prefix, include its `share/fonts` directory in your
 Fontconfig configuration (or use that prefix's `share` as `XDG_DATA_HOME`).
-The 155 monochrome logos use Plane 16 private-use glyphs, outside
+The bundled monochrome logos use Plane 16 private-use glyphs, outside
 [Nerd Fonts' assigned ranges](https://github.com/ryanoasis/nerd-fonts/wiki/Glyph-Sets-and-Code-Points).
 Provider aliases and renamed accounts keep the appropriate logo. Color artwork,
 custom image files and partial logo fills still require a graphical adapter;

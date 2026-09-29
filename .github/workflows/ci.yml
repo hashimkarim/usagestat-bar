@@ -9,6 +9,9 @@ on:
       ref:
         type: string
         default: ''
+      require_latest_icons:
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -20,10 +23,15 @@ jobs:
         with:
           ref: ${{ inputs.ref || github.ref }}
           persist-credentials: false
+      - name: Require the latest published icon release
+        if: ${{ inputs.require_latest_icons }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/update-provider-icons.py --check
       - name: Install check dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync xvfb openbox imagemagick
+          sudo apt-get install -y gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync xvfb openbox imagemagick python3-fonttools python3-pil python3-gi librsvg2-common
       - name: Icon picker and override UI
         env:
           USAGESTAT_ICON_TEST_OUTPUT: ${{ github.workspace }}/artifacts/icon-picker

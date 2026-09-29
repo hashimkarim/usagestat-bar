@@ -16,10 +16,15 @@ const test = (name, fn) => tests.push([name, fn]);
 const prefs = settings();
 const usage = {primary:{usedPercent:25}, secondary:{usedPercent:80}};
 test('shared icons resolve colour and product alternatives without changing provider identity', () => {
-    equal(Object.keys(providerIcons).length, 155);
+    const manifest = JSON.parse(new TextDecoder().decode(Gio.File.new_for_path(`${ROOT}/assets/provider-icons/manifest.json`).load_contents(null)[1]));
+    equal(Object.keys(providerIcons).sort(), Object.keys(manifest.icons).sort());
+    for (const id of Object.keys(providerIcons)) {
+        for (const style of ['monochrome', 'color'])
+            assert(Gio.File.new_for_path(`${ROOT}/assets/provider-icons/${resolveProviderIcon(id, {style}).file}`).query_exists(null), `Missing ${id} ${style} artwork`);
+    }
     equal(resolveProviderIcon('codex', {variant:'chatgpt'}).file, 'openai.svg');
     equal(resolveProviderIcon('claude', {variant:'claude-code',style:'color'}).file, 'claudecode-color.svg');
-    equal(resolveProviderIcon('openai', {style:'color'}).style, 'monochrome');
+    equal(resolveProviderIcon('abacus', {style:'color'}).style, 'monochrome');
     equal(resolveProviderIcon('codex', {variant:'claude'}), undefined);
     equal(resolveProviderIcon('__proto__'), undefined);
     assert(logoSvg({iconId:'claudecode',iconStyle:'color'}, {neutral:'#ffffff'}).includes('#D97757'));
@@ -54,9 +59,11 @@ test('Linux snapshots accept any library mark while preserving provider identity
     }
 });
 test('icon library searches names and aliases and permits custom providers to select a mark', () => {
-    equal(providerIconChoices().length, 155);
+    equal(providerIconChoices().map(icon => icon.id).sort(), Object.keys(providerIcons).sort());
     assert(providerIconChoices('  CHATGPT  ').some(icon => icon.id === 'openai'));
     assert(providerIconChoices('claude code').some(icon => icon.id === 'claudecode'));
+    assert(providerIconChoices('千问').some(icon => icon.id === 'qwen'));
+    assert(providerIconChoices('Nemotron').some(icon => icon.id === 'nvidia'));
     equal(providerIconChoices('no-such-provider-xyz'), []);
     equal(selectedProviderIcon('custom-fixture', 'claude-code', 'color').file, 'claudecode-color.svg');
     for (const invalid of ['constructor', '__proto__', '../secret.svg'])
@@ -124,7 +131,7 @@ test('Polybar provider text cannot inject click actions', () => { assert(!escape
 test('Polybar uses provider logo glyphs, including aliases and renamed accounts', () => {
     const glyph = providerGlyph({iconId:'claude'});
     assert(glyph.codePointAt(0) >= 0x100000);
-    equal(providerGlyph({iconId:'opencode'}), providerGlyph({iconId:'opencode-go'}));
+    equal(providerGlyph({iconId:'opencodego'}), providerGlyph({iconId:'opencode-go'}));
     for (const iconId of ['%{A:bad:}', 'constructor', '__proto__', 'toString', undefined])
         equal(providerGlyph({iconId}), String.fromCodePoint(0x100000));
     const provider = {key:'work',name:'My renamed account',iconId:'claude',percent:50};
