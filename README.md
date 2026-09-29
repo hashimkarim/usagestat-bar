@@ -68,7 +68,25 @@ If the CLI is in a non-standard location, set `USAGESTAT_CLI=/path/to/usagestat`
 - Configurable normal, warning, danger, and neutral colors.
 - Uses the installed `usagestat` CLI — provider support follows the backend plugin set.
 - Toggle and reorder providers from preferences.
+- Choose from 155 bundled provider/product icons or use your own image for any provider or account.
 - Keeps config private when saving.
+
+### Choose a provider icon
+
+Open **Preferences → Providers**, expand a provider or one of its grouped
+sources, and select **Icon library → Choose…**. Search by provider or product
+name, then select a mark. The bundled AgenticDriver library works offline;
+**Icon style** controls its colour or monochrome variant.
+
+Use **Custom image → Browse** to override the icon with a local SVG, PNG, JPEG
+or WebP. Keep that file at its selected path. Clearing the image restores the
+library choice; **Use default icon** clears both overrides. Missing or invalid
+images fall back to the library/default icon. Each source has its own choice,
+independent of its provider identity and usage settings.
+
+Custom images appear in graphical panels, trays and popups. Text-only Waybar
+and Polybar segments retain their text/glyph presentation; Polybar can use the
+selected library mark through its bundled icon font.
 
 ## Development
 
@@ -83,6 +101,7 @@ Run the credential-free baseline checks:
 ./test-nested.sh     # Isolated GNOME UI checks, logs and screenshots
 ./dev-shell.sh --fixtures  # Interactive desktop with a fake backend
 ./tests/linux/run.sh       # Standalone Linux model and rendering checks
+bash tests/linux/icon-picker.sh # Isolated icon picker checks and screenshots
 ./tests/linux/lab.sh plasma # Native desktop check after building the lab image
 ```
 

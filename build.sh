@@ -10,7 +10,7 @@ fi
 stage_dir="$(mktemp -d -t usagestat-package.XXXXXX)"
 trap 'rm -rf -- "$stage_dir"' EXIT
 
-for app_file in extension.js prefs.js preferences.js providerMetadata.js cli.js config.js stylesheet.css metadata.json schemas assets LICENSE; do
+for app_file in extension.js prefs.js preferences.js providerMetadata.js customIcons.js cli.js config.js stylesheet.css metadata.json schemas assets LICENSE; do
     cp -a "$source_dir/$app_file" "$stage_dir/"
 done
 glib-compile-schemas --strict "$stage_dir/schemas/"
@@ -23,6 +23,7 @@ zip -qr "$out" \
     prefs.js \
     preferences.js \
     providerMetadata.js \
+    customIcons.js \
     cli.js \
     config.js \
     stylesheet.css \

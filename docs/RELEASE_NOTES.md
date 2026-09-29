@@ -7,6 +7,9 @@ remain open.
   Polybar (i3/bspwm).
 - Provider icons from AgenticDriver provider-icons v0.1.0-alpha.1, with shared
   usage presentation, preferences, pinning, scrolling and popup placement.
+- Search all 155 bundled marks for any built-in provider, custom provider or
+  grouped account. Local SVG, PNG, JPEG and WebP images can override the choice;
+  unavailable images fall back to the selected library/default icon.
 - Archives, native screenshots, interaction videos, environment/package
   identities, scenario results and checksums are produced from one commit.
 - GNOME's fixed top panel and Polybar's horizontal-only panels account for five

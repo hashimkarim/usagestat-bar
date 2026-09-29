@@ -23,7 +23,11 @@ jobs:
       - name: Install check dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync
+          sudo apt-get install -y gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync xvfb openbox imagemagick
+      - name: Icon picker and override UI
+        env:
+          USAGESTAT_ICON_TEST_OUTPUT: ${{ github.workspace }}/artifacts/icon-picker
+        run: bash tests/linux/icon-picker.sh
       - name: Contracts, package lifecycle and release gate tests
         run: python3 scripts/release.py check --output artifacts/ci-checks
       - name: Build versioned candidates from the tested commit
@@ -40,5 +44,7 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: linux-check-logs
-          path: artifacts/ci-checks/
+          path: |
+            artifacts/ci-checks/
+            artifacts/icon-picker/
           retention-days: 30

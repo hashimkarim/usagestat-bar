@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 RUNTIME = ['main.js', 'client.js', 'model.js', 'render.js', 'protocol.js', 'settings.js', 'tray.js', 'trayPreferences.js', 'shortcuts.js', 'desktop.js', 'cosmic.js', 'panelWindow.js', 'x11Panel.py', 'waybarPreferences.js', 'waybar_config.py', 'ui.js', 'usagestat-bar', 'install.py']
 
 def stage(target):
-    for name in ['cli.js', 'config.js', 'preferences.js', 'providerMetadata.js', 'LICENSE']:
+    for name in ['cli.js', 'config.js', 'preferences.js', 'providerMetadata.js', 'customIcons.js', 'LICENSE']:
         shutil.copy2(ROOT / name, target / name)
     shutil.copytree(ROOT / 'assets', target / 'assets', ignore=shutil.ignore_patterns('.fuse_hidden*'))
     runtime = target / 'platforms/linux'

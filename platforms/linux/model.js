@@ -3,7 +3,7 @@ import GLib from 'gi://GLib';
 import {fetchProviderUsage, fetchProviderManifests, findAiUsage, normalizeBackendSnapshot} from '../../cli.js';
 import {configPath, loadConfig, enabledProviders, providerKey, providerDisplayName} from '../../config.js';
 import {jsonSetting} from './settings.js';
-import {PROVIDER_DASHBOARD_URLS, resolveProviderIcon} from '../../providerMetadata.js';
+import {PROVIDER_DASHBOARD_URLS, selectedProviderIcon} from '../../providerMetadata.js';
 
 const TIERS = ['primary', 'secondary', 'tertiary', 'quaternary'];
 export const clamp = value => Math.max(0, Math.min(100, Number(value) || 0));
@@ -290,7 +290,7 @@ export class Model {
                     || manifest.dashboardUrl || PROVIDER_DASHBOARD_URLS[config.id] || '') : '',
                 statusUrl: settings.get_boolean('show-status-link') ? safeUrl(snapshot?.statusPageUrl || manifest.statusPageUrl || '') : '',
                 iconPath: config.iconPath || '',
-                iconId: resolveProviderIcon(config.id, {variant: options.iconSource || undefined})?.id || config.id,
+                iconId: selectedProviderIcon(config.id, options.iconSource)?.id || config.id,
                 iconStyle: options.iconStyle || settings.get_string('provider-icon-style')};
             return view;
         });

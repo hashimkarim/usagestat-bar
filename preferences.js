@@ -1,5 +1,6 @@
 import Gio from 'gi://Gio';
-import {providerIcons, resolveProviderIcon} from './providerMetadata.js';
+import {providerIconChoices, resolveProviderIcon, selectedProviderIcon} from './providerMetadata.js';
+import {customIconFile} from './customIcons.js';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gdk from 'gi://Gdk';
@@ -26,6 +27,7 @@ function pageProcess(owner, argv, flags) {
 
 function closePage(page) {
     page._closed = true;
+    page._iconPicker?.close();
     for (const [object, id] of page._externalSignals || []) object.disconnect(id);
     page._externalSignals = [];
     for (const id of page._validationDebounceIds?.values() || []) GLib.source_remove(id);
@@ -1718,10 +1720,7 @@ class ProvidersPage extends Adw.PreferencesPage {
 
         const tierRow = this._usageTierRow(provider);
         row.add_row(tierRow);
-        row.add_row(this._providerIconStyleRow(provider));
-        const icon = resolveProviderIcon(baseId);
-        if (icon?.alternatives.length > 1)
-            row.add_row(this._providerIconSourceRow(provider, icon));
+        this._addIconRows(row, provider);
         row.add_row(this._usageTrackersRow(provider));
         row.add_row(this._costAndCreditsRow(provider));
 
@@ -1747,44 +1746,125 @@ class ProvidersPage extends Adw.PreferencesPage {
         row.connect('notify::selected', () => {
             const value = values[row.selected] || 'auto';
             this._setProviderUsageSetting(provider, 'iconStyle', value === 'auto' ? null : value);
-            this._renderProviders(providerKey(provider));
+            this._renderProviders(provider.tabParent || providerKey(provider));
         });
         return row;
     }
 
-    _providerIconSourceRow(provider, icon) {
-        const values = icon.alternatives;
-        const labels = values.map(id => providerIcons[id].name);
-        const saved = this._providerUsageSetting(provider, 'iconSource');
-        const selected = resolveProviderIcon(icon.id, {variant: saved || icon.id})?.id || icon.id;
-        const row = combo(labels, labels[values.indexOf(selected)]);
-        row.title = _('Provider icon');
-        row.subtitle = _('Choose the product mark for this provider.');
-        row.connect('notify::selected', () => {
-            const value = values[row.selected] || icon.id;
-            this._setProviderUsageSetting(provider, 'iconSource', value === icon.id ? null : value);
-            this._renderProviders(providerKey(provider));
+    _addIconRows(row, provider) {
+        row.add_row(this._providerIconSourceRow(provider));
+        row.add_row(this._customIconRow(provider));
+        row.add_row(this._providerIconStyleRow(provider));
+    }
+
+    _selectProviderIcon(provider, id) {
+        if (this._closed || id && !resolveProviderIcon(id)) return;
+        delete provider.iconPath;
+        this._setProviderUsageSetting(provider, 'iconSource', id || null);
+        this._save();
+        this._renderProviders(provider.tabParent || providerKey(provider));
+    }
+
+    _providerIconSourceRow(provider) {
+        const selected = resolveProviderIcon(this._providerUsageSetting(provider, 'iconSource'));
+        const row = new Adw.ActionRow({
+            title: _('Icon library'),
+            subtitle: selected?.name || _('Default provider icon'),
         });
+        const choose = new Gtk.Button({label: _('Choose…'), valign: Gtk.Align.CENTER});
+        choose.connect('clicked', () => this._showIconPicker(provider));
+        row.add_suffix(choose);
+        const reset = new Gtk.Button({
+            icon_name: 'edit-undo-symbolic', tooltip_text: _('Use default icon'), valign: Gtk.Align.CENTER,
+            sensitive: Boolean(selected || provider.iconPath),
+        });
+        reset.connect('clicked', () => this._selectProviderIcon(provider, null));
+        row.add_suffix(reset);
+        row.activatable_widget = choose;
         return row;
+    }
+
+    _showIconPicker(provider) {
+        this._iconPicker?.close();
+        const dialog = new Adw.Window({
+            title: _('Choose provider icon'), transient_for: this.get_root(), modal: true,
+            destroy_with_parent: true, default_width: 660, default_height: 560,
+        });
+        this._iconPicker = dialog;
+        dialog.connect('close-request', () => {
+            if (this._iconPicker === dialog) this._iconPicker = null;
+            return false;
+        });
+        const content = new Gtk.Box({orientation: Gtk.Orientation.VERTICAL});
+        content.append(new Adw.HeaderBar({title_widget: new Gtk.Label({label: _('Choose provider icon')})}));
+        const search = new Gtk.SearchEntry({placeholder_text: _('Search providers and products…'),
+            margin_start: 16, margin_end: 16, margin_top: 8, margin_bottom: 12});
+        content.append(search);
+        const grid = new Gtk.FlowBox({selection_mode: Gtk.SelectionMode.NONE, homogeneous: true,
+            min_children_per_line: 2, max_children_per_line: 5, row_spacing: 6, column_spacing: 6,
+            valign: Gtk.Align.START, margin_start: 12, margin_end: 12, margin_bottom: 12});
+        const scroll = new Gtk.ScrolledWindow({vexpand: true, hscrollbar_policy: Gtk.PolicyType.NEVER});
+        scroll.set_child(grid);
+        content.append(scroll);
+        const empty = new Gtk.Label({label: _('No matching icons'), visible: false, margin_bottom: 16});
+        content.append(empty);
+        const footer = new Gtk.Box({spacing: 12, margin_start: 16, margin_end: 16, margin_bottom: 16});
+        footer.append(new Gtk.Label({label: _('AgenticDriver provider-icons'), xalign: 0, hexpand: true,
+            css_classes: ['dim-label']}));
+        const reset = new Gtk.Button({label: _('Use default icon')});
+        reset.connect('clicked', () => { this._selectProviderIcon(provider, null); dialog.close(); });
+        footer.append(reset);
+        content.append(footer);
+        const style = this._providerUsageSetting(provider, 'iconStyle') || this._settings.get_string('provider-icon-style');
+        const selected = resolveProviderIcon(this._providerUsageSetting(provider, 'iconSource'))?.id;
+        for (const icon of providerIconChoices()) {
+            const resolved = resolveProviderIcon(icon.id, {style: style === 'color' ? 'color' : 'monochrome'});
+            const file = this._providerIconGFile(resolved.file);
+            const tile = new Gtk.Box({orientation: Gtk.Orientation.VERTICAL, spacing: 6, margin_top: 8, margin_bottom: 8});
+            tile.append(new Gtk.Image({gicon: Gio.FileIcon.new(this._providerIconRenderFile(file, resolved.file)), pixel_size: 32}));
+            tile.append(new Gtk.Label({label: icon.name, wrap: true, justify: Gtk.Justification.CENTER,
+                max_width_chars: 13, width_chars: 13}));
+            const button = new Gtk.Button({child: tile, tooltip_text: icon.name,
+                css_classes: [icon.id === selected && !provider.iconPath ? 'suggested-action' : 'flat']});
+            button.connect('clicked', () => { this._selectProviderIcon(provider, icon.id); dialog.close(); });
+            const child = new Gtk.FlowBoxChild({child: button});
+            child._iconId = icon.id;
+            grid.append(child);
+        }
+        search.connect('search-changed', () => {
+            const ids = new Set(providerIconChoices(search.get_text()).map(icon => icon.id));
+            grid.set_filter_func(child => ids.has(child._iconId));
+            empty.visible = ids.size === 0;
+        });
+        dialog.set_content(content);
+        dialog.present();
+        search.grab_focus();
     }
 
     _customIconRow(provider) {
         const row = new Adw.ActionRow({
-            title: _('Custom icon SVG'),
-            subtitle: provider.iconPath || _('Using default fallback icon'),
+            title: _('Custom image'),
+            subtitle: _('Overrides the library icon. SVG, PNG, JPEG or WebP.'),
         });
 
         const entry = new Gtk.Entry({
             text: provider.iconPath || '',
-            placeholder_text: '/path/to/icon.svg',
+            placeholder_text: _('Path to an image'),
             hexpand: true,
             valign: Gtk.Align.CENTER,
         });
+        const validate = () => {
+            const valid = !provider.iconPath || customIconFile(provider.iconPath, this._providerIconForegroundColor());
+            row.set_subtitle(valid ? _('Overrides the library icon. SVG, PNG, JPEG or WebP.')
+                : _('Image unavailable. Using the library or default icon.'));
+            if (valid) entry.remove_css_class('error'); else entry.add_css_class('error');
+        };
+        validate();
         entry.connect('changed', () => {
             this._assignOptional(provider, 'iconPath', entry.get_text());
-            row.set_subtitle(provider.iconPath || _('Using default fallback icon'));
-            this._save();
+            validate();
         });
+        entry.connect('activate', () => this._renderProviders(provider.tabParent || providerKey(provider)));
         row.add_suffix(entry);
 
         const browseButton = new Gtk.Button({
@@ -1793,8 +1873,8 @@ class ProvidersPage extends Adw.PreferencesPage {
         });
         browseButton.connect('clicked', () => {
             const filter = new Gtk.FileFilter();
-            filter.set_name(_('SVG icons'));
-            filter.add_suffix('svg');
+            filter.set_name(_('Images (SVG, PNG, JPEG, WebP)'));
+            for (const suffix of ['svg', 'png', 'jpg', 'jpeg', 'webp']) filter.add_suffix(suffix);
             const dialog = new Gtk.FileChooserNative({
                 title: _('Choose custom icon'),
                 transient_for: this.get_root(),
@@ -1808,7 +1888,7 @@ class ProvidersPage extends Adw.PreferencesPage {
                     const file = dialog.get_file();
                     if (file) {
                         entry.set_text(file.get_path());
-                        this._renderProviders(providerKey(provider));
+                        this._renderProviders(provider.tabParent || providerKey(provider));
                     }
                 }
                 dialog.destroy();
@@ -1824,7 +1904,7 @@ class ProvidersPage extends Adw.PreferencesPage {
         });
         clearButton.connect('clicked', () => {
             entry.set_text('');
-            this._renderProviders(providerKey(provider));
+            this._renderProviders(provider.tabParent || providerKey(provider));
         });
         row.add_suffix(clearButton);
         row.activatable_widget = entry;
@@ -1853,17 +1933,17 @@ class ProvidersPage extends Adw.PreferencesPage {
     }
 
     _providerIconFile(provider) {
-        if (this._isCustomProvider(provider) && provider.iconPath) {
-            const customFile = Gio.File.new_for_path(provider.iconPath);
-            if (customFile.query_exists(null))
-                return provider.iconPath;
+        if (provider.iconPath) {
+            const customFile = customIconFile(provider.iconPath, this._providerIconForegroundColor());
+            if (customFile)
+                return customFile.get_path();
         }
 
         const baseId = providerBaseId(provider);
         const iconSource = this._providerUsageSetting(provider, 'iconSource');
-        const iconId = resolveProviderIcon(baseId, {variant: iconSource || undefined})?.id || baseId;
+        const iconId = selectedProviderIcon(baseId, iconSource)?.id || baseId;
         const style = this._providerUsageSetting(provider, 'iconStyle') || this._settings.get_string('provider-icon-style');
-        if (iconId === baseId) {
+        if (!resolveProviderIcon(iconSource)) {
             const manifestFile = this._providerManifestIconFile(baseId, style);
             if (manifestFile)
                 return manifestFile;
@@ -2193,6 +2273,8 @@ class ProvidersPage extends Adw.PreferencesPage {
         } else {
             this._addRelevantRows(row, provider, validator);
         }
+
+        this._addIconRows(row, provider);
 
         const deleteRow = new Adw.ActionRow({
             title: _('Delete from tab'),
@@ -2567,8 +2649,6 @@ class ProvidersPage extends Adw.PreferencesPage {
         const baseId = providerBaseId(provider);
 
         if (this._isCustomProvider(provider)) {
-            row.add_row(this._customIconRow(provider));
-
             const commandRow = entryRow(_('CLI command'), provider.customCommand || '', _('Command that prints usagestat-style usage JSON'));
             commandRow._entry.connect('changed', () => {
                 this._assignOptional(provider, 'customCommand', commandRow._entry.get_text());

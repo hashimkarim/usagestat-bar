@@ -7,7 +7,8 @@ import {assert, equal} from '../assert.js';
 import {settings, ROOT} from '../../platforms/linux/settings.js';
 import {Model, selectedUsage, panelProviders, thresholds, thresholdAt, windows, resetText, safeUrl} from '../../platforms/linux/model.js';
 import {escapeXml, escapePolybar, panelSvg, verticalPanelSvg, panelText, waybarOutput, logoSvg, traySvg, svgPixels, renderFiles} from '../../platforms/linux/render.js';
-import {resolveProviderIcon, providerIcons} from '../../providerMetadata.js';
+import {resolveProviderIcon, providerIcons, selectedProviderIcon, providerIconChoices} from '../../providerMetadata.js';
+import {customIconFile} from '../../customIcons.js';
 import {providerGlyph} from '../../platforms/polybar/icons.js';
 
 const tests = [];
@@ -23,7 +24,7 @@ test('shared icons resolve colour and product alternatives without changing prov
     equal(resolveProviderIcon('__proto__'), undefined);
     assert(logoSvg({iconId:'claudecode',iconStyle:'color'}, {neutral:'#ffffff'}).includes('#D97757'));
 });
-test('Linux snapshots validate saved product marks while preserving provider identity and usage', () => {
+test('Linux snapshots accept any library mark while preserving provider identity and usage', () => {
     const model = new Model(prefs);
     const saved = prefs.get_string('provider-usage-settings');
     try {
@@ -32,7 +33,7 @@ test('Linux snapshots validate saved product marks while preserving provider ide
         for (const [codex, claude, expectedCodex, expectedClaude] of [
             ['chatgpt', 'claude-code', 'openai', 'claudecode'],
             ['openai-api', 'anthropic', 'openai', 'anthropic'],
-            ['claude', 'codex', 'codex', 'claude'],
+            ['claude', 'codex', 'claude', 'codex'],
             ['missing-product', '__proto__', 'codex', 'claude'],
             ['', '', 'codex', 'claude'],
         ]) {
@@ -51,6 +52,15 @@ test('Linux snapshots validate saved product marks while preserving provider ide
         model.close();
         prefs.set_string('provider-usage-settings', saved);
     }
+});
+test('icon library searches names and aliases and permits custom providers to select a mark', () => {
+    equal(providerIconChoices().length, 155);
+    assert(providerIconChoices('  CHATGPT  ').some(icon => icon.id === 'openai'));
+    assert(providerIconChoices('claude code').some(icon => icon.id === 'claudecode'));
+    equal(providerIconChoices('no-such-provider-xyz'), []);
+    equal(selectedProviderIcon('custom-fixture', 'claude-code', 'color').file, 'claudecode-color.svg');
+    for (const invalid of ['constructor', '__proto__', '../secret.svg'])
+        equal(selectedProviderIcon('codex', invalid).id, 'codex');
 });
 test('the default panel uses the session meter', () => equal(selectedUsage(usage),25));
 test('an explicit automatic panel usage averages standard windows', () => equal(selectedUsage(usage,{panelUsageTier:'auto'}),52.5));
@@ -156,6 +166,10 @@ test('custom raster icons load and every fill mode rasterizes in the combined SV
             const rendered = loader.get_pixbuf();
             assert(rendered.get_width() > 20 && rendered.get_pixels().some(value => value > 0));
         }
+        const file = customIconFile(path, '#ffffff');
+        assert(file?.query_exists(null), 'Custom raster must also become a GNOME-compatible SVG');
+        const svg = new TextDecoder().decode(file.load_contents(null)[1]);
+        assert(svg.includes('viewBox="0 0 128 64"') && svg.includes('data:image/png;base64,'));
     } finally { Gio.File.new_for_path(path).delete(null); }
 });
 test('a malformed custom SVG cannot stop panel, tray or provider rendering', () => {
@@ -172,6 +186,8 @@ test('a malformed custom SVG cannot stop panel, tray or provider rendering', () 
             }
             svgPixels(traySvg(provider, {...appearance,style:'logo-fill',fill}),32);
         }
+        equal(customIconFile(path, '#ffffff'), null);
+        equal(logoSvg({...provider, iconId: 'codex'}, appearance), logoSvg({iconId: 'codex', percent: 25}, appearance));
     } finally { Gio.File.new_for_path(path).delete(null); }
 });
 test('custom SVGs with intrinsic dimensions render without a viewBox', () => {

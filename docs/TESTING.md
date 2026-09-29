@@ -61,6 +61,7 @@ The result directory is printed at startup under `artifacts/gnome.*`:
 | `03-multiple-providers-remaining.png` | Remaining-mode fills |
 | `04-backend-error.png` | Native error presentation |
 | `05-preferences.png` | A mapped preferences window |
+| `08-custom-provider-icon.png` | Custom raster override on a built-in provider |
 
 The script exits nonzero on a failed assertion, early Shell exit, or timeout.
 It terminates the test Shell/session and removes temporary state; evidence
@@ -81,6 +82,25 @@ The initial checks verified GNOME 50.4; the latest
 [native interaction report](reports/linux-port-fixes-2026-09-27.md) uses 50.5.
 The extension metadata still declares 45–50; these runs do not verify 45–49. See the
 [parity checklist](BASELINE.md) for further coverage still needed.
+
+## Icon picker checks
+
+```bash
+bash tests/linux/icon-picker.sh
+```
+
+This runs the shared GTK preferences under Xvfb and Openbox with a private
+D-Bus session, memory-backed settings and synthetic provider configuration.
+Requirements: GJS, GTK 4, libadwaita, librsvg introspection bindings, Python 3,
+GLib schema tools, Xvfb, Openbox and ImageMagick (`import`). No GPU or live
+credentials are needed; the harness uses Cairo rendering.
+
+It checks library search, built-in/custom/grouped source choices, PNG overrides,
+missing-image fallback, reset and window cleanup. Light/dark screenshots and
+`result.json` are retained under the printed `artifacts/icon-picker.*` directory.
+Set `USAGESTAT_ICON_TEST_OUTPUT` to choose a different evidence directory.
+GitHub CI runs this before building candidates and retains the same evidence
+in `linux-check-logs`. Review screenshots alongside the assertions.
 
 ## Packaging checks
 

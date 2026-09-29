@@ -138,7 +138,7 @@ app.connect('activate', () => {
             const custom = config().find(p => p.displayName === 'Acceptance custom');
             assert(custom.customCommand.includes('--provider codex'));
             const customRow = provider(providers, providerKey(custom));
-            entry(customRow, 'Custom icon SVG', `${ROOT}/assets/provider-icons/codex.svg`);
+            entry(customRow, 'Custom image', `${ROOT}/assets/provider-icons/codex.svg`);
             assert(config().find(p => p.instanceId === custom.instanceId).iconPath.endsWith('codex.svg'));
             click(customRow, 'Delete source');
             assert(!config().some(p => p.instanceId === custom.instanceId));

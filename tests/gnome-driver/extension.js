@@ -1,5 +1,6 @@
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
+import GdkPixbuf from 'gi://GdkPixbuf';
 import Shell from 'gi://Shell';
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
@@ -154,6 +155,75 @@ export default class BaselineDriver extends Extension {
             assert(app._usageFilledProviderIconSvg(source, 'vertical', 25).includes('y="7.5" width="20" height="2.5"'));
             assert(app._usageFilledProviderIconSvg(source, 'pie', 25).includes('<path d="M '));
             assert(app._usageFilledProviderIconSvg(source, 'pie', 0).includes('<rect width="0" height="0"/>'));
+        });
+        await check('library and raster overrides preserve built-in provider identity and GNOME logo fills', async () => {
+            const {configPath, loadConfig, saveConfig} = await import(`file://${app.path}/config.js`);
+            const {svgPixels} = await import(`file://${app.path}/customIcons.js`);
+            const configFile = Gio.File.new_for_path(configPath());
+            const originalConfig = configFile.load_contents(null)[1];
+            const config = loadConfig();
+            const provider = config.providers.find(p => p.id === 'codex' && !p.instanceId);
+            const settings = app._settings.get_string('provider-usage-settings');
+            const oldFill = app._settings.get_string('provider-logo-fill-mode');
+            const path = `${GLib.get_tmp_dir()}/usagestat-icon-${GLib.uuid_string_random()}.png`;
+            const pixels = GdkPixbuf.Pixbuf.new(GdkPixbuf.Colorspace.RGB, true, 8, 40, 20);
+            pixels.fill(0xff6600ff); pixels.savev(path, 'png', [], []);
+            try {
+                app._settings.set_string('provider-usage-settings', JSON.stringify({codex: {iconSource: 'openrouter'}}));
+                equal(app._providerIconFile(provider, 'codex'), 'openrouter.svg');
+                equal(provider.id, 'codex');
+                provider.iconPath = path;
+                const selected = app._providerIconFile(provider, 'codex');
+                assert(selected.includes('/custom-icons/'));
+                const file = Gio.File.new_for_path(selected);
+                equal(app._svgViewBox(file), {width: 128, height: 64});
+                for (const mode of ['vertical', 'horizontal', 'pie']) {
+                    const fill = app._usageFilledProviderIconFile(file, mode, 25);
+                    const svg = new TextDecoder().decode(fill.load_contents(null)[1]);
+                    assert(svg.includes('clipPath') && svg.includes('data:image/png;base64,'));
+                    const rendered = svgPixels(svg, 128, 64);
+                    const bytes = rendered.get_pixels(), channels = rendered.get_n_channels();
+                    let dim = false, full = false;
+                    for (let i = 0; i < bytes.length; i += channels) {
+                        // Allow librsvg's premultiplied-alpha rounding.
+                        if (bytes[i] === 255 && Math.abs(bytes[i + 1] - 102) <= 3 && bytes[i + 2] === 0) {
+                            if (bytes[i + 3] > 240) full = true;
+                            if (bytes[i + 3] > 0 && bytes[i + 3] < 100) dim = true;
+                        }
+                    }
+                    assert(dim && full, `${mode} must render the image with both dim and filled pixels`);
+                }
+                saveConfig(config);
+                app._settings.set_string('provider-logo-fill-mode', 'horizontal');
+                app._render();
+                equal(app._providers.find(p => p.id === 'codex' && !p.instanceId).iconPath, path);
+                app._indicator.menu.open();
+                await this._screenshot('08-custom-provider-icon');
+                const capture = GdkPixbuf.Pixbuf.new_from_file(`${GLib.getenv('USAGESTAT_TEST_OUTPUT_DIR')}/08-custom-provider-icon.png`);
+                const data = capture.get_pixels(), stride = capture.get_rowstride(), channels = capture.get_n_channels();
+                const [x, y] = app._switcher.get_transformed_position(), [w, h] = app._switcher.get_transformed_size();
+                const scale = capture.get_width() / global.stage.width;
+                let left = Infinity, right = -Infinity, top = Infinity, bottom = -Infinity;
+                for (let py = Math.max(0, Math.floor(y * scale)); py < Math.min(capture.height, (y + h) * scale); py++) {
+                    for (let px = Math.max(0, Math.floor(x * scale)); px < Math.min(capture.width, (x + w) * scale); px++) {
+                        const offset = py * stride + px * channels;
+                        if (data[offset] === 255 && data[offset + 1] === 102 && data[offset + 2] === 0) {
+                            left = Math.min(left, px); right = Math.max(right, px);
+                            top = Math.min(top, py); bottom = Math.max(bottom, py);
+                        }
+                    }
+                }
+                assert(Number.isFinite(left) && Math.abs((right - left + 1) / (bottom - top + 1) - 2) < 0.1,
+                    'Visible custom image must preserve its 2:1 aspect ratio');
+                provider.iconPath = '/missing/custom-icon.png';
+                equal(app._providerIconFile(provider, 'codex'), 'openrouter.svg');
+            } finally {
+                configFile.replace_contents(originalConfig, null, false, Gio.FileCreateFlags.PRIVATE, null);
+                app._settings.set_string('provider-usage-settings', settings);
+                app._settings.set_string('provider-logo-fill-mode', oldFill);
+                Gio.File.new_for_path(path).delete(null);
+                app._render();
+            }
         });
         await check('detail popup renders usage, accounts and costs', async () => {
             app._activeId = 'codex';

@@ -1,12 +1,12 @@
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
-import GdkPixbuf from 'gi://GdkPixbuf';
-import Rsvg from 'gi://Rsvg?version=2.0';
 import Pango from 'gi://Pango';
 import PangoCairo from 'gi://PangoCairo';
 import {ROOT, writePrivate} from './settings.js';
 import {clamp, safeColor} from './model.js';
 import {resolveProviderIcon} from '../../providerMetadata.js';
+import {customIconSvg, svgPixels} from '../../customIcons.js';
+export {svgPixels} from '../../customIcons.js';
 import {providerGlyph} from '../polybar/icons.js';
 
 export const escapeXml = value => String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;')
@@ -18,37 +18,10 @@ function read(path) {
     try { return new TextDecoder().decode(Gio.File.new_for_path(path).load_contents(null)[1]); } catch { return ''; }
 }
 
-function customLogo(path, neutral) {
-    try {
-        let svg = read(path), pixels;
-        if (/<svg\b/.test(svg)) {
-            svg = svg.replaceAll('currentColor', neutral);
-            const handle = Rsvg.Handle.new_from_data(new TextEncoder().encode(svg));
-            const [hasSize, width, height] = handle.get_intrinsic_size_in_pixels();
-            const [, , , , hasViewBox, box] = handle.get_intrinsic_dimensions();
-            const w = hasSize ? width : hasViewBox ? box.width : 0;
-            const h = hasSize ? height : hasViewBox ? box.height : 0;
-            if (!(w > 0 && h > 0)) return '';
-            // Preserve intrinsic coordinates before giving a dimension-only
-            // SVG the bounded size used by all native panel/tray renderers.
-            if (!hasViewBox) svg = svg.replace('<svg', `<svg viewBox="0 0 ${w} ${h}"`);
-            const scale = 128 / Math.max(w, h);
-            pixels = svgPixels(svg, Math.max(1, Math.round(w * scale)), Math.max(1, Math.round(h * scale)));
-        } else {
-            pixels = GdkPixbuf.Pixbuf.new_from_file_at_scale(path, 128, 128, true);
-        }
-        // Isolate custom namespaces, definitions and invalid XML from the
-        // combined panel. One broken icon must not stop every provider.
-        const [, bytes] = pixels.save_to_bufferv('png', [], []);
-        const width = pixels.get_width(), height = pixels.get_height();
-        return `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image width="${width}" height="${height}" xlink:href="data:image/png;base64,${GLib.base64_encode(bytes)}"/></svg>`;
-    } catch { return ''; }
-}
-
 export function logoSvg(provider, appearance) {
     const icon = resolveProviderIcon(provider.iconId, {style: provider.iconStyle === 'color' ? 'color' : 'monochrome'});
-    let svg = provider.iconPath ? customLogo(provider.iconPath, appearance.neutral)
-        : read(icon ? `${ROOT}/assets/provider-icons/${icon.file}` : '');
+    let svg = customIconSvg(provider.iconPath, appearance.neutral)
+        || read(icon ? `${ROOT}/assets/provider-icons/${icon.file}` : '');
     if (!svg.includes('<svg')) svg = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="currentColor"/></svg>';
     svg = svg.replaceAll('currentColor', appearance.neutral);
     // Many bundled logos use 1em dimensions. Give file-based GTK/Qt loaders a
@@ -250,15 +223,6 @@ export function traySvg(provider, appearance = {}) {
         }
     }
     return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">${parts.join('')}</svg>`;
-}
-
-export function svgPixels(svg, width, height = width) {
-    // Render our composed SVG directly through librsvg. Recent GdkPixbuf
-    // versions send SVG to an external decoder, whose font sandbox can fail
-    // in nested desktops. Explicit dimensions keep each output crisp.
-    const sized = svg.replace(/<svg\b[^>]*>/, tag => tag.replace(/\s(?:width|height)=["'][^"']*["']/g, '')
-        .replace('<svg', `<svg width="${Math.round(width)}" height="${Math.round(height)}"`));
-    return Rsvg.Handle.new_from_data(new TextEncoder().encode(sized)).get_pixbuf();
 }
 
 function writePanelPng(path, svg, width, height = 28) {

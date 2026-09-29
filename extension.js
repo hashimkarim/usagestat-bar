@@ -1,5 +1,6 @@
 import Gio from 'gi://Gio';
-import {resolveProviderIcon, PROVIDER_DASHBOARD_URLS} from './providerMetadata.js';
+import {resolveProviderIcon, selectedProviderIcon, PROVIDER_DASHBOARD_URLS} from './providerMetadata.js';
+import {customIconFile} from './customIcons.js';
 import GLib from 'gi://GLib';
 import Pango from 'gi://Pango';
 import St from 'gi://St';
@@ -1691,16 +1692,7 @@ export default class AIUsageBarExtension extends Extension {
             const file = this._providerIconGFile(fileName);
             if (file.query_exists(null)) {
                 const renderFile = this._providerIconRenderFile(file, fileName);
-                const icon = new St.Icon({
-                    gicon: Gio.FileIcon.new(renderFile),
-                    icon_size: height,
-                    style_class: 'usagestat-provider-icon',
-                    y_align: Clutter.ActorAlign.CENTER,
-                });
-                const {width, height: viewBoxHeight} = this._svgViewBox(renderFile);
-                icon.set_height(height);
-                icon.set_width(Math.round(height * (width / viewBoxHeight)));
-                return icon;
+                return this._providerImageActor(renderFile, height);
             }
         }
 
@@ -1730,16 +1722,28 @@ export default class AIUsageBarExtension extends Extension {
         if (!fillFile)
             return this._providerIcon(provider, height);
 
-        const icon = new St.Icon({
-            gicon: Gio.FileIcon.new(fillFile),
+        return this._providerImageActor(fillFile, height);
+    }
+
+    _providerImageActor(file, height) {
+        const {width, height: viewBoxHeight} = this._svgViewBox(file);
+        const displayWidth = Math.max(1, Math.round(height * width / viewBoxHeight));
+        if (width !== viewBoxHeight) {
+            // GIcon textures force square dimensions. Load rectangular marks as
+            // images so their artwork and usage-fill geometry keep their ratio.
+            const scale = St.ThemeContext.get_for_stage(global.stage).scale_factor;
+            const image = St.TextureCache.get_default().load_file_async(file, displayWidth, height, scale, 1);
+            image.set_size(displayWidth, height);
+            return new St.Bin({child: image, width: displayWidth, height,
+                style_class: 'usagestat-provider-icon', y_align: Clutter.ActorAlign.CENTER});
+        }
+        return new St.Icon({
+            gicon: Gio.FileIcon.new(file),
             icon_size: height,
+            width: displayWidth, height,
             style_class: 'usagestat-provider-icon',
             y_align: Clutter.ActorAlign.CENTER,
         });
-        const {width, height: viewBoxHeight} = this._svgViewBox(fillFile);
-        icon.set_height(height);
-        icon.set_width(Math.round(height * (width / viewBoxHeight)));
-        return icon;
     }
 
     _usageFilledProviderIconFile(file, mode, percentage) {
@@ -1798,7 +1802,7 @@ export default class AIUsageBarExtension extends Extension {
         const clipId = `usageClip${Math.round(pct)}${mode}`;
         const clip = this._providerLogoClipPath(mode, pct, minX, minY, width, height);
         return [
-            `<svg width="${width}" height="${height}" viewBox="${minX} ${minY} ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">`,
+            `<svg width="${width}" height="${height}" viewBox="${minX} ${minY} ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">`,
             '<defs>',
             `<clipPath id="${clipId}">${clip}</clipPath>`,
             '</defs>',
@@ -1925,14 +1929,14 @@ export default class AIUsageBarExtension extends Extension {
 
     _providerIconFile(provider, providerId) {
         if (provider && typeof provider === 'object' && provider.iconPath) {
-            const customFile = Gio.File.new_for_path(provider.iconPath);
-            if (customFile.query_exists(null))
-                return provider.iconPath;
+            const customFile = customIconFile(provider.iconPath, this._settings.get_string('neutral-color'));
+            if (customFile)
+                return customFile.get_path();
         }
 
         const iconId = this._providerIconSource(provider, providerId);
         const style = this._providerIconStyle(provider);
-        if (iconId === providerId) {
+        if (!resolveProviderIcon(this._providerUsageSettings(providerKey(provider)).iconSource)) {
             const manifestFile = this._providerManifestIconFile(providerId, style);
             if (manifestFile)
                 return manifestFile;
@@ -2013,7 +2017,7 @@ export default class AIUsageBarExtension extends Extension {
 
     _providerIconSource(provider, providerId) {
         const variant = this._providerUsageSettings(providerKey(provider)).iconSource || undefined;
-        return resolveProviderIcon(providerId, {variant})?.id || providerId;
+        return selectedProviderIcon(providerId, variant)?.id || providerId;
     }
 
     _providerIconStyle(provider) {
