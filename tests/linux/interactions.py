@@ -554,7 +554,7 @@ def placement_checks():
     step('panel-item-index',item_index)
     for edge in ['bottom','left','right']:
         if TARGET in ['i3','bspwm'] and edge in ['left','right']:
-            checks.append({'name':'panel-edge-'+edge,'status':'unsupported','reason':'Polybar supports horizontal panels only.'})
+            checks.append({'name':'panel-edge-'+edge,'status':'skipped','reason':'Platform compatibility: Polybar supports horizontal panels only.'})
         else: step('panel-edge-'+edge,lambda edge=edge:at_position(edge,'center',0))
     def alignment(value, edge='top'):
         position(edge,'center',0); setting('popup-alignment',value)

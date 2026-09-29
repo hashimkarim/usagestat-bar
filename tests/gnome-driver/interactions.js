@@ -141,7 +141,7 @@ export async function runInteractions(driver) {
             });
         }
         await check('popup-alignment-section',()=>{equal(Object.keys(aligned).length,3);return aligned;});
-        results.push({name:'panel-edge-bottom-left-right',status:'unsupported',reason:'The native GNOME Shell top panel has a fixed screen edge.'});
+        results.push({name:'panel-edge-bottom-left-right',status:'skipped',reason:'Platform compatibility: the native GNOME Shell top panel has a fixed screen edge.'});
         if(app._indicator.menu.isOpen) await barClick();
         await check('preferences-window',async()=>{
             await app.openPreferences();await driver._until(()=>global.get_window_actors().some(a=>a.mapped&&a.meta_window.get_title()?.includes('UsageStat')),'preferences window');

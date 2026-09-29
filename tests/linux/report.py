@@ -11,6 +11,19 @@ from urllib.parse import quote
 ORDER = 'gnome plasma cinnamon mate xfce lxqt sway hyprland budgie cosmic i3 bspwm'.split()
 LABELS = dict(zip(ORDER, ['GNOME', 'Plasma', 'Cinnamon', 'MATE', 'Xfce', 'LXQt',
                          'Sway', 'Hyprland', 'Budgie', 'COSMIC', 'i3', 'bspwm']))
+COMPATIBILITY_SKIPS = {
+    'gnome': {'panel-edge-bottom-left-right'},
+    'i3': {'panel-edge-left', 'panel-edge-right'},
+    'bspwm': {'panel-edge-left', 'panel-edge-right'},
+}
+
+
+def classify_check(target, check):
+    # Older recordings used "unsupported" for these specific native panel limits.
+    # Keep their original status visible without rewriting the raw evidence.
+    if check['status'] == 'unsupported' and check['name'] in COMPATIBILITY_SKIPS.get(target, set()):
+        return dict(check, status='skipped', rawStatus=check['status'])
+    return check
 
 
 def collect(batches, output, blocked, notes):
@@ -30,7 +43,7 @@ def collect(batches, output, blocked, notes):
             if path.is_file() and not path.name.startswith('.') and path.suffix in ['.json', '.jsonl', '.png', '.mp4', '.log', '.txt']:
                 shutil.copy2(path, destination / path.name)
         raw = json.loads((source / 'result.json').read_text())
-        checks = raw.get('checks', raw.get('results', []))
+        checks = [classify_check(target, check) for check in raw.get('checks', raw.get('results', []))]
         counts = dict(Counter(check['status'] for check in checks))
         runs.append(dict(target=target, label=LABELS.get(target, target), source=str(source.resolve()),
                          status='blocked' if target in blocked else raw['status'], rawStatus=raw['status'],
@@ -54,7 +67,7 @@ def render(runs, title):
             figure = (f'<a href="{target}/{quote(shot)}"><img loading="lazy" src="{target}/{quote(shot)}" '
                       f'alt="{escape(label)}: {escape(name)}"></a>') if shot else ''
             cue = (f'<button data-player="video-{target}" data-time="{check["seconds"]}">Play near this step</button>') if 'seconds' in check else ''
-            details = {key: check[key] for key in ['observation', 'error', 'reason'] if key in check}
+            details = {key: check[key] for key in ['observation', 'error', 'reason', 'rawStatus'] if key in check}
             cards.append(f'<article class="check" data-status="{result}"><h3>{escape(name)}</h3>'
                          f'<p class="{result}">{result}</p>{figure}{cue}<details><summary>Observed result</summary>'
                          f'<pre>{escape(json.dumps(details, indent=2))}</pre></details></article>')
@@ -72,14 +85,14 @@ def render(runs, title):
 *{box-sizing:border-box}body{margin:0}main{max-width:1440px;margin:auto;padding:32px}
 h1{font-size:2.2rem;line-height:1.2}h2{font-size:1.7rem}h3{font-size:1rem;overflow-wrap:anywhere}
 a{color:#9cc9ff}button{background:#26394e;color:#fff;border:1px solid #4b6580;border-radius:7px;padding:8px 12px;cursor:pointer}
-header p{max-width:950px;color:#bdc8d6}.passed{color:#7bddb1}.failed{color:#ffb1a2}.blocked,.unsupported{color:#efcb80}
+header p{max-width:950px;color:#bdc8d6}.passed{color:#7bddb1}.failed{color:#ffb1a2}.blocked,.unsupported{color:#efcb80}.skipped{color:#bdc8d6}
 table{border-collapse:collapse;width:100%;font-size:.93rem}th,td{text-align:left;padding:12px;border-bottom:1px solid #344150}
 th{white-space:nowrap}.table-wrap{overflow-x:auto}section{margin:64px 0;scroll-margin-top:20px}
 .section-heading{display:flex;align-items:center;gap:24px}video{width:100%;max-height:78vh;background:#050708;border-radius:10px}
 .links{display:flex;gap:24px;flex-wrap:wrap}.checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
 .check{background:#1c2530;padding:18px;border-radius:10px}.check p{margin:0 0 12px}.check img{width:100%;aspect-ratio:16/10;object-fit:contain;background:#080c11}
 details{margin-top:14px}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.78rem}label{display:block;margin:25px 0}
-.only-problems .check[data-status="passed"]{display:none}footer{color:#bdc8d6;border-top:1px solid #344150;padding-top:20px}
+.only-problems .check[data-status="passed"],.only-problems .check[data-status="skipped"]{display:none}footer{color:#bdc8d6;border-top:1px solid #344150;padding-top:20px}
 @media(max-width:600px){main{padding:18px}.section-heading{display:block}}
 </style><main><header><p>UsageStat Bar · Linux interaction review</p><h1>''' + escape(title) + '''</h1>
 <p>Real mouse and wheel events in isolated native desktop sessions, using four synthetic providers.
@@ -88,10 +101,11 @@ popup alignment, dismissal, and content sizing where supported.</p>
 <p>These are scenario results for the recorded versions, not certification of every distro or hardware setup.
 Settings were applied through their native settings/configuration interfaces; this does not validate every Preferences control by clicking it.
 Videos contain unedited desktop frames at 5 FPS. Step links are approximate. Raw logs and environment metadata are included beside each video.</p>
-</header><div class="table-wrap"><table><thead><tr><th>Platform</th><th>Assessment</th><th>Raw checks</th><th>Notes</th></tr></thead><tbody>''' + ''.join(rows) + '''</tbody></table></div>
-<label><input id="problems" type="checkbox"> Show only failed or unsupported screenshot steps</label>''' + ''.join(sections) + '''
+</header><div class="table-wrap"><table><thead><tr><th>Platform</th><th>Assessment</th><th>Checks</th><th>Notes</th></tr></thead><tbody>''' + ''.join(rows) + '''</tbody></table></div>
+<label><input id="problems" type="checkbox"> Show only checks needing attention</label>''' + ''.join(sections) + '''
 <footer>All account data in these captures is synthetic. A blocked session does not establish working native input.
-Unsupported cases are not counted as passes. <a href="summary.json">Download the result matrix</a>.</footer></main>
+Platform-compatibility skips are excluded from pass/fail counts and do not block the supported baseline.
+Archived raw results may label these skips as unsupported. <a href="summary.json">Download the result matrix</a>.</footer></main>
 <script>
 document.getElementById('problems').addEventListener('change', e => document.body.classList.toggle('only-problems',e.target.checked));
 document.querySelectorAll('button[data-player]').forEach(button => button.addEventListener('click',()=>{

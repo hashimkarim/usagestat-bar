@@ -2,7 +2,7 @@
 
 Four confirmed problems were fixed in the Linux integrations. The selected
 final native runs pass 388 checks across 12 profiles, with no failed checks
-and five unsupported checks. This supplements the
+and five checks skipped for platform compatibility. This supplements the
 [section-alignment review](linux-section-alignment-fixes-2026-09-11.md).
 
 ## Fixes
@@ -37,7 +37,7 @@ and reopening checks were retained. No Plasma application change was needed.
 
 ## Native results
 
-| Profile | Passed | Failed | Unsupported |
+| Profile | Passed | Failed | Skipped (compatibility) |
 | --- | ---: | ---: | ---: |
 | GNOME | 19 | 0 | 1 |
 | Plasma | 34 | 0 | 0 |
@@ -53,8 +53,12 @@ and reopening checks were retained. No Plasma application change was needed.
 | bspwm | 27 | 0 | 2 |
 | **Total** | **388** | **0** | **5** |
 
-Unsupported checks are GNOME's fixed top-panel edge and Polybar's lack of
-vertical panels, counted separately for i3 and bspwm. They are not passes.
+The compatibility skips are GNOME's fixed top-panel edge (one grouped check)
+and Polybar's lack of vertical panels (left and right, separately for i3 and
+bspwm). They do not block the supported Linux baseline and are excluded from
+pass/fail counts. On 29 September the reporting classification changed from
+`unsupported` to `skipped`; the original raw recordings retain their original
+status labels. This is a classification change, not a new native test run.
 The tests cover native clicks and scrolling, pinning, provider count, popup
 content resizing and scrolling, dismissal/reopening, panel placement, section
 alignment and preferences activation. GNOME uses its separate Shell driver.
@@ -77,6 +81,10 @@ The self-contained gallery is at
 records each selected source run; screenshots, videos and raw results are
 included. Representative popup and preferences screenshots were inspected.
 All 12 videos decoded successfully.
+
+The gallery regenerated with compatibility-skip labels is at
+`artifacts/linux-compatibility-skips-2026-09-29/index.html`. Its raw result files
+are byte-for-byte identical to the original gallery's results.
 
 Selected runs:
 

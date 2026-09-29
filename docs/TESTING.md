@@ -135,6 +135,15 @@ USAGESTAT_FIXTURE_SCENARIO=full ./tests/fixtures/usagestat --json usage --provid
 Copy this template into the platform issue or a report file. Keep skipped and
 manual checks explicit.
 
+Native interaction checks use `skipped` with a reason when a native platform
+cannot support the scenario: GNOME's fixed top panel and Polybar's horizontal-only
+panels are the current examples. These architecture/compatibility skips are
+counted separately from passes and failures and do not block acceptance of the
+supported baseline. An environment failure or an untested supported scenario
+remains blocked or untested; it does not qualify as a compatibility skip.
+The gallery classifies those specific legacy `unsupported` results as `skipped`
+while preserving their original status and raw result files.
+
 ```text
 Target / desktop / panel / compositor:
 OS / distro / version / architecture / session:
