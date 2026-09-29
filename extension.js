@@ -508,6 +508,7 @@ export default class AIUsageBarExtension extends Extension {
         });
         fill.set_width(waiting ? 18 : this._barFillWidth(this._errors.has(id) ? 100 : percent, 68));
         track.add_child(fill);
+        track.visible = Number.isFinite(percent) || waiting || this._errors.has(id);
         box.add_child(track);
 
         let tileStatus = 'green';
@@ -605,7 +606,7 @@ export default class AIUsageBarExtension extends Extension {
                 windows = this._panelUsageWindows(providerId, snap);
             }
             if (!windows.length)
-                windows = [{usedPercent: 0}];
+                return null;
 
             const barsToShow = Math.min(barsPerProvider, windows.length);
             const effectiveBarLayout = barsToShow === 1 ? 'horizontal' : barLayout;
@@ -659,7 +660,7 @@ export default class AIUsageBarExtension extends Extension {
             label.set_style(`color: ${neutralColor};`);
 
             const percentLabel = new St.Label({
-                text: `${Math.round(shownPercent)}%`,
+                text: Number.isFinite(shownPercent) ? `${Math.round(shownPercent)}%` : '—',
                 style_class: 'usagestat-panel-label',
                 y_align: Clutter.ActorAlign.CENTER,
             });
@@ -671,7 +672,9 @@ export default class AIUsageBarExtension extends Extension {
 
             for (const component of components) {
                 if (component === 'bar') {
-                    providerBox.add_child(buildProviderBars(providerId, snap));
+                    const bars = buildProviderBars(providerId, snap);
+                    if (bars)
+                        providerBox.add_child(bars);
                 } else if (component === 'percent') {
                     providerBox.add_child(percentLabel);
                 } else if (component === 'logo') {
@@ -681,9 +684,8 @@ export default class AIUsageBarExtension extends Extension {
                 }
             }
 
-            if (!components.length) {
-                providerBox.add_child(buildBar(shownPercent, color));
-            }
+            if (!providerBox.get_n_children())
+                providerBox.add_child(Number.isFinite(shownPercent) ? buildBar(shownPercent, color) : percentLabel);
 
             return providerBox;
         };
@@ -1364,14 +1366,14 @@ export default class AIUsageBarExtension extends Extension {
     _snapshotPercent(snapshot, providerId) {
         const window = this._selectedPanelWindow(snapshot, providerId);
         if (!window)
-            return 0;
+            return null;
         return this._displayPercent(window);
     }
 
     _snapshotUsedPercent(snapshot, providerId) {
         const window = this._selectedPanelWindow(snapshot, providerId);
         if (!window)
-            return 0;
+            return null;
         return Math.max(0, Math.min(100, Number(window.usedPercent) || 0));
     }
 
@@ -1471,6 +1473,8 @@ export default class AIUsageBarExtension extends Extension {
     }
 
     _thresholdForUsedPercent(percent) {
+        if (!Number.isFinite(percent))
+            return null;
         const used = Math.max(0, Math.min(100, Number(percent) || 0));
         let current = null;
         for (const threshold of this._thresholds()) {
@@ -1482,6 +1486,8 @@ export default class AIUsageBarExtension extends Extension {
 
     _maybeNotifyThreshold(providerId, snapshot) {
         const percent = this._snapshotUsedPercent(snapshot, providerId);
+        if (!Number.isFinite(percent))
+            return;
         const threshold = this._thresholdForUsedPercent(percent);
         const state = threshold?.id || 'normal';
         if (!this._thresholdStates.has(providerId)) {
@@ -1707,7 +1713,7 @@ export default class AIUsageBarExtension extends Extension {
 
     _panelProviderIcon(provider, height, percentage) {
         const mode = this._settings.get_string('provider-logo-fill-mode');
-        if (!['vertical', 'horizontal', 'pie'].includes(mode))
+        if (!Number.isFinite(percentage) || !['vertical', 'horizontal', 'pie'].includes(mode))
             return this._providerIcon(provider, height);
 
         const providerId = providerBaseId(provider);
@@ -1862,6 +1868,8 @@ export default class AIUsageBarExtension extends Extension {
     }
 
     _usageIcon(percentage, size) {
+        if (!Number.isFinite(percentage))
+            return new St.Icon({icon_name: 'web-browser-symbolic', icon_size: size, y_align: Clutter.ActorAlign.CENTER});
         const file = this._usageIconFile(percentage);
         return new St.Icon({
             gicon: Gio.FileIcon.new(file),

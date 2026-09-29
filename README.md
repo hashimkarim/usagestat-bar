@@ -72,6 +72,9 @@ If the CLI is in a non-standard location, set `USAGESTAT_CLI=/path/to/usagestat`
 
 ## Development
 
+The project includes the [TypeSafe skill and private API-key setup](docs/TYPESAFE.md)
+for Jev work and TypeSafe usage diagnostics.
+
 Run the credential-free baseline checks:
 
 ```bash

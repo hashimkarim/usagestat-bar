@@ -92,6 +92,25 @@ test('empty cost summaries are absent and token-only totals still count', () => 
     equal(normalizeCostSummary({totals: {}, daily: []}), null);
     equal(normalizeCostSummary({totals: {totalTokens: 20}}).lines[2].tokens, 20);
 });
+test('TypeSafe billing preserves spend and balance without inventing a quota', async () => {
+    GLib.setenv('USAGESTAT_FIXTURE_SCENARIO', 'typesafe-billing', true);
+    const result = await usage({id: 'typesafe', source: 'web'});
+    equal(result.provider, 'typesafe');
+    equal(result.usage.primary, undefined);
+    equal(result.usage.costSummary, undefined);
+    equal(result.usage.extraTextLines, [
+        {label: 'September 2026', value: 'USD 0.01', subtitle: ''},
+        {label: 'Balance', value: 'USD 4.98', subtitle: ''},
+        {label: 'Plan', value: 'Free', subtitle: ''},
+    ]);
+});
+test('TypeSafe protection errors survive the backend badge contract', async () => {
+    GLib.setenv('USAGESTAT_FIXTURE_SCENARIO', 'typesafe-blocked', true);
+    const result = await usage({id: 'typesafe'});
+    equal(result.source, 'error');
+    assert(result.usage.badges[0].text.includes('Cloudflare'));
+    equal(result.usage.primary, undefined);
+});
 for (const [scenario, pattern] of [
     ['empty', /exited with status 0/], ['malformed', /Could not parse usagestat JSON/],
     ['failure', /Fixture backend failed/], ['api-error', /Fixture account needs setup/],

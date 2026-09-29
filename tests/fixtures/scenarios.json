@@ -19,6 +19,20 @@
     "missing-fields": {"minimal": true},
     "legacy": {"legacy": true, "used": 25, "weeklyUsed": 80},
     "array": {"array": true, "used": 25, "weeklyUsed": 80},
+    "typesafe-billing": {"cost": false, "snapshot": {
+      "displayName": "TypeSafe", "source": "web", "plan": "Balance",
+      "usageDashboardUrl": "https://console.typesafe.ai/usage",
+      "metrics": [
+        {"type": "text", "label": "September 2026", "value": "USD 0.01"},
+        {"type": "text", "label": "Balance", "value": "USD 4.98"},
+        {"type": "text", "label": "Plan", "value": "Free"}
+      ]
+    }},
+    "typesafe-blocked": {"cost": false, "snapshot": {
+      "displayName": "TypeSafe", "source": "error",
+      "metrics": [{"type": "badge", "label": "Error", "color": "red",
+        "text": "failed: TypeSafe usage is blocked by Cloudflare browser protection. Open the provider's website to check access; the saved login has not been verified."}]
+    }},
     "empty": {"empty": true},
     "malformed": {"malformed": true},
     "failure": {"exit": 7, "stderr": "Fixture backend failed\nAdditional diagnostic"},

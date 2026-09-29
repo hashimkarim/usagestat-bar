@@ -186,6 +186,39 @@ export default class BaselineDriver extends Extension {
             equal(app._errors.size, 0);
             equal(app._usage.get('codex').usage.primary.usedPercent, 25);
         });
+        await check('TypeSafe billing and protection errors render without false quota meters', async () => {
+            const labels = actor => [actor.text || '', ...(actor.get_children?.() || []).flatMap(labels)];
+            const actors = actor => [actor, ...(actor.get_children?.() || []).flatMap(actors)];
+            try {
+                writeJson(GLib.getenv('USAGESTAT_FIXTURE_STATE'), {scenario: 'typesafe-billing'});
+                await app._refresh();
+                for (const mode of ['used', 'remaining']) {
+                    app._settings.set_string('display-mode', mode);
+                    app._render();
+                    equal(app._snapshotPercent(app._usage.get('codex'), 'codex'), null);
+                    equal(app._snapshotUsedPercent(app._usage.get('codex'), 'codex'), null);
+                    const panel = labels(app._panelBox);
+                    assert(panel.includes('—'), 'Unknown quota must be explicit');
+                    assert(panel.every(text => !text.includes('%')), 'Billing must not become a percentage');
+                    assert(actors(app._panelBox).every(actor => !actor.has_style_class_name?.('usagestat-panel-meter')));
+                }
+                assert(labels(app._content).some(text => text.includes('Balance: USD 4.98')), 'Billing balance missing from popup');
+                equal(app._thresholdForUsedPercent(null), null);
+                app._settings.set_string('panel-components', 'bar');
+                app._render();
+                assert(labels(app._panelBox).includes('—'), 'Bar-only presentation must not disappear');
+                await this._screenshot('06-typesafe-billing');
+                writeJson(GLib.getenv('USAGESTAT_FIXTURE_STATE'), {scenario: 'typesafe-blocked'});
+                await app._refresh();
+                assert(labels(app._content).some(text => text.includes('Cloudflare')), 'Blocked request must show its reason');
+                await this._screenshot('07-typesafe-blocked');
+            } finally {
+                app._settings.set_string('display-mode', 'remaining');
+                app._settings.set_string('panel-components', 'logo,bar,percent,text');
+                writeJson(GLib.getenv('USAGESTAT_FIXTURE_STATE'), {scenario: 'normal'});
+                await app._refresh();
+            }
+        });
         await check('preferences window opens on the isolated desktop', async () => {
             app._indicator.menu.close();
             await app.openPreferences();

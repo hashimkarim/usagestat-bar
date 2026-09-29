@@ -2,7 +2,7 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import System from 'system';
 import GdkPixbuf from 'gi://GdkPixbuf';
-import {normalizeBackendSnapshot} from '../../cli.js';
+import {fetchProviderUsage, normalizeBackendSnapshot} from '../../cli.js';
 import {assert, equal} from '../assert.js';
 import {settings, ROOT} from '../../platforms/linux/settings.js';
 import {Model, selectedUsage, panelProviders, thresholds, thresholdAt, windows, resetText, safeUrl} from '../../platforms/linux/model.js';
@@ -64,6 +64,32 @@ test('automatic exhausted primary falls back to paid quota', () => equal(selecte
 test('session selection keeps exhausted session visible', () => equal(selectedUsage({primary:{usedPercent:100},providerCost:{used:20,limit:80}}),100));
 test('hidden paid quota does not override standard usage', () => equal(selectedUsage({primary:{usedPercent:100},providerCost:{used:20,limit:80}},{hiddenWindows:['extraUsage']}),100));
 test('no quota is unavailable rather than reported as unused', () => equal(selectedUsage({}),null));
+test('TypeSafe billing and blocked snapshots reach the Linux view without fabricated percentages', async () => {
+    const model = new Model(prefs);
+    const scenario = GLib.getenv('USAGESTAT_FIXTURE_SCENARIO');
+    try {
+        model.providers = [{id: 'typesafe', enabled: true, source: 'web'}];
+        for (const name of ['typesafe-billing', 'typesafe-blocked']) {
+            GLib.setenv('USAGESTAT_FIXTURE_SCENARIO', name, true);
+            model.usage.set('typesafe', await fetchProviderUsage(model.providers[0], null, {cliPath: `${ROOT}/tests/fixtures/usagestat`}));
+            const view = model.snapshot().providers[0];
+            equal(view.percent, null);
+            equal(view.windows, []);
+            if (name === 'typesafe-billing') {
+                equal(view.error, '');
+                equal(view.lines.find(line => line.label === 'Balance').value, 'USD 4.98');
+            } else {
+                assert(view.error.includes('Cloudflare'));
+                equal(view.statusColor, '#ff5f57');
+                equal(view.text, 'Error');
+            }
+        }
+    } finally {
+        model.close();
+        if (scenario === null) GLib.unsetenv('USAGESTAT_FIXTURE_SCENARIO');
+        else GLib.setenv('USAGESTAT_FIXTURE_SCENARIO', scenario, true);
+    }
+});
 test('clamp each standard window before averaging', () => equal(selectedUsage({primary:{usedPercent:125},secondary:{usedPercent:-10}},{panelUsageTier:'auto'}),50));
 test('all extra window units and reset metadata survive', () => {
     const data={extraRateWindows:[{id:'api',title:'API',window:{usedPercent:22,used:22,limit:100,format:{kind:'count'},resetsAt:'2099-01-01'}}]};

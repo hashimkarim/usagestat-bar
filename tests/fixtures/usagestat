@@ -77,6 +77,8 @@ def main():
                 {"date": (today - datetime.timedelta(days=1)).isoformat(),
                  "totalCost": 1.25, "totalTokens": 1000},
             ])
+    elif scenario.get("snapshot"):
+        result = {"providerId": provider, "fetchedAt": data["fetchedAt"], **scenario["snapshot"]}
     elif scenario.get("legacy"):
         result = {"provider": provider, "usage": {
             "updatedAt": data["fetchedAt"], "primary": {"usedPercent": used},
