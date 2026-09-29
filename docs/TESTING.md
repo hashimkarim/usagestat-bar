@@ -3,7 +3,8 @@
 For the new Linux ports, use the [Linux desktop lab](LINUX.md#repeatable-desktop-checks-from-gnome).
 It runs real panels/compositors in isolated containers, installs the release
 bundle, uses these same fixtures, and retains screenshots and results. The
-[Linux parity report](reports/linux-ports.md) records coverage and gaps.
+[current roadmap](ROADMAP.md) records coverage and gaps, with links to the
+dated native and VM reports.
 
 ## Fast contract checks
 
@@ -76,8 +77,9 @@ verification therefore remains a separate real-session check. Portal,
 PipeWire, authentication-agent or shutdown-service warnings may occur in a
 minimal session; inspect them separately from application JavaScript errors.
 
-GNOME 50.4 is currently verified. The extension metadata still declares
-45–50; this run does not verify the other versions. See the
+The initial checks verified GNOME 50.4; the latest
+[native interaction report](reports/linux-port-fixes-2026-09-27.md) uses 50.5.
+The extension metadata still declares 45–50; these runs do not verify 45–49. See the
 [parity checklist](BASELINE.md) for further coverage still needed.
 
 ## Packaging checks

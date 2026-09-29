@@ -15,6 +15,11 @@ and panels. Windows and macOS follow. Large shared-code refactoring and a
 coordinated release pipeline belong to Phase 2; working, repeatable checks
 belong to every Phase 1 port.
 
+The [29 September roadmap review](ROADMAP.md) records the implemented Linux
+baseline and the next release work. The reusable contract/fixture deliverable
+is complete; target acceptance remains scoped to its evidence in #4–#13/#16.
+The reference above is historical, not the current `main` revision.
+
 ## Feature contract
 
 Each port must report every row as **passed**, **failed**, **untested**, or
@@ -22,6 +27,11 @@ Each port must report every row as **passed**, **failed**, **untested**, or
 limitation needs an explicit review before counting toward baseline completion.
 Do not silently omit a current feature because a generic tray API lacks it.
 Desktop-specific controls may use a documented native equivalent.
+
+The five panel-edge checks for GNOME and Polybar are reviewed compatibility
+skips, counted separately from passes and failures. They do not
+block the supported baseline. Other untested scenarios and visual differences
+still require their own evidence or review; see [result classification](TESTING.md#port-acceptance-report-template).
 
 | ID | Required behavior | Reference implementation | Current automated coverage |
 | --- | --- | --- | --- |
@@ -37,9 +47,9 @@ Desktop-specific controls may use a documented native equivalent.
 | DATA-4 | Used/remaining modes change meter fill, text and logo fill consistently; thresholds still refer to **used** quota. | `extension.js`: `_displayPercent`, `_formatPercent`, `_panelProviderIcon` | Native checks and screenshots |
 | DATA-5 | Display optional provider cost, today/yesterday/period cost summaries, badges/text, and pace information. Missing cost must not hide quota. | `cli.js`: `normalizeCostSummary`; extension cost/pace renderers | Enriched native fixture views cover cost/currency, credits, code review, pace/ETA and service status |
 | VIEW-1 | Show a visible panel indicator, provider switcher, details, child sources, refresh/loading/error states and timestamps. | `extension.js`: `_render`, `_renderProvider`, `_renderChildProvider` | Native checks and screenshots; loading interaction still manual |
-| VIEW-2 | Configure bar/percent/logo/text components and ordering, multiple providers, pinned providers, multiple usage bars, spacing and orientation. | GNOME settings schema; `_renderPanel`, `AppearancePage` | Pins/component order, three windows and six vertical panel profiles; tray/Polybar limits remain |
-| VIEW-3 | Configure normal/threshold/neutral colors, provider icon styles, custom icons, and full/vertical/horizontal/pie logo fills. Preserve SVG presentation attributes. | `extension.js`: icon helpers; `prefs.js`: `AppearancePage` | SVG/raster fill contracts, custom threshold colors, light/dark preferences; host/theme limits remain |
-| VIEW-4 | Support panel placement/index, popup alignment, scroll switching, keyboard interaction and readable scaled/multi-monitor layouts. | GNOME panel/settings handlers | Native clicks, basic keys, six vertical profiles, VM 1×/2× and Sway mixed-scale virtual outputs; full accessibility/physical monitors remain |
+| VIEW-2 | Configure bar/percent/logo/text components and ordering, multiple providers, pinned providers, multiple usage bars, spacing and orientation. | GNOME settings schema; `_renderPanel`, `AppearancePage` | Native adapters cover pins/component order, provider count, supported edges and section geometry; optional tray and Polybar graphical limits remain explicit |
+| VIEW-3 | Configure normal/threshold/neutral colors, provider icon styles, custom icons, and full/vertical/horizontal/pie logo fills. Preserve SVG presentation attributes. | `extension.js`: icon helpers; `prefs.js`: `AppearancePage` | SVG/raster and malformed/intrinsic-size custom SVG contracts, 155 Polybar glyph comparisons, light/dark preferences; full theme/fill combinations remain |
+| VIEW-4 | Support panel placement/index, popup alignment, scroll switching, keyboard interaction and readable scaled/multi-monitor layouts. | GNOME panel/settings handlers | All 12 profiles have native input/section-alignment evidence; panel-edge compatibility skips are explicit. Older VM 1×/2× and Sway virtual-output checks do not cover full accessibility/physical displays |
 | ALERT-1 | Choose the highest crossed custom threshold. First observation does not notify; repeated/downward readings do not notify; a later enabled upward crossing does. | `extension.js`: `_thresholdForUsedPercent`, `_maybeNotifyThreshold` | Actual native notification creation checked |
 | PREF-1 | Open usable Behaviour, Appearance, Providers and Tools preferences, including per-provider edit entry points. | `prefs.js`; `_openProviderPreferences` | Four pages, provider entry points and representative widget flows on two distro/library generations |
 | ACTION-1 | Expose the current status/dashboard links, reset formats, refresh controls, CLI/plugin setup and terminal/tool actions. | `extension.js`, `prefs.js` | Real URL handler and XTerm/backend launch in VMs; live installers/authentication and other terminals remain |
@@ -115,5 +125,7 @@ behavior.
 
 See [testing instructions](TESTING.md) and the
 [initial GNOME report](reports/gnome-50.4.md). The
-[Linux acceptance report](reports/linux-acceptance.md) records native desktop
-checks, VM lifecycle/preferences, live-provider evidence and remaining parity work.
+[September 7 acceptance report](reports/linux-acceptance.md) retains VM lifecycle,
+preferences and live-provider evidence. Use the
+[September 27 fix report](reports/linux-port-fixes-2026-09-27.md) for the latest
+native matrix and the [roadmap](ROADMAP.md) for current remaining work.

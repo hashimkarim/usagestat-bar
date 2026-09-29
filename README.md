@@ -2,7 +2,7 @@
 
 AI provider usage in your Linux panel, using the `usagestat` CLI. The existing GNOME extension now has ports for Plasma, Cinnamon, MATE, Xfce, LXQt, Budgie, COSMIC, Waybar and Polybar.
 
-For other Linux desktops, see [installation and desktop checks](docs/LINUX.md) and the [current parity report](docs/reports/linux-acceptance.md). Windows and macOS are tracked in the [platform roadmap](https://github.com/Hashim-K/usagestat-bar/issues/2).
+For other Linux desktops, see [installation and desktop checks](docs/LINUX.md) and the [current roadmap and support coverage](docs/ROADMAP.md). The latest native results are **388 passed, 0 failed, 5 compatibility skips**; see the [verification report](docs/reports/linux-port-fixes-2026-09-27.md). Coordinated Linux verification/releases are next; Windows and macOS are later ports.
 
 ## Install
 
@@ -84,7 +84,7 @@ Run the credential-free baseline checks:
 See [testing instructions](docs/TESTING.md), the
 [Linux desktop lab](docs/LINUX.md#repeatable-desktop-checks-from-gnome), the
 [current-version port baseline](docs/BASELINE.md), and the
-[platform roadmap](https://github.com/Hashim-K/usagestat-bar/issues/2).
+[current roadmap](docs/ROADMAP.md).
 
 Link the repo into the extensions directory for live reloading:
 

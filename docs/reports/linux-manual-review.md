@@ -4,6 +4,13 @@ The [Plasma manual review](plasma-manual-review.md) is the visual baseline.
 Its feedback has been carried into the other Linux integrations. All ten
 profiles below remain **pending the user's manual review**.
 
+The [27 September native recordings](linux-port-fixes-2026-09-27.md) pass the
+supported scenarios for all profiles. Native LXQt, Budgie and COSMIC adapters
+and Polybar logo glyphs supersede the earlier tray-only descriptions in these
+chronological notes. The queue below names the current integrations; passing
+automated checks does not change the user's manual review status. See the
+[current roadmap](../ROADMAP.md) for release and compatibility priorities.
+
 The subsequent [recorded interaction validation on 2026-09-09](linux-interaction-validation-2026-09-09.md)
 adds native input checks, videos and screenshots for all Linux profiles. Its
 results supersede the earlier statements below about automated checks not yet
@@ -29,9 +36,9 @@ settings are disposable. No automated interactions or screenshots run.
 | `cinnamon` | Native applet and shared usage application | Pending |
 | `mate` | Native applet and shared usage application | Pending |
 | `xfce` | Native panel plugin and shared usage application | Pending |
-| `lxqt` | Tray icons and shared usage application | Pending |
-| `budgie` | Tray icons and shared usage application | Pending |
-| `cosmic` | Status-area icons and shared usage application | Pending |
+| `lxqt` | Native panel plugin and shared usage application | Pending |
+| `budgie` | Native panel applet and shared usage application | Pending |
+| `cosmic` | Native hosted applet and popup | Pending |
 | `sway` | Native Waybar widget and shared usage application | Pending |
 | `hyprland` | Native Waybar widget and shared usage application | Pending |
 | `i3` | Polybar module and shared usage application | Pending |

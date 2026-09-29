@@ -2,10 +2,10 @@
 
 The first ports are available in this repository. They use the existing
 `usagestat` CLI, provider configuration, icons and preferences. They are
-**ports checked in desktop labs and disposable VMs**, with remaining appearance limits
-tracked in [the roadmap](https://github.com/Hashim-K/usagestat-bar/issues/2).
-See the [parity report](reports/linux-acceptance.md) before treating a combination
-as fully supported. Windows and macOS remain separate, later tasks.
+**ports checked in desktop labs and disposable VMs**. The
+[current roadmap and coverage matrix](ROADMAP.md) distinguishes the implemented
+baseline from remaining acceptance. Coordinated Linux verification/releases are
+next; Windows and macOS remain separate, later tasks.
 
 **Plasma is tentatively complete**, following the user's manual review on
 2026-09-07 with the real backend. The [manual review record](reports/plasma-manual-review.md)
@@ -18,7 +18,8 @@ records the current native adapters. The [earlier audit](reports/linux-section-a
 explains why the original whole-panel alignment passes were withdrawn.
 The [27 September fix report](reports/linux-port-fixes-2026-09-27.md) covers
 provider-icon validation, custom SVG rendering and Cinnamon tooltip fixes,
-with 388 passing native checks across all 12 Linux profiles.
+with 388 passed, zero failed and five accepted compatibility skips across all
+12 Linux profiles. Those skips do not block the supported Linux baseline.
 
 ## Choose the integration
 
@@ -95,9 +96,10 @@ toggle fits its height to the selected provider, including short loading and
 error states. Hyprland caps it to the available monitor area and keeps it
 beside the panel when its height changes. All integrations share GTK
 preferences. Both details views use the same currency formatting and compact
-token counts (`K`, `M`, `B`) as GNOME. Square tray slots and text-only Polybar
-modules retain appearance limits; they are documented
-in the report and are not claimed as full graphical parity.
+token counts (`K`, `M`, `B`) as GNOME. Square tray slots remain host-controlled.
+Polybar has monochrome logo glyphs but retains limits for color SVGs, custom
+images, partial logo fills and graphical multi-row layouts; see the
+[Polybar integration](../platforms/polybar/README.md) and [roadmap](ROADMAP.md).
 
 ## Build and install
 
@@ -542,13 +544,15 @@ python3 tests/linux/package.py
 ```
 
 The Linux package test also checks desktop-launcher quoting and uses GJS.
-The [acceptance report](reports/linux-acceptance.md) records current VM
+The [September 7 acceptance report](reports/linux-acceptance.md) records older VM
 login/upgrade/uninstall, live-provider, theme and display coverage. Additional
 versions, distro/session combinations, accessibility, input and physical-display
 cases remain in [#16](https://github.com/Hashim-K/usagestat-bar/issues/16).
 A nested panel session does not certify a whole distro or a full login session.
-Coordinated CI, interactive previews, native distro packages and simultaneous
-release publishing remain in [Phase 2](https://github.com/Hashim-K/usagestat-bar/issues/17).
+Interactive previews and desktop/VM runners already exist. Coordinating their
+checks and producing versioned release artifacts is the next
+[Phase 2 task](https://github.com/hashimkarim/usagestat-bar/issues/17). Publishing
+to native distro repositories is a separate destination choice.
 
 ### Recorded interaction checks
 

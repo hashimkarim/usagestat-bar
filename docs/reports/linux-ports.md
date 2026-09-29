@@ -1,7 +1,9 @@
 # Initial Linux ports — 2026-09-06
 
-Historical report. See the [2026-09-07 acceptance report](linux-acceptance.md)
-for the current implementation, VM checks and remaining gaps.
+Historical report. See the [current roadmap](../ROADMAP.md) and
+[27 September native report](linux-port-fixes-2026-09-27.md) for current status.
+The [7 September acceptance report](linux-acceptance.md) retains the older
+VM and live-provider evidence.
 
 Status: **working initial ports with passing fixture checks; full baseline
 acceptance remains open**. These results do not certify every Linux distro,

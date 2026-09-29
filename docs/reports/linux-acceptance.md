@@ -1,5 +1,11 @@
 # Linux port acceptance — 2026-09-07
 
+**Historical evidence.** Use the [current roadmap](../ROADMAP.md) and
+[27 September native report](linux-port-fixes-2026-09-27.md) for current status.
+The counts and VM/live-provider evidence below retain their original scope.
+Subsequent native LXQt/Budgie/COSMIC adapters and Polybar logo glyphs supersede
+the corresponding tray-only/initials-only implementation descriptions here.
+
 The Linux ports now have richer panel rendering and repeatable desktop, preferences
 and VM lifecycle checks. **The tested combinations pass; full Linux baseline
 acceptance remains open for the explicit limitations and untested combinations
@@ -16,7 +22,7 @@ Polybar were repeated on `3763642` with screenshots delayed for their polling
 interval. Final VMs use `ca215bf`, including the subsequent symbolic-icon
 corrections. GNOME regression uses `9113641`. Every recorded run has a clean
 tracked source tree; exact per-run revisions are retained below and in JSON.
-The work is committed locally and has not been published.
+The work was local at the time of this report and is now included in `main`.
 
 Reference contract: [BASELINE.md](../BASELINE.md). Machine-readable results:
 [linux-acceptance.json](linux-acceptance.json).
@@ -212,6 +218,9 @@ remain open for that review and the outstanding environment matrix.
 | LIFE-2 | Passed | Clean install/upgrade/login/reboot/uninstall on Ubuntu 24.04 and Fedora 44 Xfce x86_64; native bundle installation in all desktop labs. Other distro/session/architecture combinations remain in #16. |
 
 ## Remaining work
+
+The following was recorded on 7 September. The [current roadmap](../ROADMAP.md)
+tracks what remains after later fixes.
 
 - **Tray appearance:** LXQt, Budgie and COSMIC use compact square slots. Three
   rings plus logos, percentages and initials can become cramped at small host
