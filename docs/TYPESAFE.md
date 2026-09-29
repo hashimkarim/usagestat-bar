@@ -13,18 +13,36 @@ still owns UI interaction, screenshots, video capture and deterministic checks.
 
 ## Local API key
 
-Store the Jev key outside the repository in:
+Store the Jev key in this checkout's ignored secrets directory:
 
 ```text
-~/.config/usagestat-bar/secrets/typesafe.env
+./configs/secrets/typesafe.env
 ```
 
 Use a directory readable only by your user (`0700`) and a file readable/writable
-only by your user (`0600`). The file contains:
+only by your user (`0600`) on filesystems that support those permissions. Git
+ignores the entire `configs/secrets/` directory, and release packages include
+only their explicit runtime file lists. The file contains:
 
 ```dotenv
 TYPESAFE_API_KEY=your-key-here
 ```
+
+For a fresh checkout, copy the checked-in
+[empty template](../configs/typesafe.env.example) without overwriting an existing
+key:
+
+```sh
+install -d -m 700 configs/secrets
+(umask 077; set -C; cat configs/typesafe.env.example > configs/secrets/typesafe.env)
+```
+
+Verify those permissions before entering a key. This development checkout's
+`/mnt/shared` filesystem ignores `chmod`, so its project-local path is a symlink
+to `~/.config/usagestat-bar/secrets/typesafe.env` instead. That target has mode
+`0600` inside a `0700` directory. Edit the project-local path normally; keep the
+symlink intact. Other checkouts on a filesystem with Unix permissions can use a
+regular private file directly in `configs/secrets/`.
 
 Edit this file locally, then tell the agent the key is ready. Do not paste the
 key into the conversation. The agent must read the value privately and inject
