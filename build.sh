@@ -18,7 +18,7 @@ glib-compile-schemas --strict "$stage_dir/schemas/"
 mkdir -p "$(dirname "$out")"
 rm -f "$out"
 cd "$stage_dir"
-zip -qr "$out" \
+zip -qr "$stage_dir/full.zip" \
     extension.js \
     prefs.js \
     preferences.js \
@@ -35,5 +35,8 @@ zip -qr "$out" \
     assets/ \
     LICENSE \
     -x "schemas/.fuse_hidden*" "schemas/gschemas.compiled"
+
+python3 "$source_dir/scripts/prepare-gnome-store.py" --archive "$stage_dir/full.zip" \
+    --sha256 "$(sha256sum "$stage_dir/full.zip" | cut -d ' ' -f 1)" --output "$out" >/dev/null
 
 echo "Built: $out"

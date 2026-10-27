@@ -27,6 +27,16 @@ with zipfile.ZipFile(archive) as package:
     assert {name.split('/')[0] for name in paths} == expected
     assert 'schemas/gschemas.compiled' not in paths
     assert json.loads(package.read('metadata.json'))['uuid'] == 'usagestat-bar@hashimkarim'
+    prefix = 'assets/provider-icons/'
+    assert not any(name.startswith(prefix + folder) for name in paths for folder in ['react/', 'sources/', 'scripts/'])
+    assert prefix + 'svg-data.js' not in paths
+    assert prefix + 'LICENSE' in paths and prefix + 'NOTICE' in paths
+    catalog = json.loads(package.read(prefix + 'manifest.json'))
+    for icon in catalog['icons'].values():
+        for artwork in [icon, *icon.get('artworks', {}).values()]:
+            for style in ['monochrome', 'color']:
+                if style in artwork:
+                    assert prefix + artwork[style] in paths
     for name in paths:
         if not name.endswith('/'):
             assert Path(target, name).read_bytes() == package.read(name), name

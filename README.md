@@ -1,8 +1,10 @@
 # UsageStat Bar
 
+The GNOME extension’s [0.2.0 release](https://github.com/hashimkarim/usagestat-bar/releases/tag/v0.2.0) adds **Preferences → CLI → Provider icons**, with daily updates and manual refresh. Install this bar update once; future icon releases arrive independently. The extension release targets GNOME Shell 50.
+
 AI provider usage in your Linux panel, using the `usagestat` CLI. The existing GNOME extension now has ports for Plasma, Cinnamon, MATE, Xfce, LXQt, Budgie, COSMIC, Waybar and Polybar.
 
-For other Linux desktops, see [installation and desktop checks](docs/LINUX.md) and the [current roadmap and support coverage](docs/ROADMAP.md). The September 27 native results are **388 passed, 0 failed, 5 compatibility skips**; see the [verification report](docs/reports/linux-port-fixes-2026-09-27.md). [Linux release automation](docs/RELEASING.md) builds candidate packages and requires native screenshots, videos and passing scenarios before publication. The native CI runner is awaiting host selection; the first release is pending. Windows and macOS are later ports.
+For other Linux desktops, see [installation and desktop checks](docs/LINUX.md) and the [current roadmap and support coverage](docs/ROADMAP.md). The September 27 native results are **388 passed, 0 failed, 5 compatibility skips**; see the [verification report](docs/reports/linux-port-fixes-2026-09-27.md). [Linux release automation](docs/RELEASING.md) builds candidate packages and requires native screenshots, videos and passing scenarios before publication. The native CI runner is awaiting host selection; [v0.1.0-rc.1 is published](https://github.com/hashimkarim/usagestat-bar/releases/tag/v0.1.0-rc.1). Windows and macOS are later ports.
 
 The [September 29 release rehearsal](docs/reports/linux-release-rehearsal-2026-09-29.md) repeated the full native matrix against clean-commit candidate archives, with the same **388 passes / 5 skips**, validated screenshots and twelve decoded videos.
 

@@ -3,8 +3,10 @@
 The first destination is **GitHub Releases**, with a GNOME extension ZIP,
 a portable Linux runtime archive, and a separate complete source archive for
 [distro packaging](DISTRIBUTION.md). The runtime serves all eleven other native
-profiles. No product release has been published by this setup work. The initial
-version in `release.json` is `0.1.0-rc.1`.
+profiles. The full Linux candidate `0.1.0-rc.1` is published. Version `0.2.0`
+is a GNOME-only minor release: it publishes the tested extension ZIP and source,
+without claiming a new full desktop matrix. Full Linux releases still require
+the complete candidate/evidence gates below.
 
 The hosted [Linux checks workflow](../.github/workflows/ci.yml) runs on main,
 PRs and manual requests. It runs the shared/Linux contracts, both package

@@ -2,7 +2,9 @@
   "uuid": "usagestat-bar@hashimkarim",
   "name": "UsageStat Bar",
   "description": "GNOME panel usage meter for usagestat CLI providers.",
-  "shell-version": ["45", "46", "47", "48", "49", "50"],
+  "shell-version": [
+    "50"
+  ],
   "settings-schema": "org.gnome.shell.extensions.usagestat-bar",
   "gettext-domain": "usagestat-bar",
   "url": "https://github.com/Hashim-K/usagestat-bar",
@@ -11,5 +13,7 @@
     "paypal": "hashimkarim",
     "github": "Hashim-K",
     "kofi": "hashimkarim"
-  }
+  },
+  "version": 2,
+  "version-name": "0.2.0"
 }

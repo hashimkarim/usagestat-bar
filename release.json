@@ -1,8 +1,10 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.0-rc.1",
-  "gnomeVersion": 1,
-  "gnomeShellVersions": ["50"],
+  "version": "0.2.0",
+  "gnomeVersion": 2,
+  "gnomeShellVersions": [
+    "50"
+  ],
   "repository": "hashimkarim/usagestat-bar",
   "architecture": "x86_64",
   "backend": {
