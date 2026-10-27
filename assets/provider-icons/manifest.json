@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "packageVersion": "1.0.0",
+  "packageVersion": "1.1.0",
   "icons": {
     "abacus": {
       "name": "Abacus",
@@ -9,6 +9,18 @@
         "abacus"
       ],
       "searchTerms": [],
+      "colourTheme": []
+    },
+    "abliteration": {
+      "name": "abliteration.ai",
+      "monochrome": "abliteration.svg",
+      "alternatives": [
+        "abliteration"
+      ],
+      "searchTerms": [
+        "abliteration.ai"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-abliteration.svg",
       "colourTheme": []
     },
     "ace": {
@@ -80,6 +92,18 @@
           "monochrome": "adobefirefly-text.svg"
         }
       }
+    },
+    "aerostack": {
+      "name": "Aerostack",
+      "monochrome": "aerostack.svg",
+      "alternatives": [
+        "aerostack"
+      ],
+      "searchTerms": [
+        "Aerostack"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-aerostack.svg",
+      "colourTheme": []
     },
     "agentvoice": {
       "name": "AgentVoice",
@@ -245,6 +269,18 @@
         }
       }
     },
+    "aiand": {
+      "name": "ai&",
+      "monochrome": "aiand.svg",
+      "alternatives": [
+        "aiand"
+      ],
+      "searchTerms": [
+        "ai&"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-aiand.svg",
+      "colourTheme": []
+    },
     "aihubmix": {
       "name": "AiHubMix",
       "monochrome": "aihubmix.svg",
@@ -290,6 +326,29 @@
       "artworks": {
         "text": {
           "monochrome": "aimass-text.svg"
+        }
+      }
+    },
+    "aimlapi": {
+      "name": "AIMLAPI",
+      "monochrome": "aimlapi.svg",
+      "alternatives": [
+        "aimlapi"
+      ],
+      "fullName": "AI/ML API",
+      "category": "provider",
+      "searchTerms": [
+        "AI/ML API",
+        "AIMLAPI"
+      ],
+      "upstreamUrl": "https://icons.lobehub.com/components/aimlapi",
+      "primaryColour": "#000000",
+      "colourTheme": [
+        "#000000"
+      ],
+      "artworks": {
+        "text": {
+          "monochrome": "aimlapi-text.svg"
         }
       }
     },
@@ -385,6 +444,19 @@
           "monochrome": "aistudio-text.svg"
         }
       }
+    },
+    "aixy": {
+      "name": "Aixy",
+      "monochrome": "aixy.svg",
+      "alternatives": [
+        "aixy"
+      ],
+      "searchTerms": [
+        "Aixy"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-aixy.svg",
+      "colourTheme": [],
+      "color": "aixy-color.svg"
     },
     "akashchat": {
       "name": "AkashChat",
@@ -737,7 +809,7 @@
       "searchTerms": [
         "Appwrite"
       ],
-      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/382",
+      "upstreamUrl": "https://icons.lobehub.com/components/appwrite",
       "primaryColour": "#FD366E",
       "colourTheme": [
         "#FD366E"
@@ -849,6 +921,29 @@
       ],
       "searchTerms": [],
       "colourTheme": []
+    },
+    "autolith": {
+      "name": "Autolith",
+      "monochrome": "autolith.svg",
+      "alternatives": [
+        "autolith"
+      ],
+      "fullName": "Autolith",
+      "category": "application",
+      "searchTerms": [
+        "Autolith"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/433",
+      "primaryColour": "#42B28A",
+      "colourTheme": [
+        "#42B28A"
+      ],
+      "color": "autolith-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "autolith-text.svg"
+        }
+      }
     },
     "automatic": {
       "name": "Automatic",
@@ -1166,6 +1261,18 @@
         }
       }
     },
+    "bifrost": {
+      "name": "Bifrost",
+      "monochrome": "bifrost.svg",
+      "alternatives": [
+        "bifrost"
+      ],
+      "searchTerms": [
+        "Bifrost"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-bifrost.svg",
+      "colourTheme": []
+    },
     "bilibili": {
       "name": "bilibili",
       "monochrome": "bilibili.svg",
@@ -1481,6 +1588,18 @@
         }
       }
     },
+    "chatbox": {
+      "name": "Chatbox AI",
+      "monochrome": "chatbox.svg",
+      "alternatives": [
+        "chatbox"
+      ],
+      "searchTerms": [
+        "Chatbox AI"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-chatbox.svg",
+      "colourTheme": []
+    },
     "chatglm": {
       "name": "ChatGLM",
       "monochrome": "chatglm.svg",
@@ -1516,10 +1635,10 @@
       "searchTerms": [
         "Cheaper Inference"
       ],
-      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/425",
-      "primaryColour": "#040D10",
+      "upstreamUrl": "https://icons.lobehub.com/components/cheaper-inference",
+      "primaryColour": "#CFF331",
       "colourTheme": [
-        "#040D10"
+        "#CFF331"
       ],
       "artworks": {
         "text": {
@@ -1647,6 +1766,18 @@
         }
       }
     },
+    "clawrouter": {
+      "name": "ClawRouter",
+      "monochrome": "clawrouter.svg",
+      "alternatives": [
+        "clawrouter"
+      ],
+      "searchTerms": [
+        "ClawRouter"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-clawrouter.svg",
+      "colourTheme": []
+    },
     "cline": {
       "name": "Cline",
       "monochrome": "cline.svg",
@@ -1668,6 +1799,18 @@
           "monochrome": "cline-text.svg"
         }
       }
+    },
+    "clinepass": {
+      "name": "ClinePass",
+      "monochrome": "clinepass.svg",
+      "alternatives": [
+        "clinepass"
+      ],
+      "searchTerms": [
+        "ClinePass"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-clinepass.svg",
+      "colourTheme": []
     },
     "clipdrop": {
       "name": "Clipdrop",
@@ -1791,6 +1934,18 @@
           "monochrome": "codegeex-text.svg"
         }
       }
+    },
+    "coderabbit": {
+      "name": "CodeRabbit",
+      "monochrome": "coderabbit.svg",
+      "alternatives": [
+        "coderabbit"
+      ],
+      "searchTerms": [
+        "CodeRabbit"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-coderabbit.svg",
+      "colourTheme": []
     },
     "codex": {
       "name": "Codex",
@@ -2074,6 +2229,18 @@
         }
       }
     },
+    "cosmic": {
+      "name": "Cosmic AI",
+      "monochrome": "cosmic.svg",
+      "alternatives": [
+        "cosmic"
+      ],
+      "searchTerms": [
+        "Cosmic AI"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-cosmic.svg",
+      "colourTheme": []
+    },
     "coze": {
       "name": "Coze",
       "monochrome": "coze.svg",
@@ -2130,6 +2297,30 @@
         "crof"
       ],
       "searchTerms": [],
+      "colourTheme": []
+    },
+    "crofai": {
+      "name": "CrofAI",
+      "monochrome": "crofai.svg",
+      "alternatives": [
+        "crofai"
+      ],
+      "searchTerms": [
+        "CrofAI"
+      ],
+      "upstreamUrl": "https://github.com/barramee27/crossusage/blob/ba1ad530b2148ba4be738332cb102858e9bdcc55/plugins/crofai/icon.svg",
+      "colourTheme": []
+    },
+    "crossmodel": {
+      "name": "CrossModel",
+      "monochrome": "crossmodel.svg",
+      "alternatives": [
+        "crossmodel"
+      ],
+      "searchTerms": [
+        "CrossModel"
+      ],
+      "upstreamUrl": "https://github.com/Finesssee/Win-CodexBar/blob/31b10ce42993d3be2f041e169e82ef174d24c7ec/apps/desktop-tauri/src/components/providers/icons/ProviderIcon-crossmodel.svg",
       "colourTheme": []
     },
     "crusoe": {
@@ -2319,6 +2510,18 @@
         }
       }
     },
+    "deepgram": {
+      "name": "Deepgram",
+      "monochrome": "deepgram.svg",
+      "alternatives": [
+        "deepgram"
+      ],
+      "searchTerms": [
+        "Deepgram"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-deepgram.svg",
+      "colourTheme": []
+    },
     "deepinfra": {
       "name": "DeepInfra",
       "monochrome": "deepinfra.svg",
@@ -2434,6 +2637,18 @@
           "monochrome": "devin-text.svg"
         }
       }
+    },
+    "devpass": {
+      "name": "DevPass",
+      "monochrome": "devpass.svg",
+      "alternatives": [
+        "devpass"
+      ],
+      "searchTerms": [
+        "DevPass"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-devpass.svg",
+      "colourTheme": []
     },
     "deyin": {
       "name": "Deyin",
@@ -2574,6 +2789,29 @@
         }
       }
     },
+    "dothoosh": {
+      "name": "DotHoosh",
+      "monochrome": "dothoosh.svg",
+      "alternatives": [
+        "dothoosh"
+      ],
+      "fullName": "DotHoosh",
+      "category": "provider",
+      "searchTerms": [
+        "DotHoosh"
+      ],
+      "upstreamUrl": "https://icons.lobehub.com/components/dot-hoosh",
+      "primaryColour": "#F4600C",
+      "colourTheme": [
+        "#F4600C"
+      ],
+      "color": "dothoosh-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "dothoosh-text.svg"
+        }
+      }
+    },
     "dotsstudio": {
       "name": "Dots Studio",
       "monochrome": "dotsstudio.svg",
@@ -2643,6 +2881,29 @@
         }
       }
     },
+    "easyai": {
+      "name": "Easy AI",
+      "monochrome": "easyai.svg",
+      "alternatives": [
+        "easyai"
+      ],
+      "fullName": "Easy AI",
+      "category": "application",
+      "searchTerms": [
+        "Easy AI"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/453",
+      "primaryColour": "#7B458E",
+      "colourTheme": [
+        "#7B458E"
+      ],
+      "color": "easyai-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "easyai-text.svg"
+        }
+      }
+    },
     "elevenlabs": {
       "name": "ElevenLabs",
       "monochrome": "elevenlabs.svg",
@@ -2698,7 +2959,7 @@
       "searchTerms": [
         "EmpirioLabs AI"
       ],
-      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/338",
+      "upstreamUrl": "https://icons.lobehub.com/components/empirio-labs",
       "primaryColour": "#0A7CFF",
       "colourTheme": [
         "#0A7CFF"
@@ -2996,6 +3257,28 @@
         }
       }
     },
+    "flexai": {
+      "name": "FlexAI",
+      "monochrome": "flexai.svg",
+      "alternatives": [
+        "flexai"
+      ],
+      "fullName": "FlexAI",
+      "category": "provider",
+      "searchTerms": [
+        "FlexAI"
+      ],
+      "upstreamUrl": "https://icons.lobehub.com/components/flex-ai",
+      "primaryColour": "#00349F",
+      "colourTheme": [
+        "#00349F"
+      ],
+      "artworks": {
+        "text": {
+          "monochrome": "flexai-text.svg"
+        }
+      }
+    },
     "flora": {
       "name": "Flora",
       "monochrome": "flora.svg",
@@ -3084,6 +3367,19 @@
           "monochrome": "friendli-text.svg"
         }
       }
+    },
+    "futureagi": {
+      "name": "Future AGI",
+      "monochrome": "futureagi.svg",
+      "alternatives": [
+        "futureagi"
+      ],
+      "searchTerms": [
+        "Future AGI"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-futureagi.svg",
+      "colourTheme": [],
+      "color": "futureagi-color.svg"
     },
     "gemini": {
       "name": "Gemini",
@@ -3246,6 +3542,18 @@
           "monochrome": "githubcopilot-text.svg"
         }
       }
+    },
+    "gitkraken": {
+      "name": "GitKraken AI",
+      "monochrome": "gitkraken.svg",
+      "alternatives": [
+        "gitkraken"
+      ],
+      "searchTerms": [
+        "GitKraken AI"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-gitkraken.svg",
+      "colourTheme": []
     },
     "glama": {
       "name": "Glama",
@@ -3465,7 +3773,7 @@
       "searchTerms": [
         "GreenPT"
       ],
-      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/372",
+      "upstreamUrl": "https://icons.lobehub.com/components/green-pt",
       "primaryColour": "#9BE755",
       "colourTheme": [
         "#9BE755"
@@ -3521,6 +3829,28 @@
       "artworks": {
         "text": {
           "monochrome": "grok-text.svg"
+        }
+      }
+    },
+    "grokbot": {
+      "name": "Grok Bot",
+      "monochrome": "grokbot.svg",
+      "alternatives": [
+        "grokbot"
+      ],
+      "fullName": "Grok Bot",
+      "category": "application",
+      "searchTerms": [
+        "Grok Bot"
+      ],
+      "upstreamUrl": "https://icons.lobehub.com/components/grok-bot",
+      "primaryColour": "#000000",
+      "colourTheme": [
+        "#000000"
+      ],
+      "artworks": {
+        "text": {
+          "monochrome": "grokbot-text.svg"
         }
       }
     },
@@ -3659,6 +3989,18 @@
           "monochrome": "hefu-text.svg"
         }
       }
+    },
+    "helmcode": {
+      "name": "Helmcode",
+      "monochrome": "helmcode.svg",
+      "alternatives": [
+        "helmcode"
+      ],
+      "searchTerms": [
+        "Helmcode"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-helmcode.svg",
+      "colourTheme": []
     },
     "hermesagent": {
       "name": "Hermes Agent",
@@ -3827,6 +4169,18 @@
         }
       }
     },
+    "hyper": {
+      "name": "Charm Hyper",
+      "monochrome": "hyper.svg",
+      "alternatives": [
+        "hyper"
+      ],
+      "searchTerms": [
+        "Charm Hyper"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-hyper.svg",
+      "colourTheme": []
+    },
     "hyperbolic": {
       "name": "Hyperbolic",
       "monochrome": "hyperbolic.svg",
@@ -3872,6 +4226,19 @@
           "monochrome": "ibm-text.svg"
         }
       }
+    },
+    "ibmbob": {
+      "name": "IBM Bob",
+      "monochrome": "ibmbob.svg",
+      "alternatives": [
+        "ibmbob"
+      ],
+      "searchTerms": [
+        "IBM Bob"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-ibmbob.svg",
+      "colourTheme": [],
+      "color": "ibmbob-color.svg"
     },
     "ideogram": {
       "name": "Ideogram",
@@ -4120,6 +4487,29 @@
       "artworks": {
         "text": {
           "monochrome": "ionet-text.svg"
+        }
+      }
+    },
+    "jeikcode": {
+      "name": "JeikCode",
+      "monochrome": "jeikcode.svg",
+      "alternatives": [
+        "jeikcode"
+      ],
+      "fullName": "JeikCode",
+      "category": "application",
+      "searchTerms": [
+        "JeikCode"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/454",
+      "primaryColour": "#38BDF8",
+      "colourTheme": [
+        "#38BDF8"
+      ],
+      "color": "jeikcode-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "jeikcode-text.svg"
         }
       }
     },
@@ -4532,6 +4922,18 @@
         }
       }
     },
+    "langdock": {
+      "name": "Langdock",
+      "monochrome": "langdock.svg",
+      "alternatives": [
+        "langdock"
+      ],
+      "searchTerms": [
+        "Langdock"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-langdock.svg",
+      "colourTheme": []
+    },
     "langfuse": {
       "name": "Langfuse",
       "monochrome": "langfuse.svg",
@@ -4672,6 +5074,42 @@
         }
       }
     },
+    "ling": {
+      "name": "Ling",
+      "monochrome": "ling.svg",
+      "alternatives": [
+        "ling"
+      ],
+      "fullName": "Ling (\u767e\u7075)",
+      "category": "model",
+      "searchTerms": [
+        "Ling (\u767e\u7075)",
+        "Ling"
+      ],
+      "upstreamUrl": "https://icons.lobehub.com/components/ling",
+      "primaryColour": "#144DFF",
+      "colourTheme": [
+        "#144DFF"
+      ],
+      "color": "ling-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "ling-text.svg"
+        }
+      }
+    },
+    "linkup": {
+      "name": "Linkup",
+      "monochrome": "linkup.svg",
+      "alternatives": [
+        "linkup"
+      ],
+      "searchTerms": [
+        "Linkup"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-linkup.svg",
+      "colourTheme": []
+    },
     "liquid": {
       "name": "Liquid",
       "monochrome": "liquid.svg",
@@ -4693,6 +5131,30 @@
           "monochrome": "liquid-text.svg"
         }
       }
+    },
+    "litellm": {
+      "name": "LiteLLM",
+      "monochrome": "litellm.svg",
+      "alternatives": [
+        "litellm"
+      ],
+      "searchTerms": [
+        "LiteLLM"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-litellm.svg",
+      "colourTheme": []
+    },
+    "lithosai": {
+      "name": "LithosAI",
+      "monochrome": "lithosai.svg",
+      "alternatives": [
+        "lithosai"
+      ],
+      "searchTerms": [
+        "LithosAI"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-lithosai.svg",
+      "colourTheme": []
     },
     "livekit": {
       "name": "LiveKit",
@@ -4797,7 +5259,7 @@
       "searchTerms": [
         "LLM Gateway"
       ],
-      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/373",
+      "upstreamUrl": "https://icons.lobehub.com/components/llm-gateway",
       "primaryColour": "#000000",
       "colourTheme": [
         "#000000"
@@ -4807,6 +5269,30 @@
           "monochrome": "llmgateway-text.svg"
         }
       }
+    },
+    "llmman": {
+      "name": "llmman",
+      "monochrome": "llmman.svg",
+      "alternatives": [
+        "llmman"
+      ],
+      "searchTerms": [
+        "llmman"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-llmman.svg",
+      "colourTheme": []
+    },
+    "llmproxy": {
+      "name": "LLM Proxy",
+      "monochrome": "llmproxy.svg",
+      "alternatives": [
+        "llmproxy"
+      ],
+      "searchTerms": [
+        "LLM Proxy"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-llmproxy.svg",
+      "colourTheme": []
     },
     "lmstudio": {
       "name": "LM Studio",
@@ -4963,6 +5449,28 @@
       "artworks": {
         "text": {
           "monochrome": "magic-text.svg"
+        }
+      }
+    },
+    "magpie": {
+      "name": "Magpie",
+      "monochrome": "magpie.svg",
+      "alternatives": [
+        "magpie"
+      ],
+      "fullName": "Magpie",
+      "category": "provider",
+      "searchTerms": [
+        "Magpie"
+      ],
+      "upstreamUrl": "https://icons.lobehub.com/components/magpie",
+      "primaryColour": "#4D6BFE",
+      "colourTheme": [
+        "#4D6BFE"
+      ],
+      "artworks": {
+        "text": {
+          "monochrome": "magpie-text.svg"
         }
       }
     },
@@ -5299,6 +5807,29 @@
         }
       }
     },
+    "modelflare": {
+      "name": "Modelflare",
+      "monochrome": "modelflare.svg",
+      "alternatives": [
+        "modelflare"
+      ],
+      "fullName": "Modelflare",
+      "category": "provider",
+      "searchTerms": [
+        "Modelflare"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/439",
+      "primaryColour": "#FF6512",
+      "colourTheme": [
+        "#FF6512"
+      ],
+      "color": "modelflare-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "modelflare-text.svg"
+        }
+      }
+    },
     "modelscope": {
       "name": "ModelScope",
       "monochrome": "modelscope.svg",
@@ -5415,6 +5946,54 @@
         }
       }
     },
+    "munito": {
+      "name": "Munito",
+      "monochrome": "munito.svg",
+      "alternatives": [
+        "munito"
+      ],
+      "searchTerms": [
+        "Munito"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-munito.svg",
+      "colourTheme": []
+    },
+    "muse": {
+      "name": "Muse",
+      "monochrome": "muse.svg",
+      "alternatives": [
+        "muse"
+      ],
+      "fullName": "Muse (Meta)",
+      "category": "model",
+      "searchTerms": [
+        "Muse (Meta)",
+        "Muse"
+      ],
+      "upstreamUrl": "https://icons.lobehub.com/components/muse",
+      "primaryColour": "#0082FB",
+      "colourTheme": [
+        "#0082FB"
+      ],
+      "color": "muse-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "muse-text.svg"
+        }
+      }
+    },
+    "museai": {
+      "name": "Muse (muse.ai)",
+      "monochrome": "museai.svg",
+      "alternatives": [
+        "museai"
+      ],
+      "searchTerms": [
+        "Muse (muse.ai)"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-museai.svg",
+      "colourTheme": []
+    },
     "myshell": {
       "name": "MyShell",
       "monochrome": "myshell.svg",
@@ -5516,6 +6095,18 @@
           "monochrome": "nebius-text.svg"
         }
       }
+    },
+    "neuralwatt": {
+      "name": "Neuralwatt",
+      "monochrome": "neuralwatt.svg",
+      "alternatives": [
+        "neuralwatt"
+      ],
+      "searchTerms": [
+        "Neuralwatt"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-neuralwatt.svg",
+      "colourTheme": []
     },
     "newapi": {
       "name": "New API",
@@ -6057,6 +6648,18 @@
         }
       }
     },
+    "parallel": {
+      "name": "Parallel",
+      "monochrome": "parallel.svg",
+      "alternatives": [
+        "parallel"
+      ],
+      "searchTerms": [
+        "Parallel"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-parallel.svg",
+      "colourTheme": []
+    },
     "parasail": {
       "name": "Parasail",
       "monochrome": "parasail.svg",
@@ -6552,9 +7155,9 @@
         "Qwen"
       ],
       "upstreamUrl": "https://icons.lobehub.com/components/qwen",
-      "primaryColour": "#615CED",
+      "primaryColour": "#082DFF",
       "colourTheme": [
-        "#615CED"
+        "#082DFF"
       ],
       "color": "qwen-color.svg",
       "artworks": {
@@ -6584,6 +7187,18 @@
           "monochrome": "railway-text.svg"
         }
       }
+    },
+    "raycast": {
+      "name": "Raycast",
+      "monochrome": "raycast.svg",
+      "alternatives": [
+        "raycast"
+      ],
+      "searchTerms": [
+        "Raycast"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-raycast.svg",
+      "colourTheme": []
     },
     "recraft": {
       "name": "Recraft",
@@ -6835,6 +7450,18 @@
           "monochrome": "rwkv-text.svg"
         }
       }
+    },
+    "sailresearch": {
+      "name": "Sail Research",
+      "monochrome": "sailresearch.svg",
+      "alternatives": [
+        "sailresearch"
+      ],
+      "searchTerms": [
+        "Sail Research"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-sailresearch.svg",
+      "colourTheme": []
     },
     "sakana": {
       "name": "sakana.ai",
@@ -7141,6 +7768,30 @@
         }
       }
     },
+    "sofya": {
+      "name": "Sofya",
+      "monochrome": "sofya.svg",
+      "alternatives": [
+        "sofya"
+      ],
+      "searchTerms": [
+        "Sofya"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-sofya.svg",
+      "colourTheme": []
+    },
+    "soniox": {
+      "name": "Soniox",
+      "monochrome": "soniox.svg",
+      "alternatives": [
+        "soniox"
+      ],
+      "searchTerms": [
+        "Soniox"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-soniox.svg",
+      "colourTheme": []
+    },
     "sophnet": {
       "name": "SophNet",
       "monochrome": "sophnet.svg",
@@ -7368,7 +8019,7 @@
       "searchTerms": [
         "Sub2API"
       ],
-      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/367",
+      "upstreamUrl": "https://icons.lobehub.com/components/sub2-api",
       "primaryColour": "#2FD3E1",
       "colourTheme": [
         "#2FD3E1"
@@ -7456,6 +8107,18 @@
       "searchTerms": [],
       "colourTheme": []
     },
+    "t3chat": {
+      "name": "T3 Chat",
+      "monochrome": "t3chat.svg",
+      "alternatives": [
+        "t3chat"
+      ],
+      "searchTerms": [
+        "T3 Chat"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-t3chat.svg",
+      "colourTheme": []
+    },
     "tabbit": {
       "name": "Tabbit",
       "monochrome": "tabbit.svg",
@@ -7467,7 +8130,7 @@
       "searchTerms": [
         "Tabbit"
       ],
-      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/381",
+      "upstreamUrl": "https://icons.lobehub.com/components/tabbit",
       "primaryColour": "#FC9832",
       "colourTheme": [
         "#FC9832"
@@ -7645,6 +8308,18 @@
         }
       }
     },
+    "tinyapi": {
+      "name": "TinyApi",
+      "monochrome": "tinyapi.svg",
+      "alternatives": [
+        "tinyapi"
+      ],
+      "searchTerms": [
+        "TinyApi"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-tinyapi.svg",
+      "colourTheme": []
+    },
     "together": {
       "name": "together.ai",
       "monochrome": "together.svg",
@@ -7769,14 +8444,14 @@
         "typesafeai"
       ],
       "fullName": "TypeSafe AI",
-      "category": "model",
+      "category": "provider",
       "searchTerms": [
         "TypeSafe AI"
       ],
-      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/421",
-      "primaryColour": "#F386A1",
+      "upstreamUrl": "https://icons.lobehub.com/components/type-safe-ai",
+      "primaryColour": "#E551BA",
       "colourTheme": [
-        "#F386A1"
+        "#E551BA"
       ],
       "artworks": {
         "text": {
@@ -8202,6 +8877,18 @@
         }
       }
     },
+    "wayfinder": {
+      "name": "Wayfinder",
+      "monochrome": "wayfinder.svg",
+      "alternatives": [
+        "wayfinder"
+      ],
+      "searchTerms": [
+        "Wayfinder"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-wayfinder.svg",
+      "colourTheme": []
+    },
     "wenxin": {
       "name": "Wenxin",
       "monochrome": "wenxin.svg",
@@ -8245,6 +8932,29 @@
       "artworks": {
         "text": {
           "monochrome": "windsurf-text.svg"
+        }
+      }
+    },
+    "workbuddy": {
+      "name": "WorkBuddy",
+      "monochrome": "workbuddy.svg",
+      "alternatives": [
+        "workbuddy"
+      ],
+      "fullName": "WorkBuddy",
+      "category": "application",
+      "searchTerms": [
+        "WorkBuddy"
+      ],
+      "upstreamUrl": "https://icons.lobehub.com/components/work-buddy",
+      "primaryColour": "#01C886",
+      "colourTheme": [
+        "#01C886"
+      ],
+      "color": "workbuddy-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "workbuddy-text.svg"
         }
       }
     },
@@ -8318,6 +9028,18 @@
         }
       }
     },
+    "xapi": {
+      "name": "X API",
+      "monochrome": "xapi.svg",
+      "alternatives": [
+        "xapi"
+      ],
+      "searchTerms": [
+        "X API"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-xapi.svg",
+      "colourTheme": []
+    },
     "xiaomimimo": {
       "name": "XiaomiMiMo",
       "monochrome": "xiaomimimo.svg",
@@ -8363,6 +9085,18 @@
           "monochrome": "xinference-text.svg"
         }
       }
+    },
+    "xkiro": {
+      "name": "xKiro",
+      "monochrome": "xkiro.svg",
+      "alternatives": [
+        "xkiro"
+      ],
+      "searchTerms": [
+        "xKiro"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-xkiro.svg",
+      "colourTheme": []
     },
     "xpay": {
       "name": "xpay",
@@ -8572,6 +9306,18 @@
         }
       }
     },
+    "zed": {
+      "name": "Zed",
+      "monochrome": "zed.svg",
+      "alternatives": [
+        "zed"
+      ],
+      "searchTerms": [
+        "Zed"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-zed.svg",
+      "colourTheme": []
+    },
     "zencoder": {
       "name": "Zencoder",
       "monochrome": "zencoder.svg",
@@ -8664,6 +9410,19 @@
           "monochrome": "zhipu-text.svg"
         }
       }
+    },
+    "zoommate": {
+      "name": "ZoomMate",
+      "monochrome": "zoommate.svg",
+      "alternatives": [
+        "zoommate"
+      ],
+      "searchTerms": [
+        "ZoomMate"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/5f93dc3068b3bee3f8753f3772614cc2949c335d/Sources/CodexBar/Resources/ProviderIcon-zoommate.svg",
+      "colourTheme": [],
+      "color": "zoommate-color.svg"
     }
   },
   "aliases": {

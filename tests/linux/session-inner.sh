@@ -83,7 +83,11 @@ case "$target" in
         mkdir -p "$XDG_CONFIG_HOME/lxqt"
         printf '%s\n' '[General]' 'theme=light' 'icon_theme=Adwaita' > "$XDG_CONFIG_HOME/lxqt/lxqt.conf"
         printf '%s\n' '[General]' 'panels=panel1' '__userfile__=true' '[panel1]' 'position=Top' 'plugins=usagestat,worldclock' 'desktop=0' 'lineCount=1' 'panelSize=38' 'iconSize=24' 'length=100' 'lengthInPercents=true' '[usagestat]' 'type=usagestat' '[worldclock]' 'type=worldclock' > "$XDG_CONFIG_HOME/lxqt/panel.conf"
-        usagestat-lxqt-panel > /out/panel.log 2>&1 &
+        if [[ "${USAGESTAT_LAB_SYSTEM:-0}" == 1 ]]; then
+            lxqt-panel > /out/panel.log 2>&1 &
+        else
+            usagestat-lxqt-panel > /out/panel.log 2>&1 &
+        fi
         ;;
     xfce)
         export XDG_CURRENT_DESKTOP=XFCE
@@ -285,7 +289,7 @@ CONFIG
         USAGESTAT_LAB_TARGET="$target" python3 - <<'PY'
 import json, os
 from pathlib import Path
-p=json.loads(Path('/tmp/usagestat-prefix/share/usagestat-bar/platforms/waybar/native.jsonc').read_text())
+p=json.loads((Path(os.environ['USAGESTAT_LAB_RUNTIME'])/'platforms/waybar/native.jsonc').read_text())
 p.update({'layer':'top', 'height':36, 'modules-left':['cffi/usagestat']})
 if os.environ['USAGESTAT_LAB_TARGET'] == 'hyprland' and os.environ.get('USAGESTAT_LAB_INTERACTIVE') == '1':
     p.update({'modules-left': ['custom/apps', 'custom/terminal', 'custom/files', 'hyprland/workspaces'],
@@ -298,7 +302,7 @@ if os.environ['USAGESTAT_LAB_TARGET'] == 'hyprland' and os.environ.get('USAGESTA
               'tray': {'spacing': 8}})
 Path('/tmp/waybar.json').write_text(json.dumps(p))
 PY
-        cp /tmp/usagestat-prefix/share/usagestat-bar/platforms/waybar/style.css /tmp/waybar.css
+        cp "$USAGESTAT_LAB_RUNTIME/platforms/waybar/style.css" /tmp/waybar.css
         if [[ "$target" == hyprland && "${USAGESTAT_LAB_INTERACTIVE:-0}" == 1 ]]; then
             cat >> /tmp/waybar.css <<'CSS'
 #custom-apps, #custom-terminal, #custom-files, #clock, #tray { padding: 0 10px; }

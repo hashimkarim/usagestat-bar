@@ -27,8 +27,19 @@ Names and logos are trademarks of their respective owners. The library does
 not imply endorsement or transfer trademark rights. Product alternatives and
 aliases select artwork only; they do not select a runtime, account or billing.
 
+Additional provider marks are sourced from steipete/CodexBar,
+Finesssee/Win-CodexBar and barramee27/crossusage. sources/inspiration.json retains
+their exact revisions, original SVG contents, Git blob and SHA-256 hashes,
+and the reviewed conversion for each mark. Their MIT notices are retained in
+licenses/. provenance.json's inspiration section records the generated assets.
+Single-colour ink is normalized to currentColor without changing geometry.
+Full-colour sources are retained unchanged as colour variants; their monochrome
+variants convert inverse source luminance to currentColor opacity, preserving
+white cutouts and tonal detail. Consumer accessibility labels replace source
+title references in generated inline artwork.
+
 The generated inline module removes layout styles, accessibility labels and
 titles and namespaces SVG fragment identifiers. A strict allowlist retains
 rendering styles needed for masks, blending, grayscale and stroke width.
-Original SVG files remain unchanged. Consumers supply their own accessible
+Original source SVGs remain unchanged in their snapshots. Consumers supply their own accessible
 label or mark icons decorative.

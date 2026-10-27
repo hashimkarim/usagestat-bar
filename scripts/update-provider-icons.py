@@ -126,9 +126,16 @@ def refresh(root, release, data):
         counts = validate_bundle(stage, release['version'])
         fonts = stage / 'platforms/polybar'
         fonts.mkdir(parents=True)
-        for name in ('build-font.py', 'glyphs.json'):
-            shutil.copy2(root / 'platforms/polybar' / name, fonts / name)
-        subprocess.run([sys.executable, str(fonts / 'build-font.py')], check=True)
+        upstream_font = stage / 'assets/provider-icons/fonts'
+        if upstream_font.exists():
+            # Use the release's stable assignments even when this bar skipped
+            # intermediate icon releases containing now-retired codepoints.
+            for name in ('UsageStatProviderIcons.ttf', 'glyphs.json'):
+                shutil.copy2(upstream_font / name, fonts / name)
+        else:
+            for name in ('build-font.py', 'glyphs.json'):
+                shutil.copy2(root / 'platforms/polybar' / name, fonts / name)
+            subprocess.run([sys.executable, str(fonts / 'build-font.py')], check=True)
         install_staged(root, stage)
     return counts
 

@@ -1,0 +1,5 @@
+usagestat-bar (0.1.0~rc.1-1ppa1) noble; urgency=medium
+
+  * First prerelease of the shared desktop runtime and native panel adapters.
+
+ -- Hashim Karim <hashimkarim@users.noreply.github.com>  Tue, 27 Oct 2026 12:00:00 +0000

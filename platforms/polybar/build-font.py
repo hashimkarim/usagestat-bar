@@ -133,7 +133,9 @@ def main():
         matrix = Transform(scale, 0, 0, -scale, (1000 - width * scale) / 2 - x * scale,
                            400 + height * scale / 2 + y * scale)
         pen = TTGlyphPen(None)
-        if any('mask' in element.attrib or 'clip-path' in element.attrib for element in root.iter()):
+        if any('mask' in element.attrib or 'clip-path' in element.attrib or
+               'stroke-dasharray' in element.attrib or 'stroke-dasharray' in element.get('style', '')
+               for element in root.iter()):
             shape = traced_outline(root)
         else:
             shape = outline(root)

@@ -1,0 +1,56 @@
+# Maintainer: Hashim Karim <hashimkarim@users.noreply.github.com>
+pkgbase=usagestat-bar
+pkgname=(usagestat-bar usagestat-bar-plasma usagestat-bar-cinnamon usagestat-bar-mate usagestat-bar-xfce usagestat-bar-budgie usagestat-bar-lxqt usagestat-bar-waybar)
+pkgver=@ARCH_VERSION@
+pkgrel=1
+pkgdesc='Desktop panel frontends for UsageStat'
+arch=('x86_64')
+url='https://github.com/hashimkarim/usagestat-bar'
+license=('MIT')
+makedepends=('python' 'glib2' 'gtk3' 'json-glib' 'xfce4-panel' 'budgie-desktop' 'libpeas' 'lxqt-panel' 'qt6-base' 'cmake')
+source=("usagestat-bar-@VERSION@.tar.gz::https://github.com/hashimkarim/usagestat-bar/releases/download/v@VERSION@/usagestat-bar-@VERSION@-source.tar.gz")
+sha256sums=('@SHA256@')
+options=('!debug')
+
+build() {
+    cd "$srcdir/usagestat-bar-@VERSION@"
+    python platforms/linux/package.py stage build/runtime
+    for component in runtime plasma cinnamon mate xfce budgie lxqt waybar; do
+        python packaging/stage.py --source build/runtime --destdir "$srcdir/stage-$component" \
+            --version '@VERSION@' --libdir /usr/lib --component "$component"
+    done
+}
+
+package_usagestat-bar() {
+    depends=('libsoup3' 'gjs' 'gtk4>=4.12' 'libadwaita>=1.4' 'librsvg' 'python' 'python-gobject' 'dbus' 'bash')
+    optdepends=('usagestat: provider usage backend' 'gtk4-layer-shell: Wayland popup placement')
+    cp -a "$srcdir/stage-runtime/." "$pkgdir/"
+}
+package_usagestat-bar-plasma() {
+    depends=("usagestat-bar=$pkgver" 'plasma-workspace>=6.4')
+    cp -a "$srcdir/stage-plasma/." "$pkgdir/"
+}
+package_usagestat-bar-cinnamon() {
+    depends=("usagestat-bar=$pkgver" 'cinnamon')
+    cp -a "$srcdir/stage-cinnamon/." "$pkgdir/"
+}
+package_usagestat-bar-mate() {
+    depends=("usagestat-bar=$pkgver" 'mate-panel' 'python-cairo')
+    cp -a "$srcdir/stage-mate/." "$pkgdir/"
+}
+package_usagestat-bar-xfce() {
+    depends=("usagestat-bar=$pkgver" 'xfce4-panel' 'json-glib')
+    cp -a "$srcdir/stage-xfce/." "$pkgdir/"
+}
+package_usagestat-bar-budgie() {
+    depends=("usagestat-bar=$pkgver" 'budgie-desktop' 'json-glib' 'libpeas')
+    cp -a "$srcdir/stage-budgie/." "$pkgdir/"
+}
+package_usagestat-bar-lxqt() {
+    depends=("usagestat-bar=$pkgver" 'lxqt-panel' 'qt6-base')
+    cp -a "$srcdir/stage-lxqt/." "$pkgdir/"
+}
+package_usagestat-bar-waybar() {
+    depends=("usagestat-bar=$pkgver" 'waybar' 'json-glib' 'gtk4-layer-shell')
+    cp -a "$srcdir/stage-waybar/." "$pkgdir/"
+}

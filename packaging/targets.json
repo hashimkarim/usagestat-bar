@@ -1,0 +1,11 @@
+{
+  "aur": {"account": "hashimkarim", "pkgbase": "usagestat-bar", "package": "usagestat-bar"},
+  "copr": {
+    "owner": "hashimkarim", "project": "usagestat-bar-testing", "package": "usagestat-bar",
+    "chroots": ["fedora-44-x86_64"]
+  },
+  "ppa": {
+    "owner": "hashimkarim", "archive": "usagestat-bar-testing", "uploader": "hashimkarim",
+    "source": "usagestat-bar", "package": "usagestat-bar", "series": ["noble"], "architectures": ["amd64"]
+  }
+}

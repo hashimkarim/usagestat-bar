@@ -1,5 +1,5 @@
 {
-  "commit": "329f378cbd1a88f45b60cd096b9111ce16f3ea39",
+  "commit": "8b7bbc433d38437fa2b0cca58ae896917162b812",
   "icons": {
     "ace": {
       "artworks": {
@@ -144,6 +144,17 @@
         }
       },
       "name": "AiMass"
+    },
+    "aimlapi": {
+      "artworks": {
+        "icon": {
+          "monochrome": "aimlapi.svg"
+        },
+        "text": {
+          "monochrome": "aimlapi-text.svg"
+        }
+      },
+      "name": "AIMLAPI"
     },
     "aionlabs": {
       "artworks": {
@@ -349,6 +360,18 @@
         }
       },
       "name": "Apple"
+    },
+    "appwrite": {
+      "artworks": {
+        "icon": {
+          "color": "appwrite-color.svg",
+          "monochrome": "appwrite.svg"
+        },
+        "text": {
+          "monochrome": "appwrite-text.svg"
+        }
+      },
+      "name": "Appwrite"
     },
     "arcee": {
       "artworks": {
@@ -740,6 +763,17 @@
         }
       },
       "name": "ChatGLM"
+    },
+    "cheaperinference": {
+      "artworks": {
+        "icon": {
+          "monochrome": "cheaperinference.svg"
+        },
+        "text": {
+          "monochrome": "cheaperinference-text.svg"
+        }
+      },
+      "name": "Cheaper Inference"
     },
     "cherrystudio": {
       "artworks": {
@@ -1256,6 +1290,18 @@
       },
       "name": "Dolphin"
     },
+    "dothoosh": {
+      "artworks": {
+        "icon": {
+          "color": "dothoosh-color.svg",
+          "monochrome": "dothoosh.svg"
+        },
+        "text": {
+          "monochrome": "dothoosh-text.svg"
+        }
+      },
+      "name": "DotHoosh"
+    },
     "dotsstudio": {
       "artworks": {
         "icon": {
@@ -1311,6 +1357,18 @@
         }
       },
       "name": "11x"
+    },
+    "empiriolabs": {
+      "artworks": {
+        "icon": {
+          "color": "empiriolabs-color.svg",
+          "monochrome": "empiriolabs.svg"
+        },
+        "text": {
+          "monochrome": "empiriolabs-text.svg"
+        }
+      },
+      "name": "EmpirioLabs AI"
     },
     "essentialai": {
       "artworks": {
@@ -1418,6 +1476,17 @@
         }
       },
       "name": "FishAudio"
+    },
+    "flexai": {
+      "artworks": {
+        "icon": {
+          "monochrome": "flexai.svg"
+        },
+        "text": {
+          "monochrome": "flexai-text.svg"
+        }
+      },
+      "name": "FlexAI"
     },
     "flora": {
       "artworks": {
@@ -1626,6 +1695,18 @@
       },
       "name": "Gradio"
     },
+    "greenpt": {
+      "artworks": {
+        "icon": {
+          "color": "greenpt-color.svg",
+          "monochrome": "greenpt.svg"
+        },
+        "text": {
+          "monochrome": "greenpt-text.svg"
+        }
+      },
+      "name": "GreenPT"
+    },
     "greptile": {
       "artworks": {
         "icon": {
@@ -1648,6 +1729,17 @@
         }
       },
       "name": "Grok"
+    },
+    "grokbot": {
+      "artworks": {
+        "icon": {
+          "monochrome": "grokbot.svg"
+        },
+        "text": {
+          "monochrome": "grokbot-text.svg"
+        }
+      },
+      "name": "Grok Bot"
     },
     "groq": {
       "artworks": {
@@ -1692,7 +1784,7 @@
           "monochrome": "happyhorse-text.svg"
         }
       },
-      "name": "Hedra"
+      "name": "HappyHorse"
     },
     "hedra": {
       "artworks": {
@@ -2169,6 +2261,18 @@
       },
       "name": "Lightricks"
     },
+    "ling": {
+      "artworks": {
+        "icon": {
+          "color": "ling-color.svg",
+          "monochrome": "ling.svg"
+        },
+        "text": {
+          "monochrome": "ling-text.svg"
+        }
+      },
+      "name": "Ling"
+    },
     "liquid": {
       "artworks": {
         "icon": {
@@ -2227,6 +2331,17 @@
         }
       },
       "name": "LLM API"
+    },
+    "llmgateway": {
+      "artworks": {
+        "icon": {
+          "monochrome": "llmgateway.svg"
+        },
+        "text": {
+          "monochrome": "llmgateway-text.svg"
+        }
+      },
+      "name": "LLM Gateway"
     },
     "lmstudio": {
       "artworks": {
@@ -2308,6 +2423,17 @@
         }
       },
       "name": "Magic"
+    },
+    "magpie": {
+      "artworks": {
+        "icon": {
+          "monochrome": "magpie.svg"
+        },
+        "text": {
+          "monochrome": "magpie-text.svg"
+        }
+      },
+      "name": "Magpie"
     },
     "make": {
       "artworks": {
@@ -2534,6 +2660,18 @@
         }
       },
       "name": "Moxt"
+    },
+    "muse": {
+      "artworks": {
+        "icon": {
+          "color": "muse-color.svg",
+          "monochrome": "muse.svg"
+        },
+        "text": {
+          "monochrome": "muse-text.svg"
+        }
+      },
+      "name": "Muse"
     },
     "myshell": {
       "artworks": {
@@ -3447,6 +3585,18 @@
       },
       "name": "StreamLake"
     },
+    "sub2api": {
+      "artworks": {
+        "icon": {
+          "color": "sub2api-color.svg",
+          "monochrome": "sub2api.svg"
+        },
+        "text": {
+          "monochrome": "sub2api-text.svg"
+        }
+      },
+      "name": "Sub2API"
+    },
     "submodel": {
       "artworks": {
         "icon": {
@@ -3480,6 +3630,18 @@
         }
       },
       "name": "Sync"
+    },
+    "tabbit": {
+      "artworks": {
+        "icon": {
+          "color": "tabbit-color.svg",
+          "monochrome": "tabbit.svg"
+        },
+        "text": {
+          "monochrome": "tabbit-text.svg"
+        }
+      },
+      "name": "Tabbit"
     },
     "targon": {
       "artworks": {
@@ -3621,6 +3783,17 @@
         }
       },
       "name": "TuriX"
+    },
+    "typesafeai": {
+      "artworks": {
+        "icon": {
+          "monochrome": "typesafeai.svg"
+        },
+        "text": {
+          "monochrome": "typesafeai-text.svg"
+        }
+      },
+      "name": "TypeSafe AI"
     },
     "udio": {
       "artworks": {
@@ -3852,6 +4025,18 @@
       },
       "name": "Windsurf"
     },
+    "workbuddy": {
+      "artworks": {
+        "icon": {
+          "color": "workbuddy-color.svg",
+          "monochrome": "workbuddy.svg"
+        },
+        "text": {
+          "monochrome": "workbuddy-text.svg"
+        }
+      },
+      "name": "WorkBuddy"
+    },
     "workersai": {
       "artworks": {
         "icon": {
@@ -4063,5 +4248,5 @@
     }
   },
   "repository": "https://github.com/lobehub/lobe-icons",
-  "tocSha256": "e36650061f80bdce9e01ab0b501f67da050f595210722ff81f953c398fb24bf4"
+  "tocSha256": "8adf5748f65c98f3bbe01d441e495c8bea166f2e05aebda202bce1f3b9a944ad"
 }

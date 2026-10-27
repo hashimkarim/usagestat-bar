@@ -445,7 +445,7 @@ def position(edge='top', region='left', index=0):
             config['custom/neighbor']={'format':'Neighbor','tooltip':False}
             config['modules-left'].append('custom/neighbor')
             path.write_text(json.dumps(config)); command('pkill','-USR2','-x','waybar'); time.sleep(.6)
-        helper='/tmp/usagestat-prefix/share/usagestat-bar/platforms/linux/waybar_config.py'
+        helper=str(Path(os.environ['USAGESTAT_LAB_RUNTIME'])/'platforms/linux/waybar_config.py')
         for key,value in [('edge',edge),('alignment',region)]: command('python3',helper,key,value); time.sleep(.6)
         current=json.loads(path.read_text())
         group=current['modules-'+region]
@@ -505,7 +505,8 @@ def position(edge='top', region='left', index=0):
             config[plugin]={'type':'spacer','alignment':'Left','expandable':'true'}
         path.parent.mkdir(parents=True,exist_ok=True)
         with path.open('w') as stream:config.write(stream)
-        with (OUT/'panel.log').open('a') as log:subprocess.Popen(['usagestat-lxqt-panel'],stdout=log,stderr=log)
+        launcher='lxqt-panel' if os.environ.get('USAGESTAT_LAB_SYSTEM')=='1' else 'usagestat-lxqt-panel'
+        with (OUT/'panel.log').open('a') as log:subprocess.Popen([launcher],stdout=log,stderr=log)
         time.sleep(1)
         if TRAY: setting('enabled','true',True);time.sleep(1)
     elif TARGET=='cosmic':

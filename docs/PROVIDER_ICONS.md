@@ -1,15 +1,15 @@
-# Bundled provider icon updates
+# Provider icon updates
 
 The app bundles the latest **stable GitHub release** of
 [AgenticDriver provider-icons](https://github.com/agenticdriver/provider-icons/releases/latest).
 It keeps the complete catalog, artwork variants and license/provenance files.
 The picker searches upstream aliases, localized names and model names and shows
-the bundled version and mark count. Marks and SVG files have different counts:
+the active version and mark count. Marks and SVG files have different counts:
 one mark can have monochrome, color, brand and wordmark variants.
 
-Default provider icons are resolved from that catalog on each app start. A new
-matching mark is adopted after updating the app, without choosing it manually or
-resetting provider settings. Matching uses canonical IDs, upstream aliases and
+Default provider icons are resolved from the active catalog. A new matching mark
+is adopted when the icon library updates, without updating the bar, choosing it
+manually or resetting provider settings. Matching uses canonical IDs, upstream aliases and
 unambiguous names, allowing differences in spacing, dots, hyphens and underscores.
 Plugin manifest names are also checked when the provider ID has no match; account
 display names do not affect the icon. The backend's `typesafe` ID maps to the
@@ -23,15 +23,36 @@ frontends and the generated Polybar font use the same catalog resolver. Matching
 does not use fuzzy search or infer a brand from part of a provider name.
 
 `assets/provider-icons/source.json` pins the exact archive URL and SHA-256;
-`package.json` records its version. Builds and installed applications use that
-committed snapshot offline. Rebuilding an older commit preserves its icon version.
+`package.json` records its version. Builds use that committed snapshot as an offline fallback. Rebuilding an older
+commit preserves its bundled fallback version.
 
-## Automatic refreshes
+## Installed applications
+
+The bar checks the latest stable GitHub release once a day while it is running.
+Preferences → CLI → Provider icons shows the active version, latest checked
+release and last check time. Its refresh button checks immediately. The CLI binary
+and its plugin folder do not own this library.
+
+Updates download the release archive, verify its SHA-256 and validate its JSON,
+SVGs and optional native font. Downloaded JavaScript is never imported or executed.
+A complete generation is activated atomically in the user's XDG cache; open bars
+and preference windows watch that shared pointer and refresh their catalog.
+Failed updates retain the current icons. Offline starts use the cached generation
+or the bundled fallback. Custom images and explicit library selections retain
+priority. Checks are shared across windows and processes and stop with the app.
+
+Polybar uses prebuilt font data included in newer provider-icons releases. The
+updater keeps font data in durable user storage and registers it with Fontconfig,
+so clearing the catalog cache does not remove installed logos. An already running
+Polybar must be restarted to load new glyphs. Releases without font data retain
+the bundled glyph map. Graphical adapters use the updated SVGs immediately.
+
+## Bundled fallback refreshes
 
 [Refresh bundled provider icons](../.github/workflows/provider-icons.yml) runs
 daily at 06:17 UTC and can be dispatched manually. It resolves GitHub's latest
-stable release, checks the release asset digest and manifest, and rebuilds the
-Polybar font from every default monochrome mark. Existing codepoints are retained;
+stable release, checks the release asset digest and manifest, and uses its
+prebuilt Polybar font, generating one locally for older releases without it. Existing codepoints are retained;
 wordmark/brand variants are not mistaken for additional providers.
 
 The bundle and font are staged together before replacement. Failed downloads,

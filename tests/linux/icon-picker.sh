@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+export USAGESTAT_ICON_UPDATES=0
 source_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 for tool in gjs Xvfb openbox dbus-run-session import; do
     command -v "$tool" >/dev/null || { echo "Missing UI test dependency: $tool" >&2; exit 1; }

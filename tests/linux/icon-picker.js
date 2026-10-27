@@ -6,7 +6,7 @@ import GdkPixbuf from 'gi://GdkPixbuf';
 import {fillPreferencesWindow} from '../../preferences.js';
 import {settings, ROOT} from '../../platforms/linux/settings.js';
 import {loadConfig, providerKey} from '../../config.js';
-import {providerIcons} from '../../providerMetadata.js';
+import {providerIcons, providerIconVersion} from '../../providerMetadata.js';
 import {assert, equal} from '../assert.js';
 
 String.prototype.format ??= imports.format.format;
@@ -259,6 +259,20 @@ app.connect('activate', () => {
             const scroll = all(cliPage).find(w => w instanceof Gtk.ScrolledWindow);
             scroll.vadjustment.value = scroll.vadjustment.upper - scroll.vadjustment.page_size;
             await screenshot(`binary-refresh-${dark ? 'dark' : 'light'}`);
+            binary.expanded = false;
+            const icons = row(cliPage, 'Provider icons');
+            icons.expanded = true;
+            button(icons, 'Update provider icons now').grab_focus();
+            await pause(400);
+            scroll.vadjustment.value = scroll.vadjustment.upper - scroll.vadjustment.page_size;
+            await screenshot(`provider-icon-updates-${dark ? 'dark' : 'light'}`);
+            Gio.File.new_for_path(`${GLib.get_user_cache_dir()}/usagestat-bar/provider-icon-catalog/status.json`)
+                .replace_contents(JSON.stringify({latest: providerIconVersion, checkedAt: Math.floor(Date.now() / 1000), error: null}),
+                    null, false, Gio.FileCreateFlags.PRIVATE, null);
+            await wait(() => all(icons).some(w => w instanceof Gtk.Label && w.label === 'Up to date'));
+            await screenshot(`provider-icon-updates-current-${dark ? 'dark' : 'light'}`);
+            icons.expanded = false;
+            binary.expanded = true;
             window.set_visible_page(page);
             button(row(provider(page, 'codex'), 'Icon library')).emit('clicked');
             const picker = page._iconPicker;

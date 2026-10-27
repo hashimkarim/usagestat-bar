@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+export USAGESTAT_ICON_UPDATES=0
 source_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 mode="${1:---check}"
 if [[ "$mode" != --check && "$mode" != --interactive ]]; then

@@ -13,7 +13,7 @@
 
 ![A selection of provider icons in the library](docs/preview.svg)
 
-**380 marks · 1,041 SVGs.** Monochrome and colour logos, vector wordmarks,
+**432 marks · 1,117 SVGs.** Monochrome and colour logos, vector wordmarks,
 brand variants, and related product marks in one maintained catalogue.
 
 - **Ready to use:** React components and DOM helpers handle size, layout and unique SVG IDs.

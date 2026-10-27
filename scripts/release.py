@@ -28,6 +28,8 @@ SUITES = {'shared': ['bash', 'tests/run.sh'], 'linux': ['bash', 'tests/linux/run
           'gnome-package': ['bash', 'tests/package.sh'], 'linux-package': ['python3', 'tests/linux/package.py'],
           'release-tools': ['python3', 'tests/release-test.py'],
           'provider-icons': ['python3', 'tests/provider-icons-test.py'],
+          'system-package': ['python3', 'tests/linux/system-package.py'],
+          'distribution-tools': ['python3', 'tests/distribution-test.py'],
           'polybar-font': ['/usr/bin/python3', 'tests/linux/polybar-font.py']}
 
 
@@ -60,6 +62,8 @@ def config():
         raise ValueError('release.json requires a semantic version (optionally alpha/beta/rc.N)')
     if type(data['gnomeVersion']) is not int or data['gnomeVersion'] < 1:
         raise ValueError('gnomeVersion must be a positive integer')
+    if not data.get('gnomeShellVersions') or any(not re.fullmatch(r'\d+', version) for version in data['gnomeShellVersions']):
+        raise ValueError('gnomeShellVersions must list tested GNOME Shell major versions')
     return data
 
 
@@ -109,6 +113,19 @@ def canonical_zip(source, output, epoch, metadata):
             archive.writestr(info, data)
 
 
+def source(output):
+    commit, cfg = clean_commit(), config()
+    epoch = int(command(['git', 'show', '-s', '--format=%ct', commit]))
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix='usagestat-source.') as temp:
+        root = Path(temp) / f'usagestat-bar-{cfg["version"]}'
+        root.mkdir()
+        snapshot = subprocess.check_output(['git', 'archive', commit], cwd=ROOT)
+        with tarfile.open(fileobj=io.BytesIO(snapshot)) as archive:
+            archive.extractall(root, filter='data')
+        canonical_tar(root, output, epoch)
+
+
 def check(output):
     commit = clean_commit()
     output.mkdir(parents=True, exist_ok=False)
@@ -131,15 +148,17 @@ def build(output, checks):
     output.mkdir(parents=True, exist_ok=False)
     with tempfile.TemporaryDirectory(prefix='usagestat-release.') as temp:
         temp = Path(temp)
-        source = temp / 'source'
+        source = temp / f'usagestat-bar-{cfg["version"]}'
         source.mkdir()
         snapshot = subprocess.check_output(['git', 'archive', commit], cwd=ROOT)
         with tarfile.open(fileobj=io.BytesIO(snapshot)) as archive:
             archive.extractall(source, filter='data')
+        source_name = f'usagestat-bar-{cfg["version"]}-source.tar.gz'
+        canonical_tar(source, output / source_name, epoch)
         subprocess.run(['bash', str(source / 'build.sh'), str(temp / 'gnome.zip')], check=True)
         gnome_name = f'usagestat-bar-{cfg["version"]}.shell-extension.zip'
         canonical_zip(temp / 'gnome.zip', output / gnome_name, epoch,
-                      {'version': cfg['gnomeVersion'], 'version-name': cfg['version']})
+                      {'version': cfg['gnomeVersion'], 'version-name': cfg['version'], 'shell-version': cfg['gnomeShellVersions']})
         stage = temp / 'usagestat-bar'
         subprocess.run(['python3', str(source / 'platforms/linux/package.py'), 'stage', str(stage)], check=True)
         # The installer compiles schemas on the destination, avoiding host GLib output in portable assets.
@@ -150,7 +169,7 @@ def build(output, checks):
     manifest = {'schemaVersion': 1, 'version': cfg['version'], 'commit': commit, 'epoch': epoch,
                 'configSha256': sha(ROOT / 'release.json'), 'architecture': cfg['architecture'], 'scope': cfg['scope'],
                 'backend': cfg['backend'], 'providerIcons': read(ROOT / 'assets/provider-icons/source.json'),
-                'artifacts': {name: file_record(output / name) for name in [gnome_name, linux_name]},
+                'artifacts': {name: file_record(output / name) for name in [gnome_name, linux_name, source_name]},
                 'targetArtifacts': {target: gnome_name if target == 'gnome' else linux_name for target in cfg['targets']},
                 'checks': fast}
     write(output / 'manifest.json', manifest)
@@ -165,7 +184,8 @@ def candidate(directory):
             data['configSha256'] != sha(ROOT / 'release.json') or data['version'] != cfg['version'] or
             data['architecture'] != cfg['architecture']):
         raise ValueError('Candidate source/version/scope does not match this clean checkout')
-    expected_names = {f'usagestat-bar-{cfg["version"]}.shell-extension.zip', f'usagestat-bar-{cfg["version"]}-linux.tar.gz'}
+    expected_names = {f'usagestat-bar-{cfg["version"]}{suffix}'
+                      for suffix in ('.shell-extension.zip', '-linux.tar.gz', '-source.tar.gz')}
     if set(data['artifacts']) != expected_names or set(data['targetArtifacts']) != set(cfg['targets']):
         raise ValueError('Candidate has missing or unexpected artifacts/targets')
     for target, name in data['targetArtifacts'].items():
@@ -363,7 +383,7 @@ def assemble(artifacts, evidence, output):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='command', required=True)
-    for name in ['check', 'build', 'native', 'verify', 'assemble']:
+    for name in ['source', 'check', 'build', 'native', 'verify', 'assemble']:
         cmd = sub.add_parser(name)
         if name != 'verify':
             cmd.add_argument('--output', required=True, type=Path)

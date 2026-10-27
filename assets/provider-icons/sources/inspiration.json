@@ -1,0 +1,505 @@
+{
+  "version": 1,
+  "repositories": {
+    "CodexBar": {
+      "url": "https://github.com/steipete/CodexBar",
+      "commit": "5f93dc3068b3bee3f8753f3772614cc2949c335d",
+      "license": "licenses/CodexBar-MIT.txt",
+      "licenseSha256": "14293556b79940745123d0160c71d27ed0e9fe9b8a848093f3ed78f4853caafe"
+    },
+    "crossusage": {
+      "url": "https://github.com/barramee27/crossusage",
+      "commit": "ba1ad530b2148ba4be738332cb102858e9bdcc55",
+      "license": "licenses/crossusage-MIT.txt",
+      "licenseSha256": "c5fd519b52f75734a1c003745cef3d01bcbaeeb2ae5e78274b981b2978614d58"
+    },
+    "Win-CodexBar": {
+      "url": "https://github.com/Finesssee/Win-CodexBar",
+      "commit": "31b10ce42993d3be2f041e169e82ef174d24c7ec",
+      "license": "licenses/Win-CodexBar-MIT.txt",
+      "licenseSha256": "49bbe703c7c83fb9a8ff13f0d812abd778ad3f9c008f53683d1a6256b3938370"
+    }
+  },
+  "icons": {
+    "abliteration": {
+      "name": "abliteration.ai",
+      "componentName": "Abliteration",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-abliteration.svg",
+        "gitBlob": "528206e8679fda0413d5a7ea20886dffd38b12f0",
+        "sha256": "91aed6bc9a06c7b0f4605684c2c38b6bcd96211c727f01afa830bc664382a774",
+        "content": "<svg width=\"1000\" height=\"1000\" viewBox=\"0 0 1000 1000\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M282.521 230H199V770.458H282.521V230Z\" fill=\"#000000\"/>\n<path d=\"M801.487 230H712.348L501.571 740.998L489.954 770.458H577.195L788.58 261.434L801.487 230Z\" fill=\"#000000\"/>\n<path d=\"M506.281 230H422.533L346.528 758.613L344.706 770.458H428.151L502.029 257.942L506.281 230Z\" fill=\"#000000\"/>\n</svg>\n"
+      }
+    },
+    "aerostack": {
+      "name": "Aerostack",
+      "componentName": "Aerostack",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-aerostack.svg",
+        "gitBlob": "550dd51c00d7c8c5b8f1b0f8d212e557eacf49e5",
+        "sha256": "6c603c7a9a44d29f52ef4a873d3bcc6953c9a94dcd865c50cd3cab6fc30900c8",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"m12 2 10 18h-5l-5-9-5 9H2Z\"/><path fill=\"currentColor\" d=\"M9 19h6v3H9Z\"/></svg>\n"
+      }
+    },
+    "aiand": {
+      "name": "ai&",
+      "componentName": "AiAnd",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-aiand.svg",
+        "gitBlob": "68cba8283fc7ed02d9e9a11a441aa0db11771ded",
+        "sha256": "491834756ea31b74222bb82a9e51a1a3b6e7ac6d6927a83696f46dfb47ce8c93",
+        "content": "<svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n  <g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M18.2 11.4c0 4.9-3.5 8.9-8.1 8.9a4.7 4.7 0 0 1-4.7-4.7c0-5.9 7.7-4.4 7.7-8.8a2.9 2.9 0 1 0-5.8 0c0 3.2 2.8 8.9 11.9 13\"/>\n    <path d=\"M16.5 11.4h3.2\"/>\n  </g>\n</svg>\n"
+      }
+    },
+    "aixy": {
+      "name": "Aixy",
+      "componentName": "Aixy",
+      "repository": "CodexBar",
+      "monochrome": "luminance",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-aixy.svg",
+        "gitBlob": "224bb877f1d70d2443abdc3293b5fa5479eef1c7",
+        "sha256": "ac516ea6969f95b68f047890f3fcee0ef37581bc93de83585b3e3d60dfd1d796",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1024\" height=\"1024\" viewBox=\"0 0 64 64\" role=\"img\" aria-labelledby=\"title\"><title id=\"title\">Aixy</title><g transform=\"translate(32 32) scale(1.1) translate(-34.5 -30)\"><path fill=\"#123650\" fill-rule=\"evenodd\" d=\"M18 47 30.6 16h4.6L48 47h-8.2l-2.6-7.2H27L24.2 47H18z M31.8 24.6l-2.7 8.2h6l-2.8-8.2h-.5z\"/><circle cx=\"47\" cy=\"17\" r=\"4\" fill=\"#ec744a\"/></g></svg>\n"
+      }
+    },
+    "bifrost": {
+      "name": "Bifrost",
+      "componentName": "Bifrost",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-bifrost.svg",
+        "gitBlob": "f334d6abeea2459a2d0481dc7e40e1743ebe2496",
+        "sha256": "bef49ced861a9de39e77cda2c14fa271ee401d55a47153b8ae6fb306440ae6d0",
+        "content": "<svg viewBox=\"0 0 110 110\" xmlns=\"http://www.w3.org/2000/svg\">\n<path transform=\"translate(11.13 0)\" d=\"M65.8047 109.59H0V87.6719H65.8047V109.59ZM87.7393 87.6719H65.8047V65.7539H87.7393V87.6719ZM43.8701 65.7539H21.9355V43.8359H43.8701V65.7539ZM87.7393 43.8359H65.8047V21.918H87.7393V43.8359ZM65.8047 21.918H0V0H65.8047V21.918Z\" fill=\"currentColor\"/>\n</svg>\n"
+      }
+    },
+    "chatbox": {
+      "name": "Chatbox AI",
+      "componentName": "Chatbox",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-chatbox.svg",
+        "gitBlob": "9cdc206625529abf8643f8206803446e64c4f109",
+        "sha256": "63962481c3e046bce4e09691794987deeba5198181ab612631362a5ac4dd8d8a",
+        "content": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M17.0674 3.26367L17.0674 2.26367H17.0674V3.26367ZM17.0674 18.0566V19.0566H17.0674L17.0674 18.0566ZM7.66211 18.0566V17.0566C7.42949 17.0566 7.20415 17.1377 7.02487 17.286L7.66211 18.0566ZM4.41895 20.7383H3.41895C3.41895 21.1256 3.64261 21.4781 3.99306 21.6431C4.3435 21.808 4.75768 21.7558 5.05618 21.509L4.41895 20.7383ZM4.41895 17.165H5.41895C5.41895 16.8637 5.28308 16.5785 5.04912 16.3886L4.41895 17.165ZM6.93359 3.26367V2.26367H6.93357L6.93359 3.26367ZM17.0674 3.26367L17.0674 4.26367C18.721 4.26372 20.0615 5.6042 20.0615 7.25781H21.0615H22.0615C22.0615 4.49957 19.8256 2.26375 17.0674 2.26367L17.0674 3.26367ZM21.0615 7.25781H20.0615V14.0625H21.0615H22.0615V7.25781H21.0615ZM21.0615 14.0625H20.0615C20.0615 15.7161 18.721 17.0566 17.0674 17.0566L17.0674 18.0566L17.0674 19.0566C19.8256 19.0566 22.0615 16.8207 22.0615 14.0625H21.0615ZM17.0674 18.0566V17.0566H7.66211V18.0566V19.0566H17.0674V18.0566ZM7.66211 18.0566L7.02487 17.286L3.78171 19.9676L4.41895 20.7383L5.05618 21.509L8.29934 18.8273L7.66211 18.0566ZM4.41895 20.7383H5.41895V17.165H4.41895H3.41895V20.7383H4.41895ZM4.41895 17.165L5.04912 16.3886C4.37038 15.8377 3.93945 15.0007 3.93945 14.0625H2.93945H1.93945C1.93945 15.6296 2.66288 17.0277 3.78877 17.9415L4.41895 17.165ZM2.93945 14.0625H3.93945V7.25781H2.93945H1.93945V14.0625H2.93945ZM2.93945 7.25781H3.93945C3.93945 5.6042 5.27994 4.26372 6.93362 4.26367L6.93359 3.26367L6.93357 2.26367C4.17542 2.26375 1.93945 4.49957 1.93945 7.25781H2.93945ZM6.93359 3.26367V4.26367H17.0674V3.26367V2.26367H6.93359V3.26367Z\" fill=\"#000000\"/>\n<path d=\"M9.13379 9.29883C9.83353 9.29883 10.4014 9.86667 10.4014 10.5664C10.4012 11.266 9.83346 11.833 9.13379 11.833C8.43421 11.8329 7.86731 11.266 7.86719 10.5664C7.86719 9.86673 8.43414 9.29893 9.13379 9.29883ZM14.8662 9.29883C15.566 9.29883 16.1338 9.86667 16.1338 10.5664C16.1337 11.266 15.5659 11.833 14.8662 11.833C14.1666 11.8329 13.5997 11.266 13.5996 10.5664C13.5996 9.86673 14.1666 9.29893 14.8662 9.29883Z\" fill=\"#000000\"/>\n</svg>\n"
+      }
+    },
+    "clawrouter": {
+      "name": "ClawRouter",
+      "componentName": "ClawRouter",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-clawrouter.svg",
+        "gitBlob": "f8718f87e971d3b10ddf43bf4736886341bd12f9",
+        "sha256": "1a54a636075166f84b0f4c5c9cfd332976b6e3c2330ba69f34ad5efac5709c32",
+        "content": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" xmlns=\"http://www.w3.org/2000/svg\">\n  <circle cx=\"8\" cy=\"7\" r=\"3\" fill=\"currentColor\" stroke=\"none\"/>\n  <circle cx=\"24\" cy=\"8\" r=\"3\" fill=\"currentColor\" stroke=\"none\"/>\n  <circle cx=\"24\" cy=\"24\" r=\"3\" fill=\"currentColor\" stroke=\"none\"/>\n  <path d=\"M8 10v6c0 4.4 3.6 8 8 8h5\"/>\n  <path d=\"M11 8h10\"/>\n</svg>\n"
+      }
+    },
+    "clinepass": {
+      "name": "ClinePass",
+      "componentName": "ClinePass",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-clinepass.svg",
+        "gitBlob": "1ce7fe20bedaa920a40ffcd0ca1723adb5d5de3f",
+        "sha256": "b1b936d0c3e2a6373d2481882f547838873864a399520f0c927217952908243d",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 466.73 487.04\">\n  <!-- Official Cline bot icon: https://cline.bot/brand -->\n  <path d=\"M463.6,275.08l-29.26-58.75v-33.83c0-56.08-45.01-101.5-100.53-101.5h-50.01c3.62-7.43,5.61-15.79,5.61-24.61,0-31.17-25.08-56.39-56.07-56.39s-56.07,25.22-56.07,56.39c0,8.82,1.99,17.17,5.61,24.61h-50.01c-55.51,0-100.52,45.42-100.52,101.5v33.83l-29.87,58.59c-3.01,5.9-3.01,12.92,0,18.81l29.87,57.93v33.83c0,56.08,45.01,101.5,100.52,101.5h200.95c55.51,0,100.53-45.42,100.53-101.5v-33.83l29.21-58.13c2.9-5.79,2.9-12.61.05-18.46ZM202.75,322.96c0,25.48-20.54,46.14-45.88,46.14s-45.88-20.66-45.88-46.14v-82.02c0-25.48,20.54-46.14,45.88-46.14s45.88,20.66,45.88,46.14v82.02ZM350.58,322.96c0,25.48-20.54,46.14-45.88,46.14s-45.88-20.66-45.88-46.14v-82.02c0-25.48,20.54-46.14,45.88-46.14s45.88,20.66,45.88,46.14v82.02Z\"/>\n</svg>\n"
+      }
+    },
+    "coderabbit": {
+      "name": "CodeRabbit",
+      "componentName": "CodeRabbit",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-coderabbit.svg",
+        "gitBlob": "da00467579b5f0122484cea7ccc7efe0aa59de09",
+        "sha256": "b9e5ca3d02e0886d6a586cf60046b01476b52abb1826017bb0cd18652d76542c",
+        "content": "<svg width=\"100\" height=\"100\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12 2C10.6 2 9.5 3.1 9.5 4.5V8.1C8.7 8.5 8 9.1 7.4 9.8L4.6 6.2C3.7 5.1 2.1 4.9 1 5.8C-0.1 6.7 -0.3 8.3 0.6 9.4L3.7 13.3C3.2 14.5 3 15.7 3 17C3 20.9 6.1 24 10 24H14C17.9 24 21 20.9 21 17C21 15.7 20.8 14.5 20.3 13.3L23.4 9.4C24.3 8.3 24.1 6.7 23 5.8C21.9 4.9 20.3 5.1 19.4 6.2L16.6 9.8C16 9.1 15.3 8.5 14.5 8.1V4.5C14.5 3.1 13.4 2 12 2ZM11.5 5C11.5 4.7 11.7 4.5 12 4.5C12.3 4.5 12.5 4.7 12.5 5V8H11.5V5ZM8 14C8.6 14 9 14.4 9 15C9 15.6 8.6 16 8 16C7.4 16 7 15.6 7 15C7 14.4 7.4 14 8 14ZM16 14C16.6 14 17 14.4 17 15C17 15.6 16.6 16 16 16C15.4 16 15 15.6 15 15C15 14.4 15.4 14 16 14ZM12 17.5C10.9 17.5 10 18.4 10 19.5H14C14 18.4 13.1 17.5 12 17.5Z\" fill=\"white\"/>\n</svg>\n"
+      }
+    },
+    "cosmic": {
+      "name": "Cosmic AI",
+      "componentName": "Cosmic",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-cosmic.svg",
+        "gitBlob": "8b22e1973c0c3975482692a503ef3a724a7f931e",
+        "sha256": "4b04d465bd2a0b19cc5264139f86b9a4b36c7c3fbd83adeb7d55bb86ffba6bb8",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M16 4a9 9 0 1 0 0 16l-2-3a5.5 5.5 0 1 1 0-10Z\"/><path fill=\"currentColor\" d=\"m19 3 1.2 3.8L24 8l-3.8 1.2L19 13l-1.2-3.8L14 8l3.8-1.2Z\"/></svg>\n"
+      }
+    },
+    "crofai": {
+      "name": "CrofAI",
+      "componentName": "CrofAI",
+      "repository": "crossusage",
+      "monochrome": "ink",
+      "source": {
+        "path": "plugins/crofai/icon.svg",
+        "gitBlob": "265fbc3342a6ed50c47e07c6dba4899b961c123c",
+        "sha256": "f845c61986fc2436d17c626c284203c25849d920d82a02376143566ca1513332",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 388 388\" role=\"img\" aria-label=\"CrofAI logo\">\n  <path fill=\"currentColor\" d=\"\n    M 103 107\n    H 161\n    V 135\n    C 173 114, 195 103, 226 103\n    C 264 103, 285 131, 285 185\n    V 294\n    H 226\n    V 189\n    C 226 159, 215 146, 194 146\n    C 172 146, 161 163, 161 193\n    V 294\n    H 103\n    Z\"/>\n</svg>\n"
+      }
+    },
+    "crossmodel": {
+      "name": "CrossModel",
+      "componentName": "CrossModel",
+      "repository": "Win-CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "apps/desktop-tauri/src/components/providers/icons/ProviderIcon-crossmodel.svg",
+        "gitBlob": "e7634bd5cddbc51c658d4394adafa43bbcee9a95",
+        "sha256": "4d3b966933b0e87733afea975cbebb9636c9b8d5df98c22cb515227493444134",
+        "content": "<svg viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M6 38 L 58 38\" stroke=\"currentColor\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n  <path d=\"M14 38 A 18 18 0 0 1 50 38\" stroke=\"currentColor\" stroke-width=\"5\" stroke-linecap=\"round\" fill=\"none\"/>\n  <path d=\"M14 38 A 18 18 0 0 0 50 38\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" fill=\"none\" stroke-dasharray=\"2 5\" opacity=\"0.5\"/>\n</svg>\n"
+      }
+    },
+    "deepgram": {
+      "name": "Deepgram",
+      "componentName": "Deepgram",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-deepgram.svg",
+        "gitBlob": "a72ab7db15166f4643b12f1261cb5a971fba0a03",
+        "sha256": "863500028bccf80a88aa0f56cc6237fc754702f5e31e499a84896ee9da8451fa",
+        "content": "<svg viewBox=\"0 0 32 32\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M6 9h3v14H6V9Zm6-4h3v22h-3V5Zm6 7h3v8h-3v-8Zm6-3h3v14h-3V9Z\"/>\n  <path d=\"M4 26h24v2H4v-2Z\" opacity=\".35\"/>\n</svg>\n"
+      }
+    },
+    "devpass": {
+      "name": "DevPass",
+      "componentName": "DevPass",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-devpass.svg",
+        "gitBlob": "4b19e32fb71d1d8ed64633fb9e4e8e28434b6635",
+        "sha256": "1d76b19bae764eb11a28f85b31503f797d7d2e62a016184736d64ece47875ad7",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\">\n  <path fill=\"#000\" fill-rule=\"evenodd\" d=\"M5 3h6a9 9 0 0 1 0 18H5V3zm3 3v12h3a6 6 0 0 0 0-12H8z\"/>\n</svg>\n"
+      }
+    },
+    "futureagi": {
+      "name": "Future AGI",
+      "componentName": "FutureAGI",
+      "repository": "CodexBar",
+      "monochrome": "luminance",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-futureagi.svg",
+        "gitBlob": "eeff7f14de06d97b365e503bae7179859d07ec86",
+        "sha256": "2646285d92a8b990ada45a4d08be44d0e5e255d2e7e8353cba6664cdef2c09b8",
+        "content": "<svg width=\"51\" height=\"51\" viewBox=\"0 0 51 51\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M51 27.628L47.2995 29.7647L43.5967 31.9013L39.8963 34.0404L36.1958 36.177L34.0568 39.8798L31.9201 43.5803L29.7835 47.2831L27.6468 50.9835H23.3711L25.5078 47.2831L27.6468 43.5803L29.7835 39.8798L31.9201 36.177L33.4839 33.4651L36.1935 31.9013L39.8963 29.7647L43.5967 27.628L39.8963 25.4913L36.1935 23.3523L32.4907 21.2156L30.772 20.2248L29.7811 18.5084L27.6444 14.8056L25.5078 11.1028L27.6444 7.40234L29.7811 11.1028L31.9178 14.8056L33.4816 17.5152L36.1935 19.0789L39.8963 21.2156L43.5967 23.3523L47.2995 25.4913L51 27.628Z\" fill=\"url(#paint0_linear_75_61877)\"/>\n<path d=\"M43.5812 27.6444L39.8807 29.7811L36.1779 31.9178L33.4683 33.4816L31.9046 36.1935L29.7679 39.8963L27.6312 43.5967L25.4922 47.2995L23.3555 51L21.2188 47.2995L19.0822 43.5967L16.9431 39.8963L14.8065 36.1958L11.1037 34.0568L7.40323 31.9201L3.70044 29.7835L0 27.6468L0 23.3711L3.70044 25.5078L7.40323 27.6468L11.1037 29.7835L14.8065 31.9201L17.5184 33.4839L19.0822 36.1935L21.2188 39.8963L23.3555 43.5967L25.4922 39.8963L27.6312 36.1935L29.7679 32.4907L30.7588 30.772L32.4751 29.7811L36.1779 27.6444L39.8807 25.5078L43.5812 27.6444Z\" fill=\"url(#paint1_linear_75_61877)\"/>\n<path d=\"M11.1037 21.2188L7.40323 23.3555L11.1037 25.4922L14.8065 27.6312L18.5093 29.7679L20.228 30.7588L21.2188 32.4751L23.3555 36.1779L25.4922 39.8807L23.3555 43.5812L21.2188 39.8807L19.0822 36.1779L17.5184 33.4683L14.8065 31.9046L11.1037 29.7679L7.40323 27.6312L3.70044 25.4922L0 23.3555L3.70044 21.2188L7.40323 19.0822L11.1037 16.9431L14.8041 14.8065L16.9431 11.1037L19.0798 7.40323L21.2165 3.70044L23.3532 0H27.6289L25.4922 3.70044L23.3532 7.40323L21.2165 11.1037L19.0798 14.8065L17.516 17.5184L16.5933 18.0514L14.8065 19.0822L11.1037 21.2188Z\" fill=\"url(#paint2_linear_75_61877)\"/>\n<path d=\"M50.9884 23.3532V27.6289L47.2879 25.4922L43.5852 23.3532L39.8847 21.2165L36.1819 19.0798L33.47 17.516L31.9062 14.8065L29.7695 11.1037L27.6329 7.40323L25.4962 11.1037L23.3572 14.8065L21.2205 18.5093L20.2296 20.228L18.5132 21.2188L14.8105 23.3555L11.1077 25.4922L7.40723 23.3555L11.1077 21.2188L14.8105 19.0822L16.5973 18.0514L17.52 17.5184L19.0838 14.8065L21.2205 11.1037L23.3572 7.40323L25.4962 3.70044L27.6329 0L29.7695 3.70044L31.9062 7.40323L34.0452 11.1037L36.1819 14.8041L39.8847 16.9431L43.5852 19.0798L47.2879 21.2165L50.9884 23.3532Z\" fill=\"url(#paint3_linear_75_61877)\"/>\n<defs>\n<linearGradient id=\"paint0_linear_75_61877\" x1=\"37.1855\" y1=\"7.40234\" x2=\"37.1855\" y2=\"50.9835\" gradientUnits=\"userSpaceOnUse\">\n<stop stop-color=\"#CF6BE8\"/>\n<stop offset=\"1\" stop-color=\"#7857FC\"/>\n</linearGradient>\n<linearGradient id=\"paint1_linear_75_61877\" x1=\"21.7906\" y1=\"23.3711\" x2=\"21.7906\" y2=\"51\" gradientUnits=\"userSpaceOnUse\">\n<stop stop-color=\"#8B44FF\"/>\n<stop offset=\"1\" stop-color=\"#7A40D9\"/>\n</linearGradient>\n<linearGradient id=\"paint2_linear_75_61877\" x1=\"13.8144\" y1=\"0\" x2=\"13.8144\" y2=\"43.5812\" gradientUnits=\"userSpaceOnUse\">\n<stop stop-color=\"#CF6BE8\"/>\n<stop offset=\"1\" stop-color=\"#7857FC\"/>\n</linearGradient>\n<linearGradient id=\"paint3_linear_75_61877\" x1=\"29.1978\" y1=\"0\" x2=\"29.1978\" y2=\"27.6289\" gradientUnits=\"userSpaceOnUse\">\n<stop stop-color=\"#8B44FF\"/>\n<stop offset=\"1\" stop-color=\"#7A40D9\"/>\n</linearGradient>\n</defs>\n</svg>\n"
+      }
+    },
+    "gitkraken": {
+      "name": "GitKraken AI",
+      "componentName": "GitKraken",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-gitkraken.svg",
+        "gitBlob": "12b4cfab2afd2df00e843137f04a395cc3c5c7cf",
+        "sha256": "20b52166e290620e572aca954b633ba5db8892f48fef65b01502fa4e6f47f9d7",
+        "content": "<!-- GitKraken mark from GitKraken browser extension: https://github.com/gitkraken/gk-browser-extension/blob/main/src/hosts/github.ts -->\n<svg role=\"img\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><title>GitKraken</title><path d=\"M0 16C0 7.177 7.177 0 16 0s16 7.177 16 16-7.177 16-16 16S0 24.823 0 16Zm28.226-4.714a.607.607 0 0 0-.269-.317l-.004-.001c-.123-.07-.268-.095-.409-.07a.613.613 0 0 0-.5.6c.002.073.014.144.04.214.502 1.337.757 2.741.756 4.17a11.835 11.835 0 0 1-10.188 11.729v-5.396c.284-.058.566-.134.84-.226v4.67l.111-.027a11.128 11.128 0 0 0 6.042-3.864 10.939 10.939 0 0 0 2.406-6.884 11.052 11.052 0 0 0-5.703-9.685.618.618 0 0 0-.476-.046.61.61 0 0 0-.113 1.113 9.846 9.846 0 0 1-1.031 17.733v-3.954a1.666 1.666 0 0 0 1.104-1.387 1.67 1.67 0 0 0-.768-1.606c.237-2.17.927-2.598 1.433-2.913.302-.186.561-.348.561-.817v-.668c0-.692-.687-2.307-2.224-4.353-2.127-2.834-3.34-3.13-3.659-3.153-.12-.012-.223-.007-.337 0h-.012c-.321.023-1.534.32-3.664 3.153-1.539 2.046-2.227 3.661-2.227 4.353v.666c0 .47.26.63.56.817.506.313 1.197.742 1.433 2.912a1.664 1.664 0 0 0-.779 1.423c0 .692.456 1.33 1.117 1.572v3.955a9.837 9.837 0 0 1-4.364-3.51 9.784 9.784 0 0 1-1.752-5.604c0-3.578 1.95-6.88 5.088-8.62a.609.609 0 0 0-.294-1.14h-.001a.593.593 0 0 0-.29.076 11.057 11.057 0 0 0-5.71 9.684c0 2.53.833 4.91 2.407 6.885a11.131 11.131 0 0 0 6.041 3.864l.111.027v-4.669c.275.092.557.168.84.226v5.395A11.834 11.834 0 0 1 4.154 15.884c0-1.43.255-2.833.76-4.17a.612.612 0 0 0-.017-.464.597.597 0 0 0-.34-.316.611.611 0 0 0-.655.155.61.61 0 0 0-.125.202 13.133 13.133 0 0 0-.744 6.067A13.135 13.135 0 0 0 5.128 23.1a13.134 13.134 0 0 0 4.477 4.162 13.14 13.14 0 0 0 5.88 1.672l.093.003v-6.565a17.775 17.775 0 0 0 .479.012c.08-.002.233-.006.362-.012v6.565l.093-.003a13.156 13.156 0 0 0 5.878-1.676 13.152 13.152 0 0 0 4.477-4.163 13.145 13.145 0 0 0 2.097-5.741 13.146 13.146 0 0 0-.738-6.068ZM13.664 20.01a.977.977 0 0 0-.436-1.442.978.978 0 0 0-1.329.71.978.978 0 0 0 .583 1.09.974.974 0 0 0 1.183-.357h-.002Zm6.343-.994a.971.971 0 0 0-1.14-.475.978.978 0 0 0-.69 1.025.975.975 0 0 0 .968.881.974.974 0 0 0 .861-1.431h.001Z\"/></svg>\n"
+      }
+    },
+    "helmcode": {
+      "name": "Helmcode",
+      "componentName": "Helmcode",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-helmcode.svg",
+        "gitBlob": "cb0f57a53c5e1816c46a3807f2a272d6fdc16ba7",
+        "sha256": "815993dc14457df021454bb59972c0cb9ff8651271f74b0cb8a5bf0f9fa191c3",
+        "content": "<svg width=\"132\" height=\"132\" viewBox=\"0 0 132 132\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n  <g transform=\"translate(8.5)\">\n    <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M57.5 0C54.9373 0 52.3747 0.6439 50.1323 1.9317L7.20752 26.8829C2.72284 29.4585 0 34.2878 0 39.439V92.561C0 97.712 2.72284 102.541 7.20752 105.117L50.1323 130.068C52.3747 131.356 54.9373 132 57.5 132C60.0627 132 62.6253 131.356 64.8677 130.068L107.792 105.117C112.277 102.541 115 97.712 115 92.561V39.439C115 34.2878 112.277 29.4585 107.792 26.8829L64.8677 1.9317C62.6253 0.6439 60.0627 0 57.5 0ZM57.5 23.8244L20.0055 43.7423L57.4199 64.8294V109.302H57.5L97.6901 86.0459V47.285L57.5 23.8244Z\" fill=\"currentColor\"/>\n  </g>\n</svg>\n"
+      }
+    },
+    "hyper": {
+      "name": "Charm Hyper",
+      "componentName": "Hyper",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-hyper.svg",
+        "gitBlob": "25ea99e68213d7448730e5ddff341d883f4f60c9",
+        "sha256": "ff3e79537cad7f1ef964d6981ef12ba0a449d2e5f0d66f3cee81c1174e743341",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" aria-label=\"Charm Hyper\">\n  <path fill=\"currentColor\" d=\"M12 2 22 12 12 22 2 12Z\"/>\n</svg>\n"
+      }
+    },
+    "ibmbob": {
+      "name": "IBM Bob",
+      "componentName": "IBMBob",
+      "repository": "CodexBar",
+      "monochrome": "luminance",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-ibmbob.svg",
+        "gitBlob": "70367244e94d3df078fd2570ffca56d09fc25632",
+        "sha256": "fdf8b7b09391dc5eb5a188402973760a6563dbe244647c467a572df2b58df236",
+        "content": "<svg id=\"Bob\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\">\n  <defs>\n    <linearGradient id=\"helmetShade\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n      <stop offset=\".134\" stop-opacity=\"0\"/>\n      <stop offset=\".873\"/>\n    </linearGradient>\n    <linearGradient id=\"bobGradient\" x1=\"0\" y1=\"32\" x2=\"32\" y2=\"0\" gradientUnits=\"userSpaceOnUse\">\n      <stop offset=\".1\" stop-color=\"#a16efb\"/>\n      <stop offset=\".9\" stop-color=\"#0e61fa\"/>\n    </linearGradient>\n    <mask id=\"helmetMask\" x=\"0\" y=\"0\" width=\"32\" height=\"32\" maskUnits=\"userSpaceOnUse\">\n      <path d=\"M29.718 15.25a13.67 13.67 0 0 0-9.991-12.476A1.747 1.747 0 0 0 18 1.25h-4c-.887 0-1.615.667-1.727 1.524A13.67 13.67 0 0 0 2.282 15.25H0v1.5h32v-1.5h-2.282zM12.25 4.337V13h1.5V3a.25.25 0 0 1 .25-.25h4a.25.25 0 0 1 .25.25v10h1.5V4.337a12.183 12.183 0 0 1 8.468 10.913H3.782A12.183 12.183 0 0 1 12.25 4.337z\" fill=\"#fff\"/>\n      <path d=\"M21 7v7H11V7h10z\" fill=\"url(#helmetShade)\"/>\n    </mask>\n  </defs>\n  <g mask=\"url(#helmetMask)\">\n    <path fill=\"url(#bobGradient)\" d=\"M0 0h32v32H0z\"/>\n  </g>\n  <path d=\"M24 30.75H8a4.756 4.756 0 0 1-4.69-4H3c-.965 0-1.75-.785-1.75-1.75v-6h1.5v6c0 .138.112.25.25.25h1.75V26A3.254 3.254 0 0 0 8 29.25h16A3.254 3.254 0 0 0 27.25 26v-.75H29a.25.25 0 0 0 .25-.25v-6h1.5v6c0 .965-.785 1.75-1.75 1.75h-.31a4.756 4.756 0 0 1-4.69 4z\" fill=\"#001d6c\"/>\n  <circle cx=\"22\" cy=\"21\" r=\"2\" fill=\"#001d6c\"/>\n  <circle cx=\"10\" cy=\"21\" r=\"2\" fill=\"#001d6c\"/>\n  <path d=\"M16 27.75a5.695 5.695 0 0 1-3.451-1.15.75.75 0 0 1 .903-1.199c1.476 1.111 3.617 1.111 5.099 0a.75.75 0 1 1 .901 1.199 5.696 5.696 0 0 1-3.45 1.15z\" fill=\"#001d6c\"/>\n</svg>\n"
+      }
+    },
+    "langdock": {
+      "name": "Langdock",
+      "componentName": "Langdock",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-langdock.svg",
+        "gitBlob": "6d80ebd4ccda1c2fdae68d9d4ed6dda979febb8d",
+        "sha256": "f409e0a0bb47415bb287290efce1fb9424f2d0ffe6a78ef7ffb4b942287b9faa",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"112.9 211.2 30 30\" width=\"512\" height=\"512\">\n  <!-- Langdock mark from https://langdock.com/brand-kit (brand-dark.svg). -->\n  <path d=\"M135.301 230.862C135.595 230.358 135.593 229.735 135.296 229.234L130.455 221.061L126.41 214.282C125.786 213.235 124.268 213.24 123.649 214.29L120.175 220.187C119.879 220.69 119.879 221.314 120.175 221.816L124.545 229.234C124.84 229.735 124.841 230.358 124.547 230.86L121.105 236.734C120.479 237.803 121.25 239.15 122.49 239.15H129.534C130.105 239.15 130.632 238.847 130.92 238.355L135.301 230.862Z\" fill=\"white\"/>\n</svg>\n"
+      }
+    },
+    "linkup": {
+      "name": "Linkup",
+      "componentName": "Linkup",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-linkup.svg",
+        "gitBlob": "acde746e7772d3aad1bbeaac8efd159fd3590c8b",
+        "sha256": "49088ad12dce50e3582da8f3cb2f7ddf47000f5af4e841a54784a8a96d8d0328",
+        "content": "<svg width=\"285\" height=\"198\" viewBox=\"0 0 285 198\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_650_11)\">\n<path d=\"M96.1153 0C115.145 9.96246e-05 131.026 8.72414 143.978 22.1662C149.579 27.9789 154.673 34.7119 159.303 42.0916C177.404 34.9414 195.406 32.5434 211.123 39.016C225.943 45.1194 234.458 56.0167 238.15 69.3667C241.755 82.4004 240.712 97.5027 237.317 112.551C236.123 117.841 234.62 123.193 232.884 128.536C239.707 128.029 246.056 127.795 251.797 127.879C260.507 128.006 268.207 128.866 274.116 130.847C285.12 134.535 288.65 148.138 280.65 156.687C275.381 162.319 266.383 168.603 253.035 175.39C239.593 182.225 221.386 189.745 197.367 197.701C195.644 198.272 193.756 198.015 192.246 197.006C190.737 195.996 189.774 194.345 189.635 192.53C188.645 179.559 186.69 163.856 183.595 147.175C172.198 149.244 160.331 151.672 148.311 154.368C94.6619 166.396 38.6478 183.583 8.34971 197.465C6.49768 198.314 4.34053 198.144 2.64306 197.016C0.945589 195.888 -0.0526946 193.96 0.0021483 191.918C0.84773 160.512 6.41469 113.301 20.5188 73.735C27.5677 53.9608 36.888 35.6927 49.1507 22.2785C61.5163 8.75168 77.0563 0 96.1153 0ZM251.626 139.722C244.9 139.624 237.119 139.996 228.507 140.784C222.883 155.254 215.916 169.209 209.107 181.111C225.195 175.287 237.886 169.815 247.704 164.823C260.564 158.284 268.153 152.74 272.049 148.577C274.097 146.388 273.296 143.061 270.379 142.083C266.169 140.672 259.884 139.843 251.626 139.722ZM154.363 57.2032C134.146 67.0213 112.683 83.0036 92.5185 101.014C72.3972 118.986 53.7959 138.772 39.3029 155.979C31.9268 164.737 25.7098 172.713 20.9227 179.37C53.5158 166.719 100.651 152.916 145.739 142.807C157.803 140.102 169.756 137.653 181.28 135.558C177.168 116.252 171.54 96.2054 164.138 77.9653C161.166 70.6416 157.928 63.6647 154.419 57.1756C154.401 57.1846 154.382 57.1941 154.363 57.2032ZM215.189 142.245C208.813 143.05 202.133 144.03 195.225 145.164C197.088 155.218 198.539 164.912 199.629 173.886C205.045 164.31 210.498 153.477 215.189 142.245ZM96.1153 11.8456C81.0934 11.8456 68.524 18.6064 57.8453 30.2879C47.0636 42.0821 38.4043 58.7186 31.6286 77.7264C21.0555 107.387 15.4078 141.843 13.0465 170.111C17.8505 163.568 23.6922 156.167 30.2916 148.331C45.0869 130.766 64.0751 110.564 84.6755 92.164C104.969 74.0389 127.049 57.4622 148.392 46.9482C144.399 40.7546 140.104 35.1838 135.496 30.4012C124.159 18.635 111.166 11.8457 96.1153 11.8456ZM206.644 49.9744C195.25 45.282 181.19 46.4708 165.297 52.4684C168.864 59.1583 172.114 66.222 175.066 73.4961C182.82 92.6035 188.671 113.5 192.918 133.539C202.399 131.977 211.495 130.692 220.013 129.743C222.352 123.112 224.336 116.453 225.807 109.934C228.997 95.8018 229.646 82.8969 226.78 72.5356C224.002 62.4906 217.886 54.6042 206.644 49.9744Z\" fill=\"black\"/>\n</g>\n<defs>\n<clipPath id=\"clip0_650_11\">\n<rect width=\"285\" height=\"198\" fill=\"white\"/>\n</clipPath>\n</defs>\n</svg>\n"
+      }
+    },
+    "litellm": {
+      "name": "LiteLLM",
+      "componentName": "LiteLLM",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-litellm.svg",
+        "gitBlob": "3a6c20b880397849c321d092fccc5778aaac3a83",
+        "sha256": "c96713a6b76bf004c38d1a8a08d407d48af72290adccd73f8a0269ab157cf94e",
+        "content": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n  <g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M8.1 12.4C12.5 8.8 17.7 6.3 22.4 5.7c0-.5.5-.7 1-.8 1.8-.4 4.1-.5 5.8-.5.6 0 1 .4 1 1v19c0 .6-.4 1-1 1H10c-.7 0-1.3 0-1.9-.1V12.4Z\" stroke-width=\"1.35\"/>\n    <path d=\"M8.1 12.4C5 14.8 3 17 2.8 19.2c-.2 1.9 1.8 3.5 5.3 4.5V12.4Z\" fill=\"currentColor\" stroke-width=\"1.35\"/>\n    <path d=\"M10.6 19.5h3.7\" stroke-width=\"1.35\"/>\n    <path d=\"M20.6 25.5l-1.3 2.6c.5.3 1.1.4 1.7.2.9-.2 1.6-1.2 1.7-2.8\" stroke-width=\"1.2\"/>\n    <path d=\"M25.3 25.5c.1 1.8 1.2 3 2.6 3s2.5-1.2 2.6-3\" stroke-width=\"1.2\"/>\n    <path d=\"M25.3 15.5h2.9c.5 0 .9.4.9.9v6.9c0 .5-.4.9-.9.9h-2.9c-.5 0-.9-.4-.9-.9v-6.9c0-.5.4-.9.9-.9Z\" stroke-width=\"1.2\"/>\n    <path d=\"M17.3 22.6h7.1m4.7 0h1.1\" stroke-width=\"1.05\"/>\n  </g>\n  <path d=\"M12.9 13.1c4.2-2.3 8.3-3.5 12.7-3.6.8.2 1.8 1.5 2.4 3.1-5.3.2-10.3.8-15.2 2.6-1.2.4-1.5-1.2.1-2.1Z\" fill=\"currentColor\"/>\n  <path d=\"M20.4 16.5h4v5.4h-6.6l2.6-5.4Z\" fill=\"currentColor\"/>\n  <path d=\"M29.1 16.5h1.1v5.4h-1.1v-5.4Z\" fill=\"currentColor\"/>\n  <path d=\"M10.9 25.5h9.5l-1.6 2.3H10c-.8 0-1.1-.7-.7-1.3l1.6-1Z\" fill=\"currentColor\"/>\n  <path d=\"M25.8 25.5h4c-.1 1.2-.9 2.1-2 2.1s-1.9-.9-2-2.1Z\" fill=\"currentColor\"/>\n</svg>\n"
+      }
+    },
+    "lithosai": {
+      "name": "LithosAI",
+      "componentName": "LithosAI",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-lithosai.svg",
+        "gitBlob": "326e97efaad27f19db256266e2fa868c63846dee",
+        "sha256": "8d7c8c56387ee74b6c1d99924d93d4a327551ae69f27262a1accf863cce3299c",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M5 3h5v13h9v5H5z\"/></svg>\n"
+      }
+    },
+    "llmman": {
+      "name": "llmman",
+      "componentName": "Llmman",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-llmman.svg",
+        "gitBlob": "a087c006cac77c84c2a77c17f514ee1afc59a2ad",
+        "sha256": "e6c802d15b085b9fc4a1550852b1a5860179f2004c6e0a730954d881403d185d",
+        "content": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<!-- Template-safe vector trace of the llmman logo (https://github.com/llmmanorg) -->\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M3.8 21.0C1.1 20.7 -0.5 18.1 0.7 16.1C0.9 15.7 2.0 14.7 2.2 14.7C2.2 14.7 2.3 14.6 2.3 14.6C2.4 14.5 2.4 14.5 2.5 14.5C2.5 14.5 2.9 14.2 3.1 14.1C3.5 13.7 3.8 13.3 3.8 13.0C4.9 7.5 7.7 4.4 12.3 3.7C12.5 3.6 12.7 3.6 12.8 3.6C12.9 3.5 13.5 3.5 14.0 3.5C14.6 3.5 15.1 3.4 15.1 3.4C15.8 3.1 17.3 3.0 18.2 3.2C18.6 3.3 19.3 3.6 19.4 3.6C19.4 3.7 19.5 3.7 19.6 3.7C20.6 4.3 22.1 6.2 22.1 7.2C22.1 7.2 22.2 7.3 22.3 7.5C22.8 7.8 23.3 8.6 23.4 9.2C23.5 9.4 23.5 9.5 23.6 9.6C23.8 9.7 23.8 10.1 23.6 10.2C23.5 10.3 23.5 10.6 23.6 10.7C23.8 10.9 23.6 11.4 23.3 11.4C23.2 11.4 23.2 11.4 23.1 11.5C23.0 11.7 22.5 12.1 22.2 12.2C22.0 12.2 21.9 12.3 21.9 12.4C21.7 12.6 21.4 13.0 21.2 13.1C21.1 13.2 21.1 13.2 21.1 13.2C21.2 13.4 21.4 14.9 21.3 15.4C21.2 15.5 21.2 15.7 21.2 15.9C21.1 16.3 20.9 16.8 20.7 17.1C20.7 17.2 20.6 17.3 20.5 17.4C20.3 17.9 19.3 18.7 18.8 18.9C17.9 19.2 17.1 18.5 16.9 17.1C16.9 16.7 16.9 16.7 16.5 16.9C15.8 17.1 14.9 17.3 14.4 17.4C14.1 17.4 14.0 17.5 14.0 17.5C14.0 17.7 13.3 18.4 13.1 18.7C11.9 19.7 10.9 19.9 10.2 19.3C9.9 19.0 9.5 18.0 9.5 17.5C9.5 17.3 9.5 17.2 9.2 17.1C9.1 17.1 8.7 16.9 8.3 16.8C7.4 16.5 7.5 16.5 7.5 16.8C7.5 17.0 7.6 17.2 7.6 17.5C7.9 19.7 6.3 21.2 3.8 21.0ZM5.4 19.8C6.0 19.6 6.4 19.2 6.5 18.7C6.6 18.4 6.6 18.2 6.5 17.0L6.5 16.6L6.3 16.7C6.3 16.7 6.1 16.8 6.0 16.9C5.7 17.2 5.5 17.2 5.2 17.0C5.0 16.8 5.1 16.4 5.4 16.1C6.1 15.5 6.9 15.4 7.8 15.6C7.9 15.7 8.2 15.7 8.3 15.8C8.4 15.8 8.7 15.9 9.0 16.0C9.4 16.1 9.5 16.1 9.5 15.8C9.6 15.5 9.7 15.1 9.8 14.9C9.9 14.8 9.9 14.7 9.9 14.7C9.9 14.7 10.3 14.2 10.5 14.0C10.9 13.5 11.1 13.2 11.2 12.7C11.3 12.3 11.7 12.2 12.0 12.5C12.3 12.8 12.0 13.7 11.2 14.6C10.4 15.6 10.2 17.0 10.8 18.3L10.9 18.6L11.1 18.6C11.9 18.6 13.1 17.4 13.5 16.2C13.7 15.4 13.7 14.7 13.6 13.8C13.5 13.2 13.5 13.1 13.8 12.9C14.1 12.7 14.5 12.9 14.6 13.4C14.6 13.6 14.6 13.8 14.7 13.9C14.7 14.0 14.7 14.4 14.7 14.7C14.7 15.2 14.7 15.4 14.6 16.1C14.5 16.4 14.5 16.4 15.0 16.2C16.6 15.9 17.8 15.2 18.9 14.1C19.3 13.8 19.3 13.8 19.1 13.8C18.8 13.8 17.9 13.5 17.8 13.3C17.6 13.1 17.6 12.6 17.9 12.5L18.0 12.5L17.7 12.3C17.6 12.2 17.3 12.1 17.2 12.0L17.0 11.7L16.8 11.9C16.6 12.1 16.4 12.2 16.2 12.0C16.0 11.8 16.0 11.6 16.4 11.2C16.7 10.9 16.6 10.6 16.3 10.8C16.0 11.1 15.6 10.9 15.6 10.6C15.6 10.4 16.0 10.0 16.1 10.0C16.2 10.0 16.3 9.9 16.4 9.9C16.7 9.7 16.9 9.7 17.0 9.7C17.1 9.7 17.2 9.6 17.4 9.6C17.9 9.5 18.3 9.7 18.1 10.2C18.1 10.3 18.1 10.3 18.2 10.4C18.4 10.6 18.3 10.9 17.9 11.1L17.8 11.2L17.9 11.2C18.8 11.9 20.2 11.3 20.4 10.2C20.5 9.8 20.8 9.7 21.0 9.9C21.2 10.0 21.2 10.4 21.1 10.8L21.1 11.0L21.3 11.1C21.7 11.4 22.4 11.1 22.1 10.8C21.9 10.6 22.0 10.2 22.2 10.2C22.3 10.2 22.3 10.2 22.2 10.0C22.1 9.8 22.2 9.6 22.3 9.5C22.6 9.2 21.9 8.2 21.1 7.8C20.3 7.4 20.3 7.4 20.5 7.1C20.6 6.9 20.6 6.9 20.8 6.8L20.9 6.8L20.9 6.6C20.7 6.0 19.9 5.2 19.3 4.8C17.2 3.4 14.6 4.0 13.2 6.3C13.1 6.6 12.8 6.5 12.7 6.2C12.6 5.8 12.7 5.6 13.4 4.7L13.5 4.5L13.0 4.6C12.8 4.6 12.4 4.6 12.3 4.7C11.1 5.0 10.6 5.1 10.4 5.2C10.4 5.2 10.1 5.3 9.9 5.5C7.6 6.6 6.2 8.3 5.3 10.9C5.0 12.0 4.7 13.6 4.7 14.5C4.7 15.3 4.6 15.5 4.3 15.5C4.0 15.5 3.9 15.4 3.9 15.1L3.8 14.8L3.0 15.4C1.1 16.6 0.7 17.7 1.8 18.9C2.6 19.8 4.3 20.2 5.4 19.8ZM18.8 17.8C19.8 16.9 20.3 15.9 20.3 14.7L20.3 14.2L19.6 14.9C19.2 15.3 18.8 15.6 18.7 15.7C18.5 15.9 18.4 15.9 18.2 16.1C17.9 16.2 17.9 16.2 18.0 16.8C18.0 17.3 18.2 17.9 18.3 17.9C18.5 18.0 18.6 17.9 18.8 17.8ZM20.1 12.6C20.3 12.5 20.8 12.2 20.9 12.1C20.9 12.1 20.8 12.0 20.7 12.0L20.6 11.9L20.3 12.1C19.9 12.4 19.4 12.5 18.9 12.6C18.5 12.6 18.5 12.6 18.7 12.6C18.9 12.7 19.7 12.7 20.1 12.6ZM16.3 8.5C15.4 8.2 15.6 7.0 16.5 7.0C17.3 7.0 17.5 8.3 16.7 8.5C16.7 8.5 16.6 8.5 16.6 8.5C16.5 8.5 16.4 8.5 16.3 8.5Z\" fill=\"currentColor\"/>\n</svg>\n"
+      }
+    },
+    "llmproxy": {
+      "name": "LLM Proxy",
+      "componentName": "LLMProxy",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-llmproxy.svg",
+        "gitBlob": "812831dcacca8d1de2c6df04b673de0cebad32b2",
+        "sha256": "a6325d79506a71b115bf9f47028e3e71704d3da51c905011d455a2bbeb2797c0",
+        "content": "<svg viewBox=\"0 0 32 32\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M7 8.5A5.5 5.5 0 0 1 12.5 3H18v4h-5.5A1.5 1.5 0 0 0 11 8.5V12H7V8.5Z\"/>\n  <path d=\"M25 23.5A5.5 5.5 0 0 1 19.5 29H14v-4h5.5a1.5 1.5 0 0 0 1.5-1.5V20h4v3.5Z\"/>\n  <path d=\"M12 21H8.5A5.5 5.5 0 0 1 3 15.5v-3A5.5 5.5 0 0 1 8.5 7H12v4H8.5A1.5 1.5 0 0 0 7 12.5v3A1.5 1.5 0 0 0 8.5 17H12v4Z\"/>\n  <path d=\"M20 11h3.5A1.5 1.5 0 0 1 25 12.5v3a1.5 1.5 0 0 1-1.5 1.5H20v4h3.5a5.5 5.5 0 0 0 5.5-5.5v-3A5.5 5.5 0 0 0 23.5 7H20v4Z\"/>\n  <path d=\"M10 14h12v4H10v-4Z\"/>\n</svg>\n"
+      }
+    },
+    "munito": {
+      "name": "Munito",
+      "componentName": "Munito",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-munito.svg",
+        "gitBlob": "8098214d6d6ab5c45377e42d613cda5cb54c545d",
+        "sha256": "7ffb981320c00a37c04264e3747363106850f2c896bf84829e3da9951e970966",
+        "content": "<svg fill=\"currentColor\" viewBox=\"-11.8 -11.8 55.6 55.6\" xmlns=\"http://www.w3.org/2000/svg\">\n  <title>Munito</title>\n  <path d=\"M8 0h24v1h-24zM7 1h24v1h-24zM6 2h24v1h-24zM5 3h24v1h-24zM4 4h24v1h-24zM3 5h24v1h-24zM2 6h24v1h-24zM1 7h24v1h-24z\" opacity=\".55\"/>\n  <path d=\"M0 8h24v1h-24zM0 9h24v1h-24zM0 10h24v1h-24zM0 11h24v1h-24zM0 12h24v1h-24zM0 13h24v1h-24zM0 14h24v1h-24zM0 15h24v1h-24zM0 16h6v1h-6zM10 16h4v1h-4zM18 16h6v1h-6zM0 17h6v1h-6zM10 17h4v1h-4zM18 17h6v1h-6zM0 18h6v1h-6zM10 18h4v1h-4zM18 18h6v1h-6zM0 19h6v1h-6zM10 19h4v1h-4zM18 19h6v1h-6zM0 20h6v1h-6zM10 20h4v1h-4zM18 20h6v1h-6zM0 21h6v1h-6zM10 21h4v1h-4zM18 21h6v1h-6zM0 22h24v1h-24zM0 23h24v1h-24zM0 24h24v1h-24zM0 25h24v1h-24zM0 26h24v1h-24zM0 27h24v1h-24zM0 28h24v1h-24zM0 29h24v1h-24zM0 30h24v1h-24zM0 31h24v1h-24z\"/>\n  <path d=\"M31 1h1v1h-1zM30 2h2v1h-2zM29 3h3v1h-3zM28 4h4v1h-4zM27 5h5v1h-5zM26 6h6v1h-6zM25 7h7v1h-7zM24 8h6v1h-6zM31 8h1v1h-1zM24 9h6v1h-6zM31 9h1v1h-1zM24 10h4v1h-4zM29 10h1v1h-1zM31 10h1v1h-1zM24 11h3v1h-3zM29 11h1v1h-1zM31 11h1v1h-1zM24 12h2v1h-2zM29 12h1v1h-1zM31 12h1v1h-1zM24 13h2v1h-2zM27 13h1v1h-1zM29 13h1v1h-1zM31 13h1v1h-1zM24 14h2v1h-2zM27 14h1v1h-1zM29 14h1v1h-1zM31 14h1v1h-1zM24 15h2v1h-2zM29 15h1v1h-1zM31 15h1v1h-1zM24 16h2v1h-2zM29 16h1v1h-1zM31 16h1v1h-1zM24 17h2v1h-2zM27 17h1v1h-1zM29 17h1v1h-1zM31 17h1v1h-1zM24 18h2v1h-2zM27 18h1v1h-1zM29 18h3v1h-3zM24 19h2v1h-2zM27 19h1v1h-1zM29 19h3v1h-3zM24 20h2v1h-2zM27 20h5v1h-5zM24 21h2v1h-2zM27 21h5v1h-5zM24 22h8v1h-8zM24 23h8v1h-8zM24 24h7v1h-7zM24 25h6v1h-6zM24 26h5v1h-5zM24 27h4v1h-4zM24 28h3v1h-3zM24 29h2v1h-2zM24 30h1v1h-1z\" opacity=\".35\"/>\n  <path d=\"M30 8h1v1h-1zM30 9h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM27 11h2v1h-2zM30 11h1v1h-1zM26 12h3v1h-3zM30 12h1v1h-1zM26 13h1v1h-1zM28 13h1v1h-1zM30 13h1v1h-1zM26 14h1v1h-1zM28 14h1v1h-1zM30 14h1v1h-1zM26 15h3v1h-3zM30 15h1v1h-1zM26 16h3v1h-3zM30 16h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM30 17h1v1h-1zM26 18h1v1h-1zM28 18h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM26 20h1v1h-1zM26 21h1v1h-1z\" opacity=\".8\"/>\n</svg>\n"
+      }
+    },
+    "museai": {
+      "name": "Muse (muse.ai)",
+      "componentName": "MuseAI",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-museai.svg",
+        "gitBlob": "e20c8275b974e47b570b45713b853d7b2cc6c4d0",
+        "sha256": "9da087304f1b6b9331fd5f2301116a1f1037871ddd38ccdbd9858359e604d4ed",
+        "content": "<svg viewBox=\"-2.00 -2.04 104.08 104.08\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path fill=\"white\" d=\"M24.6257 16.1214C28.2365 16.1214 30.8187 18.9408 30.8187 23.3643C30.8185 27.7868 30.1055 31.7765 28.9225 40.2466C28.0743 46.1813 26.62 55.2418 26.0132 59.0088C27.1782 56.7815 29.9074 51.5757 30.3914 50.5982C36.1081 39.061 42.0657 28.7544 43.7826 26.0254C46.0594 22.382 48.062 20.9229 51.1597 20.9229C52.7685 20.923 54.6826 21.7357 55.6315 22.819C56.9178 24.2895 57.1859 26.6602 57.1411 29.244C57.0738 33.2073 56.5599 39.5264 55.8553 46.5698C55.5416 49.7057 54.9365 56.1066 54.5288 60.4004C58.1883 53.8532 64.9609 41.8109 67.6921 37.6058C70.0727 33.9402 72.466 31.5797 75.6836 31.5796C78.4595 31.5796 81.8809 33.5416 81.6772 38.7573C81.3774 46.4556 80.2673 63.2232 79.7607 70.7479C83.1662 65.7913 87.6377 58.4543 89.3148 55.6966C91.0104 52.908 92.75 50.6542 95.3898 50.5778C98.0987 50.4995 99.913 52.341 99.9959 55.1839C100.078 58.0277 98.3835 61.2256 96.1344 64.856C93.6937 68.7957 90.9621 73.0123 87.6383 76.9491C84.3148 80.8856 81.2604 83.8782 76.5991 83.8786C72.4243 83.8786 69.4869 81.1043 69.283 76.0254C69.1768 73.364 69.6804 67.6405 70.0602 63.1673C70.5 57.9875 71.0315 52.9861 71.403 49.6786C67.7337 56.3979 60.0101 70.4676 56.5348 75.9603C53.1343 81.3339 51.4774 83.2269 47.8882 83.2275C44.2977 83.2275 42.7226 80.6416 42.6717 76.7497C42.6142 72.5285 45.7852 47.1821 46.8587 38.737C45.1183 42.4616 40.839 51.6056 38.1551 57.0435C35.5587 62.3055 31.204 71.3978 28.0436 76.6357C25.7668 80.4094 23.2092 83.2273 19.4173 83.2275C15.6252 83.2275 13.4847 80.6784 13.4847 76.5788C13.4847 72.4794 14.6716 65.6492 15.9465 57.1777C16.5839 53.0781 17.3108 48.6133 18.1315 43.8761C18.7324 40.448 19.7764 34.4169 20.4183 30.7129C17.502 35.2539 12.2536 43.4278 10.6567 45.8903C8.88113 48.6291 7.28747 50.626 4.64681 50.6266C1.7329 50.6266 0.000532901 48.3522 0 45.7113C0 43.0703 1.34323 41.0344 3.52376 37.4512C6.32403 32.8465 11.3578 26.57 14.1154 23.2747C17.3656 19.3912 20.6139 16.1219 24.6257 16.1214Z\"/>\n</svg>\n"
+      }
+    },
+    "neuralwatt": {
+      "name": "Neuralwatt",
+      "componentName": "Neuralwatt",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-neuralwatt.svg",
+        "gitBlob": "cf43777aca009df29acfe94ff8ad8b3ff1876d6a",
+        "sha256": "1f724e174fe57ec02fddd2f4fa53b6c279908ebe2343527571ca2e68b9e942d0",
+        "content": "<svg viewBox=\"0 0 32 32\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M18 2 6 19h7l-3 11 14-19h-7z\"/>\n</svg>\n"
+      }
+    },
+    "parallel": {
+      "name": "Parallel",
+      "componentName": "Parallel",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-parallel.svg",
+        "gitBlob": "9c47d974b7669dfd3fa3e9eefa4ae1fee47963d2",
+        "sha256": "4e9099a53db55499ba9c407aa8b45bdbf3efc63e403f455e496eeef80542e06b",
+        "content": "<svg fill=\"currentColor\" viewBox=\"-10 -10.5 291 291\" xmlns=\"http://www.w3.org/2000/svg\">\n  <title>Parallel</title>\n  <path d=\"M267.804 105.65H193.828C194.026 106.814 194.187 107.996 194.349 109.178H76.6703C76.4546 110.736 76.2388 112.312 76.0591 113.87H1.63342C1.27387 116.198 0.950289 118.543 0.698608 120.925H75.3759C75.2501 122.483 75.1602 124.059 75.0703 125.617H195.949C196.003 126.781 196.057 127.962 196.093 129.144H270.68V125.384C270.195 118.651 269.242 112.061 267.804 105.65Z\"/>\n  <path d=\"M195.949 144.401H75.0703C75.1422 145.977 75.2501 147.535 75.3759 149.093H0.698608C0.950289 151.457 1.2559 153.802 1.63342 156.148H76.0591C76.2388 157.724 76.4366 159.282 76.6703 160.84H194.349C194.187 162.022 194.008 163.186 193.828 164.367H267.804C269.242 157.957 270.195 151.367 270.68 144.634V140.874H196.093C196.057 142.055 196.003 143.219 195.949 144.401Z\"/>\n  <path d=\"M190.628 179.642H80.3559C80.7514 181.218 81.1828 182.776 81.6143 184.334H9.30994C10.2448 186.715 11.2515 189.061 12.3121 191.389H83.7536C84.2749 192.965 84.7962 194.523 85.3535 196.08H185.594C185.163 197.262 184.732 198.426 184.282 199.608H254.519C258.6 192.177 261.98 184.316 264.604 176.114H191.455C191.185 177.296 190.898 178.46 190.61 179.642H190.628Z\"/>\n  <path d=\"M177.666 214.883H93.3352C94.1082 216.458 94.9172 218.034 95.7441 219.574H29.8756C31.8351 221.992 33.8666 224.337 35.9699 226.63H99.6632C100.598 228.205 101.551 229.781 102.522 231.321H168.498C167.761 232.503 167.006 233.685 166.233 234.849H226.762C234.474 227.847 241.36 219.95 247.292 211.355H179.356C178.799 212.537 178.26 213.719 177.684 214.883H177.666Z\"/>\n  <path d=\"M154.943 250.106H116.058C117.371 251.699 118.701 253.257 120.067 254.797H73.021C91.6094 264.431 112.715 269.946 135.096 270C135.24 270 135.366 270 135.492 270C135.618 270 135.761 270 135.887 270C164.04 269.911 190.178 261.28 211.805 246.56H157.748C156.813 247.742 155.878 248.924 154.925 250.088L154.943 250.106Z\"/>\n  <path d=\"M116.059 19.9124H154.943C155.896 21.0764 156.831 22.2582 157.766 23.4401H211.823C190.179 8.72065 164.058 0.0895344 135.906 0C135.762 0 135.636 0 135.51 0C135.384 0 135.24 0 135.115 0C112.715 0.0716275 91.6277 5.56904 73.0393 15.2029H120.086C118.719 16.7429 117.389 18.3187 116.077 19.8945L116.059 19.9124Z\"/>\n  <path d=\"M93.3356 55.1532H177.667C178.242 56.3171 178.799 57.499 179.339 58.6808H247.274C241.342 50.0855 234.457 42.1886 226.744 35.187H166.215C166.988 36.351 167.743 37.5328 168.48 38.7147H102.504C101.533 40.2726 100.58 41.8305 99.6456 43.4063H35.9523C33.831 45.6804 31.7996 48.0262 29.858 50.4616H95.7265C94.8996 52.0195 94.1086 53.5774 93.3176 55.1532H93.3356Z\"/>\n  <path d=\"M80.3736 90.3758H190.646C190.933 91.5398 191.221 92.7216 191.491 93.9035H264.64C262.015 85.7021 258.636 77.841 254.555 70.4097H184.318C184.767 71.5736 185.199 72.7555 185.63 73.9373H85.3893C84.832 75.4952 84.2927 77.0531 83.7893 78.6289H12.3479C11.2872 80.9389 10.2805 83.2847 9.3457 85.6842H81.65C81.2186 87.2421 80.7871 88.8 80.3916 90.3758H80.3736Z\"/>\n</svg>\n"
+      }
+    },
+    "raycast": {
+      "name": "Raycast",
+      "componentName": "Raycast",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-raycast.svg",
+        "gitBlob": "851925356dc4432e24deb202567bfb82c37729e3",
+        "sha256": "1d37e9ef7ad1be8aa1ff2fc86f41fcf2af6dc0fd77d1832bef770df4ca6a9f10",
+        "content": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M6.004 15.492v2.504L0 11.992l1.258-1.249Zm2.504 2.504H6.004L12.008 24l1.253-1.253zm14.24-4.747L24 11.997 12.003 0 10.75 1.251 15.491 6h-2.865L9.317 2.692 8.065 3.944l2.06 2.06H8.691v9.31H18v-1.432l2.06 2.06 1.252-1.252-3.312-3.32V8.506ZM6.63 5.372 5.38 6.625l1.342 1.343 1.251-1.253Zm10.655 10.655-1.247 1.251 1.342 1.343 1.253-1.251zM3.944 8.059 2.692 9.31l3.312 3.314v-2.506zm9.936 9.937h-2.504l3.314 3.312 1.25-1.252z\"/>\n</svg>\n"
+      }
+    },
+    "sailresearch": {
+      "name": "Sail Research",
+      "componentName": "SailResearch",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-sailresearch.svg",
+        "gitBlob": "83450235001bccc7ce0e9b1d5c135d878e6e8e87",
+        "sha256": "a479ecda1acb0df6c26f523484d4e471b1c45dd1b6593b4a0e2c16c7166d95df",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 167 149\">\n  <path fill=\"#000\" d=\"M165.371.267c-6.511 13.076-45.948 89.68-104.083 147.779-.316.315-.093.856.354.856h104.182a.5.5 0 0 0 .5-.5V.528c0-.532-.716-.737-.953 0Z\"/>\n  <path fill=\"#000\" d=\"M87.497 49.707C81.025 58.66 40.157 114.303.178 148.022c-.357.301-.141.88.327.88h87.428c.276 0 .45-.224.45-.5V50.041c0-.487-.601-.728-.886-.334Z\"/>\n</svg>\n"
+      }
+    },
+    "sofya": {
+      "name": "Sofya",
+      "componentName": "Sofya",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-sofya.svg",
+        "gitBlob": "e876a779c06a7f630abf364a6567a9903037feae",
+        "sha256": "4edb17f5d7c586c2243dcda1cb7f4b8d048cf5c41a07d2b7a71201ee5160be97",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"64 144 384 272\">\n  <path fill=\"#000\" d=\"M80 400V300c0-80 60-140 130-140l32 30v195l-32 15H80zm352 0V300c0-80-60-140-130-140l-32 30v195l32 15h130z\"/>\n</svg>\n"
+      }
+    },
+    "soniox": {
+      "name": "Soniox",
+      "componentName": "Soniox",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-soniox.svg",
+        "gitBlob": "1389f5f230dd60bc67ec871e6953d7cd67d0acd7",
+        "sha256": "3811c11ff1f9794cddbe76ffdf83b69bb8f3245fa45332a983436b62d2bd6e0f",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -3 23 23\" fill=\"currentColor\">\n  <path d=\"m0 14.866 2.1606-3.5214c1.8927 1.2576 3.9669 1.8995 5.6694 1.8995 1.0025 0 1.4606-0.3036 1.4606-0.8847v-0.0607c0-0.6419-0.9161-0.9194-2.6532-1.4138-3.2582-0.8587-5.8509-1.9602-5.8509-5.2995v-0.06938c0-3.5214 2.8088-5.4903 6.6114-5.4903 2.4112 0 4.9089 0.70255 6.8016 1.9342l-1.9791 3.6775c-1.7112-0.95408-3.5693-1.5352-4.8744-1.5352-0.88152 0-1.3396 0.33827-1.3396 0.79796v0.06071c0 0.64184 0.94202 0.95409 2.6792 1.4745 3.2582 0.91939 5.8509 2.0556 5.8509 5.2735v0.0607c0 3.6515-2.7137 5.551-6.741 5.551-2.7656-0.0087-5.5052-0.798-7.7955-2.4546z\"/>\n</svg>\n"
+      }
+    },
+    "t3chat": {
+      "name": "T3 Chat",
+      "componentName": "T3Chat",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-t3chat.svg",
+        "gitBlob": "68a174a697ba54e379cc35ad7f1ed500e7f48173",
+        "sha256": "5c1de0325365c61d747124a74b101f5ad06689bb6cbee5479a5433532f1fee79",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\n  <g transform=\"translate(0 512) scale(0.1 -0.1)\" fill=\"currentColor\" stroke=\"none\">\n    <path d=\"M1010 5110 c-364 -19 -535 -83 -726 -274 -157 -157 -226 -303 -262 -550 -16 -111 -17 -252 -17 -1721 0 -1691 0 -1707 46 -1889 38 -148 129 -297 253 -414 182 -170 345 -231 671 -252 207 -13 2966 -13 3170 0 179 12 297 32 385 67 256 102 475 345 539 600 45 178 46 200 46 1888 0 1469 -1 1610 -17 1721 -36 247 -105 393 -262 550 -159 158 -317 232 -571 265 -104 14 -3011 22 -3255 9z m1746 -1000 c518 -42 1026 -285 1302 -623 195 -238 285 -474 286 -747 0 -189 -35 -335 -121 -505 -227 -450 -721 -765 -1348 -861 -161 -24 -479 -22 -649 4 l-128 21 -322 -130 c-176 -72 -383 -155 -459 -186 -134 -54 -162 -58 -173 -29 -3 8 17 173 45 367 44 314 48 357 36 385 -7 18 -23 37 -34 43 -30 17 -163 171 -217 254 -134 202 -194 401 -194 638 0 190 36 336 126 509 209 406 656 711 1206 824 206 43 415 54 644 36z\"/>\n  </g>\n</svg>\n"
+      }
+    },
+    "tinyapi": {
+      "name": "TinyApi",
+      "componentName": "TinyApi",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-tinyapi.svg",
+        "gitBlob": "a7e7ad16523975df3e847c9142daabab320447e9",
+        "sha256": "accb34f3aedfcb610b4904eb99d3c0da7115f4364c7abbae792442196ca8f066",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 106 81\" aria-label=\"TinyApi\">\n  <path fill=\"currentColor\" transform=\"translate(-9.626586 49.746547)\" d=\"M 77.953125 -23.203125 L 87.640625 -15.109375 L 59.203125 18.90625 C 57.003906 21.539062 54.429688 23.601562 51.484375 25.09375 C 48.546875 26.582031 45.460938 27.46875 42.234375 27.75 C 39.015625 28.03125 35.835938 27.707031 32.703125 26.78125 C 29.578125 25.863281 26.691406 24.300781 24.046875 22.09375 L 22.75 21.015625 C 20.101562 18.796875 18.035156 16.21875 16.546875 13.28125 C 15.066406 10.351562 14.179688 7.273438 13.890625 4.046875 C 13.609375 0.828125 13.941406 -2.351562 14.890625 -5.5 C 15.835938 -8.65625 17.410156 -11.550781 19.609375 -14.1875 L 48.046875 -48.203125 L 57.78125 -40.0625 L 29.34375 -6.046875 C 27.894531 -4.316406 26.988281 -2.367188 26.625 -0.203125 C 26.257812 1.953125 26.441406 4.046875 27.171875 6.078125 C 27.898438 8.117188 29.128906 9.863281 30.859375 11.3125 L 32.15625 12.390625 C 33.894531 13.835938 35.828125 14.738281 37.953125 15.09375 C 40.085938 15.457031 42.1875 15.265625 44.25 14.515625 C 46.3125 13.773438 48.066406 12.539062 49.515625 10.8125 Z M 77.953125 -23.203125\"/>\n  <path fill=\"currentColor\" transform=\"translate(115.142795 30.459118)\" d=\"M -77.953125 23.203125 L -87.640625 15.109375 L -59.203125 -18.90625 C -57.003906 -21.539062 -54.429688 -23.601562 -51.484375 -25.09375 C -48.546875 -26.582031 -45.460938 -27.46875 -42.234375 -27.75 C -39.015625 -28.03125 -35.835938 -27.707031 -32.703125 -26.78125 C -29.578125 -25.863281 -26.691406 -24.300781 -24.046875 -22.09375 L -22.75 -21.015625 C -20.101562 -18.796875 -18.035156 -16.21875 -16.546875 -13.28125 C -15.066406 -10.351562 -14.179688 -7.273438 -13.890625 -4.046875 C -13.609375 -0.828125 -13.941406 2.351562 -14.890625 5.5 C -15.835938 8.65625 -17.410156 11.550781 -19.609375 14.1875 L -48.046875 48.203125 L -57.78125 40.0625 L -29.34375 6.046875 C -27.894531 4.316406 -26.988281 2.367188 -26.625 0.203125 C -26.257812 -1.953125 -26.441406 -4.046875 -27.171875 -6.078125 C -27.898438 -8.117188 -29.128906 -9.863281 -30.859375 -11.3125 L -32.15625 -12.390625 C -33.894531 -13.835938 -35.828125 -14.738281 -37.953125 -15.09375 C -40.085938 -15.457031 -42.1875 -15.265625 -44.25 -14.515625 C -46.3125 -13.773438 -48.066406 -12.539062 -49.515625 -10.8125 Z M -77.953125 23.203125\"/>\n</svg>\n"
+      }
+    },
+    "wayfinder": {
+      "name": "Wayfinder",
+      "componentName": "Wayfinder",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-wayfinder.svg",
+        "gitBlob": "2d913546cd3cabe9d8b67c9f8e33bcdce351a95f",
+        "sha256": "f4bfe41390802030234a2f3f4b264a7fe0586d399703136f578ecf42c17b7be9",
+        "content": "<svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M16 3v26\"/>\n  <path d=\"M7 6h14l4 4-4 4H7z\"/>\n  <path d=\"M25 17H11l-4 4 4 4h14z\"/>\n</svg>\n"
+      }
+    },
+    "xapi": {
+      "name": "X API",
+      "componentName": "XAPI",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-xapi.svg",
+        "gitBlob": "fc51ae4874fdd8ca1a41f662d23e2b5d42638c6b",
+        "sha256": "28debc2e0f74583d2af4f2317bd257fa24686c166780a5723687eadda59e4dd4",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M3 3h5.2l5.3 7.1L19.5 3H22l-7.3 8.9L22 21h-5.2l-5.7-7.5L4.7 21H2l7.9-9.3L3 3zm3.4 1.7 11.2 14.6h1.1L7.5 4.7H6.4z\"/></svg>\n"
+      }
+    },
+    "xkiro": {
+      "name": "xKiro",
+      "componentName": "XKiro",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-xkiro.svg",
+        "gitBlob": "3dd57adf548e2292a7d2a279a52a29e913e612fd",
+        "sha256": "1130dc3d5bed0f66def56e209f008f4cd685056593b512981d4e0ecd6e7e8671",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M3 4h5l4 5.5L16 4h5l-6.5 8L21 20h-5l-4-5.5L8 20H3l6.5-8Z\"/></svg>\n"
+      }
+    },
+    "zed": {
+      "name": "Zed",
+      "componentName": "Zed",
+      "repository": "CodexBar",
+      "monochrome": "ink",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-zed.svg",
+        "gitBlob": "fdb37112bcc5c542e6615707da6997874f4d0e9c",
+        "sha256": "b8f831d07c8c1999669358e349ed6d6098b5911ccff89898831e86f37a44a583",
+        "content": "<svg width=\"100\" height=\"100\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path fill=\"white\" d=\"M2.25 1.5a.75.75 0 0 0-.75.75v16.5H0V2.25A2.25 2.25 0 0 1 2.25 0h20.095c1.002 0 1.504 1.212.795 1.92L10.764 14.298h3.486V12.75h1.5v1.922a1.125 1.125 0 0 1-1.125 1.125H9.264l-2.578 2.578h11.689V9h1.5v9.375a1.5 1.5 0 0 1-1.5 1.5H5.185L2.562 22.5H21.75a.75.75 0 0 0 .75-.75V5.25H24v16.5A2.25 2.25 0 0 1 21.75 24H1.655C.653 24 .151 22.788.86 22.08L13.19 9.75H9.75v1.5h-1.5V9.375A1.125 1.125 0 0 1 9.375 8.25h5.314l2.625-2.625H5.625V15h-1.5V5.625a1.5 1.5 0 0 1 1.5-1.5h13.19L21.438 1.5z\"/>\n</svg>\n"
+      }
+    },
+    "zoommate": {
+      "name": "ZoomMate",
+      "componentName": "ZoomMate",
+      "repository": "CodexBar",
+      "monochrome": "luminance",
+      "source": {
+        "path": "Sources/CodexBar/Resources/ProviderIcon-zoommate.svg",
+        "gitBlob": "03b027dd4209481a106a32808726baf17dcc0074",
+        "sha256": "d6e7cf16485c115778cad59fea0910e60907e93f277221a0b0125fbadbd43ab5",
+        "content": "<svg width=\"64\" height=\"64\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7.4736 0.952515V8.10417H0.321045C0.321044 7.99446 0.376881 7.88475 0.488552 7.82536L3.16237 6.40332C4.27292 5.81268 5.18182 4.90389 5.77258 3.79341L7.19481 1.11999C7.25421 1.00834 7.3639 0.952515 7.4736 0.952515Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint0_radial_45419_301)\"/><path d=\"M14.6262 8.10417L7.47363 8.10417L7.47363 0.952515C7.58333 0.952514 7.69303 1.00834 7.75243 1.11999L9.17466 3.79341C9.76542 4.90389 10.6743 5.81268 11.7849 6.40332L14.4587 7.82536C14.5704 7.88476 14.6262 7.99446 14.6262 8.10417Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint1_radial_45419_301)\"/><path d=\"M7.47363 15.2559L7.47363 8.10428L14.6262 8.10428C14.6262 8.21399 14.5704 8.3237 14.4587 8.38309L11.7849 9.80514C10.6743 10.3958 9.76542 11.3046 9.17465 12.415L7.75242 15.0885C7.69303 15.2001 7.58333 15.2559 7.47363 15.2559Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint2_radial_45419_301)\"/><path d=\"M0.321045 8.10428L7.47569 8.10428V15.258C7.36599 15.258 7.25629 15.2022 7.19689 15.0905L5.77394 12.4158C5.18318 11.3053 4.27428 10.3965 3.16373 9.80586L0.488552 8.38309C0.376881 8.3237 0.321046 8.21399 0.321045 8.10428Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint3_radial_45419_301)\"/><path d=\"M7.47359 4.47397L7.47359 8.10428H3.84277L4.50905 7.74993C5.6196 7.15929 6.5285 6.2505 7.11926 5.14002L7.47359 4.47397Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint4_linear_45419_301)\"/><path d=\"M11.1044 8.10428L10.4382 7.74993C9.32762 7.15929 8.41873 6.2505 7.82797 5.14002L7.47363 4.47397L7.47363 8.10428L11.1044 8.10428Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint5_linear_45419_301)\"/><path d=\"M7.47363 11.7346L7.47363 8.10428L11.1045 8.10428L10.4382 8.45863C9.32762 9.04927 8.41873 9.95806 7.82796 11.0685L7.47363 11.7346Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint6_linear_45419_301)\"/><path d=\"M3.84277 8.10428L7.47359 8.10428L7.47359 11.7346L7.11926 11.0685C6.52849 9.95806 5.6196 9.04927 4.50905 8.45863L3.84277 8.10428Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint7_linear_45419_301)\"/><path d=\"M13.1579 0.100098V2.6312H10.6265C10.6265 2.59464 10.6451 2.55807 10.6823 2.53827L11.5561 2.07354C12.0003 1.83729 12.3639 1.47378 12.6002 1.02958L13.065 0.155922C13.0848 0.118706 13.1213 0.100098 13.1579 0.100098Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint8_radial_45419_301)\"/><path d=\"M15.6894 2.63121L13.158 2.63121L13.158 0.100098C13.1945 0.100098 13.2311 0.118706 13.2509 0.155922L13.7157 1.02958C13.952 1.47378 14.3155 1.83729 14.7598 2.07354L15.6336 2.53827C15.6708 2.55807 15.6894 2.59464 15.6894 2.63121Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint9_radial_45419_301)\"/><path d=\"M13.158 5.16233L13.158 2.63123L15.6894 2.63123C15.6894 2.6678 15.6708 2.70437 15.6336 2.72416L14.7598 3.18889C14.3155 3.42514 13.952 3.78866 13.7157 4.23285L13.2509 5.10651C13.2311 5.14373 13.1945 5.16233 13.158 5.16233Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint10_radial_45419_301)\"/><path d=\"M10.6265 2.63123L13.1586 2.63123V5.16307C13.1221 5.16307 13.0855 5.14446 13.0657 5.10724L12.6007 4.2331C12.3644 3.78891 12.0008 3.42539 11.5566 3.18914L10.6823 2.72416C10.6451 2.70436 10.6265 2.66779 10.6265 2.63123Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint11_radial_45419_301)\"/><path d=\"M13.1579 1.34995L13.0151 1.61843C12.8182 1.98859 12.5152 2.29152 12.145 2.4884L11.8765 2.63123L13.1579 2.63123L13.1579 1.34995Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint12_linear_45419_301)\"/><path d=\"M14.4394 2.63123L14.1709 2.4884C13.8007 2.29152 13.4977 1.98859 13.3008 1.61843L13.158 1.34995L13.158 2.63123L14.4394 2.63123Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint13_linear_45419_301)\"/><path d=\"M13.158 3.91251L13.158 2.63123L14.4394 2.63123L14.1709 2.77406C13.8007 2.97094 13.4977 3.27387 13.3008 3.64403L13.158 3.91251Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint14_linear_45419_301)\"/><path d=\"M11.8765 2.63123L13.1579 2.63123L13.1579 3.91251L13.0151 3.64403C12.8182 3.27387 12.5152 2.97094 12.145 2.77406L11.8765 2.63123Z\" fill=\"url(#IconAICompanionOnLightFillColor__paint15_linear_45419_301)\"/><defs><radialGradient id=\"IconAICompanionOnLightFillColor__paint0_radial_45419_301\" cx=\"0\" cy=\"0\" r=\"1\" gradientUnits=\"userSpaceOnUse\" gradientTransform=\"translate(7.16086 4.56023) rotate(132.641) scale(4.8177 4.81775)\"><stop offset=\"0.130911\" stop-color=\"#222CEB\"/><stop offset=\"0.651476\" stop-color=\"#6499ED\"/></radialGradient><radialGradient id=\"IconAICompanionOnLightFillColor__paint1_radial_45419_301\" cx=\"0\" cy=\"0\" r=\"1\" gradientUnits=\"userSpaceOnUse\" gradientTransform=\"translate(11.4871 2.68402) rotate(110.558) scale(5.78882 5.78936)\"><stop offset=\"0.130911\" stop-color=\"#222CEB\"/><stop offset=\"0.651476\" stop-color=\"#A7DFFF\"/></radialGradient><radialGradient id=\"IconAICompanionOnLightFillColor__paint2_radial_45419_301\" cx=\"0\" cy=\"0\" r=\"1\" gradientUnits=\"userSpaceOnUse\" gradientTransform=\"translate(12.3732 9.04238) rotate(137.357) scale(8.07799 8.07791)\"><stop offset=\"0.130911\" stop-color=\"#222CEB\"/><stop offset=\"0.651476\" stop-color=\"#99D4FF\"/></radialGradient><radialGradient id=\"IconAICompanionOnLightFillColor__paint3_radial_45419_301\" cx=\"0\" cy=\"0\" r=\"1\" gradientUnits=\"userSpaceOnUse\" gradientTransform=\"translate(6.4734 9.45971) rotate(135.582) scale(3.64985 3.64984)\"><stop offset=\"0.130911\" stop-color=\"#2C67FF\"/><stop offset=\"0.651476\" stop-color=\"#6CB0FF\"/></radialGradient><linearGradient id=\"IconAICompanionOnLightFillColor__paint4_linear_45419_301\" x1=\"6.59182\" y1=\"4.47397\" x2=\"5.65843\" y2=\"8.10434\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0.13\" stop-color=\"#9786FF\"/><stop offset=\"0.736193\" stop-color=\"#2244F4\"/></linearGradient><linearGradient id=\"IconAICompanionOnLightFillColor__paint5_linear_45419_301\" x1=\"8.35383\" y1=\"5.51906\" x2=\"8.90382\" y2=\"7.27925\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#915DFF\"/><stop offset=\"1\" stop-color=\"#0F31E0\"/></linearGradient><linearGradient id=\"IconAICompanionOnLightFillColor__paint6_linear_45419_301\" x1=\"7.47363\" y1=\"9.34896\" x2=\"10.4992\" y2=\"8.10398\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0.28\" stop-color=\"#1939DF\"/><stop offset=\"1\" stop-color=\"#5570FF\"/></linearGradient><linearGradient id=\"IconAICompanionOnLightFillColor__paint7_linear_45419_301\" x1=\"5.2731\" y1=\"10.9645\" x2=\"7.19821\" y2=\"8.59906\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#8793FF\"/><stop offset=\"1\" stop-color=\"#1235E8\"/></linearGradient><radialGradient id=\"IconAICompanionOnLightFillColor__paint8_radial_45419_301\" cx=\"0\" cy=\"0\" r=\"1\" gradientUnits=\"userSpaceOnUse\" gradientTransform=\"translate(13.1579 1.16336) rotate(130.772) scale(1.93821 1.93823)\"><stop stop-color=\"#134BDB\"/><stop offset=\"0.651476\" stop-color=\"#61A0FF\"/></radialGradient><radialGradient id=\"IconAICompanionOnLightFillColor__paint9_radial_45419_301\" cx=\"0\" cy=\"0\" r=\"1\" gradientUnits=\"userSpaceOnUse\" gradientTransform=\"translate(14.8421 0.442305) rotate(114.186) scale(2.39953 2.39977)\"><stop offset=\"0.130911\" stop-color=\"#222CEB\"/><stop offset=\"0.651476\" stop-color=\"#99C0FF\"/></radialGradient><radialGradient id=\"IconAICompanionOnLightFillColor__paint10_radial_45419_301\" cx=\"0\" cy=\"0\" r=\"1\" gradientUnits=\"userSpaceOnUse\" gradientTransform=\"translate(14.892 2.96324) rotate(137.357) scale(2.85897 2.85893)\"><stop stop-color=\"#0C45D7\"/><stop offset=\"0.651476\" stop-color=\"#99D4FF\"/></radialGradient><radialGradient id=\"IconAICompanionOnLightFillColor__paint11_radial_45419_301\" cx=\"0\" cy=\"0\" r=\"1\" gradientUnits=\"userSpaceOnUse\" gradientTransform=\"translate(12.8039 3.11094) rotate(135.583) scale(1.29175 1.29175)\"><stop offset=\"0.130911\" stop-color=\"#2C67FF\"/><stop offset=\"0.651476\" stop-color=\"#6CB0FF\"/></radialGradient><linearGradient id=\"IconAICompanionOnLightFillColor__paint12_linear_45419_301\" x1=\"12.8467\" y1=\"1.34995\" x2=\"12.5173\" y2=\"2.63125\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0.13\" stop-color=\"#BEE8FF\"/><stop offset=\"0.736193\" stop-color=\"#72D5FB\"/></linearGradient><linearGradient id=\"IconAICompanionOnLightFillColor__paint13_linear_45419_301\" x1=\"13.3685\" y1=\"1.36843\" x2=\"13.7894\" y2=\"2.63162\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#59C8FB\"/><stop offset=\"1\" stop-color=\"#8CDEFB\"/></linearGradient><linearGradient id=\"IconAICompanionOnLightFillColor__paint14_linear_45419_301\" x1=\"13.158\" y1=\"3.07052\" x2=\"14.2258\" y2=\"2.63112\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0.28\" stop-color=\"#67D9FF\"/><stop offset=\"1\" stop-color=\"#A7E6FF\"/></linearGradient><linearGradient id=\"IconAICompanionOnLightFillColor__paint15_linear_45419_301\" x1=\"12.3813\" y1=\"3.64072\" x2=\"13.3157\" y2=\"2.63144\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0.221428\" stop-color=\"#FCFEFF\"/><stop offset=\"0.895295\" stop-color=\"#48D3FF\"/></linearGradient></defs></svg>\n"
+      }
+    }
+  }
+}

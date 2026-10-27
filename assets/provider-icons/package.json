@@ -1,6 +1,6 @@
 {
   "name": "@agenticdriver/provider-icons",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "AI provider and product icons for React, JavaScript and native apps",
   "type": "module",
   "license": "MIT",
@@ -58,6 +58,7 @@
   ],
   "scripts": {
     "sync:lobehub": "python3 scripts/sync_lobehub.py",
+    "sync:inspiration": "python3 scripts/sync_inspiration.py",
     "build": "python3 scripts/build.py",
     "test": "python3 scripts/build.py --check && python3 -m unittest discover -s tests -p 'test_*.py' && node --test tests/*.test.mjs",
     "prepack": "npm test",

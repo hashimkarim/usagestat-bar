@@ -182,7 +182,8 @@ class Gates(unittest.TestCase):
 
     def test_candidate_rejects_changed_assets(self):
         cfg = release.config()
-        names = [f'usagestat-bar-{cfg["version"]}.shell-extension.zip', f'usagestat-bar-{cfg["version"]}-linux.tar.gz']
+        names = [f'usagestat-bar-{cfg["version"]}{suffix}'
+                 for suffix in ('.shell-extension.zip', '-linux.tar.gz', '-source.tar.gz')]
         for name in names:
             (self.root / name).write_bytes(b'candidate')
         manifest = {'schemaVersion': 1, 'commit': 'a' * 40, 'version': cfg['version'], 'architecture': cfg['architecture'],

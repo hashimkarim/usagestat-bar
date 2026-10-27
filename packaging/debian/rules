@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	python3 platforms/linux/package.py stage build/runtime
+
+override_dh_auto_install:
+	python3 packaging/stage.py --source build/runtime --destdir debian/tmp --version $$(cat release.json | python3 -c 'import json,sys; print(json.load(sys.stdin)["version"])') --libdir /usr/lib/$(DEB_HOST_MULTIARCH) --component runtime --component cinnamon --component mate --component xfce --component budgie
+
+override_dh_auto_test:
+	python3 tests/linux/system-package.py
+
+override_dh_auto_clean:
+	rm -rf build
+
+override_dh_missing:
+	dh_missing --fail-missing
+
+include /usr/share/dpkg/architecture.mk

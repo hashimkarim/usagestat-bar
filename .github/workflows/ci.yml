@@ -31,7 +31,7 @@ jobs:
       - name: Install check dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync xvfb openbox imagemagick python3-fonttools python3-pil python3-gi librsvg2-common
+          sudo apt-get install -y gjs gir1.2-soup-3.0 gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync xvfb openbox imagemagick python3-fonttools python3-pil python3-gi librsvg2-common
       - name: Icon picker and override UI
         env:
           USAGESTAT_ICON_TEST_OUTPUT: ${{ github.workspace }}/artifacts/icon-picker

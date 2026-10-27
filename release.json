@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "version": "0.1.0-rc.1",
   "gnomeVersion": 1,
+  "gnomeShellVersions": ["50"],
   "repository": "hashimkarim/usagestat-bar",
   "architecture": "x86_64",
   "backend": {

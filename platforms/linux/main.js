@@ -11,6 +11,7 @@ import {Tray} from './tray.js';
 import {canAnchorToPanel, preparePanelWindow, anchorToPanel, dismissOutside} from './panelWindow.js';
 import {applyDesktopAppearance} from './waybarPreferences.js';
 import {desktopName} from './desktop.js';
+import {watchProviderIcons} from '../../providerIconUpdates.js';
 
 // Keep the loaded layer-shell library in this process only. Desktop settings
 // and provider helpers may use GTK3 and must not inherit GTK4 through preload.
@@ -27,6 +28,7 @@ let detailsPosition, detailsAnchor, lastPanelAnchor, detailsSize;
 let stopDismissal, dismissedAt = 0;
 let hostedPopup, hostedPopupWatch;
 let anchorOwner, anchorWatch;
+let stopIconUpdates;
 
 function stopOutside() { stopDismissal?.(); stopDismissal = null; }
 function dismissDetails() {
@@ -233,11 +235,13 @@ app.connect('startup', () => {
     exported.export(app.get_dbus_connection(), OBJECT);
     traySettingsId = trayConfig.connect('changed', syncTray);
     syncTray();
+    stopIconUpdates = watchProviderIcons((_status, changed) => { if (changed) model.emit(); });
     model.refresh();
     quitSignal = unixSignal(15, () => { quitSignal = 0; app.quit(); return GLib.SOURCE_REMOVE; });
 });
 app.connect('activate', () => {});
 app.connect('shutdown', () => {
+    stopIconUpdates?.();
     if (anchorWatch) Gio.bus_unwatch_name(anchorWatch);
     if (hostedPopupWatch) Gio.bus_unwatch_name(hostedPopupWatch);
     stopOutside();

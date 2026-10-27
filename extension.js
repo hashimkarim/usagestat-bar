@@ -1,5 +1,6 @@
 import Gio from 'gi://Gio';
-import {resolveProviderIcon, selectedProviderIcon, PROVIDER_DASHBOARD_URLS} from './providerMetadata.js';
+import {resolveProviderIcon, selectedProviderIcon, providerIconPath, PROVIDER_DASHBOARD_URLS} from './providerMetadata.js';
+import {watchProviderIcons} from './providerIconUpdates.js';
 import {customIconFile} from './customIcons.js';
 import GLib from 'gi://GLib';
 import Pango from 'gi://Pango';
@@ -148,10 +149,13 @@ export default class AIUsageBarExtension extends Extension {
 
         this._loadProviders();
         this._setupRefresh();
+        this._stopIconUpdates = watchProviderIcons((_status, changed) => { if (changed) this._render(); });
         this._refresh();
     }
 
     disable() {
+        this._stopIconUpdates?.();
+        this._stopIconUpdates = null;
         for (const name of this._shortcutNames || []) Main.wm.removeKeybinding(name);
         this._shortcutNames = [];
         this._stopClockTick();
@@ -1965,7 +1969,7 @@ export default class AIUsageBarExtension extends Extension {
     _providerIconGFile(fileName) {
         if (GLib.path_is_absolute(fileName))
             return Gio.File.new_for_path(fileName);
-        return Gio.File.new_for_path(GLib.build_filenamev([EXTENSION_DIR, 'assets', 'provider-icons', fileName]));
+        return Gio.File.new_for_path(providerIconPath(fileName, `${EXTENSION_DIR}/assets/provider-icons`));
     }
 
     _providerIconRenderFile(file, fileName) {

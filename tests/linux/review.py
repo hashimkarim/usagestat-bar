@@ -21,6 +21,7 @@ def run(target, output, bundle=None):
     args = [*podman, 'run', '--rm', '--name', name, '--network', 'none', '--security-opt', 'label=disable',
             '-e', 'USAGESTAT_LAB_INTERACTIONS=1', '-e', 'USAGESTAT_LAB_HOLD='+os.environ.get('USAGESTAT_LAB_HOLD','0'),
             '-e', 'USAGESTAT_LAB_CORE_ONLY='+os.environ.get('USAGESTAT_LAB_CORE_ONLY','0'),
+            '-e', 'USAGESTAT_LAB_SYSTEM='+os.environ.get('USAGESTAT_LAB_SYSTEM','0'),
             '-e', 'USAGESTAT_LAB_TRAY_COMPANION='+os.environ.get('USAGESTAT_LAB_TRAY_COMPANION','0'),
             '-v', f'{output / "source"}:/src:ro', '-v', f'{output}:/out:rw']
     if target in ['cinnamon','sway','hyprland']: args += ['--userns=keep-id:uid=1000,gid=1000']
@@ -48,6 +49,7 @@ def run(target, output, bundle=None):
         'dirty':bool(subprocess.check_output(['git','status','--porcelain','--untracked-files=no'],cwd=ROOT,text=True)),
         'backend':'synthetic fixtures', 'input':'native mouse / wheel events', 'capture':'unedited frames at 5 FPS',
         'bundleSha256':hashlib.sha256(bundle.read_bytes()).hexdigest() if bundle else None,
+        'systemPackages':os.environ.get('USAGESTAT_LAB_SYSTEM')=='1',
         'trayCompanion':target in ['cosmic','lxqt','budgie'] and os.environ.get('USAGESTAT_LAB_TRAY_COMPANION')=='1'},indent=2))
     capture = encoder = None
     with (output/'session.log').open('wb') as log, (output/'capture.log').open('wb') as capture_log:

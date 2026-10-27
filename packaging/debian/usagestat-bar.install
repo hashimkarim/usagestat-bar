@@ -1,0 +1,8 @@
+usr/bin/usagestat-bar
+usr/share/usagestat-bar/*.js
+usr/share/usagestat-bar/assets
+usr/share/usagestat-bar/platforms/linux
+usr/share/usagestat-bar/platforms/polybar
+usr/share/applications/io.github.HashimK.UsageStatBar.desktop
+usr/share/dbus-1/services/io.github.HashimK.UsageStatBar.service
+usr/share/licenses/usagestat-bar/LICENSE

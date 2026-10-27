@@ -1,6 +1,7 @@
 import Gio from 'gi://Gio';
-import {providerIconChoices, providerIconVersion, resolveProviderIcon, selectedProviderIcon} from './providerMetadata.js';
+import {providerIconChoices, providerIconVersion, providerIconPath, resolveProviderIcon, selectedProviderIcon} from './providerMetadata.js';
 import {customIconFile} from './customIcons.js';
+import {watchProviderIcons, updateProviderIcons} from './providerIconUpdates.js';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gdk from 'gi://Gdk';
@@ -27,6 +28,8 @@ function pageProcess(owner, argv, flags) {
 
 function closePage(page) {
     page._closed = true;
+    page._stopIconUpdates?.();
+    page._stopIconUpdates = null;
     page._iconPicker?.close();
     for (const [object, id] of page._externalSignals || []) object.disconnect(id);
     page._externalSignals = [];
@@ -297,7 +300,45 @@ class BehaviourPage extends Adw.PreferencesPage {
         const group = new Adw.PreferencesGroup({title: _('CLI')});
         group.add(this._buildBinaryExpander());
         group.add(this._buildPluginExpander());
+        group.add(this._buildIconLibraryExpander());
         return group;
+    }
+
+    _buildIconLibraryExpander() {
+        const expander = new Adw.ExpanderRow({title: _('Provider icons')});
+        const version = new Adw.ActionRow({title: _('Installed version'),
+            subtitle: _('Updates independently of the CLI and UsageStat Bar.')});
+        const versionLabel = new Gtk.Label({valign: Gtk.Align.CENTER});
+        version.add_suffix(versionLabel); expander.add_row(version);
+        const latest = new Adw.ActionRow({title: _('Latest release')});
+        const latestLabel = new Gtk.Label({valign: Gtk.Align.CENTER});
+        latest.add_suffix(latestLabel); expander.add_row(latest);
+        const checked = new Adw.ActionRow({title: _('Last checked'), subtitle: _('Automatically checks once a day while the bar is running.')});
+        const checkedLabel = new Gtk.Label({valign: Gtk.Align.CENTER});
+        checked.add_suffix(checkedLabel); expander.add_row(checked);
+        const row = new Adw.ActionRow({title: _('Status')});
+        const status = new Gtk.Label({valign: Gtk.Align.CENTER, ellipsize: 3, max_width_chars: 28});
+        const spinner = new Gtk.Spinner({valign: Gtk.Align.CENTER, visible: false});
+        const update = new Gtk.Button({icon_name: 'view-refresh-symbolic', valign: Gtk.Align.CENTER,
+            tooltip_text: _('Update provider icons now'), css_classes: ['flat']});
+        update.connect('clicked', () => updateProviderIcons());
+        row.add_suffix(update); row.add_suffix(spinner); row.add_suffix(status); expander.add_row(row);
+        this._stopIconUpdates = watchProviderIcons(state => {
+            versionLabel.set_label(`v${state.active}`);
+            versionLabel.set_tooltip_text(_('Bundled fallback: v%s').format(state.bundled));
+            expander.set_subtitle(_('v%s · %d icons').format(state.active, providerIconChoices().length));
+            latestLabel.set_label(state.latest ? `v${state.latest}` : _('Not checked'));
+            checkedLabel.set_label(state.checkedAt ? GLib.DateTime.new_from_unix_local(state.checkedAt).format('%x %R') : _('Never'));
+            update.set_sensitive(!state.busy);
+            spinner.set_visible(state.busy);
+            if (state.busy) spinner.start(); else spinner.stop();
+            const text = state.busy ? _('Updating…') : state.error ? _('Could not update')
+                : state.latest === state.active ? _('Up to date') : state.latest ? _('Update available') : _('Not checked');
+            status.set_label(text);
+            status.set_tooltip_text(state.error || text);
+            status.set_css_classes(state.error ? ['error'] : state.latest ? ['success'] : ['dim-label']);
+        });
+        return expander;
     }
 
     _buildBinaryExpander() {
@@ -1413,6 +1454,11 @@ class ProvidersPage extends Adw.PreferencesPage {
         this.add(this._hiddenGroup);
 
         this._renderProviders(this._targetProviderId);
+        this._stopIconUpdates = watchProviderIcons((_status, changed) => {
+            if (!changed) return;
+            this._iconPicker?.close();
+            this._renderProviders(this._expandedProviderId());
+        });
         if (this._targetProviderId)
             this._settings.set_string('preferences-provider', '');
     }
@@ -1986,7 +2032,8 @@ class ProvidersPage extends Adw.PreferencesPage {
     _providerIconGFile(fileName) {
         if (GLib.path_is_absolute(fileName))
             return Gio.File.new_for_path(fileName);
-        return Gio.File.new_for_path(GLib.build_filenamev([GLib.path_get_dirname(GLib.filename_from_uri(import.meta.url)[0]), 'assets', 'provider-icons', fileName]));
+        const root = GLib.path_get_dirname(GLib.filename_from_uri(import.meta.url)[0]);
+        return Gio.File.new_for_path(providerIconPath(fileName, `${root}/assets/provider-icons`));
     }
 
     _providerIconRenderFile(file, fileName) {

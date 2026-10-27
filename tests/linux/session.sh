@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Runs inside the disposable lab container with a private display and bus.
 set -euo pipefail
+export USAGESTAT_ICON_UPDATES=0
 target="${1:-lxqt}"
 export XDG_CONFIG_HOME=/tmp/usagestat-config XDG_DATA_HOME=/tmp/usagestat-prefix/share
 export XDG_CACHE_HOME=/tmp/usagestat-cache XDG_STATE_HOME=/tmp/usagestat-state XDG_RUNTIME_DIR=/tmp/usagestat-runtime
@@ -28,7 +29,11 @@ else
     export USAGESTAT_FIXTURE_LOG=/out/backend-commands.jsonl
     printf '%s\n' '{"scenario":"normal"}' > "$USAGESTAT_FIXTURE_STATE"
 fi
-if [[ -n "${USAGESTAT_LAB_BUNDLE:-}" ]]; then
+if [[ "${USAGESTAT_LAB_SYSTEM:-0}" == 1 ]]; then
+    test -z "${USAGESTAT_LAB_BUNDLE:-}"
+    export USAGESTAT_LAB_RUNTIME=/usr/share/usagestat-bar
+    command -v usagestat-bar > /out/install.log
+elif [[ -n "${USAGESTAT_LAB_BUNDLE:-}" ]]; then
     python3 - "$USAGESTAT_LAB_BUNDLE" <<'PY'
 import sys
 import tarfile
@@ -52,13 +57,16 @@ PY
 else
     python3 /src/platforms/linux/package.py stage /tmp/usagestat-package
 fi
+if [[ "${USAGESTAT_LAB_SYSTEM:-0}" != 1 ]]; then
 native_options=()
 if [[ "$target" == xfce ]]; then native_options=(--native xfce); fi
 if [[ "$target" == lxqt || "$target" == budgie || "$target" == cosmic ]]; then native_options=(--native "$target"); fi
 if [[ "$target" == sway || "$target" == hyprland ]]; then native_options=(--native waybar); fi
 python3 /tmp/usagestat-package/platforms/linux/install.py --prefix /tmp/usagestat-prefix "${native_options[@]}" > /out/install.log
 export PATH="/tmp/usagestat-prefix/bin:$PATH"
-export GSETTINGS_SCHEMA_DIR=/tmp/usagestat-prefix/share/usagestat-bar/platforms/linux/schemas
+export USAGESTAT_LAB_RUNTIME=/tmp/usagestat-prefix/share/usagestat-bar
+fi
+export GSETTINGS_SCHEMA_DIR="$USAGESTAT_LAB_RUNTIME/platforms/linux/schemas"
 if command -v rpm >/dev/null; then
     rpm -qa --qf '%{NAME} %{VERSION}-%{RELEASE}.%{ARCH}\n' | sort > /out/packages.txt
 else

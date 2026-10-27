@@ -43,7 +43,9 @@ the renderer resolves provider aliases through `providerMetadata.js`.
 Polybar uses its configured font fallback, so the logo font can occupy any font
 index after the normal text font. No Nerd Font is required.
 
-The font, mapping and runtime adapter ship in the archive. Font generation has
+The font, mapping and runtime adapter ship in the archive. New provider-icons
+releases can update the font and mapping independently through the shared updater;
+restart Polybar to load an updated font. Font generation has
 no runtime dependencies. Maintainers can regenerate it in a Python environment
 with the pinned packages in `requirements-build.txt`, system PyGObject/librsvg
 and Potrace. See [icon update setup](../../docs/PROVIDER_ICONS.md).

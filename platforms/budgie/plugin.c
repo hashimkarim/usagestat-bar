@@ -1,5 +1,9 @@
 #include <plugin.h>
+#if __has_include(<libpeas.h>)
 #include <libpeas.h>
+#else
+#include <libpeas/peas.h>
+#endif
 #include "../gtk-panel/widget.h"
 
 typedef struct { BudgieApplet parent; UsageStatWidget *widget; int size; gboolean vertical; } UsageStatApplet;

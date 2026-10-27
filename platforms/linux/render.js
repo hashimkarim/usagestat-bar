@@ -4,7 +4,7 @@ import Pango from 'gi://Pango';
 import PangoCairo from 'gi://PangoCairo';
 import {ROOT, writePrivate} from './settings.js';
 import {clamp, safeColor} from './model.js';
-import {resolveProviderIcon} from '../../providerMetadata.js';
+import {resolveProviderIcon, providerIconPath} from '../../providerMetadata.js';
 import {customIconSvg, svgPixels} from '../../customIcons.js';
 export {svgPixels} from '../../customIcons.js';
 import {providerGlyph} from '../polybar/icons.js';
@@ -21,7 +21,7 @@ function read(path) {
 export function logoSvg(provider, appearance) {
     const icon = resolveProviderIcon(provider.iconId, {style: provider.iconStyle === 'color' ? 'color' : 'monochrome'});
     let svg = customIconSvg(provider.iconPath, appearance.neutral)
-        || read(icon ? `${ROOT}/assets/provider-icons/${icon.file}` : '');
+        || read(icon ? providerIconPath(icon.file, `${ROOT}/assets/provider-icons`) : '');
     if (!svg.includes('<svg')) svg = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="currentColor"/></svg>';
     svg = svg.replaceAll('currentColor', appearance.neutral);
     // Many bundled logos use 1em dimensions. Give file-based GTK/Qt loaders a

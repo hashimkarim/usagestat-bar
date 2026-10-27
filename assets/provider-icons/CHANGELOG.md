@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.1.0 — 2026-10-27
+
+- Add 40 provider and product icons from reviewed UsageStat inspiration
+  repositories, with pinned sources, retained MIT notices, theme-aware
+  monochrome artwork and four original colour variants.
+- Add AIMLAPI, DotHoosh, FlexAI, Grok Bot, Ling, Magpie, Muse and WorkBuddy
+  from the updated LobeHub catalogue, plus reviewed Autolith, Modelflare,
+  Easy AI and JeikCode contributions.
+- Reconcile eight merged contributions with their mainline sources while
+  retaining the existing public IDs, React exports and asset paths.
+- Preserve dashed SVG strokes used by JeikCode's colour artwork.
+
 ## 1.0.0 — 2026-09-29
 
 First stable release: 380 AI provider and product marks, comprising 1,041 original

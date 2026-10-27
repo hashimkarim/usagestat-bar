@@ -1,0 +1,3 @@
+usr/share/usagestat-bar/platforms/mate
+usr/share/mate-panel/applets/io.github.HashimK.UsageStat.mate-panel-applet
+usr/share/dbus-1/services/org.mate.panel.applet.UsageStatAppletFactory.service

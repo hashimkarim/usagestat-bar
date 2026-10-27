@@ -21,7 +21,7 @@ Install it as a project dependency using one package manager:
 | Deno | `deno add npm:@agenticdriver/provider-icons` |
 
 These clients consume the same npm package. Commit the generated lockfile.
-To pin a release explicitly, install `@agenticdriver/provider-icons@1.0.0`.
+To pin a release explicitly, install `@agenticdriver/provider-icons@1.1.0`.
 
 Check an npm installation:
 
@@ -52,12 +52,12 @@ The equivalent commands are `pnpm remove`, `yarn remove`, `bun remove`, and
 ## CDN
 
 [jsDelivr](https://www.jsdelivr.com/package/npm/@agenticdriver/provider-icons)
-and [UNPKG](https://unpkg.com/@agenticdriver/provider-icons@1.0.0/)
+and [UNPKG](https://unpkg.com/@agenticdriver/provider-icons@1.1.0/)
 serve the public npm package. Use a full version and filename for reproducible URLs.
 
 ```html
 <img
-  src="https://cdn.jsdelivr.net/npm/@agenticdriver/provider-icons@1.0.0/assets/claude-color.svg"
+  src="https://cdn.jsdelivr.net/npm/@agenticdriver/provider-icons@1.1.0/assets/claude-color.svg"
   width="32" height="32" alt="Claude"
 />
 ```
@@ -65,7 +65,7 @@ serve the public npm package. Use a full version and filename for reproducible U
 The equivalent UNPKG asset is:
 
 ```text
-https://unpkg.com/@agenticdriver/provider-icons@1.0.0/assets/claude-color.svg
+https://unpkg.com/@agenticdriver/provider-icons@1.1.0/assets/claude-color.svg
 ```
 
 For browser JavaScript without a bundler:
@@ -73,7 +73,7 @@ For browser JavaScript without a bundler:
 ```html
 <span id="provider-icon"></span>
 <script type="module">
-  import { mountProviderIcon } from 'https://cdn.jsdelivr.net/npm/@agenticdriver/provider-icons@1.0.0/dom.js';
+  import { mountProviderIcon } from 'https://cdn.jsdelivr.net/npm/@agenticdriver/provider-icons@1.1.0/dom.js';
   mountProviderIcon('#provider-icon', 'claude', { style: 'color', size: 32, label: 'Claude' });
 </script>
 ```
@@ -89,17 +89,17 @@ provide the same npm-format archive with `SHA256SUMS`. JavaScript projects can
 install a specific archive directly:
 
 ```sh
-npm install --save-exact https://github.com/agenticdriver/provider-icons/releases/download/v1.0.0/agenticdriver-provider-icons-1.0.0.tgz
+npm install --save-exact https://github.com/agenticdriver/provider-icons/releases/download/v1.1.0/agenticdriver-provider-icons-1.1.0.tgz
 ```
 
 For Python, Go, Rust, GTK and other native applications, bundle the manifest and
 assets. No language-specific wrapper is required. Download and check a release:
 
 ```sh
-curl -fLO https://github.com/agenticdriver/provider-icons/releases/download/v1.0.0/agenticdriver-provider-icons-1.0.0.tgz
-curl -fLO https://github.com/agenticdriver/provider-icons/releases/download/v1.0.0/SHA256SUMS
+curl -fLO https://github.com/agenticdriver/provider-icons/releases/download/v1.1.0/agenticdriver-provider-icons-1.1.0.tgz
+curl -fLO https://github.com/agenticdriver/provider-icons/releases/download/v1.1.0/SHA256SUMS
 sha256sum -c SHA256SUMS
-tar -xzf agenticdriver-provider-icons-1.0.0.tgz
+tar -xzf agenticdriver-provider-icons-1.1.0.tgz
 ```
 
 Read `package/manifest.json`; its filenames refer to `package/assets/`.

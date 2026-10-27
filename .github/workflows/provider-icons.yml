@@ -23,7 +23,7 @@ jobs:
       - name: Install checks and font generation tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync xvfb openbox imagemagick python3-venv python3-gi python3-fonttools python3-pil librsvg2-common potrace
+          sudo apt-get install -y gjs gir1.2-soup-3.0 gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync xvfb openbox imagemagick python3-venv python3-gi python3-fonttools python3-pil librsvg2-common potrace
           /usr/bin/python3 -m venv --system-site-packages "$RUNNER_TEMP/icon-tools"
           "$RUNNER_TEMP/icon-tools/bin/python" -m pip install -r platforms/polybar/requirements-build.txt
       - name: Resolve, verify and bundle the latest stable release

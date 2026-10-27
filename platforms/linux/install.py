@@ -3,6 +3,7 @@
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 import shlex
 import shutil
@@ -18,7 +19,6 @@ def stop_running(target, launcher):
         '--object-path', '/org/freedesktop/DBus', '--method', 'org.freedesktop.DBus.GetConnectionUnixProcessID',
         APP_ID], capture_output=True, text=True)
     if result.returncode: return None
-    import re
     match = re.search(r'uint32 (\d+)', result.stdout)
     if not match: return None
     process = Path('/proc') / match[1]
@@ -42,6 +42,15 @@ ROOT = Path(__file__).resolve().parents[2]
 def desktop_quote(path):
     quoted = '"' + str(path).replace('\\', '\\\\').replace('"', '\\"').replace('`', '\\`').replace('$', '\\$') + '"'
     return quoted.replace('\\', '\\\\').replace('%', '%%')
+
+def updated_icon_font(path):
+    """Recognize only the shared updater's generation links, including stale links."""
+    if not path.is_symlink(): return False
+    data = Path(os.environ.get('XDG_DATA_HOME', Path.home() / '.local/share')) / 'usagestat-bar-icons/fonts'
+    try: relative = Path(os.readlink(path)).relative_to(data)
+    except ValueError: return False
+    return (len(relative.parts) == 2 and re.fullmatch(r'\d+\.\d+\.\d+-[a-f0-9]{64}', relative.parts[0])
+            and relative.parts[1] == 'UsageStatProviderIcons.ttf')
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -94,7 +103,8 @@ def main():
         for name, contents in owned.items():
             path = Path(name)
             if isinstance(contents, dict) and 'symlink' in contents:
-                if path.is_symlink() and os.readlink(path) == contents['symlink']: path.unlink()
+                if path.is_symlink() and (os.readlink(path) == contents['symlink'] or
+                        path == icon_font and updated_icon_font(path)): path.unlink()
             elif path.is_file() and not path.is_symlink():
                 if path.read_text() == contents:
                     path.unlink()
@@ -125,7 +135,7 @@ def main():
         parser.error(f'An unrelated panel library already exists: {xfce_library}')
     if 'budgie' in native and (budgie_library.exists() or budgie_library.is_symlink()) and previous.get(str(budgie_library)) != {'symlink': str(target / 'platforms/budgie/libusagestat.so')}:
         parser.error(f'An unrelated panel library already exists: {budgie_library}')
-    if (icon_font.exists() or icon_font.is_symlink()) and (previous.get(str(icon_font)) != font_link
+    if (icon_font.exists() or icon_font.is_symlink()) and not updated_icon_font(icon_font) and (previous.get(str(icon_font)) != font_link
             or not icon_font.is_symlink() or os.readlink(icon_font) != font_link['symlink']):
         parser.error(f'An unrelated font already exists: {icon_font}')
     with tempfile.TemporaryDirectory(prefix='.usagestat-install.', dir=data) as temp:
@@ -207,8 +217,9 @@ def main():
         previous[str(budgie_library)] = {'symlink': str(target / 'platforms/budgie/libusagestat.so')}
     install_options.write_text(json.dumps({'native': native}))
     icon_font.parent.mkdir(parents=True, exist_ok=True)
-    if icon_font.is_symlink(): icon_font.unlink()
-    icon_font.symlink_to(font_link['symlink'])
+    if not updated_icon_font(icon_font):
+        if icon_font.is_symlink(): icon_font.unlink()
+        icon_font.symlink_to(font_link['symlink'])
     previous[str(icon_font)] = font_link
     if shutil.which('fc-cache'):
         subprocess.run(['fc-cache', str(icon_font.parent)], check=False, stdout=subprocess.DEVNULL)

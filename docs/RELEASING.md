@@ -1,7 +1,8 @@
 # Linux release automation
 
-The first destination is **GitHub Releases**, with one GNOME extension ZIP and
-one Linux runtime/source archive. The latter serves all eleven other native
+The first destination is **GitHub Releases**, with a GNOME extension ZIP,
+a portable Linux runtime archive, and a separate complete source archive for
+[distro packaging](DISTRIBUTION.md). The runtime serves all eleven other native
 profiles. No product release has been published by this setup work. The initial
 version in `release.json` is `0.1.0-rc.1`.
 
@@ -14,7 +15,8 @@ artifacts, retained for 30 days. A package build alone does not approve a releas
 [Provider icons refresh automatically](PROVIDER_ICONS.md). The release workflow
 requires the committed bundle to match the latest stable icon release before
 building candidates. Refresh and commit icons before creating the version tag;
-the check does not mutate tagged source or fetch artwork at application runtime.
+the check does not mutate tagged source. Installed applications separately check
+for data-only icon updates at runtime.
 
 The [release evidence workflow](../.github/workflows/release.yml) runs on version
 tags or manual requests. It adds the full native lab, verifies media and results,
@@ -81,7 +83,7 @@ The package build excludes untracked files (including personal screenshots).
 Install the fast-check dependencies on Ubuntu 24.04:
 
 ```bash
-sudo apt-get install gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 \
+sudo apt-get install gjs gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 gir1.2-soup-3.0 \
   libglib2.0-bin dbus-x11 fontconfig zip unzip ffmpeg rsync \
   python3-fonttools python3-pil python3-gi librsvg2-common
 ```

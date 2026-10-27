@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+export USAGESTAT_ICON_UPDATES=0
 source_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 test_root="$(mktemp -d -t usagestat-linux-contract.XXXXXX)"
 trap 'rm -rf -- "$test_root"' EXIT

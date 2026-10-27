@@ -69,6 +69,26 @@ When a minor release adds public API, append its new entries to the baseline
 without deleting or changing existing ones. Keep the manifest schema and consumer
 TypeScript tests current too; automated checks complement API review.
 
+## Replay inspiration artwork
+
+`sources/inspiration.json` owns reviewed artwork from the UsageStat inspiration
+repositories. Each entry retains original SVG content and hashes; repository
+records pin the upstream commit and license notice. Capture new artwork from a
+clean, freshly updated reference checkout and review its geometry before adding
+an entry. Do not infer official branding from a provider filename alone.
+
+```sh
+npm run sync:inspiration
+npm run build
+npm test
+```
+
+Replay is offline and rejects changed source hashes, asset collisions and local
+artwork edits. Single-colour ink follows `currentColor`; coloured originals are
+preserved separately, with luminance converted to opacity for monochrome use.
+Inspect both themes, especially cutouts, gradients and existing masks. Category
+and brand palette metadata stay absent unless supported by reviewed sources.
+
 ## Metadata and documentation
 
 Categories and alternate names come from pinned upstream documentation. Colour

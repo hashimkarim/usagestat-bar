@@ -8,6 +8,10 @@ The [September 29 release rehearsal](docs/reports/linux-release-rehearsal-2026-0
 
 ## Install
 
+Desktop store and distro-package readiness is tracked in
+[desktop distribution](docs/DISTRIBUTION.md). A built package or an empty
+repository is not a published installation channel.
+
 ### Step 1 — Install the `usagestat` CLI
 
 **Arch / Manjaro (AUR):**

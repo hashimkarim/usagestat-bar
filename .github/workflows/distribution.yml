@@ -1,0 +1,45 @@
+name: Distro package builds
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  packages:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        distro: [fedora, ubuntu, arch]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Prepare immutable source and recipes
+        run: |
+          mkdir -p artifacts/distribution
+          python3 scripts/release.py source --output artifacts/distribution/source.tar.gz
+          digest=$(sha256sum artifacts/distribution/source.tar.gz | cut -d ' ' -f 1)
+          python3 scripts/prepare-distribution.py --source artifacts/distribution/source.tar.gz --sha256 "$digest" --output artifacts/distribution/prepared
+      - name: Build and exercise installed packages
+        env:
+          DISTRO: ${{ matrix.distro }}
+        run: |
+          case "$DISTRO" in
+            fedora) image=registry.fedoraproject.org/fedora:44 ;;
+            ubuntu) image=ubuntu:24.04 ;;
+            arch) image=archlinux:base-devel ;;
+          esac
+          docker run --rm -e DISTRO -v "$PWD:/src:ro" -v "$PWD/artifacts/distribution:/out" "$image" bash /src/packaging/check-distro.sh
+      - name: Retain packages and build metadata
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: distro-${{ matrix.distro }}
+          path: |
+            artifacts/distribution/prepared/source.json
+            artifacts/distribution/packages/
+          if-no-files-found: warn

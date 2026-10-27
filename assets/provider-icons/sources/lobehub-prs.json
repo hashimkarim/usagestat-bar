@@ -239,87 +239,6 @@
       }
     },
     {
-      "number": 338,
-      "url": "https://github.com/lobehub/lobe-icons/pull/338",
-      "title": "✨ feat: add EmpirioLabs brand icon",
-      "stateAtReview": "open",
-      "repository": "Adam-Dalloul/lobe-icons",
-      "commit": "3b272470214eca655b3f5ef5e5af71b852e564c0",
-      "files": {
-        "src/EmpirioLabs/components/Avatar.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconAvatar, { type IconAvatarProps } from '@/features/IconAvatar';\n\nimport { AVATAR_BACKGROUND, AVATAR_COLOR, AVATAR_ICON_MULTIPLE, TITLE } from '../style';\nimport Mono from './Mono';\n\nexport type AvatarProps = Omit<IconAvatarProps, 'Icon'>;\n\nconst Avatar = memo<AvatarProps>(({ ...rest }) => {\n  return (\n    <IconAvatar\n      Icon={Mono}\n      aria-label={TITLE}\n      background={AVATAR_BACKGROUND}\n      color={AVATAR_COLOR}\n      iconMultiple={AVATAR_ICON_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Avatar;\n",
-          "gitBlob": "1f7dbe509f03eae1f3f236f218fc2f7a2e3363e3",
-          "sha256": "a2d626a04075ef1f667afbf87818093367218154b14307c247e430169951ccdb"
-        },
-        "src/EmpirioLabs/components/Color.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport { useFillId } from '@/hooks/useFillId';\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  const { id, fill } = useFillId(TITLE);\n  return (\n    <svg\n      fillRule=\"evenodd\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M11.61 0.0L1.65 6.26L1.65 17.79L12.05 24.0L21.56 18.18L19.74 16.8L12.37 21.39L12.32 15.25L10.52 16.21L10.5 20.77L4.63 17.17L22.35 6.36ZM3.57 7.42L10.23 11.53L3.6 15.57ZM11.68 2.51L18.31 6.63L12.1 10.37L5.47 6.51Z\" fill={fill} />\n      <defs>\n        <linearGradient id={id} x1=\"50%\" x2=\"60%\" y1=\"0%\" y2=\"100%\">\n          <stop offset=\"0%\" stopColor=\"#7AD7F2\" />\n          <stop offset=\"48%\" stopColor=\"#1186F5\" />\n          <stop offset=\"100%\" stopColor=\"#0A2E8C\" />\n        </linearGradient>\n      </defs>\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "dac5f7b7cbea1173ed905c945924a716b027b8a8",
-          "sha256": "402fedb367d4bf4809b17bfb0b093f0aae0fd2d7f154f332cf38fa005fa6cfc0"
-        },
-        "src/EmpirioLabs/components/Combine.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconCombine, { type IconCombineProps } from '@/features/IconCombine';\n\nimport { COMBINE_SPACE_MULTIPLE, COMBINE_TEXT_MULTIPLE, TITLE } from '../style';\nimport Color from './Color';\nimport Mono from './Mono';\nimport Text from './Text';\n\nexport interface CombineProps extends Omit<IconCombineProps, 'Icon' | 'Text'> {\n  type?: 'color' | 'mono';\n}\nconst Combine = memo<CombineProps>(({ type = 'mono', extraStyle, ...rest }) => {\n  const Icon = type === 'color' ? Color : Mono;\n\n  return (\n    <IconCombine\n      Icon={Icon}\n      Text={Text}\n      aria-label={TITLE}\n      extraStyle={{ fontWeight: 500, ...extraStyle }}\n      spaceMultiple={COMBINE_SPACE_MULTIPLE}\n      textMultiple={COMBINE_TEXT_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Combine;\n",
-          "gitBlob": "d5bbd134791af43a1cd6ed30e9d83dd308cf43ac",
-          "sha256": "c93bbfbb607e33e5e21b156968406ac1562077debf95b3a1381641bdfc6395dd"
-        },
-        "src/EmpirioLabs/components/Mono.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      fillRule=\"evenodd\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M11.61 0.0L1.65 6.26L1.65 17.79L12.05 24.0L21.56 18.18L19.74 16.8L12.37 21.39L12.32 15.25L10.52 16.21L10.5 20.77L4.63 17.17L22.35 6.36ZM3.57 7.42L10.23 11.53L3.6 15.57ZM11.68 2.51L18.31 6.63L12.1 10.37L5.47 6.51Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "07b7bfc50dcf4366b3fe27fa95acfae9ac9a294d",
-          "sha256": "d65a76f23c7dc77c2fec45d7950e5afd1d55ba30d40fb37c9bfec122644df8ef"
-        },
-        "src/EmpirioLabs/components/Text.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      fillRule=\"evenodd\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 142 24\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M13.754879999999998 6.032639999999999V2.9683199999999985H1.56672V18.796799999999998H13.754879999999998V15.732479999999997H4.97664V12.253439999999998H12.925439999999998V9.189119999999999H4.97664V6.032639999999999ZM30.412799999999997 6.608639999999999C28.63872 6.608639999999999 27.16416 7.461119999999999 26.54208 8.774399999999998C25.8048 7.438079999999999 24.399359999999998 6.608639999999999 22.76352 6.608639999999999C21.28896 6.608639999999999 20.11392 7.322879999999998 19.53792 8.451839999999999V6.885119999999999H16.17408V18.796799999999998H19.53792V11.608319999999999C19.53792 10.341119999999998 20.48256 9.442559999999999 21.84192 9.442559999999999C23.06304 9.442559999999999 23.93856 10.410239999999998 23.93856 11.792639999999999V18.81984H27.16416V11.608319999999999C27.16416 10.341119999999998 28.131839999999997 9.442559999999999 29.468159999999997 9.442559999999999C30.71232 9.442559999999999 31.58784 10.410239999999998 31.58784 11.792639999999999V18.81984H34.81344V11.216639999999998C34.81344 8.520959999999999 32.90112 6.608639999999999 30.412799999999997 6.608639999999999ZM44.997119999999995 6.608639999999999C43.33823999999999 6.608639999999999 41.955839999999995 7.322879999999998 41.011199999999995 8.543999999999999V6.885119999999999H37.64735999999999V22.759679999999996H41.011199999999995V17.11488C41.955839999999995 18.359039999999997 43.33823999999999 19.073279999999997 44.997119999999995 19.073279999999997C48.17663999999999 19.073279999999997 50.480639999999994 16.4928 50.480639999999994 12.829439999999998C50.480639999999994 9.189119999999999 48.17663999999999 6.608639999999999 44.997119999999995 6.608639999999999ZM44.029439999999994 16.239359999999998C42.39359999999999 16.239359999999998 41.195519999999995 15.041279999999997 41.011199999999995 13.290239999999997V12.36864C41.195519999999995 10.640639999999998 42.39359999999999 9.442559999999999 44.029439999999994 9.442559999999999C45.89568 9.442559999999999 47.20895999999999 10.847999999999999 47.20895999999999 12.829439999999998C47.20895999999999 14.833919999999997 45.89568 16.239359999999998 44.029439999999994 16.239359999999998ZM54.53568 5.249279999999999C55.526399999999995 5.249279999999999 56.3328 4.419839999999999 56.3328 3.4060799999999993C56.3328 2.4614399999999996 55.526399999999995 1.6089599999999997 54.53568 1.6089599999999997C53.49888 1.6089599999999997 52.692479999999996 2.4614399999999996 52.692479999999996 3.4060799999999993C52.692479999999996 4.419839999999999 53.49888 5.249279999999999 54.53568 5.249279999999999ZM52.83072 18.796799999999998H56.194559999999996V6.885119999999999H52.83072ZM62.48448 9.096959999999997V6.885119999999999H59.120639999999995V18.796799999999998H62.48448V13.105919999999998C62.48448 10.871039999999997 64.07424 9.442559999999999 66.56255999999999 9.442559999999999V6.608639999999999C64.7424 6.608639999999999 63.26784 7.553279999999999 62.48448 9.096959999999997ZM70.17984 5.249279999999999C71.17056 5.249279999999999 71.97695999999999 4.419839999999999 71.97695999999999 3.4060799999999993C71.97695999999999 2.4614399999999996 71.17056 1.6089599999999997 70.17984 1.6089599999999997C69.14304 1.6089599999999997 68.33664 2.4614399999999996 68.33664 3.4060799999999993C68.33664 4.419839999999999 69.14304 5.249279999999999 70.17984 5.249279999999999ZM68.47488 18.796799999999998H71.83872V6.885119999999999H68.47488ZM80.61695999999999 19.073279999999997C84.14207999999999 19.073279999999997 87.0912 16.216319999999996 87.0912 12.829439999999998C87.0912 9.442559999999999 84.14207999999999 6.608639999999999 80.61695999999999 6.608639999999999C77.0688 6.608639999999999 74.09664 9.442559999999999 74.09664 12.829439999999998C74.09664 16.216319999999996 77.0688 19.073279999999997 80.61695999999999 19.073279999999997ZM80.61695999999999 16.239359999999998C78.81984 16.239359999999998 77.32224 14.672639999999998 77.32224 12.829439999999998C77.32224 10.986239999999999 78.81984 9.442559999999999 80.61695999999999 9.442559999999999C82.39104 9.442559999999999 83.88864 10.986239999999999 83.88864 12.829439999999998C83.88864 14.672639999999998 82.39104 16.239359999999998 80.61695999999999 16.239359999999998ZM92.75904 15.732479999999997V2.9683199999999985H89.34912V18.796799999999998H100.63871999999999V15.732479999999997ZM108.0576 6.608639999999999C106.39871999999998 6.608639999999999 104.76288 7.069439999999998 103.08095999999999 7.921919999999998L104.20991999999998 10.156799999999999C105.15455999999999 9.672959999999998 106.19135999999999 9.304319999999999 107.29727999999999 9.304319999999999C109.25567999999998 9.304319999999999 110.03903999999999 10.410239999999998 110.03903999999999 11.677439999999997V11.907839999999998C109.02527999999998 11.51616 107.96543999999999 11.308799999999998 106.99775999999999 11.308799999999998C104.23295999999999 11.308799999999998 102.04415999999999 12.921599999999998 102.04415999999999 15.271679999999998C102.04415999999999 17.552639999999997 104.00255999999999 19.073279999999997 106.53696 19.073279999999997C107.82719999999999 19.073279999999997 109.18655999999999 18.566399999999998 110.03903999999999 17.598719999999997V18.796799999999998H113.28768V11.677439999999997C113.28768 8.567039999999999 111.16799999999999 6.608639999999999 108.0576 6.608639999999999ZM107.29727999999999 16.746239999999997C106.14527999999999 16.746239999999997 105.29279999999999 16.147199999999998 105.29279999999999 15.179519999999998C105.29279999999999 14.211839999999999 106.26047999999999 13.497599999999998 107.48159999999999 13.497599999999998C108.40319999999998 13.497599999999998 109.27871999999999 13.658879999999998 110.03903999999999 13.935359999999998V15.041279999999997C109.80863999999998 16.147199999999998 108.58751999999998 16.746239999999997 107.29727999999999 16.746239999999997ZM123.47135999999999 6.608639999999999C121.81248 6.608639999999999 120.43007999999999 7.322879999999998 119.48543999999998 8.543999999999999V2.691839999999999H116.12159999999999V18.796799999999998H119.48543999999998V17.11488C120.43007999999999 18.359039999999997 121.81248 19.073279999999997 123.47135999999999 19.073279999999997C126.65087999999999 19.073279999999997 128.95488 16.4928 128.95488 12.829439999999998C128.95488 9.189119999999999 126.65087999999999 6.608639999999999 123.47135999999999 6.608639999999999ZM122.50367999999999 16.239359999999998C120.86783999999999 16.239359999999998 119.66976 15.041279999999997 119.48543999999998 13.290239999999997V12.36864C119.66976 10.640639999999998 120.86783999999999 9.442559999999999 122.50367999999999 9.442559999999999C124.36992 9.442559999999999 125.68319999999999 10.847999999999999 125.68319999999999 12.829439999999998C125.68319999999999 14.833919999999997 124.36992 16.239359999999998 122.50367999999999 16.239359999999998ZM135.79775999999998 19.073279999999997C138.72383999999997 19.073279999999997 140.63616 17.57568 140.63616 15.225599999999998C140.63616 12.622079999999997 138.35519999999997 11.930879999999998 136.30463999999998 11.400959999999998C134.69183999999998 10.963199999999997 134.20799999999997 10.778879999999997 134.20799999999997 10.133759999999999C134.20799999999997 9.719039999999998 134.784 9.419519999999999 135.61343999999997 9.419519999999999C136.6272 9.419519999999999 137.87135999999998 9.811199999999998 138.95423999999997 10.479359999999998L140.31359999999998 8.083199999999998C139.00032 7.207679999999998 137.31839999999997 6.608639999999999 135.61343999999997 6.608639999999999C132.80255999999997 6.608639999999999 130.93631999999997 8.221439999999998 130.95935999999998 10.479359999999998C130.98239999999998 12.829439999999998 132.87167999999997 13.497599999999998 135.31391999999997 14.096639999999997C136.53503999999998 14.419199999999998 137.41055999999998 14.649599999999998 137.41055999999998 15.386879999999998C137.41055999999998 15.916799999999999 136.76543999999998 16.285439999999998 135.86687999999998 16.285439999999998C134.27711999999997 16.285439999999998 132.94079999999997 15.709439999999997 131.88096 14.949119999999997L130.42943999999997 17.276159999999997C131.85791999999998 18.42816 133.88544 19.073279999999997 135.79775999999998 19.073279999999997Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "6b2ed808e8eef43d30dd2ae268927a7cbd6e6c70",
-          "sha256": "2e8f8c5f099c482a23fe7062ee9f77a2c1495fb9071b4d39317e9e6d9b306686"
-        },
-        "src/EmpirioLabs/style.ts": {
-          "content": "export const TITLE = 'EmpirioLabs AI';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#0A7CFF';\nexport const COLOR_GRADIENT = 'linear-gradient(140deg, #7AD7F2, #1186F5 48%, #0A2E8C)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n",
-          "gitBlob": "1ba955cca04ebcdf154b65e7679c4387181ec42e",
-          "sha256": "12423bc4e289476704e0f14cc04403ab3d4c77eb1c813ca73999afe233ede69d"
-        }
-      },
-      "icons": {
-        "empiriolabs": {
-          "name": "EmpirioLabs AI",
-          "componentName": "EmpirioLabs",
-          "artworks": {
-            "icon": {
-              "monochrome": "empiriolabs.svg",
-              "color": "empiriolabs-color.svg"
-            },
-            "text": {
-              "monochrome": "empiriolabs-text.svg"
-            }
-          }
-        }
-      },
-      "artworkSources": {
-        "empiriolabs.svg": {
-          "path": "src/EmpirioLabs/components/Mono.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/EmpirioLabs/components/Mono.tsx",
-            "src/EmpirioLabs/style.ts"
-          ]
-        },
-        "empiriolabs-color.svg": {
-          "path": "src/EmpirioLabs/components/Color.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/EmpirioLabs/components/Color.tsx",
-            "src/EmpirioLabs/style.ts"
-          ]
-        },
-        "empiriolabs-text.svg": {
-          "path": "src/EmpirioLabs/components/Text.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/EmpirioLabs/components/Text.tsx",
-            "src/EmpirioLabs/style.ts"
-          ]
-        }
-      }
-    },
-    {
       "number": 340,
       "url": "https://github.com/lobehub/lobe-icons/pull/340",
       "title": "✨ feat: add Everruns icon",
@@ -907,235 +826,6 @@
       }
     },
     {
-      "number": 367,
-      "url": "https://github.com/lobehub/lobe-icons/pull/367",
-      "title": "✨ feat: add Sub2API icon",
-      "stateAtReview": "open",
-      "repository": "Wei-Shaw/lobe-icons",
-      "commit": "0234197c529c69541bc301be1a0ec9cbc42e0e85",
-      "files": {
-        "src/Sub2API/components/Avatar.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconAvatar, { type IconAvatarProps } from '@/features/IconAvatar';\n\nimport { AVATAR_BACKGROUND, AVATAR_COLOR, AVATAR_ICON_MULTIPLE, TITLE } from '../style';\nimport Color from './Color';\n\nexport type AvatarProps = Omit<IconAvatarProps, 'Icon'>;\n\nconst Avatar = memo<AvatarProps>(({ ...rest }) => {\n  return (\n    <IconAvatar\n      Icon={Color}\n      aria-label={TITLE}\n      background={AVATAR_BACKGROUND}\n      color={AVATAR_COLOR}\n      iconMultiple={AVATAR_ICON_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Avatar;\n",
-          "gitBlob": "2fa6d4191705aa90d95726b53ef979ebb3f33174",
-          "sha256": "5c645a3c9fce1867906ea18b40a5d7d79907979b8ef793e1db0dd0d1359bd41c"
-        },
-        "src/Sub2API/components/Color.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport { useFillId } from '@/hooks/useFillId';\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  const { id, fill } = useFillId(TITLE);\n  return (\n    <svg\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path\n        d=\"M18.194 8.491L15.651 5.3L8.598 5.3L5.144 8.568Q5.283 8.66 5.515 8.805L15.066 14.775Q15.54 15.072 15.665 15.617Q15.791 16.161 15.495 16.636Q15.198 17.11 14.653 17.235Q14.109 17.361 13.634 17.065L4.085 11.095Q2.699 10.23 2.377 9.264Q1.922 7.9 3.222 6.669L6.731 3.35Q7.492 2.6 8.58 2.6L15.679 2.6Q16.957 2.609 17.756 3.609L20.306 6.809Q20.654 7.246 20.591 7.802Q20.529 8.357 20.091 8.706Q19.654 9.054 19.098 8.991Q18.543 8.929 18.194 8.491Z\"\n        fill={fill}\n      />\n      <path\n        d=\"M5.806 15.509L8.349 18.7L15.402 18.7L18.856 15.432Q18.717 15.34 18.485 15.195L8.934 9.225Q8.46 8.928 8.335 8.383Q8.209 7.839 8.505 7.364Q8.802 6.89 9.347 6.765Q9.891 6.639 10.366 6.935L19.915 12.905Q21.301 13.77 21.623 14.736Q22.078 16.1 20.778 17.331L17.269 20.65Q16.508 21.4 15.42 21.4L8.33 21.4Q7.058 21.4 6.244 20.391L3.694 17.191Q3.346 16.754 3.409 16.198Q3.471 15.643 3.909 15.294Q4.346 14.946 4.902 15.009Q5.457 15.071 5.806 15.509Z\"\n        fill={fill}\n      />\n      <defs>\n        <linearGradient gradientUnits=\"userSpaceOnUse\" id={id} x1=\"4\" x2=\"20\" y1=\"4\" y2=\"20\">\n          <stop stopColor=\"#67EDB1\" />\n          <stop offset=\".48\" stopColor=\"#2FD3E1\" />\n          <stop offset=\"1\" stopColor=\"#2E68EA\" />\n        </linearGradient>\n      </defs>\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "7ffdc8de21dcb6f6ea52ff98e0a28bee62d802c2",
-          "sha256": "bc34300c10d588af7852d310e1dadee8afb7309f637380f4e92242bd002dd8cf"
-        },
-        "src/Sub2API/components/Combine.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconCombine, { type IconCombineProps } from '@/features/IconCombine';\n\nimport { COMBINE_SPACE_MULTIPLE, COMBINE_TEXT_MULTIPLE, TITLE } from '../style';\nimport Color from './Color';\nimport Mono from './Mono';\nimport Text from './Text';\n\nexport interface CombineProps extends Omit<IconCombineProps, 'Icon' | 'Text'> {\n  type?: 'color' | 'mono';\n}\nconst Combine = memo<CombineProps>(({ type = 'mono', ...rest }) => {\n  const Icon = type === 'color' ? Color : Mono;\n\n  return (\n    <IconCombine\n      Icon={Icon}\n      Text={Text}\n      aria-label={TITLE}\n      spaceMultiple={COMBINE_SPACE_MULTIPLE}\n      textMultiple={COMBINE_TEXT_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Combine;\n",
-          "gitBlob": "23910637d704d251b9942c90bbfc9c82d631211a",
-          "sha256": "9b674a7ce17ef1fda563aa759c36da91d9b25316d68a8d0ed98646637d13b896"
-        },
-        "src/Sub2API/components/Mono.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M18.194 8.491L15.651 5.3L8.598 5.3L5.144 8.568Q5.283 8.66 5.515 8.805L15.066 14.775Q15.54 15.072 15.665 15.617Q15.791 16.161 15.495 16.636Q15.198 17.11 14.653 17.235Q14.109 17.361 13.634 17.065L4.085 11.095Q2.699 10.23 2.377 9.264Q1.922 7.9 3.222 6.669L6.731 3.35Q7.492 2.6 8.58 2.6L15.679 2.6Q16.957 2.609 17.756 3.609L20.306 6.809Q20.654 7.246 20.591 7.802Q20.529 8.357 20.091 8.706Q19.654 9.054 19.098 8.991Q18.543 8.929 18.194 8.491Z\" />\n      <path d=\"M5.806 15.509L8.349 18.7L15.402 18.7L18.856 15.432Q18.717 15.34 18.485 15.195L8.934 9.225Q8.46 8.928 8.335 8.383Q8.209 7.839 8.505 7.364Q8.802 6.89 9.347 6.765Q9.891 6.639 10.366 6.935L19.915 12.905Q21.301 13.77 21.623 14.736Q22.078 16.1 20.778 17.331L17.269 20.65Q16.508 21.4 15.42 21.4L8.33 21.4Q7.058 21.4 6.244 20.391L3.694 17.191Q3.346 16.754 3.409 16.198Q3.471 15.643 3.909 15.294Q4.346 14.946 4.902 15.009Q5.457 15.071 5.806 15.509Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "d76484331e7d073f2a9201b69a0908d13f51f973",
-          "sha256": "b9098d0789f4c71755c4e0ea7fe24f00dad5b7ade376e8e91810d26759916bae"
-        },
-        "src/Sub2API/components/Text.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      fillRule=\"nonzero\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 107 24\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M8.77 22.02Q6.33 22.02 4.58 21.21Q2.84 20.41 1.9 18.89Q0.96 17.38 0.96 15.28H4.39Q4.41 16.46 4.93 17.31Q5.46 18.16 6.44 18.62Q7.43 19.07 8.79 19.07Q10.03 19.07 10.94 18.72Q11.86 18.37 12.37 17.73Q12.88 17.09 12.88 16.23Q12.88 15.53 12.51 15.01Q12.14 14.5 11.34 14.11Q10.53 13.72 9.22 13.43L7.1 12.95Q4.15 12.28 2.75 10.95Q1.35 9.63 1.35 7.55Q1.35 5.79 2.26 4.47Q3.16 3.15 4.79 2.42Q6.43 1.68 8.6 1.68Q10.8 1.68 12.4 2.44Q14.01 3.2 14.9 4.61Q15.8 6.02 15.86 7.97H12.53Q12.43 6.41 11.37 5.53Q10.32 4.64 8.59 4.64Q7.5 4.64 6.65 4.99Q5.81 5.34 5.33 5.96Q4.85 6.57 4.85 7.38Q4.85 8.04 5.21 8.53Q5.57 9.01 6.36 9.38Q7.15 9.74 8.43 10.04L10.44 10.5Q11.97 10.84 13.08 11.34Q14.2 11.84 14.93 12.51Q15.65 13.19 16 14.06Q16.36 14.93 16.36 16.01Q16.36 17.85 15.43 19.2Q14.51 20.55 12.8 21.28Q11.1 22.02 8.77 22.02ZM23.77 21.98Q22.32 21.98 21.19 21.35Q20.06 20.72 19.43 19.48Q18.8 18.25 18.8 16.46V7.74H22.14V15.93Q22.14 17.46 22.88 18.26Q23.62 19.05 24.95 19.05Q25.83 19.05 26.52 18.7Q27.21 18.34 27.61 17.58Q28.01 16.82 28.01 15.63V7.74H31.35V21.7H28.06V18.15H28.72Q28.04 20.01 26.82 21Q25.6 21.98 23.77 21.98ZM41.85 21.98Q40.94 21.98 40.14 21.72Q39.34 21.45 38.69 20.92Q38.05 20.38 37.62 19.57H37.59V21.7H34.3V2H37.65V9.71H37.67Q38.12 8.95 38.75 8.45Q39.38 7.95 40.17 7.7Q40.97 7.45 41.86 7.45Q43.67 7.45 45.02 8.37Q46.38 9.29 47.13 10.92Q47.89 12.56 47.89 14.71Q47.89 16.88 47.14 18.52Q46.39 20.16 45.03 21.07Q43.68 21.98 41.85 21.98ZM41.06 19.19Q42.1 19.19 42.87 18.67Q43.65 18.15 44.08 17.15Q44.51 16.15 44.51 14.71Q44.51 13.26 44.08 12.27Q43.65 11.27 42.87 10.75Q42.1 10.23 41.06 10.23Q39.97 10.23 39.16 10.78Q38.35 11.34 37.91 12.34Q37.46 13.35 37.46 14.71Q37.46 16.06 37.91 17.07Q38.35 18.08 39.16 18.64Q39.97 19.19 41.06 19.19ZM49.8 21.7V19.04L56.95 12.8Q57.95 11.9 58.67 11.16Q59.39 10.41 59.77 9.64Q60.16 8.88 60.16 7.93Q60.16 6.9 59.73 6.14Q59.31 5.38 58.54 4.97Q57.76 4.56 56.69 4.56Q55.55 4.56 54.72 5.05Q53.9 5.55 53.45 6.46Q53.01 7.37 53.01 8.64H49.78Q49.78 6.55 50.63 4.99Q51.48 3.42 53.03 2.55Q54.59 1.68 56.69 1.68Q58.66 1.68 60.18 2.44Q61.7 3.2 62.57 4.56Q63.43 5.93 63.43 7.76Q63.43 9.1 62.93 10.23Q62.43 11.36 61.47 12.44Q60.51 13.53 59.1 14.76L54.55 18.79V18.81H63.53V21.7ZM64.76 21.7 71.79 2H76.18L83.19 21.7H79.34L75.89 11.35Q75.37 9.7 74.8 7.86Q74.24 6.02 73.51 3.5H74.48Q73.74 6.02 73.17 7.86Q72.6 9.7 72.06 11.35L68.51 21.7ZM68.93 17V14.12H79.01V17ZM84.99 21.7V2H92.53Q94.69 2 96.27 2.77Q97.85 3.54 98.71 4.95Q99.56 6.36 99.56 8.3Q99.56 10.23 98.69 11.65Q97.82 13.06 96.22 13.84Q94.63 14.61 92.46 14.61H86.89V11.63H92.33Q93.51 11.63 94.35 11.22Q95.2 10.82 95.66 10.07Q96.12 9.32 96.12 8.3Q96.12 7.27 95.66 6.53Q95.2 5.79 94.35 5.39Q93.51 4.98 92.33 4.98H88.5V21.7ZM105.42 2V21.7H101.92V2Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "09e629208817036ff9e71f0a0310684d918a6950",
-          "sha256": "8d52b1871851021b9f29717b3a1e1b97d981cf04aec6505259a0b99717d5519e"
-        },
-        "src/Sub2API/style.ts": {
-          "content": "export const TITLE = 'Sub2API';\nexport const COLOR_PRIMARY = '#2FD3E1';\nexport const COLOR_GRADIENT = 'linear-gradient(135deg, #67EDB1, #2FD3E1, #2E68EA)';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#0A1A39';\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n",
-          "gitBlob": "7d7f227cb1043d963874265816e5f36dd171296d",
-          "sha256": "866e06bec4d19a12b400e0f9612b599a342f71ae2b8d4e51d66aff0e83a6329f"
-        }
-      },
-      "icons": {
-        "sub2api": {
-          "name": "Sub2API",
-          "componentName": "Sub2API",
-          "artworks": {
-            "icon": {
-              "monochrome": "sub2api.svg",
-              "color": "sub2api-color.svg"
-            },
-            "text": {
-              "monochrome": "sub2api-text.svg"
-            }
-          }
-        }
-      },
-      "artworkSources": {
-        "sub2api.svg": {
-          "path": "src/Sub2API/components/Mono.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/Sub2API/components/Mono.tsx",
-            "src/Sub2API/style.ts"
-          ]
-        },
-        "sub2api-color.svg": {
-          "path": "src/Sub2API/components/Color.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/Sub2API/components/Color.tsx",
-            "src/Sub2API/style.ts"
-          ]
-        },
-        "sub2api-text.svg": {
-          "path": "src/Sub2API/components/Text.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/Sub2API/components/Text.tsx",
-            "src/Sub2API/style.ts"
-          ]
-        }
-      }
-    },
-    {
-      "number": 372,
-      "url": "https://github.com/lobehub/lobe-icons/pull/372",
-      "title": "✨ feat: add GreenPT icon and provider mapping",
-      "stateAtReview": "open",
-      "repository": "robertkeus/lobe-icons",
-      "commit": "589e762d98094c9013b49d5fb488d86b0011a3ba",
-      "files": {
-        "src/GreenPT/components/Avatar.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconAvatar, { type IconAvatarProps } from '@/features/IconAvatar';\n\nimport { AVATAR_BACKGROUND, AVATAR_COLOR, AVATAR_ICON_MULTIPLE, TITLE } from '../style';\nimport Color from './Color';\n\nexport type AvatarProps = Omit<IconAvatarProps, 'Icon'>;\n\nconst Avatar = memo<AvatarProps>(({ ...rest }) => {\n  return (\n    <IconAvatar\n      Icon={Color}\n      aria-label={TITLE}\n      background={AVATAR_BACKGROUND}\n      color={AVATAR_COLOR}\n      iconMultiple={AVATAR_ICON_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Avatar;\n",
-          "gitBlob": "2fa6d4191705aa90d95726b53ef979ebb3f33174",
-          "sha256": "5c645a3c9fce1867906ea18b40a5d7d79907979b8ef793e1db0dd0d1359bd41c"
-        },
-        "src/GreenPT/components/Color.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport { useFillId } from '@/hooks/useFillId';\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  const { fill, id } = useFillId(TITLE);\n\n  return (\n    <svg\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 86 86\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path\n        d=\"M43 0C19.252 0 0 19.252 0 43s19.252 43 43 43 43-19.252 43-43S66.748 0 43 0Zm1.362 66.507c-12.864 0-23.292-10.493-23.292-23.435 0-12.943 10.428-23.435 23.292-23.435 12.863 0 23.291 10.492 23.291 23.435 0 12.942-10.428 23.435-23.291 23.435Z\"\n        fill=\"#9BE755\"\n      />\n      <path\n        d=\"M56.604 78.833C37.066 78.833 21.226 62.79 21.226 43S37.066 7.167 56.604 7.167c4.368 0 8.533.84 12.396 2.306C61.728 3.558 52.506 0 42.453 0 19.007 0 0 19.252 0 43s19.007 43 42.453 43C52.506 86 61.728 82.442 69 76.527c-3.863 1.466-8.028 2.306-12.396 2.306Z\"\n        fill=\"#9BE755\"\n      />\n      <path\n        d=\"M56.604 78.833C37.066 78.833 21.226 62.79 21.226 43S37.066 7.167 56.604 7.167c4.368 0 8.533.84 12.396 2.306C61.728 3.558 52.506 0 42.453 0 19.007 0 0 19.252 0 43s19.007 43 42.453 43C52.506 86 61.728 82.442 69 76.527c-3.863 1.466-8.028 2.306-12.396 2.306Z\"\n        fill={fill}\n      />\n      <defs>\n        <linearGradient id={id} x1=\"40\" x2=\"56\" y1=\"12\" y2=\"76\" gradientUnits=\"userSpaceOnUse\">\n          <stop stopColor=\"#FFFFFF\" stopOpacity=\".1\" />\n          <stop offset=\"1\" stopColor=\"#000000\" stopOpacity=\".3\" />\n        </linearGradient>\n      </defs>\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "b54a85893a0312de319723e7b71f32dc0acc248b",
-          "sha256": "65354d1be6248a2542098aabd0336d2d2a154884fd5f8474fa7c2f53db6cfdb3"
-        },
-        "src/GreenPT/components/Combine.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconCombine, { type IconCombineProps } from '@/features/IconCombine';\n\nimport { COMBINE_SPACE_MULTIPLE, COMBINE_TEXT_MULTIPLE, TITLE } from '../style';\nimport Color from './Color';\nimport Mono from './Mono';\nimport Text from './Text';\n\nexport interface CombineProps extends Omit<IconCombineProps, 'Icon' | 'Text'> {\n  type?: 'color' | 'mono';\n}\n\nconst Combine = memo<CombineProps>(({ type = 'mono', ...rest }) => {\n  const Icon = type === 'color' ? Color : Mono;\n\n  return (\n    <IconCombine\n      Icon={Icon}\n      Text={Text}\n      aria-label={TITLE}\n      spaceMultiple={COMBINE_SPACE_MULTIPLE}\n      textMultiple={COMBINE_TEXT_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Combine;\n",
-          "gitBlob": "c8157b85de3a4257c7c1c5a114b93a01c83dfb10",
-          "sha256": "85fb788400dc6bfa76b1929747796dd5283c84b07d0caaa1f10f7cec9046182b"
-        },
-        "src/GreenPT/components/Mono.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 86 86\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M43 0C19.252 0 0 19.252 0 43s19.252 43 43 43 43-19.252 43-43S66.748 0 43 0Zm1.362 66.507c-12.864 0-23.292-10.493-23.292-23.435 0-12.943 10.428-23.435 23.292-23.435 12.863 0 23.291 10.492 23.291 23.435 0 12.942-10.428 23.435-23.291 23.435Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "5462777cf0df6cd74fe09a0822a52ebf4da05d46",
-          "sha256": "717e217ea635e2df6d34a1d6d5470503460efe5e0c467ef2672ed2069c93f18a"
-        },
-        "src/GreenPT/components/Text.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 270 50\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M50 22.253H25.726v9.615h12.932c-1.729 4.602-5.947 7.418-12.379 7.418-9.405 0-15.214-5.976-15.214-14.149 0-8.447 6.086-14.423 14.246-14.423 5.464 0 9.821 2.473 11.826 5.632l9.405-5.357C42.462 4.533 34.647 0 25.38 0 11.134 0 0 11.126 0 25.069 0 38.874 10.927 50 26.141 50 39.696 50 50 41.071 50 26.374v-4.121Z\" />\n      <path d=\"M65.5 20.794v-6.108H55V49h10.5V33.49c0-6.794 6.16-8.51 10.5-7.823V14c-4.41 0-9.1 2.196-10.5 6.794Z\" />\n      <path d=\"M89.008 36.091h24.577c.277-1.296.415-2.66.415-4.091 0-10.295-7.477-18-17.585-18C85.477 14 78 21.841 78 32s7.338 18 19.177 18c6.577 0 11.699-2.386 15.092-7.023l-8.308-4.704c-1.384 1.5-3.807 2.59-6.646 2.59-3.807 0-6.992-1.227-8.307-4.772ZM88.8 28.455c.969-3.478 3.6-5.387 7.546-5.387 3.116 0 6.231 1.432 7.339 5.387H88.8Z\" />\n      <path d=\"M128.008 36.091h24.577c.277-1.296.415-2.66.415-4.091 0-10.295-7.477-18-17.585-18C124.477 14 117 21.841 117 32s7.338 18 19.177 18c6.577 0 11.699-2.386 15.092-7.023l-8.308-4.704c-1.384 1.5-3.807 2.59-6.646 2.59-3.807 0-6.992-1.227-8.307-4.772Zm-.208-7.636c.969-3.478 3.6-5.387 7.546-5.387 3.116 0 6.231 1.432 7.339 5.387H127.8Z\" />\n      <path d=\"M178.144 14c-4.538 0-7.975 1.634-9.832 4.154v-3.201H158V49h10.312V30.411c0-4.835 2.613-7.014 6.394-7.014 3.3 0 5.981 1.975 5.981 6.196V49H191V28.095C191 18.903 185.088 14 178.144 14Z\" />\n      <path d=\"M216.186 1H198v48h10.98V33.914h7.206C225.657 33.914 233 26.577 233 17.457S225.657 1 216.186 1Zm0 22.629h-7.206V11.286h7.206c3.363 0 5.834 2.674 5.834 6.171 0 3.497-2.471 6.172-5.834 6.172ZM270 1h-36v10.56h12.462V49h11.076V11.56H270V1Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "7fbf8e379277cd70d1dc681de7f8317db9db8d28",
-          "sha256": "5663ef92233903ddcd7a8b9ffaf56d34558c17a8d2771529c94cd81127ee4cfa"
-        },
-        "src/GreenPT/style.ts": {
-          "content": "export const TITLE = 'GreenPT';\nexport const COMBINE_TEXT_MULTIPLE = 0.92;\nexport const COMBINE_SPACE_MULTIPLE = 0.12;\nexport const COLOR_PRIMARY = '#9BE755';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#0B1707';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.72;\n",
-          "gitBlob": "f555e61c64fa0ed49c0e8ad9356b97acd0e2c58a",
-          "sha256": "fd4d16284994dd186861b4e813ada1bd7ddc32a8980ecae0e54dd0f56ba1fbd3"
-        }
-      },
-      "icons": {
-        "greenpt": {
-          "name": "GreenPT",
-          "componentName": "GreenPT",
-          "artworks": {
-            "icon": {
-              "monochrome": "greenpt.svg",
-              "color": "greenpt-color.svg"
-            },
-            "text": {
-              "monochrome": "greenpt-text.svg"
-            }
-          }
-        }
-      },
-      "artworkSources": {
-        "greenpt.svg": {
-          "path": "src/GreenPT/components/Mono.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/GreenPT/components/Mono.tsx",
-            "src/GreenPT/style.ts"
-          ]
-        },
-        "greenpt-color.svg": {
-          "path": "src/GreenPT/components/Color.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/GreenPT/components/Color.tsx",
-            "src/GreenPT/style.ts"
-          ]
-        },
-        "greenpt-text.svg": {
-          "path": "src/GreenPT/components/Text.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/GreenPT/components/Text.tsx",
-            "src/GreenPT/style.ts"
-          ]
-        }
-      }
-    },
-    {
-      "number": 373,
-      "url": "https://github.com/lobehub/lobe-icons/pull/373",
-      "title": "✨ feat: add LLM Gateway icon",
-      "stateAtReview": "open",
-      "repository": "smakosh/lobe-icons",
-      "commit": "c75fb8d8f6f848dde0bb61d375ae950f26b81134",
-      "files": {
-        "src/LlmGateway/components/Avatar.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconAvatar, { type IconAvatarProps } from '@/features/IconAvatar';\n\nimport { AVATAR_BACKGROUND, AVATAR_COLOR, AVATAR_ICON_MULTIPLE, TITLE } from '../style';\nimport Mono from './Mono';\n\nexport type AvatarProps = Omit<IconAvatarProps, 'Icon'>;\n\nconst Avatar = memo<AvatarProps>(({ ...rest }) => {\n  return (\n    <IconAvatar\n      Icon={Mono}\n      aria-label={TITLE}\n      background={AVATAR_BACKGROUND}\n      color={AVATAR_COLOR}\n      iconMultiple={AVATAR_ICON_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Avatar;\n",
-          "gitBlob": "1f7dbe509f03eae1f3f236f218fc2f7a2e3363e3",
-          "sha256": "a2d626a04075ef1f667afbf87818093367218154b14307c247e430169951ccdb"
-        },
-        "src/LlmGateway/components/Combine.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconCombine, { type IconCombineProps } from '@/features/IconCombine';\n\nimport { COMBINE_SPACE_MULTIPLE, COMBINE_TEXT_MULTIPLE, TITLE } from '../style';\nimport Mono from './Mono';\nimport Text from './Text';\n\nconst Combine = memo<IconCombineProps>(({ ...rest }) => {\n  return (\n    <IconCombine\n      Icon={Mono}\n      Text={Text}\n      aria-label={TITLE}\n      spaceMultiple={COMBINE_SPACE_MULTIPLE}\n      textMultiple={COMBINE_TEXT_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Combine;\n",
-          "gitBlob": "0bd4ea1f7a7079491dea430fb0e4e9f27834fa5f",
-          "sha256": "d5aeaf8b81408d5330ba95deb3bffa1bc4ce58a73c72e8ea1c6b8a650abf99e4"
-        },
-        "src/LlmGateway/components/Mono.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      fillRule=\"evenodd\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M23.276 6.152c0-0.431-0.243-0.826-0.628-1.018L13.135 0.371s0.303 0.344 0.303 0.725V22.638c0 0.422-0.303 0.726-0.303 0.726l1.577-0.773c0.307-0.231 0.743-0.77 0.769-1.656 0.03-1.032 0.063-8.777 0.076-12.521 0.05-0.379 0.424-1.138 1.513-1.138 1.09 0 3.027 0.531 3.86 0.797 0.252 0.076 0.787 0.433 0.908 1.252 0.121 0.82 0.101 6.109 0.076 8.651 0 0.253 0.014 0.731 0.688 0.731 0.674 0 0.674-0.731 0.674-0.731V6.152Z\" />\n      <path d=\"M16.162 8.93c0-0.578 0.531-1.01 1.096-0.891l3.254 0.688c0.42 0.089 0.721 0.457 0.721 0.888v8.475c0 0.607 0.53 0.949 0.529 0.948l-5.369-1.309c-0.136-0.033-0.231-0.155-0.231-0.295V8.93ZM11.043 0.119c0.754-0.373 1.638 0.177 1.638 1.021V22.86c0 0.844-0.883 1.394-1.638 1.021L1.357 19.086C0.969 18.894 0.724 18.498 0.724 18.065v-1.848l5.143 2.055c0.419 0.167 0.874-0.142 0.873-0.594 0-0.275-0.176-0.52-0.436-0.607L0.724 15.206v-1.48l4.167 0.798c0.41 0.079 0.79-0.237 0.79-0.656 0-0.34-0.255-0.626-0.592-0.663L0.724 12.716V11.222l8.123-0.312c0.43-0.017 0.769-0.371 0.769-0.801 0-0.479-0.415-0.851-0.889-0.798L0.724 10.211V8.528l5.529-1.849c0.246-0.082 0.412-0.313 0.412-0.573 0-0.424-0.424-0.716-0.819-0.563L0.724 7.518V5.935c0-0.433 0.245-0.829 0.633-1.021L11.043 0.119Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "64ce942a3de8798a30d14cccb916c7c0573590d5",
-          "sha256": "674849cd6cd4e7b043770c4d28c884ca92d77d519f7427602cda9ef6db1f7309"
-        },
-        "src/LlmGateway/components/Text.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      fillRule=\"evenodd\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 160 24\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M0 18.787L11.864 18.787 11.864 15.557 3.919 15.557 3.919 0.253 0 0.253M13.824 18.787L25.689 18.787 25.689 15.557 17.743 15.557 17.743 0.253 13.824 0.253M27.649 0.253L27.649 18.787 31.45 18.787 31.45 6.679 31.604 6.679 36.4 18.697 38.988 18.697 43.785 6.724 43.938 6.724 43.938 18.787 47.739 18.787 47.739 0.253 42.907 0.253 37.803 12.706 37.586 12.706 32.481 0.253M67.886 6.244L71.868 6.244C71.361 2.579 68.13 0 63.94 0 59.044 0 55.271 3.529 55.271 9.538 55.271 15.403 58.8 19.041 64.022 19.041 68.7 19.041 72.04 16.081 72.04 11.204L72.04 8.869 64.284 8.869 64.284 11.819 68.266 11.819C68.212 14.118 66.646 15.575 64.04 15.575 61.099 15.575 59.243 13.376 59.243 9.502 59.243 5.647 61.171 3.466 64.004 3.466 66.022 3.466 67.388 4.507 67.886 6.244M78.235 19.05C80.29 19.05 81.62 18.154 82.299 16.86L82.407 16.86 82.407 18.787 86.063 18.787 86.063 9.412C86.063 6.1 83.258 4.706 80.163 4.706 76.833 4.706 74.643 6.299 74.109 8.833L77.674 9.122C77.937 8.199 78.76 7.52 80.145 7.52 81.457 7.52 82.208 8.181 82.208 9.321L82.208 9.376C82.208 10.271 81.258 10.389 78.842 10.624 76.091 10.878 73.62 11.801 73.62 14.905 73.62 17.656 75.584 19.05 78.235 19.05M79.339 16.389C78.154 16.389 77.303 15.837 77.303 14.778 77.303 13.692 78.199 13.158 79.557 12.968 80.398 12.851 81.774 12.652 82.235 12.344L82.235 13.819C82.235 15.276 81.032 16.389 79.339 16.389M95.815 4.887L93.2 4.887 93.2 1.557 89.345 1.557 89.345 4.887 87.444 4.887 87.444 7.783 89.345 7.783 89.345 15.023C89.327 17.747 91.182 19.095 93.978 18.977 94.974 18.941 95.68 18.742 96.069 18.615L95.462 15.747C95.272 15.783 94.865 15.873 94.503 15.873 93.734 15.873 93.2 15.584 93.2 14.516L93.2 7.783 95.815 7.783M103.875 19.059C107.314 19.059 109.631 17.385 110.174 14.805L106.608 14.57C106.219 15.629 105.224 16.181 103.938 16.181 102.011 16.181 100.789 14.905 100.789 12.833L100.789 12.824 110.255 12.824 110.255 11.765C110.255 7.041 107.395 4.706 103.721 4.706 99.631 4.706 96.979 7.611 96.979 11.9 96.979 16.308 99.595 19.059 103.875 19.059M100.789 10.434C100.871 8.851 102.074 7.584 103.785 7.584 105.459 7.584 106.617 8.778 106.626 10.434M114.767 18.787L118.84 18.787 121.229 10.045 121.401 10.045 123.79 18.787 127.871 18.787 131.645 4.887 127.754 4.887 125.636 14.172 125.519 14.172 123.238 4.887 119.41 4.887 117.166 14.226 117.039 14.226 114.885 4.887 110.985 4.887M137.017 19.05C139.072 19.05 140.402 18.154 141.081 16.86L141.189 16.86 141.189 18.787 144.845 18.787 144.845 9.412C144.845 6.1 142.04 4.706 138.945 4.706 135.614 4.706 133.424 6.299 132.891 8.833L136.456 9.122C136.719 8.199 137.542 7.52 138.927 7.52 140.239 7.52 140.99 8.181 140.99 9.321L140.99 9.376C140.99 10.271 140.04 10.389 137.624 10.624 134.872 10.878 132.402 11.801 132.402 14.905 132.402 17.656 134.366 19.05 137.017 19.05M138.121 16.389C136.936 16.389 136.085 15.837 136.085 14.778 136.085 13.692 136.981 13.158 138.338 12.968 139.18 12.851 140.556 12.652 141.017 12.344L141.017 13.819C141.017 15.276 139.814 16.389 138.121 16.389M149.077 24C151.946 24 153.466 22.534 154.253 20.29L159.656 4.887 155.575 4.887 152.67 15.095 152.525 15.095 149.647 4.887 145.593 4.887 150.579 19.186 150.353 19.774C149.846 21.077 148.878 21.14 147.52 20.724L146.652 23.602C147.204 23.837 148.1 24 149.077 24\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "fd4358b717f6316c49bd268f227df3cff8407d6f",
-          "sha256": "1d50d05380053c93c4b7eec3c8a7eb2c6cc05066f761bfe6bfe737253bcd85a4"
-        },
-        "src/LlmGateway/style.ts": {
-          "content": "export const TITLE = 'LLM Gateway';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n",
-          "gitBlob": "f4eada22fdf52fb39624be252e284bd76fde6ed0",
-          "sha256": "651ede4dd3a0c085b3c9798b6a84e478ec120ff695628dacadb19756c0616726"
-        }
-      },
-      "icons": {
-        "llmgateway": {
-          "name": "LLM Gateway",
-          "componentName": "LlmGateway",
-          "artworks": {
-            "icon": {
-              "monochrome": "llmgateway.svg"
-            },
-            "text": {
-              "monochrome": "llmgateway-text.svg"
-            }
-          }
-        }
-      },
-      "artworkSources": {
-        "llmgateway.svg": {
-          "path": "src/LlmGateway/components/Mono.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/LlmGateway/components/Mono.tsx",
-            "src/LlmGateway/style.ts"
-          ]
-        },
-        "llmgateway-text.svg": {
-          "path": "src/LlmGateway/components/Text.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/LlmGateway/components/Text.tsx",
-            "src/LlmGateway/style.ts"
-          ]
-        }
-      }
-    },
-    {
       "number": 375,
       "url": "https://github.com/lobehub/lobe-icons/pull/375",
       "title": "✨ feat: add Openference and Deyin icons with provider mappings",
@@ -1292,168 +982,6 @@
           "flipY": 24,
           "sourceSha256": "177492614895b7fcb32a504e6bc1effeef08c45add68d924d17867469d9d194f",
           "reason": "The source wordmark glyphs use an upward y-axis and render upside down in SVG. Flip around the 24-unit viewBox without changing path data."
-        }
-      }
-    },
-    {
-      "number": 381,
-      "url": "https://github.com/lobehub/lobe-icons/pull/381",
-      "title": "✨ feat: Add Tabbit icon",
-      "stateAtReview": "open",
-      "repository": "liaocaoxuezhe/lobe-icons",
-      "commit": "e9dbae8f0cd8893648882dfa2b8549b880877532",
-      "files": {
-        "src/Tabbit/components/Avatar.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconAvatar, { type IconAvatarProps } from '@/features/IconAvatar';\n\nimport { AVATAR_BACKGROUND, AVATAR_COLOR, AVATAR_ICON_MULTIPLE, TITLE } from '../style';\nimport Mono from './Mono';\n\nexport type AvatarProps = Omit<IconAvatarProps, 'Icon'>;\n\nconst Avatar = memo<AvatarProps>(({ ...rest }) => {\n  return (\n    <IconAvatar\n      Icon={Mono}\n      aria-label={TITLE}\n      background={AVATAR_BACKGROUND}\n      color={AVATAR_COLOR}\n      iconMultiple={AVATAR_ICON_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Avatar;\n",
-          "gitBlob": "1f7dbe509f03eae1f3f236f218fc2f7a2e3363e3",
-          "sha256": "a2d626a04075ef1f667afbf87818093367218154b14307c247e430169951ccdb"
-        },
-        "src/Tabbit/components/Color.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path\n        d=\"M0 8.85C0 5.75221 0 4.20331 0.60287 3.02011C1.13317 1.97934 1.97934 1.13317 3.02011 0.60287C4.20331 0 5.75221 0 8.85 0H15.15C18.2478 0 19.7967 0 20.9799 0.60287C22.0207 1.13317 22.8668 1.97934 23.3971 3.02011C24 4.20331 24 5.75221 24 8.85V15.15C24 18.2478 24 19.7967 23.3971 20.9799C22.8668 22.0207 22.0207 22.8668 20.9799 23.3971C19.7967 24 18.2478 24 15.15 24H8.85C5.75221 24 4.20331 24 3.02011 23.3971C1.97934 22.8668 1.13317 22.0207 0.60287 20.9799C0 19.7967 0 18.2478 0 15.15V8.85Z\"\n        fill=\"#FC9832\"\n      />\n      <path\n        d=\"M8.41995 13.7571C9.2071 12.97 10.4834 12.97 11.2705 13.7571L15.5791 18.0657C16.3663 18.8529 16.3663 20.1291 15.5791 20.9163C14.792 21.7032 13.5156 21.7034 12.7285 20.9163L8.41995 16.6077C7.63288 15.8206 7.63303 14.5443 8.41995 13.7571ZM7.39261 8.4202C8.17977 7.63312 9.45607 7.63307 10.2432 8.4202C11.0303 9.20733 11.0302 10.4836 10.2432 11.2708L5.93362 15.5794C5.14649 16.3664 3.87115 16.3664 3.08402 15.5794C2.29686 14.7922 2.29686 13.5159 3.08402 12.7288L7.39261 8.4202ZM18.0655 8.4202C18.8526 7.6331 20.1289 7.63306 20.916 8.4202C21.7031 9.20733 21.7031 10.4836 20.916 11.2708L16.6075 15.5794C15.8203 16.3665 14.544 16.3665 13.7569 15.5794C12.9697 14.7922 12.9697 13.5159 13.7569 12.7288L18.0655 8.4202ZM8.41995 3.08426C9.2071 2.29711 10.4834 2.29711 11.2705 3.08426L15.5791 7.39285C16.3663 8.18 16.3663 9.45629 15.5791 10.2434C14.792 11.0303 13.5156 11.0305 12.7285 10.2434L8.41995 5.93387C7.63315 5.14678 7.63315 3.87134 8.41995 3.08426Z\"\n        fill=\"#1A1A1A\"\n      />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "c8ae262e554cd14ce16f3047a393b4ebfc7fb91e",
-          "sha256": "3e505db9badce2b0faa62eac1579c9d2b287da9a2998bcabc68cd78a9749713d"
-        },
-        "src/Tabbit/components/Combine.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconCombine, { type IconCombineProps } from '@/features/IconCombine';\n\nimport { COMBINE_SPACE_MULTIPLE, COMBINE_TEXT_MULTIPLE, TITLE } from '../style';\nimport Mono from './Mono';\nimport Text from './Text';\n\nexport type CombineProps = Omit<IconCombineProps, 'Icon' | 'Text'>;\n\nconst Combine = memo<CombineProps>(({ ...rest }) => {\n  return (\n    <IconCombine\n      Icon={Mono}\n      Text={Text}\n      aria-label={TITLE}\n      spaceMultiple={COMBINE_SPACE_MULTIPLE}\n      textMultiple={COMBINE_TEXT_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Combine;\n",
-          "gitBlob": "98989adba2fd9e878ee3b948e33ced0f2d0ccc1f",
-          "sha256": "c7f207aa81966c612421bef41f1a7476230de5c25e46c750860b81929ea4f5a7"
-        },
-        "src/Tabbit/components/Mono.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M8.41995 13.7571C9.2071 12.97 10.4834 12.97 11.2705 13.7571L15.5791 18.0657C16.3663 18.8529 16.3663 20.1291 15.5791 20.9163C14.792 21.7032 13.5156 21.7034 12.7285 20.9163L8.41995 16.6077C7.63288 15.8206 7.63303 14.5443 8.41995 13.7571ZM7.39261 8.4202C8.17977 7.63312 9.45607 7.63307 10.2432 8.4202C11.0303 9.20733 11.0302 10.4836 10.2432 11.2708L5.93362 15.5794C5.14649 16.3664 3.87115 16.3664 3.08402 15.5794C2.29686 14.7922 2.29686 13.5159 3.08402 12.7288L7.39261 8.4202ZM18.0655 8.4202C18.8526 7.6331 20.1289 7.63306 20.916 8.4202C21.7031 9.20733 21.7031 10.4836 20.916 11.2708L16.6075 15.5794C15.8203 16.3665 14.544 16.3665 13.7569 15.5794C12.9697 14.7922 12.9697 13.5159 13.7569 12.7288L18.0655 8.4202ZM8.41995 3.08426C9.2071 2.29711 10.4834 2.29711 11.2705 3.08426L15.5791 7.39285C16.3663 8.18 16.3663 9.45629 15.5791 10.2434C14.792 11.0303 13.5156 11.0305 12.7285 10.2434L8.41995 5.93387C7.63315 5.14678 7.63315 3.87134 8.41995 3.08426Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "12057804877aa8bf89b162521aa3f71566a2df44",
-          "sha256": "5b33fdf21b51f4aa0c641b1eb8cc52a9b0f601899052728d3fc2433ff9a33cc4"
-        },
-        "src/Tabbit/components/Text.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 96 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <g transform=\"scale(1.2)\">\n        <path d=\"M5.37581 18.8881V5.25606H-0.000191402V2.08806H14.6398V5.25606H9.26381V18.8881H5.37581ZM23.7315 18.8881V16.3681L23.4915 15.8161V11.3041C23.4915 10.5041 23.2435 9.88006 22.7475 9.43206C22.2675 8.98406 21.5235 8.76006 20.5155 8.76006C19.8275 8.76006 19.1475 8.87206 18.4755 9.09606C17.8195 9.30406 17.2595 9.59206 16.7955 9.96006L15.4515 7.34406C16.1555 6.84806 17.0035 6.46406 17.9955 6.19206C18.9875 5.92006 19.9955 5.78406 21.0195 5.78406C22.9875 5.78406 24.5155 6.24806 25.6035 7.17606C26.6915 8.10406 27.2355 9.55206 27.2355 11.5201V18.8881H23.7315ZM19.7955 19.0801C18.7875 19.0801 17.9235 18.9121 17.2035 18.5761C16.4835 18.2241 15.9315 17.7521 15.5475 17.1601C15.1635 16.5681 14.9715 15.9041 14.9715 15.1681C14.9715 14.4001 15.1555 13.7281 15.5235 13.1521C15.9075 12.5761 16.5075 12.1281 17.3235 11.8081C18.1395 11.4721 19.2035 11.3041 20.5155 11.3041H23.9475V13.4881H20.9235C20.0435 13.4881 19.4355 13.6321 19.0995 13.9201C18.7795 14.2081 18.6195 14.5681 18.6195 15.0001C18.6195 15.4801 18.8035 15.8641 19.1715 16.1521C19.5555 16.4241 20.0755 16.5601 20.7315 16.5601C21.3555 16.5601 21.9155 16.4161 22.4115 16.1281C22.9075 15.8241 23.2675 15.3841 23.4915 14.8081L24.0675 16.5361C23.7955 17.3681 23.2995 18.0001 22.5795 18.4321C21.8595 18.8641 20.9315 19.0801 19.7955 19.0801ZM38.256 19.0801C37.12 19.0801 36.144 18.8401 35.328 18.3601C34.512 17.8801 33.888 17.1521 33.456 16.1761C33.024 15.1841 32.808 13.9361 32.808 12.4321C32.808 10.9121 33.032 9.66406 33.48 8.68806C33.944 7.71206 34.584 6.98406 35.4 6.50406C36.216 6.02406 37.168 5.78406 38.256 5.78406C39.472 5.78406 40.56 6.05606 41.52 6.60006C42.496 7.14406 43.264 7.91206 43.824 8.90406C44.4 9.89606 44.688 11.0721 44.688 12.4321C44.688 13.7761 44.4 14.9441 43.824 15.9361C43.264 16.9281 42.496 17.7041 41.52 18.2641C40.56 18.8081 39.472 19.0801 38.256 19.0801ZM30.624 18.8881V1.08006H34.368V8.59206L34.128 12.4081L34.2 16.2481V18.8881H30.624ZM37.608 16.0081C38.232 16.0081 38.784 15.8641 39.264 15.5761C39.76 15.2881 40.152 14.8801 40.44 14.3521C40.744 13.8081 40.896 13.1681 40.896 12.4321C40.896 11.6801 40.744 11.0401 40.44 10.5121C40.152 9.98406 39.76 9.57606 39.264 9.28806C38.784 9.00006 38.232 8.85606 37.608 8.85606C36.984 8.85606 36.424 9.00006 35.928 9.28806C35.432 9.57606 35.04 9.98406 34.752 10.5121C34.464 11.0401 34.32 11.6801 34.32 12.4321C34.32 13.1681 34.464 13.8081 34.752 14.3521C35.04 14.8801 35.432 15.2881 35.928 15.5761C36.424 15.8641 36.984 16.0081 37.608 16.0081ZM54.8263 19.0801C53.6903 19.0801 52.7143 18.8401 51.8983 18.3601C51.0823 17.8801 50.4583 17.1521 50.0263 16.1761C49.5943 15.1841 49.3783 13.9361 49.3783 12.4321C49.3783 10.9121 49.6023 9.66406 50.0503 8.68806C50.5143 7.71206 51.1543 6.98406 51.9703 6.50406C52.7863 6.02406 53.7383 5.78406 54.8263 5.78406C56.0423 5.78406 57.1303 6.05606 58.0903 6.60006C59.0663 7.14406 59.8343 7.91206 60.3943 8.90406C60.9703 9.89606 61.2583 11.0721 61.2583 12.4321C61.2583 13.7761 60.9703 14.9441 60.3943 15.9361C59.8343 16.9281 59.0663 17.7041 58.0903 18.2641C57.1303 18.8081 56.0423 19.0801 54.8263 19.0801ZM47.1943 18.8881V1.08006H50.9383V8.59206L50.6983 12.4081L50.7703 16.2481V18.8881H47.1943ZM54.1783 16.0081C54.8023 16.0081 55.3543 15.8641 55.8343 15.5761C56.3303 15.2881 56.7223 14.8801 57.0103 14.3521C57.3143 13.8081 57.4663 13.1681 57.4663 12.4321C57.4663 11.6801 57.3143 11.0401 57.0103 10.5121C56.7223 9.98406 56.3303 9.57606 55.8343 9.28806C55.3543 9.00006 54.8023 8.85606 54.1783 8.85606C53.5543 8.85606 52.9943 9.00006 52.4983 9.28806C52.0023 9.57606 51.6103 9.98406 51.3223 10.5121C51.0343 11.0401 50.8903 11.6801 50.8903 12.4321C50.8903 13.1681 51.0343 13.8081 51.3223 14.3521C51.6103 14.8801 52.0023 15.2881 52.4983 15.5761C52.9943 15.8641 53.5543 16.0081 54.1783 16.0081ZM63.7646 18.8881V5.97606H67.5086V18.8881H63.7646ZM65.6366 4.17606C64.9486 4.17606 64.3886 3.97606 63.9566 3.57606C63.5246 3.17606 63.3086 2.68006 63.3086 2.08806C63.3086 1.49606 63.5246 1.00006 63.9566 0.600061C64.3886 0.20006 64.9486 6.00815e-05 65.6366 6.00815e-05C66.3246 6.00815e-05 66.8846 0.19206 67.3166 0.576061C67.7486 0.944061 67.9646 1.42406 67.9646 2.01606C67.9646 2.64006 67.7486 3.16006 67.3166 3.57606C66.9006 3.97606 66.3406 4.17606 65.6366 4.17606ZM76.2634 19.0801C74.7434 19.0801 73.5594 18.6961 72.7114 17.9281C71.8634 17.1441 71.4394 15.9841 71.4394 14.4481V3.12006H75.1834V14.4001C75.1834 14.9441 75.3274 15.3681 75.6154 15.6721C75.9034 15.9601 76.2954 16.1041 76.7914 16.1041C77.3834 16.1041 77.8874 15.9441 78.3034 15.6241L79.3114 18.2641C78.9274 18.5361 78.4634 18.7441 77.9194 18.8881C77.3914 19.0161 76.8394 19.0801 76.2634 19.0801ZM69.4474 8.85606V5.97606H78.3994V8.85606H69.4474Z\" />\n      </g>\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "f807d30ff27acc9bc8d26027d306cfd28c5d0ca4",
-          "sha256": "c08f4f710e72dc2c59fb6cc0f047875dd5226cf7017e7d2562b5ece3ed43345c"
-        },
-        "src/Tabbit/style.ts": {
-          "content": "export const TITLE = 'Tabbit';\nexport const COMBINE_TEXT_MULTIPLE = 0.9;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FC9832';\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#1A1A1A';\nexport const AVATAR_ICON_MULTIPLE = 0.65;\n",
-          "gitBlob": "e1f1171af7c6e21dd7418b1e0530e9e0a8761897",
-          "sha256": "32b61db25934e0b03fceb1153616a403dac8f753f5b009a23996ca734fb03ec6"
-        }
-      },
-      "icons": {
-        "tabbit": {
-          "name": "Tabbit",
-          "componentName": "Tabbit",
-          "artworks": {
-            "icon": {
-              "monochrome": "tabbit.svg",
-              "color": "tabbit-color.svg"
-            },
-            "text": {
-              "monochrome": "tabbit-text.svg"
-            }
-          }
-        }
-      },
-      "artworkSources": {
-        "tabbit.svg": {
-          "path": "src/Tabbit/components/Mono.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/Tabbit/components/Mono.tsx",
-            "src/Tabbit/style.ts"
-          ]
-        },
-        "tabbit-color.svg": {
-          "path": "src/Tabbit/components/Color.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/Tabbit/components/Color.tsx",
-            "src/Tabbit/style.ts"
-          ]
-        },
-        "tabbit-text.svg": {
-          "path": "src/Tabbit/components/Text.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/Tabbit/components/Text.tsx",
-            "src/Tabbit/style.ts"
-          ]
-        }
-      }
-    },
-    {
-      "number": 382,
-      "url": "https://github.com/lobehub/lobe-icons/pull/382",
-      "title": "✨ feat: add Appwrite icon",
-      "stateAtReview": "open",
-      "repository": "eldadfux/lobe-icons",
-      "commit": "d35eb58a55682a0428040a64d158452b570af82a",
-      "files": {
-        "src/Appwrite/components/Avatar.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconAvatar, { type IconAvatarProps } from '@/features/IconAvatar';\n\nimport { AVATAR_BACKGROUND, AVATAR_COLOR, AVATAR_ICON_MULTIPLE, TITLE } from '../style';\nimport Mono from './Mono';\n\nexport type AvatarProps = Omit<IconAvatarProps, 'Icon'>;\n\nconst Avatar = memo<AvatarProps>(({ ...rest }) => {\n  return (\n    <IconAvatar\n      Icon={Mono}\n      aria-label={TITLE}\n      background={AVATAR_BACKGROUND}\n      color={AVATAR_COLOR}\n      iconMultiple={AVATAR_ICON_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Avatar;\n",
-          "gitBlob": "1f7dbe509f03eae1f3f236f218fc2f7a2e3363e3",
-          "sha256": "a2d626a04075ef1f667afbf87818093367218154b14307c247e430169951ccdb"
-        },
-        "src/Appwrite/components/Color.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M24 17.291v5.29H10.557A10.58 10.58 0 0 1 0 12.715v-1.43c.048-.735.174-1.463.374-2.171C1.63 4.673 5.713 1.419 10.557 1.419c4.844 0 8.927 3.254 10.183 7.695h-5.749a5.283 5.283 0 0 0-4.434-2.404 5.282 5.282 0 0 0-4.434 2.404A5.23 5.23 0 0 0 5.267 12a5.27 5.27 0 0 0 1.66 3.848 5.27 5.27 0 0 0 3.63 1.443H24Zm0-6.734v5.291h-9.813A5.276 5.276 0 0 0 15.848 12c0-.5-.07-.984-.199-1.443H24Z\" fill=\"#FD366E\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "b30302c5a0d6167f947d55f720f8015db4bd835b",
-          "sha256": "22a1852eb5e9fc69f878267cb464fdcb61666e8917d7ae3b73d75f77625a19b7"
-        },
-        "src/Appwrite/components/Combine.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconCombine, { type IconCombineProps } from '@/features/IconCombine';\n\nimport { COMBINE_SPACE_MULTIPLE, COMBINE_TEXT_MULTIPLE, TITLE } from '../style';\nimport Color from './Color';\nimport Mono from './Mono';\nimport Text from './Text';\n\nexport interface CombineProps extends Omit<IconCombineProps, 'Icon' | 'Text'> {\n  type?: 'color' | 'mono';\n}\nconst Combine = memo<CombineProps>(({ type = 'mono', ...rest }) => {\n  const Icon = type === 'color' ? Color : Mono;\n\n  return (\n    <IconCombine\n      Icon={Icon}\n      Text={Text}\n      aria-label={TITLE}\n      spaceMultiple={COMBINE_SPACE_MULTIPLE}\n      textMultiple={COMBINE_TEXT_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Combine;\n",
-          "gitBlob": "23910637d704d251b9942c90bbfc9c82d631211a",
-          "sha256": "9b674a7ce17ef1fda563aa759c36da91d9b25316d68a8d0ed98646637d13b896"
-        },
-        "src/Appwrite/components/Mono.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M24 17.291v5.29H10.557A10.58 10.58 0 0 1 0 12.715v-1.43c.048-.735.174-1.463.374-2.171C1.63 4.673 5.713 1.419 10.557 1.419c4.844 0 8.927 3.254 10.183 7.695h-5.749a5.283 5.283 0 0 0-4.434-2.404 5.282 5.282 0 0 0-4.434 2.404A5.23 5.23 0 0 0 5.267 12a5.27 5.27 0 0 0 1.66 3.848 5.27 5.27 0 0 0 3.63 1.443H24Zm0-6.734v5.291h-9.813A5.276 5.276 0 0 0 15.848 12c0-.5-.07-.984-.199-1.443H24Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "b47207537ef15c9f748b1ea8546241e1dfdd1610",
-          "sha256": "9e2ca862d7791c93ee514f6017ad4c67358e124d5f2ba5af14033271700a8ca1"
-        },
-        "src/Appwrite/components/Text.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"32 0 100 24\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path\n        d=\"M38.5573 19.4953C40.7162 19.4953 41.8075 18.3821 42.282 17.6242H42.4955C42.5904 18.4295 43.1598 19.1874 44.2749 19.1874H46.3864V16.8188H45.8407C45.4611 16.8188 45.2713 16.6057 45.2713 16.2741V6.77602H42.4718V8.29191H42.2583C41.7126 7.53397 40.5738 6.4681 38.4861 6.4681C35.1646 6.4681 32.6973 9.21567 32.6973 12.9817C32.6973 16.7478 35.2121 19.4953 38.5573 19.4953ZM39.0555 16.7952C37.0863 16.7952 35.5442 15.3503 35.5442 13.0054C35.5442 10.7079 37.0389 9.14461 39.0317 9.14461C40.9297 9.14461 42.5193 10.5421 42.5193 13.0054C42.5193 15.1135 41.167 16.7952 39.0555 16.7952Z\"\n      />\n      <path\n        d=\"M48.0392 24.0001H50.8387V17.6242H51.0522C51.5742 18.3821 52.6893 19.4953 54.8956 19.4953C58.2171 19.4953 60.637 16.7004 60.637 12.9817C60.637 9.23935 58.051 6.4681 54.7058 6.4681C52.5706 6.4681 51.5267 7.62871 51.0285 8.26823H50.815V6.77602H48.0392V24.0001ZM54.3025 16.8662C52.3808 16.8662 50.7913 15.4451 50.7913 12.9817C50.7913 10.8737 52.1436 9.09724 54.2551 9.09724C56.2242 9.09724 57.7663 10.6368 57.7663 12.9817C57.7663 15.2793 56.2717 16.8662 54.3025 16.8662Z\"\n      />\n      <path\n        d=\"M62.0816 24.0001H64.8811V17.6242H65.0946C65.6165 18.3821 66.7316 19.4953 68.938 19.4953C72.2594 19.4953 74.4487 16.7004 74.4487 12.9817C74.4487 9.23935 72.0934 6.4681 68.7482 6.4681C66.613 6.4681 65.5691 7.62871 65.0709 8.26823H64.8573V6.77602H62.0816V24.0001ZM68.3449 16.8662C66.4232 16.8662 64.8336 15.4451 64.8336 12.9817C64.8336 10.8737 66.1859 9.09724 68.2974 9.09724C70.2666 9.09724 71.8087 10.6368 71.8087 12.9817C71.8087 15.2793 70.314 16.8662 68.3449 16.8662Z\"\n      />\n      <path\n        d=\"M78.1493 19.4756H82.1114L84.3652 9.74073H84.5076L86.7614 19.4756H90.6997L93.8533 7.06423H91.0318L88.778 16.8228H88.5645L86.3106 7.06423H82.5858L80.3083 16.8228H80.0948L77.8647 7.06423H74.8754L78.1493 19.4756Z\"\n      />\n      <path\n        d=\"M95.2716 19.4756H98.0711V13.341C98.0711 10.9961 99.1624 9.55125 101.203 9.55125H102.436V6.75631H101.511C99.9216 6.75631 98.7117 7.84586 98.2372 8.88804H98.0474V7.06422H95.2716V19.4756Z\"\n      />\n      <path\n        d=\"M116.329 19.4756H118.512V16.9886H116.353C115.499 16.9886 115.143 16.6096 115.143 15.7333V9.52756H118.654V7.06422H115.143V3.5824H112.486V7.06422H110.161V9.52756H112.32V15.757C112.32 18.3861 113.909 19.4756 116.329 19.4756Z\"\n      />\n      <path\n        d=\"M126.022 19.4953C128.608 19.4953 130.886 18.2163 131.692 15.6345L129.13 15.0187C128.679 16.3925 127.375 17.1031 125.999 17.1031C123.958 17.1031 122.606 15.7767 122.582 13.6923H132.001V12.9107C132.001 9.21567 129.7 6.4681 125.904 6.4681C122.558 6.4681 119.688 9.09724 119.688 13.0054C119.688 16.7952 122.226 19.4953 126.022 19.4953ZM122.606 11.6553C122.772 10.1631 124.124 8.90775 125.904 8.90775C127.612 8.90775 129.012 9.97361 129.154 11.6553H122.606Z\"\n      />\n      <path\n        fillRule=\"evenodd\"\n        clipRule=\"evenodd\"\n        d=\"M108.916 19.4756H106.116V9.52756H103.934V7.06422H108.916V19.4756Z\"\n      />\n      <path\n        d=\"M107.309 5.34169C108.329 5.34169 109.088 4.58374 109.088 3.58893C109.088 2.61781 108.329 1.85986 107.309 1.85986C106.288 1.85986 105.529 2.61781 105.529 3.58893C105.529 4.58374 106.288 5.34169 107.309 5.34169Z\"\n      />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "a58d7e7d56dddfe0b7a914aba04e8cc85a02bfb4",
-          "sha256": "3ecef74cfeafc794540c1aeaf39636b5511ad4d085276fc5ba9ed5465ebc15f2"
-        },
-        "src/Appwrite/style.ts": {
-          "content": "export const TITLE = 'Appwrite';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FD366E';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n",
-          "gitBlob": "ad276bc2ce3562ac5d2e553e24f840fa1fd18c5d",
-          "sha256": "b1b22bf55063fc6c25f295c4b521f9f64df021578427a99673c1c7cfc1968df5"
-        }
-      },
-      "icons": {
-        "appwrite": {
-          "name": "Appwrite",
-          "componentName": "Appwrite",
-          "artworks": {
-            "icon": {
-              "monochrome": "appwrite.svg",
-              "color": "appwrite-color.svg"
-            },
-            "text": {
-              "monochrome": "appwrite-text.svg"
-            }
-          }
-        }
-      },
-      "artworkSources": {
-        "appwrite.svg": {
-          "path": "src/Appwrite/components/Mono.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/Appwrite/components/Mono.tsx",
-            "src/Appwrite/style.ts"
-          ]
-        },
-        "appwrite-color.svg": {
-          "path": "src/Appwrite/components/Color.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/Appwrite/components/Color.tsx",
-            "src/Appwrite/style.ts"
-          ]
-        },
-        "appwrite-text.svg": {
-          "path": "src/Appwrite/components/Text.tsx",
-          "format": "tsx",
-          "sources": [
-            "src/Appwrite/components/Text.tsx",
-            "src/Appwrite/style.ts"
-          ]
         }
       }
     },
@@ -2109,135 +1637,342 @@
       }
     },
     {
-      "number": 421,
-      "url": "https://github.com/lobehub/lobe-icons/pull/421",
-      "title": "feat: add TypeSafe AI icon",
+      "number": 433,
+      "url": "https://github.com/lobehub/lobe-icons/pull/433",
+      "title": "✨ feat: Add Autolith",
       "stateAtReview": "open",
-      "repository": "baranwang/lobe-icons",
-      "commit": "42c9774902e5832a19b5e0d4fb986e55104bd039",
+      "repository": "luciusmagn/lobe-icons",
+      "commit": "cfeec89b0c45b6dee27b20a0cc23d8e6255703a8",
       "files": {
-        "src/TypeSafeAI/components/Avatar.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconAvatar, { type IconAvatarProps } from '@/features/IconAvatar';\n\nimport { AVATAR_BACKGROUND, AVATAR_COLOR, AVATAR_ICON_MULTIPLE, TITLE } from '../style';\nimport Mono from './Mono';\n\nexport type AvatarProps = Omit<IconAvatarProps, 'Icon'>;\n\nconst Avatar = memo<AvatarProps>(({ ...rest }) => {\n  return (\n    <IconAvatar\n      Icon={Mono}\n      aria-label={TITLE}\n      background={AVATAR_BACKGROUND}\n      color={AVATAR_COLOR}\n      iconMultiple={AVATAR_ICON_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Avatar;\n",
-          "gitBlob": "1f7dbe509f03eae1f3f236f218fc2f7a2e3363e3",
-          "sha256": "a2d626a04075ef1f667afbf87818093367218154b14307c247e430169951ccdb"
+        "packages/static-svg/icons/autolith-color.svg": {
+          "content": "<svg height=\"1em\" style=\"flex:none;line-height:1\" viewBox=\"0 0 24 24\" width=\"1em\" xmlns=\"http://www.w3.org/2000/svg\"><title>Autolith</title><path d=\"M5.056 19.61c1.734.849 3.446 1.789 5.267 2.4c2.074.571 2.513-.841 1.979-2.553c-.775-2.414-1.92-4.653-2.996-6.961c-.08-.176-.007-.38.168-.465c.124-.059.263-.037.366.044c.889.71 1.734 1.474 2.579 2.242c2.561 2.272 4.711 4.989 6.632 7.795c0 0-.925.636-.925.636c-.519-.845-.951-2.056-1.346-2.959c-1.781-4.17-4.708-10.059-6.606-14.204c-.658-1.353-1.266-2.758-2.023-4.06c.007 0-.026-.007.073.044c.04.015.018.004.029.007c-.219.161-.468.673-.607 1.002c-.048.139-.263.088-.256-.048c.011-.523.132-1.083.563-1.43c.117-.08.326-.143.501-.066c.161.095.143.117.223.216c.077.11.252.402.322.523c1.569 2.791 3.281 6.189 4.726 9.064c1.631 3.277 3.332 6.559 4.704 9.957c0 0 .315.702.315.702c.194.512.728.991.157 1.412c-.26.168-.604.095-.772-.157c-1.251-1.869-2.568-3.68-3.965-5.417c-1.383-1.763-2.992-3.329-4.755-4.711c0 0 .534-.421.534-.421c.991 2.118 2.18 4.196 2.981 6.423c.388.991.64 2.14.241 3.171c-1.412 2.535-4.525.285-6.277-.64c-.688-.402-1.335-.841-1.983-1.288c-.15-.102-.011-.34.154-.26l0 0Z\" fill=\"#42B28A\"></path></svg>",
+          "gitBlob": "ff63c3d88d044aaa6eb169ab98379dc89d8e2aa7",
+          "sha256": "39709510833ceaf9b09f1d5b04a12902c021214e454265a67e8e7db7dee885ba"
         },
-        "src/TypeSafeAI/components/Combine.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconCombine, { type IconCombineProps } from '@/features/IconCombine';\n\nimport { COMBINE_SPACE_MULTIPLE, COMBINE_TEXT_MULTIPLE, TITLE } from '../style';\nimport Mono from './Mono';\nimport Text from './Text';\n\nexport type CombineProps = Omit<IconCombineProps, 'Icon' | 'Text'>;\n\nconst Combine = memo<CombineProps>(({ ...rest }) => {\n  return (\n    <IconCombine\n      Icon={Mono}\n      Text={Text}\n      aria-label={TITLE}\n      spaceMultiple={COMBINE_SPACE_MULTIPLE}\n      textMultiple={COMBINE_TEXT_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Combine;\n",
-          "gitBlob": "98989adba2fd9e878ee3b948e33ced0f2d0ccc1f",
-          "sha256": "c7f207aa81966c612421bef41f1a7476230de5c25e46c750860b81929ea4f5a7"
+        "packages/static-svg/icons/autolith-text.svg": {
+          "content": "<svg fill=\"currentColor\" height=\"1em\" style=\"flex:none;line-height:1\" viewBox=\"0 0 112.933 24\" xmlns=\"http://www.w3.org/2000/svg\"><title>Autolith</title><path d=\"M13.301 17.031H5.922L4.826 19.665Q4.417 20.744 4.417 21.186Q4.417 22.184 5.194 22.569Q5.971 22.953 7.362 22.92V23.526H0V22.92Q1.26 22.806 2.143 21.775Q3.027 20.744 3.975 18.47L11.55 0.131H11.894L19.828 19.501Q20.597 21.366 21.358 22.143Q22.119 22.92 23.117 22.92V23.526H12.352V22.92Q13.873 22.937 14.454 22.691Q15.035 22.446 15.035 21.791Q15.035 21.317 14.773 20.744ZM12.793 15.787 9.603 8.082 6.429 15.787ZM37.726 7.984V21.611Q37.726 22.233 37.996 22.536Q38.266 22.838 38.855 22.92V23.526H33.129V21.513Q30.969 24 28.712 24Q26.601 24 25.513 22.634Q24.425 21.268 24.425 19.207V10.863Q24.425 9.669 24.164 9.202Q23.902 8.736 23.149 8.589V7.984H29.006V18.765Q29.006 20.352 29.342 21.031Q29.677 21.71 30.479 21.71Q31.182 21.71 31.894 21.178Q32.605 20.646 33.129 19.714V10.552Q33.129 9.554 32.703 9.121Q32.278 8.687 31.182 8.589V7.984ZM50.012 7.984V9.652H46.462V20.303Q46.462 21.055 46.748 21.571Q47.035 22.086 47.673 22.086Q48.802 22.086 49.62 20.515L50.012 21.039Q48.671 24 45.759 24Q44.025 24 42.953 22.92Q41.881 21.84 41.881 19.877V9.652H39.967V9.047Q41.554 7.935 43.436 5.824Q45.317 3.714 45.89 2.389H46.462V7.984ZM66.323 15.853Q66.323 17.571 65.832 18.986Q65.342 20.401 64.573 21.309Q63.804 22.217 62.814 22.847Q61.824 23.476 60.859 23.738Q59.894 24 58.978 24Q57.62 24 56.319 23.476Q55.018 22.953 53.93 21.963Q52.843 20.973 52.172 19.362Q51.501 17.751 51.501 15.755Q51.501 12.204 53.579 9.906Q55.656 7.607 58.847 7.607Q60.352 7.607 61.701 8.155Q63.051 8.703 64.082 9.718Q65.112 10.732 65.718 12.319Q66.323 13.906 66.323 15.853ZM61.497 16.753Q61.497 15.444 61.481 14.601Q61.464 13.759 61.407 12.826Q61.35 11.894 61.235 11.337Q61.121 10.781 60.933 10.233Q60.744 9.685 60.466 9.407Q60.188 9.129 59.796 8.957Q59.403 8.785 58.879 8.785Q57.521 8.785 56.924 10.192Q56.327 11.599 56.327 14.986Q56.327 19.468 56.834 21.145Q57.342 22.822 58.912 22.822Q60.303 22.822 60.9 21.505Q61.497 20.188 61.497 16.753ZM74.323 0.507V21.219Q74.323 22.119 74.716 22.519Q75.108 22.92 75.992 22.92V23.526H67.697V22.92Q68.777 22.92 69.26 22.454Q69.742 21.988 69.742 20.973V3.256Q69.742 1.996 69.284 1.538Q68.826 1.08 67.697 1.112V0.507ZM83.305 7.984V20.875Q83.305 21.89 83.689 22.38Q84.074 22.871 84.973 22.92V23.526H76.777V22.92Q77.857 22.937 78.282 22.429Q78.708 21.922 78.708 20.712V10.765Q78.708 9.538 78.266 9.047Q77.824 8.556 76.777 8.589V7.984ZM79.247 0.753Q80.016 0 81.096 0Q82.176 0 82.92 0.753Q83.665 1.505 83.665 2.585Q83.665 3.665 82.92 4.434Q82.176 5.202 81.096 5.202Q80.016 5.202 79.247 4.434Q78.479 3.665 78.479 2.585Q78.479 1.505 79.247 0.753ZM96.065 7.984V9.652H92.515V20.303Q92.515 21.055 92.802 21.571Q93.088 22.086 93.726 22.086Q94.855 22.086 95.673 20.515L96.065 21.039Q94.724 24 91.812 24Q90.078 24 89.006 22.92Q87.935 21.84 87.935 19.877V9.652H86.02V9.047Q87.607 7.935 89.489 5.824Q91.37 3.714 91.943 2.389H92.515V7.984ZM103.117 0.507V10.061H103.182Q104.998 7.607 107.517 7.607Q109.53 7.607 110.618 8.933Q111.706 10.258 111.706 12.744V21.121Q111.706 21.693 111.992 22.209Q112.278 22.724 112.933 22.92V23.526H105.701V22.92Q106.552 22.724 106.83 22.266Q107.108 21.808 107.108 20.646V11.959Q107.108 9.783 105.669 9.783Q104.507 9.783 103.117 11.73V20.679Q103.117 21.759 103.411 22.266Q103.706 22.773 104.491 22.92V23.526H97.162V22.92Q98.061 22.675 98.299 22.151Q98.536 21.628 98.536 19.91V3.223Q98.536 2.192 98.225 1.718Q97.914 1.243 97.162 1.112V0.507Z\"></path></svg>",
+          "gitBlob": "0d8de39c52e739bf2e704b5ea47e7747303e82ac",
+          "sha256": "877ab9e33a18cef870bca997972ddc796402c7559b4869b96be53215bacad6cf"
         },
-        "src/TypeSafeAI/components/Mono.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path\n        d=\"M 12.756 2.928 L 12.756 7.067 L 16.486 9.487 L 16.487 18.652 L 8.244 24 L 3.732 21.073 L 3.732 16.82 L 0 14.399 L 0 5.35 L 0.355 5.118 L 8.244 0 Z M 5.94 20.65 L 8.242 22.144 L 14.275 18.227 L 11.975 16.735 Z M 9.022 10.332 L 9.022 14.4 L 5.29 16.822 L 5.29 19.216 L 11.197 15.383 L 11.197 8.921 Z M 12.756 15.384 L 14.928 16.794 L 14.928 10.332 L 12.756 8.922 Z M 2.21 13.976 L 4.511 15.47 L 6.812 13.976 L 4.512 12.485 Z M 1.559 6.193 L 1.559 12.544 L 3.731 11.134 L 3.731 7.066 L 7.464 4.643 L 7.464 2.36 L 1.56 6.193 Z M 5.291 11.132 L 7.463 12.542 L 7.463 10.332 L 5.292 8.921 L 5.292 11.132 Z M 5.94 7.487 L 8.244 8.981 L 10.544 7.488 L 8.244 5.994 Z M 9.024 4.643 L 11.196 6.054 L 11.196 3.774 L 9.024 2.359 Z\"\n        transform=\"translate(3.7565)\"\n      />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "1d8b722f7a0639cb386c6271c44a552583e6db5b",
-          "sha256": "6da194d6ecb15956f2d663c5fa9a48afe4ce87adc5641591d49480de66b4969e"
+        "packages/static-svg/icons/autolith.svg": {
+          "content": "<svg fill=\"currentColor\" height=\"1em\" style=\"flex:none;line-height:1\" viewBox=\"0 0 24 24\" width=\"1em\" xmlns=\"http://www.w3.org/2000/svg\"><title>Autolith</title><path d=\"M5.056 19.61c1.734.849 3.446 1.789 5.267 2.4c2.074.571 2.513-.841 1.979-2.553c-.775-2.414-1.92-4.653-2.996-6.961c-.08-.176-.007-.38.168-.465c.124-.059.263-.037.366.044c.889.71 1.734 1.474 2.579 2.242c2.561 2.272 4.711 4.989 6.632 7.795c0 0-.925.636-.925.636c-.519-.845-.951-2.056-1.346-2.959c-1.781-4.17-4.708-10.059-6.606-14.204c-.658-1.353-1.266-2.758-2.023-4.06c.007 0-.026-.007.073.044c.04.015.018.004.029.007c-.219.161-.468.673-.607 1.002c-.048.139-.263.088-.256-.048c.011-.523.132-1.083.563-1.43c.117-.08.326-.143.501-.066c.161.095.143.117.223.216c.077.11.252.402.322.523c1.569 2.791 3.281 6.189 4.726 9.064c1.631 3.277 3.332 6.559 4.704 9.957c0 0 .315.702.315.702c.194.512.728.991.157 1.412c-.26.168-.604.095-.772-.157c-1.251-1.869-2.568-3.68-3.965-5.417c-1.383-1.763-2.992-3.329-4.755-4.711c0 0 .534-.421.534-.421c.991 2.118 2.18 4.196 2.981 6.423c.388.991.64 2.14.241 3.171c-1.412 2.535-4.525.285-6.277-.64c-.688-.402-1.335-.841-1.983-1.288c-.15-.102-.011-.34.154-.26l0 0Z\"></path></svg>",
+          "gitBlob": "d6848370c33522ed1de6ff4f2720d6f0ace0e3b2",
+          "sha256": "09b39d24bd53fc6059f8c8524dda05a70598757d8bac42815638e979021ab680"
         },
-        "src/TypeSafeAI/components/Text.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      fillRule=\"evenodd\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"132.819 28.0224 527.662 110.3356\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M383.788 28.0224C389.995 28.0226 395.472 29.0824 400.126 31.312C404.797 33.4429 408.582 36.4795 411.368 40.4338C414.186 44.3312 416.028 48.8286 416.92 53.8557L417.507 57.1563H403.514L403.07 54.8772C402.294 50.8732 400.345 47.5798 397.16 44.9151L397.138 44.8932C394.128 42.3133 389.759 40.8457 383.673 40.8457C378.289 40.8459 374.08 42.1521 370.844 44.5636L370.838 44.5691C367.818 46.8048 366.352 49.7089 366.352 53.5537C366.352 57.0906 367.386 59.1112 368.927 60.2921C371.047 61.7726 374.11 62.9982 378.274 63.8453L393.761 66.8768C398.257 67.7445 402.315 69.0987 405.892 70.9682C409.649 72.8174 412.654 75.4159 414.817 78.7775L415.602 80.0955C416.97 82.6373 417.727 85.5604 417.98 88.789C418.303 88.1712 418.66 87.5711 419.067 87.0042C421.104 84.1707 423.836 82.028 427.173 80.5678L428.414 80.0406C431.345 78.8559 434.529 78.024 437.942 77.5363L449.783 75.8613C452.195 75.4475 453.851 74.8318 454.912 74.1424C455.299 73.891 455.754 73.3887 455.862 72.061L455.884 71.4404C455.884 69.0538 455.02 67.2839 453.243 65.8828C451.4 64.4317 448.772 63.5652 445.082 63.5652C441.102 63.5656 438.147 64.5025 435.982 66.1409L435.971 66.1519C433.961 67.6604 432.624 69.9116 432.116 73.2143L431.748 75.5977H418.392L418.787 72.4345C419.29 68.4135 420.647 64.8069 422.895 61.6925L422.9 61.6815C425.228 58.4925 428.317 56.0253 432.083 54.2676C435.904 52.4842 440.304 51.6426 445.197 51.6426C452.398 51.6426 458.38 53.4508 462.732 57.4474C464.343 58.9275 465.649 60.586 466.648 62.4065V52.8782H474.523V47.5951C474.523 41.8825 476.036 37.0928 479.587 33.8272L479.62 33.7997C483.09 30.6956 487.559 29.2639 492.739 29.2635H500.95V41.4059H493.305C491.455 41.4059 490.288 41.8374 489.521 42.4493L489.219 42.7184C488.641 43.2974 488.017 44.6075 488.017 47.37V52.8782H500.95V63.73C503.094 60.7228 505.674 58.1872 508.715 56.1733C513.184 53.1384 518.281 51.6426 523.905 51.6426C529.754 51.6428 534.882 53.0261 539.118 55.9646C543.256 58.7598 546.348 62.6046 548.415 67.3985C550.538 72.1492 551.573 77.4496 551.573 83.2478V84.7086C551.573 85.4546 551.452 86.2209 551.265 86.9657L550.733 89.0965H507.93C508.247 92.0547 508.918 94.619 509.923 96.8125C511.382 99.9941 513.308 102.28 515.635 103.82C518.082 105.315 520.816 106.077 523.905 106.077L525.344 106.033C528.606 105.825 531.197 104.893 533.247 103.37C535.603 101.544 537.12 99.1401 537.805 96.0272L538.288 93.8195H551.221L550.628 97.131C549.879 101.288 548.284 105.011 545.823 108.235L545.801 108.263C543.339 111.403 540.203 113.85 536.454 115.6C532.664 117.368 528.461 118.225 523.905 118.225C518.248 118.225 513.106 116.823 508.572 113.969L508.556 113.958C504.117 111.11 500.671 107.139 498.215 102.145C495.746 97.1251 494.547 91.4012 494.546 85.0491C494.546 79.4802 495.491 74.409 497.446 69.9027L498.347 68.0081C498.876 66.9684 499.46 65.9782 500.071 65.026H488.017V116.989H474.523V65.026H467.834C468.715 67.4277 469.152 70.063 469.152 72.9013V100.679C469.152 103.474 469.19 105.86 469.262 107.829C469.409 109.807 469.592 111.825 469.811 113.875L470.146 116.989H457.208L456.818 114.639C456.669 113.744 456.536 112.831 456.422 111.904C455.337 112.875 454.143 113.771 452.825 114.562L452.792 114.584C448.6 117.015 443.987 118.224 439.013 118.225C435.057 118.225 431.327 117.485 427.87 115.968L427.821 115.946C424.348 114.337 421.489 112.049 419.314 109.092L419.287 109.065C417.593 106.693 416.566 103.994 416.157 101.036C415.43 102.732 414.505 104.348 413.361 105.863L413.345 105.885C410.253 109.895 406.176 112.947 401.208 115.067C396.322 117.184 390.99 118.225 385.249 118.225C375.758 118.225 367.743 116.067 361.442 111.509L361.409 111.481C357.281 108.399 354.212 104.481 352.183 99.8C351.308 102.893 349.924 105.718 348.003 108.235L347.981 108.263C345.519 111.403 342.384 113.85 338.634 115.6C334.845 117.367 330.641 118.225 326.086 118.225C320.428 118.225 315.287 116.823 310.753 113.969L310.736 113.958C306.297 111.11 302.852 107.139 300.395 102.145C299.019 99.3456 298.054 96.3223 297.457 93.1C296.896 96.1293 296.02 99.0121 294.794 101.728L294.783 101.744C292.492 106.732 289.22 110.766 284.963 113.771L284.936 113.793C280.606 116.764 275.616 118.225 270.075 118.225C264.961 118.225 260.285 116.831 256.131 114.035L256.076 113.996C254.909 113.169 253.844 112.263 252.864 111.305V138.358H239.37V62.1374L215.575 124.623C214.517 127.387 213.187 129.832 211.555 131.894C209.858 134.036 207.774 135.675 205.321 136.765C202.852 137.863 200.004 138.358 196.87 138.358H189.219V126.21H196.529C198.45 126.21 199.806 125.741 200.791 124.991L200.846 124.947L200.911 124.903C201.915 124.218 202.892 122.959 203.663 120.779L203.679 120.729L205.783 115.078L183.557 56.6895L182.102 52.8782H196.359L212.713 97.5209L228.865 52.8782H252.864V58.6061C253.848 57.6592 254.924 56.7731 256.098 55.9646C260.255 53.0814 264.944 51.6426 270.075 51.6426C275.697 51.643 280.709 53.1398 284.985 56.2172C289.239 59.1496 292.498 63.1491 294.783 68.1234C296.042 70.8679 296.936 73.8084 297.495 76.9212C297.976 74.454 298.675 72.108 299.632 69.9027L300.532 68.0081C303.053 63.056 306.504 59.0815 310.895 56.1733C315.365 53.138 320.461 51.6426 326.086 51.6426C331.935 51.6426 337.063 53.0264 341.298 55.9646C345.435 58.7588 348.533 62.6023 350.601 67.3985C352.725 72.1507 353.753 77.452 353.753 83.2478V84.7086C353.753 85.4546 353.632 86.2209 353.446 86.9657L353.023 88.6462H363.254L363.792 90.766C365.086 95.8692 367.459 99.4362 370.772 101.75C374.21 104.099 378.952 105.402 385.249 105.402L386.644 105.374C389.828 105.254 392.691 104.718 395.255 103.793C398.137 102.679 400.377 101.083 402.059 99.0367C403.451 97.281 404.261 95.2203 404.443 92.765L404.481 91.6832C404.481 88.9779 403.92 87.108 403.059 85.8399C402.114 84.4511 400.697 83.2564 398.676 82.3087L398.643 82.2922C396.604 81.3058 394.046 80.5087 390.927 79.9417L390.872 79.9307L374.902 76.6686C370.948 75.8769 367.332 74.6792 364.083 73.055L364.045 73.0331L364.007 73.0166C360.678 71.224 357.991 68.7562 355.999 65.6411C353.92 62.3855 352.968 58.4471 352.968 54.004C352.968 48.978 354.326 44.4389 357.07 40.4887C359.44 37.0142 362.571 34.2419 366.406 32.1687L368.092 31.323C372.724 29.0973 377.979 28.0224 383.788 28.0224ZM455.884 86.0761C455.025 86.2986 454.106 86.5053 453.133 86.6856L453.078 86.6966L440.705 88.7121L440.71 88.7176C438.168 89.1414 435.915 89.742 433.939 90.4914L433.884 90.5079C432.224 91.1011 430.981 91.9715 430.067 93.0946C429.401 93.9284 428.887 95.3303 428.886 97.6418C428.887 99.6066 429.349 101.106 430.139 102.271L430.918 103.188C431.761 104.053 432.796 104.755 434.049 105.292C435.77 106.029 437.676 106.418 439.799 106.418L440.957 106.39C443.616 106.253 445.987 105.635 448.102 104.578C450.5 103.379 452.357 101.696 453.726 99.5199L453.753 99.476C454.962 97.6362 455.689 95.4445 455.851 92.8309L455.884 91.6832V86.0761ZM268.499 63.7904C265.291 63.7904 262.572 64.6456 260.234 66.3056C257.861 67.9917 255.949 70.3623 254.555 73.5273C253.227 76.7175 252.529 80.5051 252.529 84.9338C252.529 89.362 253.232 93.1446 254.561 96.3347C255.954 99.5004 257.861 101.876 260.234 103.562C262.571 105.222 265.291 106.077 268.499 106.077L269.74 106.039C272.563 105.85 274.902 105.001 276.852 103.578L276.879 103.562C279.248 101.878 281.11 99.5048 282.432 96.3347L282.453 96.2908C283.845 93.1102 284.584 89.3424 284.584 84.9338C284.584 80.5247 283.845 76.7574 282.453 73.5768L282.432 73.5328C281.11 70.3619 279.248 67.9896 276.879 66.3056L276.852 66.2892C274.902 64.8661 272.563 64.0178 269.74 63.8288L268.499 63.7904ZM310.11 89.0965C310.427 92.0547 311.098 94.619 312.104 96.8125C313.562 99.9941 315.488 102.28 317.815 103.82C320.262 105.316 322.996 106.077 326.086 106.077L327.525 106.033C330.787 105.825 333.377 104.893 335.427 103.37C337.784 101.544 339.3 99.1406 339.985 96.0272L340.469 93.8195H350.25C350.11 93.2055 349.977 92.5806 349.865 91.9468L349.36 89.0965H310.11ZM326.086 63.7904C322.636 63.7904 319.777 64.691 317.381 66.41C314.998 68.1745 313.132 70.5925 311.813 73.758C311.352 74.9308 310.983 76.183 310.687 77.5089H340.315C340.075 75.469 339.573 73.6066 338.816 71.9127L338.805 71.8908C337.73 69.4245 336.143 67.465 334.027 65.9706C332.051 64.5762 329.464 63.7904 326.086 63.7904ZM523.905 63.7904C520.457 63.7904 517.596 64.6913 515.201 66.41C512.817 68.1745 510.951 70.5925 509.632 73.758C509.171 74.9321 508.798 76.1841 508.501 77.5089H538.135C537.894 75.469 537.393 73.6066 536.635 71.9127L536.624 71.8908C535.549 69.4248 533.963 67.465 531.846 65.9706C529.871 64.5764 527.283 63.7906 523.905 63.7904Z\" />\n      <path d=\"M206.936 42.1967H176.682V116.989H162.963V42.1967H132.819V29.2635H206.936V42.1967Z\" />\n      <path d=\"M614.866 31.0319L646.762 110.767V29.2635H660.481V116.989H634.521L633.823 115.204L624.614 91.793H590.905L581.69 115.21L580.992 116.989H566.483L601.696 29.2635H614.163L614.866 31.0319ZM595.908 79.085H619.611L607.759 48.9681L595.908 79.085Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "369d512b522062749d86629529f839b1f293c012",
-          "sha256": "c8bd53c1e7cf669dabc918863c660dfc642430ea5ec8c6df252bff26d1d015d6"
+        "src/Autolith/components/Avatar.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconAvatar, { type IconAvatarProps } from '@/features/IconAvatar';\n\nimport { AVATAR_BACKGROUND, AVATAR_COLOR, AVATAR_ICON_MULTIPLE, TITLE } from '../style';\nimport Color from './Color';\n\nexport type AvatarProps = Omit<IconAvatarProps, 'Icon'>;\n\nconst Avatar = memo<AvatarProps>(({ ...rest }) => {\n  return (\n    <IconAvatar\n      Icon={Color}\n      aria-label={TITLE}\n      background={AVATAR_BACKGROUND}\n      color={AVATAR_COLOR}\n      iconMultiple={AVATAR_ICON_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Avatar;\n",
+          "gitBlob": "2fa6d4191705aa90d95726b53ef979ebb3f33174",
+          "sha256": "5c645a3c9fce1867906ea18b40a5d7d79907979b8ef793e1db0dd0d1359bd41c"
         },
-        "src/TypeSafeAI/style.ts": {
-          "content": "export const TITLE = 'TypeSafe AI';\nexport const COMBINE_TEXT_MULTIPLE = 0.62;\nexport const COMBINE_SPACE_MULTIPLE = 0.12;\nexport const COLOR_PRIMARY = '#F386A1';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#F386A1';\nexport const AVATAR_COLOR = '#1E1E1E';\nexport const AVATAR_ICON_MULTIPLE = 0.72;\n",
-          "gitBlob": "e7b7303aac3ad4a9037ebab2c3e1162cf3bb100e",
-          "sha256": "4e2771a4c8979a3b9ec0d08e93707d396f33e5f9411b1a0be2a358bdcea4ddd1"
+        "src/Autolith/components/Color.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { COLOR_PRIMARY, TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path\n        d=\"M5.056 19.61c1.734.849 3.446 1.789 5.267 2.4c2.074.571 2.513-.841 1.979-2.553c-.775-2.414-1.92-4.653-2.996-6.961c-.08-.176-.007-.38.168-.465c.124-.059.263-.037.366.044c.889.71 1.734 1.474 2.579 2.242c2.561 2.272 4.711 4.989 6.632 7.795c0 0-.925.636-.925.636c-.519-.845-.951-2.056-1.346-2.959c-1.781-4.17-4.708-10.059-6.606-14.204c-.658-1.353-1.266-2.758-2.023-4.06c.007 0-.026-.007.073.044c.04.015.018.004.029.007c-.219.161-.468.673-.607 1.002c-.048.139-.263.088-.256-.048c.011-.523.132-1.083.563-1.43c.117-.08.326-.143.501-.066c.161.095.143.117.223.216c.077.11.252.402.322.523c1.569 2.791 3.281 6.189 4.726 9.064c1.631 3.277 3.332 6.559 4.704 9.957c0 0 .315.702.315.702c.194.512.728.991.157 1.412c-.26.168-.604.095-.772-.157c-1.251-1.869-2.568-3.68-3.965-5.417c-1.383-1.763-2.992-3.329-4.755-4.711c0 0 .534-.421.534-.421c.991 2.118 2.18 4.196 2.981 6.423c.388.991.64 2.14.241 3.171c-1.412 2.535-4.525.285-6.277-.64c-.688-.402-1.335-.841-1.983-1.288c-.15-.102-.011-.34.154-.26l0 0Z\"\n        fill={COLOR_PRIMARY}\n      />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "372f3b9f4cb4fdb2397be8ddffdf68a13d9ba8cb",
+          "sha256": "bec24acfd6a5a5bd5bc99bb7a46eb7a348f44a2b102e1bcf478295d30f7ecef0"
+        },
+        "src/Autolith/components/Combine.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconCombine, { type IconCombineProps } from '@/features/IconCombine';\n\nimport { COMBINE_SPACE_MULTIPLE, COMBINE_TEXT_MULTIPLE, TITLE } from '../style';\nimport Color from './Color';\nimport Mono from './Mono';\nimport Text from './Text';\n\nexport interface CombineProps extends Omit<IconCombineProps, 'Icon' | 'Text'> {\n  type?: 'color' | 'mono';\n}\nconst Combine = memo<CombineProps>(({ type = 'mono', ...rest }) => {\n  const Icon = type === 'color' ? Color : Mono;\n\n  return (\n    <IconCombine\n      Icon={Icon}\n      Text={Text}\n      aria-label={TITLE}\n      spaceMultiple={COMBINE_SPACE_MULTIPLE}\n      textMultiple={COMBINE_TEXT_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Combine;\n",
+          "gitBlob": "23910637d704d251b9942c90bbfc9c82d631211a",
+          "sha256": "9b674a7ce17ef1fda563aa759c36da91d9b25316d68a8d0ed98646637d13b896"
+        },
+        "src/Autolith/components/Mono.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M5.056 19.61c1.734.849 3.446 1.789 5.267 2.4c2.074.571 2.513-.841 1.979-2.553c-.775-2.414-1.92-4.653-2.996-6.961c-.08-.176-.007-.38.168-.465c.124-.059.263-.037.366.044c.889.71 1.734 1.474 2.579 2.242c2.561 2.272 4.711 4.989 6.632 7.795c0 0-.925.636-.925.636c-.519-.845-.951-2.056-1.346-2.959c-1.781-4.17-4.708-10.059-6.606-14.204c-.658-1.353-1.266-2.758-2.023-4.06c.007 0-.026-.007.073.044c.04.015.018.004.029.007c-.219.161-.468.673-.607 1.002c-.048.139-.263.088-.256-.048c.011-.523.132-1.083.563-1.43c.117-.08.326-.143.501-.066c.161.095.143.117.223.216c.077.11.252.402.322.523c1.569 2.791 3.281 6.189 4.726 9.064c1.631 3.277 3.332 6.559 4.704 9.957c0 0 .315.702.315.702c.194.512.728.991.157 1.412c-.26.168-.604.095-.772-.157c-1.251-1.869-2.568-3.68-3.965-5.417c-1.383-1.763-2.992-3.329-4.755-4.711c0 0 .534-.421.534-.421c.991 2.118 2.18 4.196 2.981 6.423c.388.991.64 2.14.241 3.171c-1.412 2.535-4.525.285-6.277-.64c-.688-.402-1.335-.841-1.983-1.288c-.15-.102-.011-.34.154-.26l0 0Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "531046c10fe613dfbd462e945124d4237daba159",
+          "sha256": "7b263c21903e10b9f20ae51b7ffb7ad7539215b5a765283232ce2a04f5791027"
+        },
+        "src/Autolith/components/Text.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 112.933 24\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M13.301 17.031H5.922L4.826 19.665Q4.417 20.744 4.417 21.186Q4.417 22.184 5.194 22.569Q5.971 22.953 7.362 22.92V23.526H0V22.92Q1.26 22.806 2.143 21.775Q3.027 20.744 3.975 18.47L11.55 0.131H11.894L19.828 19.501Q20.597 21.366 21.358 22.143Q22.119 22.92 23.117 22.92V23.526H12.352V22.92Q13.873 22.937 14.454 22.691Q15.035 22.446 15.035 21.791Q15.035 21.317 14.773 20.744ZM12.793 15.787 9.603 8.082 6.429 15.787ZM37.726 7.984V21.611Q37.726 22.233 37.996 22.536Q38.266 22.838 38.855 22.92V23.526H33.129V21.513Q30.969 24 28.712 24Q26.601 24 25.513 22.634Q24.425 21.268 24.425 19.207V10.863Q24.425 9.669 24.164 9.202Q23.902 8.736 23.149 8.589V7.984H29.006V18.765Q29.006 20.352 29.342 21.031Q29.677 21.71 30.479 21.71Q31.182 21.71 31.894 21.178Q32.605 20.646 33.129 19.714V10.552Q33.129 9.554 32.703 9.121Q32.278 8.687 31.182 8.589V7.984ZM50.012 7.984V9.652H46.462V20.303Q46.462 21.055 46.748 21.571Q47.035 22.086 47.673 22.086Q48.802 22.086 49.62 20.515L50.012 21.039Q48.671 24 45.759 24Q44.025 24 42.953 22.92Q41.881 21.84 41.881 19.877V9.652H39.967V9.047Q41.554 7.935 43.436 5.824Q45.317 3.714 45.89 2.389H46.462V7.984ZM66.323 15.853Q66.323 17.571 65.832 18.986Q65.342 20.401 64.573 21.309Q63.804 22.217 62.814 22.847Q61.824 23.476 60.859 23.738Q59.894 24 58.978 24Q57.62 24 56.319 23.476Q55.018 22.953 53.93 21.963Q52.843 20.973 52.172 19.362Q51.501 17.751 51.501 15.755Q51.501 12.204 53.579 9.906Q55.656 7.607 58.847 7.607Q60.352 7.607 61.701 8.155Q63.051 8.703 64.082 9.718Q65.112 10.732 65.718 12.319Q66.323 13.906 66.323 15.853ZM61.497 16.753Q61.497 15.444 61.481 14.601Q61.464 13.759 61.407 12.826Q61.35 11.894 61.235 11.337Q61.121 10.781 60.933 10.233Q60.744 9.685 60.466 9.407Q60.188 9.129 59.796 8.957Q59.403 8.785 58.879 8.785Q57.521 8.785 56.924 10.192Q56.327 11.599 56.327 14.986Q56.327 19.468 56.834 21.145Q57.342 22.822 58.912 22.822Q60.303 22.822 60.9 21.505Q61.497 20.188 61.497 16.753ZM74.323 0.507V21.219Q74.323 22.119 74.716 22.519Q75.108 22.92 75.992 22.92V23.526H67.697V22.92Q68.777 22.92 69.26 22.454Q69.742 21.988 69.742 20.973V3.256Q69.742 1.996 69.284 1.538Q68.826 1.08 67.697 1.112V0.507ZM83.305 7.984V20.875Q83.305 21.89 83.689 22.38Q84.074 22.871 84.973 22.92V23.526H76.777V22.92Q77.857 22.937 78.282 22.429Q78.708 21.922 78.708 20.712V10.765Q78.708 9.538 78.266 9.047Q77.824 8.556 76.777 8.589V7.984ZM79.247 0.753Q80.016 0 81.096 0Q82.176 0 82.92 0.753Q83.665 1.505 83.665 2.585Q83.665 3.665 82.92 4.434Q82.176 5.202 81.096 5.202Q80.016 5.202 79.247 4.434Q78.479 3.665 78.479 2.585Q78.479 1.505 79.247 0.753ZM96.065 7.984V9.652H92.515V20.303Q92.515 21.055 92.802 21.571Q93.088 22.086 93.726 22.086Q94.855 22.086 95.673 20.515L96.065 21.039Q94.724 24 91.812 24Q90.078 24 89.006 22.92Q87.935 21.84 87.935 19.877V9.652H86.02V9.047Q87.607 7.935 89.489 5.824Q91.37 3.714 91.943 2.389H92.515V7.984ZM103.117 0.507V10.061H103.182Q104.998 7.607 107.517 7.607Q109.53 7.607 110.618 8.933Q111.706 10.258 111.706 12.744V21.121Q111.706 21.693 111.992 22.209Q112.278 22.724 112.933 22.92V23.526H105.701V22.92Q106.552 22.724 106.83 22.266Q107.108 21.808 107.108 20.646V11.959Q107.108 9.783 105.669 9.783Q104.507 9.783 103.117 11.73V20.679Q103.117 21.759 103.411 22.266Q103.706 22.773 104.491 22.92V23.526H97.162V22.92Q98.061 22.675 98.299 22.151Q98.536 21.628 98.536 19.91V3.223Q98.536 2.192 98.225 1.718Q97.914 1.243 97.162 1.112V0.507Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "2c7f364444550ee95cd9e3aebb09f3164529b115",
+          "sha256": "fcc3f932ebdfc01356d0e377e49552e1b37d976735fb523fce71a04d2b75f896"
+        },
+        "src/Autolith/style.ts": {
+          "content": "export const TITLE = 'Autolith';\nexport const COMBINE_TEXT_MULTIPLE = 0.8;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#42B28A';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#FFFEFA';\nexport const AVATAR_COLOR = COLOR_PRIMARY;\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n",
+          "gitBlob": "ddb1912293e19e397ab7f20b74419bd2c7a8433a",
+          "sha256": "6aed6b485fe896e6d0f108b06aea4ee6fd68336875d2c49573fb2720ae86090a"
         }
       },
       "icons": {
-        "typesafeai": {
-          "name": "TypeSafe AI",
-          "componentName": "TypeSafeAI",
+        "autolith": {
+          "name": "Autolith",
+          "componentName": "Autolith",
           "artworks": {
             "icon": {
-              "monochrome": "typesafeai.svg"
+              "monochrome": "autolith.svg",
+              "color": "autolith-color.svg"
             },
             "text": {
-              "monochrome": "typesafeai-text.svg"
+              "monochrome": "autolith-text.svg"
             }
           }
         }
       },
       "artworkSources": {
-        "typesafeai.svg": {
-          "path": "src/TypeSafeAI/components/Mono.tsx",
-          "format": "tsx",
+        "autolith.svg": {
+          "path": "packages/static-svg/icons/autolith.svg",
+          "format": "svg",
           "sources": [
-            "src/TypeSafeAI/components/Mono.tsx",
-            "src/TypeSafeAI/style.ts"
+            "packages/static-svg/icons/autolith.svg"
           ]
         },
-        "typesafeai-text.svg": {
-          "path": "src/TypeSafeAI/components/Text.tsx",
-          "format": "tsx",
+        "autolith-color.svg": {
+          "path": "packages/static-svg/icons/autolith-color.svg",
+          "format": "svg",
           "sources": [
-            "src/TypeSafeAI/components/Text.tsx",
-            "src/TypeSafeAI/style.ts"
+            "packages/static-svg/icons/autolith-color.svg"
+          ]
+        },
+        "autolith-text.svg": {
+          "path": "packages/static-svg/icons/autolith-text.svg",
+          "format": "svg",
+          "sources": [
+            "packages/static-svg/icons/autolith-text.svg"
           ]
         }
       }
     },
     {
-      "number": 425,
-      "url": "https://github.com/lobehub/lobe-icons/pull/425",
-      "title": "✨ feat: add Cheaper Inference icon",
+      "number": 439,
+      "url": "https://github.com/lobehub/lobe-icons/pull/439",
+      "title": "✨ feat: add Modelflare icon",
       "stateAtReview": "open",
-      "repository": "aiapienthusiast/lobe-icons",
-      "commit": "8411663c187fbde7e193bdbbc0e29355d8e7c6df",
+      "repository": "magnus-minor/lobe-icons",
+      "commit": "8d296b1080160fca6260623f2c3bcb5a0bf428d4",
       "files": {
-        "src/CheaperInference/components/Avatar.tsx": {
+        "src/Modelflare/components/Avatar.tsx": {
           "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconAvatar, { type IconAvatarProps } from '@/features/IconAvatar';\n\nimport { AVATAR_BACKGROUND, AVATAR_COLOR, AVATAR_ICON_MULTIPLE, TITLE } from '../style';\nimport Mono from './Mono';\n\nexport type AvatarProps = Omit<IconAvatarProps, 'Icon'>;\n\nconst Avatar = memo<AvatarProps>(({ ...rest }) => {\n  return (\n    <IconAvatar\n      Icon={Mono}\n      aria-label={TITLE}\n      background={AVATAR_BACKGROUND}\n      color={AVATAR_COLOR}\n      iconMultiple={AVATAR_ICON_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Avatar;\n",
           "gitBlob": "1f7dbe509f03eae1f3f236f218fc2f7a2e3363e3",
           "sha256": "a2d626a04075ef1f667afbf87818093367218154b14307c247e430169951ccdb"
         },
-        "src/CheaperInference/components/Combine.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconCombine, { type IconCombineProps } from '@/features/IconCombine';\n\nimport { COMBINE_SPACE_MULTIPLE, COMBINE_TEXT_MULTIPLE, TITLE } from '../style';\nimport Mono from './Mono';\nimport Text from './Text';\n\nexport type CombineProps = Omit<IconCombineProps, 'Icon' | 'Text'>;\n\nconst Combine = memo<CombineProps>(({ ...rest }) => {\n  return (\n    <IconCombine\n      Icon={Mono}\n      Text={Text}\n      aria-label={TITLE}\n      spaceMultiple={COMBINE_SPACE_MULTIPLE}\n      textMultiple={COMBINE_TEXT_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Combine;\n",
-          "gitBlob": "98989adba2fd9e878ee3b948e33ced0f2d0ccc1f",
-          "sha256": "c7f207aa81966c612421bef41f1a7476230de5c25e46c750860b81929ea4f5a7"
+        "src/Modelflare/components/Color.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport { useFillIds } from '@/hooks/useFillId';\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  const [a, b] = useFillIds(TITLE, 2);\n  return (\n    <svg\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path\n        d=\"M7.722 2.12C9.13 1.51 10.692 1.75 11.838 2.619C12.542 3.154 13.492 3.264 14.299 2.904C15.612 2.32 17.188 2.442 18.421 3.356C19.652 4.27 20.226 5.743 20.046 7.17C19.936 8.046 20.315 8.922 21.029 9.442C22.191 10.288 22.872 11.713 22.697 13.235C22.521 14.758 21.532 15.991 20.208 16.549C19.393 16.892 18.823 17.66 18.731 18.539C18.581 19.968 17.687 21.272 16.28 21.88C14.873 22.489 13.312 22.251 12.167 21.384C11.463 20.85 10.514 20.74 9.706 21.101C8.393 21.685 6.817 21.563 5.586 20.649C4.354 19.735 3.781 18.262 3.96 16.837C4.07 15.959 3.69 15.082 2.975 14.563C1.81 13.718 1.128 12.291 1.303 10.766C1.479 9.244 2.468 8.01 3.792 7.453C4.608 7.11 5.178 6.341 5.27 5.463C5.42 4.033 6.314 2.729 7.722 2.12Z\"\n        fill=\"none\"\n        stroke=\"#242424\"\n        strokeWidth={2.375}\n      />\n      <path\n        d=\"M8.903 8.454a1.907 1.907 0 0 1 1.907 1.907v2.859a1.907 1.907 0 0 1 -3.814 0v-2.859a1.907 1.907 0 0 1 1.907 -1.907z\"\n        fill={a.fill}\n      />\n      <path\n        d=\"M15.575 8.454a1.907 1.907 0 0 1 1.907 1.907v2.859a1.907 1.907 0 0 1 -3.814 0v-2.859a1.907 1.907 0 0 1 1.907 -1.907z\"\n        fill={b.fill}\n      />\n      <defs>\n        <linearGradient\n          gradientUnits=\"userSpaceOnUse\"\n          id={a.id}\n          x1=\"8.903\"\n          x2=\"8.903\"\n          y1=\"8.454\"\n          y2=\"15.127\"\n        >\n          <stop stopColor=\"#FF6512\" />\n          <stop offset=\"1\" stopColor=\"#FFAA7C\" />\n        </linearGradient>\n        <linearGradient\n          gradientUnits=\"userSpaceOnUse\"\n          id={b.id}\n          x1=\"15.575\"\n          x2=\"15.575\"\n          y1=\"8.454\"\n          y2=\"15.127\"\n        >\n          <stop stopColor=\"#7E7CFF\" />\n          <stop offset=\"1\" stopColor=\"#4340FF\" />\n        </linearGradient>\n      </defs>\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "af2fc6079999c1d513b00d5eda8887a84a1da368",
+          "sha256": "34a423f56ec2f042bfd0ae80c825f7d3e1fe705896fd114e582507cb9dc4bf98"
         },
-        "src/CheaperInference/components/Mono.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      fillRule=\"nonzero\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M15.579 2.877H9.488C4.25 2.877 0 6.964 0 12s4.222 9.123 9.46 9.123l6.119-6.007h-5.446c-1.74 0-3.144-1.392-3.144-3.116a3.14 3.14 0 0 1 3.144-3.144h5.446zM17.347 8.379l4.346-4.547c.831-.871 2.307-.281 2.307.92V19.68c0 .797-.646 1.443-1.443 1.443h-5.21z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "c6de8a2c2234105a76abdec629ba70e92eba5ee2",
-          "sha256": "b2fa8f5c6f50fc857888bca60dc8e431092436b1cac7d96269bcadb0d08e9b46"
+        "src/Modelflare/components/Combine.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconCombine, { type IconCombineProps } from '@/features/IconCombine';\n\nimport { COMBINE_SPACE_MULTIPLE, COMBINE_TEXT_MULTIPLE, TITLE } from '../style';\nimport Color from './Color';\nimport Mono from './Mono';\nimport Text from './Text';\n\nexport interface CombineProps extends Omit<IconCombineProps, 'Icon' | 'Text'> {\n  type?: 'color' | 'mono';\n}\nconst Combine = memo<CombineProps>(({ type = 'mono', ...rest }) => {\n  const Icon = type === 'color' ? Color : Mono;\n\n  return (\n    <IconCombine\n      Icon={Icon}\n      Text={Text}\n      aria-label={TITLE}\n      spaceMultiple={COMBINE_SPACE_MULTIPLE}\n      textMultiple={COMBINE_TEXT_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Combine;\n",
+          "gitBlob": "23910637d704d251b9942c90bbfc9c82d631211a",
+          "sha256": "9b674a7ce17ef1fda563aa759c36da91d9b25316d68a8d0ed98646637d13b896"
         },
-        "src/CheaperInference/components/Text.tsx": {
-          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      fillRule=\"nonzero\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 191 24\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M9.585 19.573q-2.18 0-3.892-1.012-1.713-1.012-2.703-2.914T2 11.076q0-2.681.995-4.588.996-1.908 2.709-2.92t3.881-1.012q1.813 0 3.298.679 1.485.678 2.453 1.963.967 1.284 1.234 3.097h-2.992Q13.3 6.827 12.21 6.021q-1.09-.807-2.58-.807-2.035 0-3.342 1.519t-1.307 4.343q0 2.858 1.312 4.349 1.313 1.49 3.326 1.49 1.49 0 2.586-.806 1.095-.807 1.373-2.275h3.003q-.233 1.591-1.145 2.892T13.033 18.8q-1.49.773-3.448.773m11.455-7.507v7.285h-2.892V2.779h2.847v6.439Q22.13 6.76 24.766 6.76q1.924 0 3.092 1.224t1.168 3.459v7.908h-2.903v-7.463q0-1.246-.646-1.958-.645-.712-1.779-.712-1.157 0-1.908.746-.75.745-.75 2.102m15.525 7.541q-1.88 0-3.231-.79-1.352-.79-2.08-2.224-.729-1.435-.729-3.382 0-1.913.718-3.364.717-1.452 2.035-2.269t3.098-.818q1.512 0 2.808.662t2.085 2.047.79 3.564v.912h-8.653q.056 1.658.929 2.525.873.868 2.263.868.957 0 1.641-.412.684-.411.973-1.201l2.658.545q-.445 1.501-1.841 2.419t-3.464.918m-3.148-7.63h5.828q-.133-1.335-.851-2.141-.717-.807-2.007-.807-1.324 0-2.097.851t-.873 2.097m13.79 7.63q-1.179 0-2.124-.429-.946-.428-1.491-1.262t-.545-2.058q0-1.401.684-2.174t1.769-1.123q1.084-.351 2.285-.473 1.624-.178 2.347-.328t.723-.795v-.056q0-.912-.556-1.418t-1.613-.506q-1.09 0-1.735.478t-.867 1.09l-2.681-.545q.545-1.646 1.974-2.447 1.43-.801 3.298-.801.879 0 1.774.206.896.206 1.641.69t1.201 1.312.456 2.074v8.309h-2.77v-1.713h-.111q-.411.801-1.312 1.385t-2.347.584m.745-2.147q1.335 0 2.13-.767.795-.768.795-1.802v-1.468q-.2.155-.711.272-.512.117-1.085.2l-.951.139q-.979.134-1.629.534-.651.401-.651 1.257 0 .801.59 1.218.589.417 1.512.417m7.84 6.54V6.916h2.825v2.058h.189q.211-.434.623-.951.411-.517 1.123-.89t1.813-.373q1.435 0 2.597.734 1.162.735 1.846 2.164t.684 3.498q0 2.046-.673 3.481-.672 1.435-1.829 2.186t-2.636.75q-1.068 0-1.774-.361-.706-.362-1.129-.873-.423-.512-.645-.957h-.123V24Zm5.783-6.807q1.446 0 2.197-1.151t.751-2.897q0-1.735-.74-2.87-.74-1.134-2.208-1.134-1.434 0-2.191 1.095-.756 1.096-.756 2.909t.767 2.93 2.18 1.118m12.9 2.414q-1.879 0-3.231-.79t-2.079-2.224q-.729-1.435-.729-3.382 0-1.913.717-3.364.718-1.452 2.036-2.269t3.097-.818q1.513 0 2.809.662 1.295.662 2.085 2.047.79 1.384.79 3.564v.912h-8.653q.055 1.658.928 2.525.874.868 2.264.868.956 0 1.64-.412.684-.411.974-1.201l2.658.545q-.445 1.501-1.841 2.419t-3.465.918m-3.147-7.63h5.828q-.134-1.335-.851-2.141-.717-.807-2.008-.807-1.323 0-2.096.851t-.873 2.097m10.097 7.374V6.916h2.803v2.08h.133q.334-1.079 1.168-1.663t1.902-.584q.556 0 1.057.078v2.658q-.178-.044-.579-.094t-.789-.05q-1.213 0-2.008.751-.795.75-.795 1.94v7.319ZM97.26 2.779v16.572h-2.97V2.779Zm5.07 9.287v7.285h-2.892V6.916h2.736l.033 2.48q1.113-2.636 3.849-2.636 1.924 0 3.086 1.224 1.163 1.223 1.163 3.459v7.908h-2.892v-7.463q0-1.246-.645-1.958t-1.78-.712q-1.157 0-1.907.746-.751.745-.751 2.102m16.559-5.15v2.269h-2.691v10.166h-2.881V9.185h-2.28V6.916h2.28v-1.19q0-1.235.523-2.063.522-.829 1.395-1.246.874-.417 1.941-.417.768 0 1.357.122.59.123.868.223l-.59 2.247q-.189-.056-.461-.117-.273-.061-.64-.061-.812 0-1.162.4t-.35 1.134v.968Zm6.238 12.691q-1.88 0-3.231-.79t-2.08-2.224q-.728-1.435-.728-3.382 0-1.913.717-3.364.717-1.452 2.035-2.269t3.098-.818q1.513 0 2.808.662 1.296.662 2.086 2.047.789 1.384.789 3.564v.912h-8.653q.056 1.658.929 2.525.873.868 2.263.868.957 0 1.641-.412.684-.411.973-1.201l2.658.545q-.444 1.501-1.84 2.419t-3.465.918m-3.148-7.63h5.829q-.134-1.335-.851-2.141-.718-.807-2.008-.807-1.323 0-2.096.851t-.874 2.097m10.098 7.374V6.916h2.803v2.08h.133q.334-1.079 1.168-1.663t1.902-.584q.556 0 1.056.078v2.658q-.178-.044-.578-.094t-.79-.05q-1.212 0-2.007.751-.795.75-.795 1.94v7.319Zm13.011.256q-1.88 0-3.231-.79t-2.08-2.224q-.728-1.435-.728-3.382 0-1.913.717-3.364.717-1.452 2.035-2.269t3.098-.818q1.513 0 2.808.662 1.296.662 2.086 2.047.79 1.384.79 3.564v.912h-8.654q.056 1.658.929 2.525.873.868 2.263.868.957 0 1.641-.412.684-.411.973-1.201l2.658.545q-.444 1.501-1.84 2.419t-3.465.918m-3.148-7.63h5.829q-.134-1.335-.851-2.141-.718-.807-2.008-.807-1.323 0-2.096.851t-.874 2.097m12.99.089v7.285h-2.892V6.916h2.736l.033 2.48q1.112-2.636 3.849-2.636 1.924 0 3.086 1.224t1.162 3.459v7.908h-2.892v-7.463q0-1.246-.645-1.958t-1.779-.712q-1.157 0-1.908.746-.75.745-.75 2.102m15.413 7.541q-1.813 0-3.147-.807-1.335-.806-2.063-2.246-.729-1.441-.729-3.354 0-1.935.729-3.387.728-1.451 2.063-2.252 1.334-.801 3.147-.801 2.08 0 3.521 1.04t1.84 2.864l-2.702.568q-.234-.968-.912-1.546-.679-.579-1.724-.579-1.513 0-2.264 1.168t-.751 2.914q0 1.146.334 2.069t1.001 1.462 1.68.54q1.067 0 1.751-.606t.918-1.607l2.703.567q-.401 1.857-1.847 2.925t-3.548 1.068m12.344 0q-1.879 0-3.231-.79t-2.08-2.224-.728-3.382q0-1.913.717-3.364.718-1.452 2.036-2.269t3.097-.818q1.513 0 2.809.662 1.295.662 2.085 2.047.79 1.384.79 3.564v.912h-8.653q.055 1.658.928 2.525.873.868 2.264.868.956 0 1.64-.412.684-.411.974-1.201l2.658.545q-.445 1.501-1.841 2.419t-3.465.918m-3.147-7.63h5.828q-.134-1.335-.851-2.141-.717-.807-2.008-.807-1.323 0-2.096.851t-.873 2.097\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
-          "gitBlob": "4cb7f7df0528ef546cfc31e12a1e442901e61b99",
-          "sha256": "c5b342db62d3b4cef189e84abcf9dce0557def7138b97b2998dbf700fd50406e"
+        "src/Modelflare/components/Mono.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      fillRule=\"evenodd\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path\n        d=\"M7.722 2.12C9.13 1.51 10.692 1.75 11.838 2.619C12.542 3.154 13.492 3.264 14.299 2.904C15.612 2.32 17.188 2.442 18.421 3.356C19.652 4.27 20.226 5.743 20.046 7.17C19.936 8.046 20.315 8.922 21.029 9.442C22.191 10.288 22.872 11.713 22.697 13.235C22.521 14.758 21.532 15.991 20.208 16.549C19.393 16.892 18.823 17.66 18.731 18.539C18.581 19.968 17.687 21.272 16.28 21.88C14.873 22.489 13.312 22.251 12.167 21.384C11.463 20.85 10.514 20.74 9.706 21.101C8.393 21.685 6.817 21.563 5.586 20.649C4.354 19.735 3.781 18.262 3.96 16.837C4.07 15.959 3.69 15.082 2.975 14.563C1.81 13.718 1.128 12.291 1.303 10.766C1.479 9.244 2.468 8.01 3.792 7.453C4.608 7.11 5.178 6.341 5.27 5.463C5.42 4.033 6.314 2.729 7.722 2.12Z\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth={2.375}\n      />\n      <path d=\"M8.903 8.454a1.907 1.907 0 0 1 1.907 1.907v2.859a1.907 1.907 0 0 1 -3.814 0v-2.859a1.907 1.907 0 0 1 1.907 -1.907z\" />\n      <path d=\"M15.575 8.454a1.907 1.907 0 0 1 1.907 1.907v2.859a1.907 1.907 0 0 1 -3.814 0v-2.859a1.907 1.907 0 0 1 1.907 -1.907z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "c86f52b1c8653b75b131c42e91e3921a57f4a990",
+          "sha256": "3fe1ff0e13105a027d9c6c4348313017608bd5b9ef289da5943ed3fb7c5b3c93"
         },
-        "src/CheaperInference/style.ts": {
-          "content": "export const TITLE = 'Cheaper Inference';\nexport const COMBINE_TEXT_MULTIPLE = 0.85;\nexport const COMBINE_SPACE_MULTIPLE = 0.6;\nexport const COLOR_PRIMARY = '#040D10';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n",
-          "gitBlob": "c09a971de118c15f7918e31af6ed894847d43e91",
-          "sha256": "4ed01054683899062df0d5e74b658a214fdef92ea83f418d810d050a2bc6bafe"
+        "src/Modelflare/components/Text.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      fillRule=\"evenodd\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 134.91 24\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M0 21.734V2.531H4.626L9.651 17.208L14.739 2.531H19.338V21.734H16.052V6.671L10.999 21.734H8.302L3.28 6.771V21.734ZM29.256 22Q27.293 22 25.835 21.159Q24.377 20.318 23.574 18.738Q22.77 17.157 22.77 14.937Q22.77 12.778 23.548 11.158Q24.326 9.537 25.782 8.637Q27.237 7.737 29.27 7.737Q31.241 7.737 32.686 8.599Q34.131 9.46 34.925 11.072Q35.718 12.684 35.718 14.937Q35.718 17.019 34.965 18.609Q34.211 20.199 32.771 21.1Q31.332 22 29.256 22ZM29.27 19.55Q30.386 19.55 31.112 18.939Q31.839 18.328 32.193 17.262Q32.547 16.197 32.547 14.838Q32.547 13.577 32.23 12.514Q31.914 11.451 31.193 10.811Q30.473 10.171 29.27 10.171Q28.141 10.171 27.405 10.761Q26.669 11.351 26.308 12.405Q25.947 13.459 25.947 14.838Q25.947 16.085 26.271 17.16Q26.594 18.234 27.324 18.892Q28.054 19.55 29.27 19.55ZM43.764 22Q41.04 22 39.488 20.127Q37.936 18.255 37.936 14.8Q37.936 12.654 38.564 11.068Q39.192 9.481 40.424 8.609Q41.657 7.737 43.468 7.737Q44.322 7.737 45.018 7.942Q45.714 8.147 46.257 8.481Q46.799 8.814 47.178 9.213Q47.557 9.611 47.77 10.005V2H51.02V21.734H48.631L48.269 18.919Q48.105 19.412 47.793 19.949Q47.48 20.486 46.957 20.953Q46.433 21.419 45.648 21.71Q44.862 22 43.764 22ZM44.426 19.62Q46.169 19.62 46.97 18.488Q47.77 17.355 47.77 14.72Q47.758 13.224 47.409 12.203Q47.06 11.182 46.338 10.662Q45.615 10.143 44.463 10.143Q43.001 10.143 42.063 11.217Q41.124 12.291 41.124 14.72Q41.124 17.137 41.988 18.379Q42.852 19.62 44.426 19.62ZM60.75 22Q58.768 22 57.259 21.155Q55.751 20.31 54.907 18.743Q54.063 17.176 54.063 15.016Q54.063 12.908 54.831 11.263Q55.598 9.619 57.053 8.678Q58.508 7.737 60.563 7.737Q62.589 7.737 63.975 8.598Q65.36 9.459 66.073 11.011Q66.786 12.562 66.786 14.631V15.615H57.287Q57.28 16.78 57.664 17.681Q58.048 18.582 58.808 19.095Q59.568 19.608 60.68 19.608Q61.819 19.608 62.661 19.1Q63.502 18.591 63.784 17.533H66.74Q66.502 18.967 65.6 19.967Q64.697 20.967 63.419 21.483Q62.141 22 60.75 22ZM57.285 13.604H63.737Q63.737 12.613 63.386 11.807Q63.036 11.001 62.33 10.53Q61.624 10.059 60.55 10.059Q59.478 10.059 58.75 10.576Q58.022 11.094 57.651 11.909Q57.279 12.725 57.285 13.604ZM73.831 21.939Q72.498 21.939 71.703 21.606Q70.908 21.272 70.51 20.715Q70.113 20.158 69.988 19.458Q69.863 18.759 69.863 18.027V2H73.036V17.66Q73.036 18.543 73.397 19.038Q73.759 19.532 74.584 19.61L75.272 19.638V21.664Q74.919 21.78 74.543 21.86Q74.167 21.939 73.831 21.939ZM79.956 21.734V10.289H77.253V8.003H79.956V5.958Q79.956 4.308 80.869 3.42Q81.782 2.531 83.512 2.531H86.406L86.42 4.732H84.502Q83.716 4.732 83.426 5.136Q83.136 5.54 83.136 6.409V8.003H86.287V10.289H83.193V21.734ZM92.781 21.939Q91.449 21.939 90.654 21.606Q89.858 21.272 89.461 20.715Q89.064 20.158 88.939 19.458Q88.813 18.759 88.813 18.027V2H91.987V17.66Q91.987 18.543 92.348 19.038Q92.71 19.532 93.535 19.61L94.223 19.638V21.664Q93.87 21.78 93.494 21.86Q93.118 21.939 92.781 21.939ZM101.211 22Q99.892 22 98.853 21.517Q97.815 21.034 97.22 20.12Q96.626 19.207 96.626 17.904Q96.626 15.635 98.268 14.484Q99.91 13.333 103.5 13.277L105.552 13.228V12.295Q105.552 11.201 104.907 10.588Q104.261 9.974 102.905 9.988Q101.907 9.995 101.083 10.455Q100.259 10.915 99.983 11.993H97.238Q97.318 10.578 98.055 9.631Q98.792 8.685 100.079 8.211Q101.365 7.737 103.057 7.737Q105.018 7.737 106.254 8.254Q107.49 8.77 108.073 9.748Q108.656 10.727 108.656 12.113V21.734H105.936L105.677 19.27Q104.936 20.814 103.802 21.407Q102.669 22 101.211 22ZM102.259 19.804Q102.861 19.804 103.445 19.587Q104.028 19.37 104.501 18.995Q104.973 18.619 105.259 18.152Q105.545 17.686 105.552 17.186V15.011L103.863 15.036Q102.617 15.055 101.684 15.31Q100.751 15.566 100.231 16.115Q99.712 16.664 99.712 17.584Q99.712 18.628 100.438 19.216Q101.165 19.804 102.259 19.804ZM112.107 21.734V8.003H115.208V10.979Q115.545 9.958 116.161 9.234Q116.777 8.51 117.612 8.124Q118.448 7.737 119.43 7.737Q119.673 7.737 119.894 7.765Q120.115 7.793 120.233 7.862V10.956Q120.081 10.887 119.849 10.862Q119.617 10.837 119.444 10.83Q118.445 10.752 117.68 10.909Q116.915 11.066 116.391 11.446Q115.867 11.825 115.602 12.405Q115.337 12.984 115.337 13.753V21.734ZM128.878 22Q126.895 22 125.387 21.155Q123.878 20.31 123.034 18.743Q122.19 17.176 122.19 15.016Q122.19 12.908 122.958 11.263Q123.726 9.619 125.181 8.678Q126.635 7.737 128.69 7.737Q130.717 7.737 132.102 8.598Q133.488 9.459 134.201 11.011Q134.914 12.562 134.914 14.631V15.615H125.415Q125.408 16.78 125.791 17.681Q126.175 18.582 126.935 19.095Q127.695 19.608 128.807 19.608Q129.947 19.608 130.788 19.1Q131.63 18.591 131.911 17.533H134.867Q134.63 18.967 133.727 19.967Q132.825 20.967 131.546 21.483Q130.268 22 128.878 22ZM125.413 13.604H131.864Q131.864 12.613 131.514 11.807Q131.164 11.001 130.458 10.53Q129.752 10.059 128.678 10.059Q127.605 10.059 126.877 10.576Q126.15 11.094 125.778 11.909Q125.407 12.725 125.413 13.604Z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "e04d03cff1e44749e791ed6b153de9c759997f7a",
+          "sha256": "f1c33e4269639e57bec1f569f5982829c8f8a9a3723ee42b8735a8782bcc6793"
+        },
+        "src/Modelflare/style.ts": {
+          "content": "export const TITLE = 'Modelflare';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#FF6512';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = '#242424';\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n",
+          "gitBlob": "8044a38f040be4ceb33ac9bbd24dd489901fd234",
+          "sha256": "ec6ae6f7152470b1a153406bd374798d99489fe4dd95878224ce1ce92dfe383b"
         }
       },
       "icons": {
-        "cheaperinference": {
-          "name": "Cheaper Inference",
-          "componentName": "CheaperInference",
+        "modelflare": {
+          "name": "Modelflare",
+          "componentName": "Modelflare",
           "artworks": {
             "icon": {
-              "monochrome": "cheaperinference.svg"
+              "monochrome": "modelflare.svg",
+              "color": "modelflare-color.svg"
             },
             "text": {
-              "monochrome": "cheaperinference-text.svg"
+              "monochrome": "modelflare-text.svg"
             }
           }
         }
       },
       "artworkSources": {
-        "cheaperinference.svg": {
-          "path": "src/CheaperInference/components/Mono.tsx",
+        "modelflare.svg": {
+          "path": "src/Modelflare/components/Mono.tsx",
           "format": "tsx",
           "sources": [
-            "src/CheaperInference/components/Mono.tsx",
-            "src/CheaperInference/style.ts"
+            "src/Modelflare/components/Mono.tsx",
+            "src/Modelflare/style.ts"
           ]
         },
-        "cheaperinference-text.svg": {
-          "path": "src/CheaperInference/components/Text.tsx",
+        "modelflare-color.svg": {
+          "path": "src/Modelflare/components/Color.tsx",
           "format": "tsx",
           "sources": [
-            "src/CheaperInference/components/Text.tsx",
-            "src/CheaperInference/style.ts"
+            "src/Modelflare/components/Color.tsx",
+            "src/Modelflare/style.ts"
+          ]
+        },
+        "modelflare-text.svg": {
+          "path": "src/Modelflare/components/Text.tsx",
+          "format": "tsx",
+          "sources": [
+            "src/Modelflare/components/Text.tsx",
+            "src/Modelflare/style.ts"
+          ]
+        }
+      }
+    },
+    {
+      "number": 453,
+      "url": "https://github.com/lobehub/lobe-icons/pull/453",
+      "title": "✨ feat: add Easy AI icon",
+      "stateAtReview": "open",
+      "repository": "locflamedia/lobe-icons",
+      "commit": "141bdd667e062d3274526f8e3cbdfc6b8de3d9e2",
+      "files": {
+        "src/EasyAI/components/Avatar.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconAvatar, { type IconAvatarProps } from '@/features/IconAvatar';\n\nimport { AVATAR_BACKGROUND, AVATAR_COLOR, AVATAR_ICON_MULTIPLE, TITLE } from '../style';\nimport Color from './Color';\n\nexport type AvatarProps = Omit<IconAvatarProps, 'Icon'>;\n\nconst Avatar = memo<AvatarProps>(({ ...rest }) => {\n  return (\n    <IconAvatar\n      Icon={Color}\n      aria-label={TITLE}\n      background={AVATAR_BACKGROUND}\n      color={AVATAR_COLOR}\n      iconMultiple={AVATAR_ICON_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Avatar;\n",
+          "gitBlob": "2fa6d4191705aa90d95726b53ef979ebb3f33174",
+          "sha256": "5c645a3c9fce1867906ea18b40a5d7d79907979b8ef793e1db0dd0d1359bd41c"
+        },
+        "src/EasyAI/components/Color.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport { useFillIds } from '@/hooks/useFillId';\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  const [a, b, c] = useFillIds(TITLE, 3);\n  return (\n    <svg\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <g transform=\"scale(0.046875)\">\n        <rect fill={a.fill} height=\"512\" rx=\"128\" width=\"512\" />\n        <path d=\"M256 60.73c25.72 103.19 100.29 173.07 203.91 195.51C356.29 278.68 281.72 348.56 256 451.75 230.28 348.56 155.71 278.68 52.09 256.24 155.71 233.8 230.28 163.92 256 60.73\" fill={b.fill} />\n        <path d=\"M256 60.73c25.72 103.19 100.29 173.07 203.91 195.51C356.29 278.68 281.72 348.56 256 451.75 230.28 348.56 155.71 278.68 52.09 256.24 155.71 233.8 230.28 163.92 256 60.73\" fill={c.fill} />\n      </g>\n      <defs>\n        <linearGradient\n          gradientUnits=\"userSpaceOnUse\"\n          id={a.id}\n          x1=\".1\"\n          x2=\"520.7\"\n          y1=\".1\"\n          y2=\"502.8\"\n        >\n          <stop offset=\"0\" stopColor=\"#ab5fa6\" />\n          <stop offset=\".08\" stopColor=\"#a95da4\" />\n          <stop offset=\".25\" stopColor=\"#9a509f\" />\n          <stop offset=\".4\" stopColor=\"#834299\" />\n          <stop offset=\".48\" stopColor=\"#773a92\" />\n          <stop offset=\".64\" stopColor=\"#68338b\" />\n          <stop offset=\".74\" stopColor=\"#5f2d83\" />\n          <stop offset=\"1\" stopColor=\"#4a2b76\" />\n        </linearGradient>\n        <linearGradient\n          gradientUnits=\"userSpaceOnUse\"\n          id={b.id}\n          x1=\"0\"\n          x2=\"0\"\n          y1=\"0\"\n          y2=\"512\"\n        >\n          <stop offset=\".13\" stopColor=\"#d660a5\" />\n          <stop offset=\".26\" stopColor=\"#d670ac\" />\n          <stop offset=\".35\" stopColor=\"#d681ae\" />\n          <stop offset=\".46\" stopColor=\"#d89bad\" />\n          <stop offset=\".5\" stopColor=\"#daa8ab\" />\n          <stop offset=\".71\" stopColor=\"#eacf9d\" />\n          <stop offset=\".82\" stopColor=\"#f1e093\" />\n          <stop offset=\".86\" stopColor=\"#f2e491\" />\n        </linearGradient>\n        <linearGradient\n          gradientUnits=\"userSpaceOnUse\"\n          id={c.id}\n          x1=\"0\"\n          x2=\"512\"\n          y1=\"0\"\n          y2=\"0\"\n        >\n          <stop offset=\".14\" stopColor=\"#98db9a\" stopOpacity=\".82\" />\n          <stop offset=\".17\" stopColor=\"#8de49a\" stopOpacity=\".62\" />\n          <stop offset=\".19\" stopColor=\"#92e09d\" stopOpacity=\".6\" />\n          <stop offset=\".22\" stopColor=\"#a7cea3\" stopOpacity=\".71\" />\n          <stop offset=\".23\" stopColor=\"#adc9a5\" stopOpacity=\".73\" />\n          <stop offset=\".25\" stopColor=\"#b0c6a7\" stopOpacity=\".73\" />\n          <stop offset=\".28\" stopColor=\"#b4c1a9\" stopOpacity=\".68\" />\n          <stop offset=\".37\" stopColor=\"#b6bbab\" stopOpacity=\".37\" />\n          <stop offset=\".44\" stopColor=\"#a5baaf\" stopOpacity=\".09\" />\n          <stop offset=\".47\" stopColor=\"#94b8b2\" stopOpacity=\".02\" />\n          <stop offset=\".5\" stopColor=\"#ffb69f\" stopOpacity=\"0\" />\n          <stop offset=\".55\" stopColor=\"#ffb9a1\" stopOpacity=\".05\" />\n          <stop offset=\".68\" stopColor=\"#fdc5a0\" stopOpacity=\".42\" />\n          <stop offset=\".71\" stopColor=\"#fecb9e\" stopOpacity=\".51\" />\n          <stop offset=\".76\" stopColor=\"#fccf9c\" stopOpacity=\".71\" />\n          <stop offset=\".79\" stopColor=\"#fcd09b\" stopOpacity=\".82\" />\n          <stop offset=\".82\" stopColor=\"#fcd29a\" stopOpacity=\".91\" />\n          <stop offset=\".85\" stopColor=\"#fcd399\" stopOpacity=\".97\" />\n        </linearGradient>\n      </defs>\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "79f48e66843d4842bbde163b6c538337a61660a9",
+          "sha256": "2b0d38d8d74429386a6a836799c8cc428993a507fe1b532d27ee50124194f58c"
+        },
+        "src/EasyAI/components/Combine.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconCombine, { type IconCombineProps } from '@/features/IconCombine';\n\nimport { COMBINE_SPACE_MULTIPLE, COMBINE_TEXT_MULTIPLE, TITLE } from '../style';\nimport Color from './Color';\nimport Mono from './Mono';\nimport Text from './Text';\n\nexport interface CombineProps extends Omit<IconCombineProps, 'Icon' | 'Text'> {\n  type?: 'color' | 'mono';\n}\nconst Combine = memo<CombineProps>(({ type = 'mono', ...rest }) => {\n  const Icon = type === 'color' ? Color : Mono;\n\n  return (\n    <IconCombine\n      Icon={Icon}\n      Text={Text}\n      aria-label={TITLE}\n      spaceMultiple={COMBINE_SPACE_MULTIPLE}\n      textMultiple={COMBINE_TEXT_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Combine;\n",
+          "gitBlob": "23910637d704d251b9942c90bbfc9c82d631211a",
+          "sha256": "9b674a7ce17ef1fda563aa759c36da91d9b25316d68a8d0ed98646637d13b896"
+        },
+        "src/EasyAI/components/Mono.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M12 .494C13.513 6.567 17.902 10.679 24 12c-6.098 1.321-10.487 5.433-12 11.506C10.487 17.433 6.098 13.321 0 12 6.098 10.679 10.487 6.567 12 .494\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "62ecf47c7d6683c3871bb9a1cbbe4c1553f67752",
+          "sha256": "b023e967090154f626d668b986abf0a6add389c2e5a823aba4c02ed255eb0936"
+        },
+        "src/EasyAI/components/Text.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 91.03 24\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M0 18.78V0h13.11v3.7H4.54v3.78h7.88v3.62H4.54v3.98h8.55v3.7Zm19.85.28q-1.34 0-2.4-.46t-1.63-1.38-.6-2.32q0-1.17.41-1.97t1.13-1.31 1.68-.78 2.02-.35q1.2-.1 1.92-.23t1.07-.35.33-.67v-.06q0-.47-.22-.8t-.64-.49-1-.17-1.05.17-.75.5-.42.75l-4.07-.5q.27-1.21 1.08-2.13t2.13-1.44 3.12-.53q1.34 0 2.5.32 1.15.31 2 .92t1.34 1.47.48 1.98v9.58h-4.23v-1.97h-.11q-.4.73-.97 1.22t-1.36.75-1.76.25m1.39-2.96q.72 0 1.3-.29t.93-.8.35-1.21v-1.32q-.19.1-.46.18t-.6.16-.66.12-.64.1q-.64.1-1.08.31-.44.22-.67.55t-.23.79.23.77.62.48.9.16m15.7 2.97q-1.81 0-3.21-.51-1.4-.52-2.28-1.49t-1.12-2.32l4.17-.64q.27.9.89 1.36t1.73.47q.9 0 1.4-.31t.51-.83q0-.47-.41-.76-.42-.29-1.3-.46l-2.46-.47q-2.1-.4-3.14-1.43t-1.04-2.65q0-1.42.77-2.42t2.16-1.53 3.31-.54q1.78 0 3.1.48t2.13 1.35 1.04 2.1l-3.97.62q-.19-.7-.77-1.08T37 7.62q-.78 0-1.32.3t-.53.84q0 .41.33.73t1.22.49l2.72.5q2.1.4 3.14 1.33t1.04 2.48q0 1.46-.86 2.53t-2.36 1.66-3.44.6m28.92-.3L72.1 0h6.1l6.44 18.78h-5.1l-2.56-8.07q-.63-2.1-1.23-4.44-.59-2.35-1.17-4.85h1.02l-1.1 4.86q-.54 2.36-1.14 4.43l-2.44 8.07Zm4.3-3.94V11.4h10.19v3.45ZM91.02 0v18.78h-4.54V0ZM44.69 4.72q-.04.01.02.16l.04.12.03.09.03.09.02.07.04.1.05.17.06.17.2.58.06.18.04.12.09.25.05.15.05.14.09.26.04.12.12.35.2.57.04.13.04.13.06.15.04.14q0 .06.03.08l.03.07.04.12.05.16.05.13.04.12.12.35.2.57.04.12.17.5.08.23.09.26.04.12.12.35q.01.07.04.1.04.06.04.12 0 .08.06.17l.06.18q.01.07.04.12l.17.5.08.23.08.26q.03.05.04.12l.12.35.04.1.04.12.06.17.06.18.04.12.05.13.05.16.04.12.04.1.02.07.03.09.04.08q0 .04.03.1l.14.43.06.18.04.1.04.12.06.17.06.18.04.12.05.13.05.16.04.12.04.09.02.08.03.09.03.08.03.1.14.4.21.6c.07.2.09.27.07.35l-.1.26-.04.08c0 .02-.05.14-.08.18l-.03.07a1.4 1.4 0 0 1-.56.53l-.07.02c-.19.1-.29.1-.67.1l-.43-.01-.16-.04a4 4 0 0 1-.63-.17q-.1-.05-.14.13l-.05.18-.03.1-.03.08-.03.1-.04.13-.03.1-.03.1-.12.4-.06.2-.15.48-.04.12-.04.13-.02.07-.02.09-.06.2-.07.22c-.12.4-.12.36-.09.4l.12.05.11.04a4 4 0 0 0 .72.18l.12.02.14.03.68.1c.3.03 1.49.02 1.79-.02l.73-.13.14-.03.12-.03.2-.06.27-.1.09-.03.13-.06.24-.1.09-.05.07-.05.03-.01.12-.06.1-.06.38-.26.19-.15c.31-.28.29-.26.43-.43l.13-.14.05-.06.32-.44.1-.15.04-.07.15-.24.04-.08.06-.12.03-.06.06-.12.03-.06.08-.18.03-.08.1-.22.11-.35.05-.12.03-.1.03-.09.02-.06.03-.09.03-.09.03-.08.03-.1.03-.08.03-.09.03-.06.03-.1.03-.09.16-.47.2-.56.02-.1.03-.06.03-.08.03-.1.02-.06.04-.1.09-.26.02-.08.03-.1q.05-.1.1-.26l.22-.66.1-.27.03-.1.02-.06q0-.03.03-.07l.03-.1.1-.27.03-.1.03-.08.03-.08.06-.2.06-.17.1-.29.03-.1q0-.05.03-.08l.09-.26q0-.06.04-.1l.02-.06.03-.1q.03-.04.03-.08t.02-.06l.03-.1q.01-.06.04-.09l.1-.3.06-.17.06-.17.21-.63.03-.1.03-.08.03-.08.04-.1.03-.08.02-.07.03-.09.03-.1.16-.46.12-.36.04-.1.09-.27.04-.1.02-.07.02-.06.04-.1.1-.26.02-.08.03-.1.13-.37.04-.1.12-.38.02-.08.1-.26q0-.06.03-.1l.02-.06.04-.1.03-.08.02-.06.04-.11.03-.1.02-.06.03-.1.04-.1.13-.36.1-.3.03-.1q0-.05.03-.08.03-.05.02-.07t.03-.08l.03-.1.03-.08.03-.09.03-.09.03-.08.02-.07q.03-.04.04-.09 0-.06.03-.1L59.3 5c.07-.2.09-.26.06-.28-.04-.03-4.63-.02-4.65 0q-.04.04-.08.22l-.06.22-.06.24-.18.68-.03.13-.04.12q0 .09-.03.12l-.03.11q0 .09-.03.12l-.04.13-.09.38-.15.55-.14.56-.13.49-.03.12-.03.11-.03.12-.04.12-.03.13-.1.38a21 21 0 0 0-.34 1.28l-.08.34a8 8 0 0 0-.2.78l-.05.17-.05.16-.16.63-.13.5-.09.34-.15.58q-.05.2-.12.18c-.07 0-.09-.03-.14-.26l-.17-.65-.03-.13-.04-.13-.08-.34-.05-.17-.05-.18-.21-.83-.03-.13-.03-.1-.04-.15-.15-.6-.03-.1-.03-.12-.08-.32-.05-.17-.18-.69-.08-.33-.05-.16-.02-.1-.03-.13-.13-.5-.09-.33-.09-.35-.3-1.2q-.03-.05-.05-.14l-.14-.56-.15-.58-.04-.16-.03-.1-.03-.11-.03-.13q0-.05-.03-.06c-.03-.02-4.59-.02-4.63 0z\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "b32888446216032aab5852436205a026f7587c0e",
+          "sha256": "5c53ed43e4d11494c95db7f8a871829e2d5f19e7613a8980a38cdd10c308c65a"
+        },
+        "src/EasyAI/style.ts": {
+          "content": "export const TITLE = 'Easy AI';\nexport const COMBINE_TEXT_MULTIPLE = 0.75;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#7B458E';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = 'linear-gradient(134deg, #AB5FA6 0%, #773A92 48%, #4A2B76 100%)';\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 1;\n",
+          "gitBlob": "f0434f80ba23c27f469973c62b59b5f7cdf3f23a",
+          "sha256": "9e01e4a4904138cb868c3b1e6409ea5410e8b3cab16bfd7e7e697da9f209d2fe"
+        }
+      },
+      "icons": {
+        "easyai": {
+          "name": "Easy AI",
+          "componentName": "EasyAI",
+          "artworks": {
+            "icon": {
+              "monochrome": "easyai.svg",
+              "color": "easyai-color.svg"
+            },
+            "text": {
+              "monochrome": "easyai-text.svg"
+            }
+          }
+        }
+      },
+      "artworkSources": {
+        "easyai.svg": {
+          "path": "src/EasyAI/components/Mono.tsx",
+          "format": "tsx",
+          "sources": [
+            "src/EasyAI/components/Mono.tsx",
+            "src/EasyAI/style.ts"
+          ]
+        },
+        "easyai-color.svg": {
+          "path": "src/EasyAI/components/Color.tsx",
+          "format": "tsx",
+          "sources": [
+            "src/EasyAI/components/Color.tsx",
+            "src/EasyAI/style.ts"
+          ]
+        },
+        "easyai-text.svg": {
+          "path": "src/EasyAI/components/Text.tsx",
+          "format": "tsx",
+          "sources": [
+            "src/EasyAI/components/Text.tsx",
+            "src/EasyAI/style.ts"
+          ]
+        }
+      }
+    },
+    {
+      "number": 454,
+      "url": "https://github.com/lobehub/lobe-icons/pull/454",
+      "title": "✨ feat: add JeikCode icon",
+      "stateAtReview": "open",
+      "repository": "jeikl/lobe-icons",
+      "commit": "25ecac81ae6052c627bc394433b29ce175e079a6",
+      "files": {
+        "src/JeikCode/components/Avatar.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconAvatar, { type IconAvatarProps } from '@/features/IconAvatar';\n\nimport { AVATAR_BACKGROUND, AVATAR_COLOR, AVATAR_ICON_MULTIPLE, TITLE } from '../style';\nimport Inner from './Inner';\n\nexport type AvatarProps = Omit<IconAvatarProps, 'Icon'>;\n\nconst Avatar = memo<AvatarProps>(({ ...rest }) => {\n  return (\n    <IconAvatar\n      Icon={Inner}\n      aria-label={TITLE}\n      background={AVATAR_BACKGROUND}\n      color={AVATAR_COLOR}\n      iconMultiple={AVATAR_ICON_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Avatar;\n",
+          "gitBlob": "a11848fcac33a7ad7f672b4e3c42f2dced6d6f42",
+          "sha256": "bc78098eb3b226a1acc32974115e38137a70304be22633df5359822cd27a5d9d"
+        },
+        "src/JeikCode/components/Color.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport { useFillIds } from '@/hooks/useFillId';\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  const [bg, border, brand] = useFillIds(TITLE, 3);\n\n  return (\n    <svg\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      {/* 1. Base Icon Canvas with Smooth Rounded Corners */}\n      <rect fill={bg.fill} height=\"24\" rx=\"5.25\" width=\"24\" />\n      {/* 2. Border Glow */}\n      <rect\n        fill=\"none\"\n        height=\"23.6\"\n        rx=\"5.05\"\n        stroke={border.fill}\n        strokeWidth=\"0.18\"\n        width=\"23.6\"\n        x=\"0.2\"\n        y=\"0.2\"\n      />\n      {/* 3. Ambient Background Light Bloom */}\n      <circle cx=\"12\" cy=\"11.25\" fill=\"#38bdf8\" opacity=\"0.16\" r=\"6.1\" />\n      <circle cx=\"13.1\" cy=\"13.1\" fill=\"#a855f7\" opacity=\"0.16\" r=\"5.6\" />\n      {/* 4. Geometric Circuit Grid Accent Lines */}\n      <g opacity=\"0.25\" stroke=\"#38bdf8\" strokeDasharray=\"0.3 0.6\" strokeWidth=\"0.12\">\n        <line x1=\"4.5\" x2=\"19.5\" y1=\"7.5\" y2=\"7.5\" />\n        <line x1=\"4.5\" x2=\"19.5\" y1=\"16.5\" y2=\"16.5\" />\n        <line x1=\"7.5\" x2=\"7.5\" y1=\"4.5\" y2=\"19.5\" />\n        <line x1=\"16.5\" x2=\"16.5\" y1=\"4.5\" y2=\"19.5\" />\n      </g>\n      {/* 5. Central Emblem: Stylized Futuristic 'J' + Code Quantum Node */}\n      <path\n        d=\"M8.91 6.94L15.09 6.94C15.56 6.94 15.94 7.31 15.94 7.78L15.94 8.34C15.94 8.81 15.56 9.19 15.09 9.19L13.03 9.19L13.03 13.59C13.03 15.75 11.34 17.44 9.19 17.44C7.03 17.44 5.53 15.75 5.53 14.06C5.53 13.5 6 13.03 6.56 13.03C7.12 13.03 7.59 13.5 7.59 14.06C7.59 14.81 8.25 15.38 9.19 15.38C10.12 15.38 10.97 14.62 10.97 13.59L10.97 9.19L8.91 9.19C8.44 9.19 8.06 8.81 8.06 8.34L8.06 7.78C8.06 7.31 8.44 6.94 8.91 6.94Z\"\n        fill={brand.fill}\n      />\n      <path\n        d=\"M6.52 9.63L6.6 9.61L6.69 9.61L6.83 9.65L6.95 9.73L7.03 9.84L7.06 9.92L7.08 10L7.08 10.08L7.06 10.16L6.99 10.29L5.2 12L6.99 13.71L7.06 13.84L7.08 13.98L7.07 14.06L7.04 14.14L6.96 14.26L6.85 14.35L6.71 14.39L6.62 14.39L6.54 14.38L6.41 14.31L4.3 12.31L4.25 12.24L4.21 12.17L4.18 12.07L4.17 11.99L4.18 11.91L4.21 11.83L4.25 11.76L6.4 9.7Z\"\n        fill={brand.fill}\n      />\n      <path\n        d=\"M17 10.27L16.96 10.2L16.93 10.12L16.92 10.04L16.93 9.96L16.95 9.88L16.99 9.81L17.04 9.74L17.1 9.69L17.23 9.62L17.35 9.61L17.5 9.64L17.62 9.71L19.71 11.71L19.76 11.77L19.8 11.85L19.82 11.93L19.83 12.01L19.8 12.15L19.76 12.23L19.71 12.29L17.62 14.29L17.5 14.36L17.35 14.39L17.23 14.38L17.1 14.31L17.04 14.26L16.99 14.19L16.95 14.12L16.93 14.04L16.92 13.96L16.93 13.88L16.96 13.8L17 13.73L18.8 12Z\"\n        fill={brand.fill}\n      />\n      {/* 6. Quantum Spark Node */}\n      <circle cx=\"17.62\" cy=\"6.94\" fill=\"#00f2fe\" opacity=\"0.45\" r=\"1.12\" />\n      <circle cx=\"17.62\" cy=\"6.94\" fill=\"#00f2fe\" r=\"0.66\" />\n      <defs>\n        <linearGradient gradientUnits=\"userSpaceOnUse\" id={bg.id} x1=\"0\" x2=\"24\" y1=\"0\" y2=\"24\">\n          <stop offset=\"0%\" stopColor=\"#0b0f19\" />\n          <stop offset=\"50%\" stopColor=\"#0f172a\" />\n          <stop offset=\"100%\" stopColor=\"#020617\" />\n        </linearGradient>\n        <linearGradient\n          gradientUnits=\"userSpaceOnUse\"\n          id={border.id}\n          x1=\"0\"\n          x2=\"24\"\n          y1=\"0\"\n          y2=\"24\"\n        >\n          <stop offset=\"0%\" stopColor=\"#38bdf8\" stopOpacity=\"0.8\" />\n          <stop offset=\"50%\" stopColor=\"#818cf8\" stopOpacity=\"0.3\" />\n          <stop offset=\"100%\" stopColor=\"#c084fc\" stopOpacity=\"0.8\" />\n        </linearGradient>\n        <linearGradient gradientUnits=\"userSpaceOnUse\" id={brand.id} x1=\"0\" x2=\"24\" y1=\"0\" y2=\"24\">\n          <stop offset=\"0%\" stopColor=\"#00f2fe\" />\n          <stop offset=\"45%\" stopColor=\"#38bdf8\" />\n          <stop offset=\"75%\" stopColor=\"#818cf8\" />\n          <stop offset=\"100%\" stopColor=\"#c084fc\" />\n        </linearGradient>\n      </defs>\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "41a3147fcfffeeff5f4dad849bfacb003178351e",
+          "sha256": "87b323ceb0260656349a612b481fbc2005a02cc7d41441fa6793096361ae11a1"
+        },
+        "src/JeikCode/components/Combine.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport IconCombine, { type IconCombineProps } from '@/features/IconCombine';\n\nimport { COMBINE_SPACE_MULTIPLE, COMBINE_TEXT_MULTIPLE, TITLE } from '../style';\nimport Color from './Color';\nimport Mono from './Mono';\nimport Text from './Text';\n\nexport interface CombineProps extends Omit<IconCombineProps, 'Icon' | 'Text'> {\n  type?: 'color' | 'mono';\n}\n\nconst Combine = memo<CombineProps>(({ type = 'mono', ...rest }) => {\n  const Icon = type === 'color' ? Color : Mono;\n\n  return (\n    <IconCombine\n      Icon={Icon}\n      Text={Text}\n      aria-label={TITLE}\n      spaceMultiple={COMBINE_SPACE_MULTIPLE}\n      textMultiple={COMBINE_TEXT_MULTIPLE}\n      {...rest}\n    />\n  );\n});\n\nexport default Combine;\n",
+          "gitBlob": "c8157b85de3a4257c7c1c5a114b93a01c83dfb10",
+          "sha256": "85fb788400dc6bfa76b1929747796dd5283c84b07d0caaa1f10f7cec9046182b"
+        },
+        "src/JeikCode/components/Inner.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport { useFillId } from '@/hooks/useFillId';\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\n/**\n * Inner symbol without the background card, used for embedding when only the\n * floating glowing glyph is desired (similar to Sora/Codex Inner).\n */\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  const { id, fill } = useFillId(TITLE);\n\n  return (\n    <svg\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path\n        d=\"M8.11 5.81L15.89 5.81C16.48 5.81 16.95 6.28 16.95 6.87L16.95 7.58C16.95 8.17 16.48 8.64 15.89 8.64L13.3 8.64L13.3 14.18C13.3 16.9 11.17 19.02 8.46 19.02C5.75 19.02 3.86 16.9 3.86 14.77C3.86 14.06 4.45 13.47 5.16 13.47C5.87 13.47 6.46 14.06 6.46 14.77C6.46 15.72 7.28 16.42 8.46 16.42C9.64 16.42 10.7 15.48 10.7 14.18L10.7 8.64L8.11 8.64C7.52 8.64 7.05 8.17 7.05 7.58L7.05 6.87C7.05 6.28 7.52 5.81 8.11 5.81Z\"\n        fill={fill}\n      />\n      <path\n        d=\"M4.95 9.28L5.11 9.2L5.29 9.17L5.47 9.2L5.56 9.25L5.64 9.31L5.71 9.39L5.76 9.48L5.81 9.66L5.79 9.84L5.75 9.94L5.69 10.03L3.45 12.18L5.69 14.33L5.78 14.49L5.81 14.67L5.77 14.85L5.72 14.94L5.66 15.02L5.51 15.13L5.34 15.18L5.24 15.18L5.13 15.17L4.97 15.09L2.31 12.56L2.23 12.46L2.19 12.37L2.16 12.27L2.15 12.16L2.16 12.06L2.2 11.96L2.25 11.87L2.31 11.79Z\"\n        fill={fill}\n      />\n      <path\n        d=\"M18.36 10.08L18.29 10L18.24 9.91L18.21 9.82L18.19 9.71L18.2 9.61L18.23 9.51L18.28 9.42L18.34 9.33L18.42 9.27L18.58 9.19L18.76 9.17L18.94 9.21L19.07 9.3L21.7 11.81L21.77 11.89L21.81 11.99L21.84 12.09L21.85 12.19L21.81 12.37L21.77 12.46L21.7 12.54L19.07 15.06L18.94 15.14L18.76 15.18L18.58 15.17L18.42 15.09L18.34 15.02L18.28 14.94L18.23 14.85L18.2 14.75L18.19 14.64L18.21 14.54L18.24 14.44L18.29 14.35L18.36 14.27L20.55 12.18Z\"\n        fill={fill}\n      />\n      <circle cx=\"19.08\" cy=\"5.81\" fill=\"#00f2fe\" opacity=\"0.4\" r=\"1.42\" />\n      <circle cx=\"19.08\" cy=\"5.81\" fill=\"#00f2fe\" r=\"0.83\" />\n      <defs>\n        <linearGradient gradientUnits=\"userSpaceOnUse\" id={id} x1=\"0\" x2=\"24\" y1=\"0\" y2=\"24\">\n          <stop offset=\"0%\" stopColor=\"#00f2fe\" />\n          <stop offset=\"45%\" stopColor=\"#38bdf8\" />\n          <stop offset=\"75%\" stopColor=\"#818cf8\" />\n          <stop offset=\"100%\" stopColor=\"#c084fc\" />\n        </linearGradient>\n      </defs>\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "a4a7df71ae2dac0b1e9691948d7ada22b9317398",
+          "sha256": "f08d361de4fc37b15c730892e18fbaa6d164000f9388709537bac915a52b232f"
+        },
+        "src/JeikCode/components/Mono.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 24 24\"\n      width={size}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M8.11 5.81L15.89 5.81C16.48 5.81 16.95 6.28 16.95 6.87L16.95 7.58C16.95 8.17 16.48 8.64 15.89 8.64L13.3 8.64L13.3 14.18C13.3 16.9 11.17 19.02 8.46 19.02C5.75 19.02 3.86 16.9 3.86 14.77C3.86 14.06 4.45 13.47 5.16 13.47C5.87 13.47 6.46 14.06 6.46 14.77C6.46 15.72 7.28 16.42 8.46 16.42C9.64 16.42 10.7 15.48 10.7 14.18L10.7 8.64L8.11 8.64C7.52 8.64 7.05 8.17 7.05 7.58L7.05 6.87C7.05 6.28 7.52 5.81 8.11 5.81Z\" />\n      <path d=\"M4.95 9.28L5.11 9.2L5.29 9.17L5.47 9.2L5.56 9.25L5.64 9.31L5.71 9.39L5.76 9.48L5.81 9.66L5.79 9.84L5.75 9.94L5.69 10.03L3.45 12.18L5.69 14.33L5.78 14.49L5.81 14.67L5.77 14.85L5.72 14.94L5.66 15.02L5.51 15.13L5.34 15.18L5.24 15.18L5.13 15.17L4.97 15.09L2.31 12.56L2.23 12.46L2.19 12.37L2.16 12.27L2.15 12.16L2.16 12.06L2.2 11.96L2.25 11.87L2.31 11.79Z\" />\n      <path d=\"M18.36 10.08L18.29 10L18.24 9.91L18.21 9.82L18.19 9.71L18.2 9.61L18.23 9.51L18.28 9.42L18.34 9.33L18.42 9.27L18.58 9.19L18.76 9.17L18.94 9.21L19.07 9.3L21.7 11.81L21.77 11.89L21.81 11.99L21.84 12.09L21.85 12.19L21.81 12.37L21.77 12.46L21.7 12.54L19.07 15.06L18.94 15.14L18.76 15.18L18.58 15.17L18.42 15.09L18.34 15.02L18.28 14.94L18.23 14.85L18.2 14.75L18.19 14.64L18.21 14.54L18.24 14.44L18.29 14.35L18.36 14.27L20.55 12.18Z\" />\n      <circle cx=\"19.08\" cy=\"5.81\" r=\"0.83\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "c6a05ffbbc72f210abca80dd0b197863adc194fe",
+          "sha256": "269b8f3d8a75b9754d07836b98fb086f664f0ab087946ff05e836ca297f359a7"
+        },
+        "src/JeikCode/components/Text.tsx": {
+          "content": "'use client';\n\nimport { memo } from 'react';\n\nimport type { IconType } from '@/types';\n\nimport { TITLE } from '../style';\n\nconst Icon: IconType = memo(({ size = '1em', style, ...rest }) => {\n  return (\n    <svg\n      fill=\"currentColor\"\n      height={size}\n      style={{ flex: 'none', lineHeight: 1, ...style }}\n      viewBox=\"0 0 118 24\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...rest}\n    >\n      <title>{TITLE}</title>\n      <path d=\"M8.33 21.97Q5.39 21.97 3.7 20.38Q2 18.79 2 15.82L2 14.51L5.77 14.51L5.77 15.85Q5.77 17.19 6.45 17.9Q7.12 18.61 8.29 18.61Q9.45 18.61 10.13 17.9Q10.8 17.19 10.8 15.85L10.8 2.31L14.81 2.31L14.81 15.9Q14.81 18.83 13.08 20.4Q11.35 21.97 8.33 21.97M23.63 22Q21.55 22 20.01 21.08Q18.47 20.17 17.62 18.54Q16.76 16.92 16.76 14.83Q16.76 12.73 17.63 11.11Q18.49 9.49 20.02 8.57Q21.54 7.64 23.5 7.64Q25.02 7.64 26.26 8.16Q27.49 8.67 28.39 9.63Q29.29 10.58 29.77 11.88Q30.26 13.18 30.26 14.76L30.26 15.78L18.13 15.78L18.13 13.34L28.42 13.34L26.69 13.92Q26.69 12.88 26.31 12.13Q25.93 11.38 25.24 10.97Q24.54 10.56 23.58 10.56Q22.63 10.56 21.94 10.97Q21.25 11.38 20.87 12.13Q20.5 12.88 20.5 13.92L20.5 15.59Q20.5 16.66 20.88 17.46Q21.26 18.25 21.99 18.69Q22.72 19.13 23.75 19.13Q24.5 19.13 25.08 18.91Q25.66 18.7 26.06 18.3Q26.45 17.9 26.62 17.37L30.12 17.37Q29.87 18.74 28.96 19.78Q28.05 20.82 26.67 21.41Q25.29 22 23.63 22M32.13 21.69L32.13 7.96L35.96 7.96L35.96 21.69L32.13 21.69M34.04 6.23Q33.09 6.23 32.46 5.65Q31.84 5.07 31.84 4.18Q31.84 3.3 32.46 2.72Q33.09 2.14 34.03 2.14Q34.97 2.14 35.6 2.72Q36.22 3.3 36.22 4.18Q36.22 5.07 35.6 5.65Q34.97 6.23 34.04 6.23M41.95 17.73L41.95 13.21L42.35 13.21L47.16 7.96L51.66 7.96L45.43 14.86L44.55 14.86L41.95 17.73M38.48 21.69L38.48 2.31L42.31 2.31L42.31 21.69L38.48 21.69M47.46 21.69L43.12 15.71L45.66 13.04L51.95 21.69L47.46 21.69M61.62 22Q58.96 22 56.88 20.78Q54.79 19.57 53.6 17.33Q52.41 15.08 52.41 12.01Q52.41 8.92 53.6 6.67Q54.79 4.42 56.88 3.21Q58.96 2 61.62 2Q63.32 2 64.78 2.51Q66.23 3.01 67.36 3.95Q68.48 4.89 69.2 6.2Q69.91 7.51 70.15 9.14L66.1 9.14Q65.93 8.28 65.54 7.61Q65.15 6.94 64.58 6.48Q64.01 6.02 63.27 5.78Q62.54 5.54 61.67 5.54Q60.02 5.54 58.85 6.33Q57.69 7.12 57.06 8.57Q56.44 10.02 56.44 12.01Q56.44 13.99 57.06 15.43Q57.68 16.88 58.85 17.67Q60.02 18.46 61.67 18.46Q62.54 18.46 63.27 18.23Q64 17.99 64.57 17.53Q65.14 17.06 65.53 16.4Q65.92 15.73 66.12 14.89L70.15 14.89Q69.91 16.5 69.2 17.81Q68.48 19.13 67.35 20.06Q66.22 21 64.77 21.5Q63.32 22 61.62 22M78.46 22Q76.39 22 74.82 21.1Q73.25 20.21 72.37 18.59Q71.49 16.98 71.49 14.83Q71.49 12.68 72.37 11.06Q73.25 9.45 74.82 8.55Q76.39 7.64 78.46 7.64Q80.55 7.64 82.12 8.55Q83.69 9.45 84.57 11.06Q85.44 12.68 85.44 14.83Q85.44 16.98 84.57 18.59Q83.69 20.21 82.12 21.1Q80.55 22 78.46 22M78.46 18.89Q79.4 18.89 80.1 18.4Q80.8 17.92 81.19 17.01Q81.58 16.1 81.58 14.83Q81.58 13.55 81.19 12.64Q80.8 11.73 80.1 11.24Q79.4 10.75 78.46 10.75Q77.54 10.75 76.84 11.24Q76.13 11.73 75.74 12.64Q75.35 13.55 75.35 14.83Q75.35 16.11 75.74 17.01Q76.13 17.92 76.84 18.4Q77.54 18.89 78.46 18.89M92.71 21.97Q90.91 21.97 89.57 21.08Q88.23 20.18 87.5 18.57Q86.76 16.95 86.76 14.81Q86.76 12.69 87.51 11.08Q88.26 9.48 89.59 8.57Q90.92 7.67 92.68 7.67Q93.58 7.67 94.33 7.91Q95.08 8.15 95.68 8.63Q96.28 9.11 96.72 9.85L96.74 9.85L96.74 2.31L100.56 2.31L100.56 21.69L96.79 21.69L96.79 19.58L96.78 19.58Q96.37 20.37 95.77 20.91Q95.16 21.45 94.38 21.71Q93.6 21.97 92.71 21.97M93.69 18.85Q94.67 18.85 95.39 18.35Q96.11 17.85 96.52 16.94Q96.92 16.03 96.92 14.81Q96.92 13.57 96.52 12.67Q96.11 11.77 95.39 11.27Q94.67 10.76 93.69 10.76Q92.77 10.76 92.08 11.24Q91.39 11.71 91.01 12.62Q90.62 13.52 90.62 14.81Q90.62 16.1 91.01 17Q91.39 17.9 92.08 18.38Q92.77 18.85 93.69 18.85M109.36 22Q107.27 22 105.73 21.08Q104.19 20.17 103.34 18.54Q102.49 16.92 102.49 14.83Q102.49 12.73 103.35 11.11Q104.22 9.49 105.74 8.57Q107.26 7.64 109.22 7.64Q110.75 7.64 111.98 8.16Q113.22 8.67 114.11 9.63Q115.01 10.58 115.5 11.88Q115.99 13.18 115.99 14.76L115.99 15.78L103.85 15.78L103.85 13.34L114.14 13.34L112.41 13.92Q112.41 12.88 112.03 12.13Q111.66 11.38 110.96 10.97Q110.27 10.56 109.3 10.56Q108.35 10.56 107.66 10.97Q106.98 11.38 106.6 12.13Q106.22 12.88 106.22 13.92L106.22 15.59Q106.22 16.66 106.6 17.46Q106.99 18.25 107.72 18.69Q108.44 19.13 109.47 19.13Q110.23 19.13 110.8 18.91Q111.38 18.7 111.78 18.3Q112.18 17.9 112.35 17.37L115.84 17.37Q115.6 18.74 114.69 19.78Q113.78 20.82 112.4 21.41Q111.02 22 109.36 22\" />\n    </svg>\n  );\n});\n\nexport default Icon;\n",
+          "gitBlob": "61234943d71d25fa93ea339d6c3b1ff724415b4a",
+          "sha256": "b24e75a679ad43f5839fcb91f14f009249fafdebe6c167e58cd6b062fa167071"
+        },
+        "src/JeikCode/style.ts": {
+          "content": "export const TITLE = 'JeikCode';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#38BDF8';\nexport const COLOR_GRADIENT =\n  'linear-gradient(135deg, #00F2FE 0%, #38BDF8 45%, #818CF8 75%, #C084FC 100%)';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND =\n  'linear-gradient(135deg, #0B0F19 0%, #0F172A 50%, #020617 100%)';\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n",
+          "gitBlob": "52353443c3d8138b26516a847f6e7143e2fff17d",
+          "sha256": "15ea92fb184f2fc8c11a9b8937c02d036cb4a80f726d65b73a942fb49bacfa59"
+        }
+      },
+      "icons": {
+        "jeikcode": {
+          "name": "JeikCode",
+          "componentName": "JeikCode",
+          "artworks": {
+            "icon": {
+              "monochrome": "jeikcode.svg",
+              "color": "jeikcode-color.svg"
+            },
+            "text": {
+              "monochrome": "jeikcode-text.svg"
+            }
+          }
+        }
+      },
+      "artworkSources": {
+        "jeikcode.svg": {
+          "path": "src/JeikCode/components/Mono.tsx",
+          "format": "tsx",
+          "sources": [
+            "src/JeikCode/components/Mono.tsx",
+            "src/JeikCode/style.ts"
+          ]
+        },
+        "jeikcode-color.svg": {
+          "path": "src/JeikCode/components/Color.tsx",
+          "format": "tsx",
+          "sources": [
+            "src/JeikCode/components/Color.tsx",
+            "src/JeikCode/style.ts"
+          ]
+        },
+        "jeikcode-text.svg": {
+          "path": "src/JeikCode/components/Text.tsx",
+          "format": "tsx",
+          "sources": [
+            "src/JeikCode/components/Text.tsx",
+            "src/JeikCode/style.ts"
           ]
         }
       }

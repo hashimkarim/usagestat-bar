@@ -15,7 +15,7 @@ def run(*args, **kwargs):
 
 with tempfile.TemporaryDirectory(prefix='usagestat-linux-install.') as temp:
     base=Path(temp)
-    env={**os.environ, 'XDG_CONFIG_HOME':str(base/'config'),'XDG_DATA_HOME':str(base/'data')}
+    env={**os.environ, 'XDG_CONFIG_HOME':str(base/'config'),'XDG_DATA_HOME':str(base/'data'), 'XDG_CACHE_HOME':str(base/'cache')}
     archive=base/'bundle.tar.gz'
     run('python3',ROOT/'platforms/linux/package.py','build',archive,cwd=base)
     with tarfile.open(archive) as package:
@@ -68,7 +68,12 @@ with tempfile.TemporaryDirectory(prefix='usagestat-linux-install.') as temp:
     font = prefix/'share/fonts/UsageStatProviderIcons.ttf'
     assert font.is_symlink() and font.resolve().is_file()
     assert subprocess.check_output(['fc-scan', '--format', '%{family}', str(font)], text=True) == 'UsageStat Provider Icons'
+    cached_font = base/'data/usagestat-bar-icons/fonts'/('999.0.0-' + 'a'*64)/'UsageStatProviderIcons.ttf'
+    cached_font.parent.mkdir(parents=True)
+    shutil.copyfile(font, cached_font)
+    font.unlink(); font.symlink_to(cached_font)
     run('python3',installer,'--prefix',prefix,env=env)
+    assert font.resolve() == cached_font, 'Bar upgrade must retain the independently updated font'
     assert json.loads(options.read_text())['native']==sorted(native), 'Upgrade lost native adapters'
     assert provider.read_text()=='sentinel provider configuration\n'
     run('python3',installer,'--prefix',prefix,'--uninstall',env=env)
