@@ -61,6 +61,105 @@ app.connect('activate', () => {
         const page = all(window).find(w => w instanceof Adw.PreferencesPage && w.title === 'Providers');
         window.set_visible_page(page);
         await wait(() => page._manifests.size === 2);
+        const binary = row(window, 'Binary');
+        binary.expanded = true;
+        const replacement = `${GLib.get_tmp_dir()}/usagestat-refresh-${GLib.uuid_string_random()}`;
+        const executable = Gio.File.new_for_path(replacement);
+        const install = version => {
+            executable.replace_contents(`#!/bin/sh\nif [ "$1" = --version ]; then echo 'usagestat ${version}'; else exec ${GLib.shell_quote(fixture)} "$@"; fi\n`,
+                null, false, Gio.FileCreateFlags.NONE, null);
+            executable.set_attribute_uint32('unix::mode', 0o700, Gio.FileQueryInfoFlags.NONE, null);
+        };
+        try {
+            install('1.0.0');
+            prefs.set_string('usagestat-cli-path', replacement);
+            await wait(() => binary.subtitle.startsWith('usagestat 1.0.0 ·'));
+            install('2.0.0');
+            button(binary, 'Refresh binary version').emit('clicked');
+            await wait(() => binary.subtitle === `usagestat 2.0.0 · ${replacement}`);
+            assert(all(row(binary, 'Status')).some(w => w instanceof Gtk.Label && w.label === 'usagestat 2.0.0'));
+            checks.push('binary refresh reads the replaced executable and updates status and summary');
+        } finally {
+            prefs.set_string('usagestat-cli-path', fixture);
+            executable.delete(null);
+        }
+        const toolsPage = all(window).find(w => w instanceof Adw.PreferencesPage && w.title === 'Tools');
+        const dashboardButton = button(row(toolsPage, 'Open usagestat dashboard'), 'Open dashboard');
+        const dashboardLog = Gio.File.new_for_path(`${replacement}.log`);
+        const installDashboard = exitCode => {
+            executable.replace_contents(`#!/bin/sh\nif [ "$1" = dashboard ]; then echo "$*" > ${GLib.shell_quote(dashboardLog.get_path())}; echo 'Dashboard fixture failure' >&2; exit ${exitCode}; fi\nexec ${GLib.shell_quote(fixture)} "$@"\n`,
+                null, false, Gio.FileCreateFlags.NONE, null);
+            executable.set_attribute_uint32('unix::mode', 0o700, Gio.FileQueryInfoFlags.NONE, null);
+        };
+        try {
+            installDashboard(0);
+            prefs.set_string('usagestat-cli-path', replacement);
+            window.set_visible_page(toolsPage);
+            dashboardButton.emit('clicked');
+            assert(!dashboardButton.sensitive, 'Dashboard launch should prevent duplicate clicks');
+            await wait(() => dashboardLog.query_exists(null) && dashboardButton.sensitive);
+            equal(new TextDecoder().decode(dashboardLog.load_contents(null)[1]).trim(), 'dashboard');
+            installDashboard(1);
+            dashboardButton.emit('clicked');
+            await wait(() => dashboardButton.sensitive && Gtk.Window.list_toplevels().some(w =>
+                w instanceof Adw.MessageDialog && w.heading === 'Could not open dashboard'));
+            const errorDialog = Gtk.Window.list_toplevels().find(w => w instanceof Adw.MessageDialog && w.heading === 'Could not open dashboard');
+            equal(errorDialog.body, 'Dashboard fixture failure');
+            await screenshot('dashboard-launch-error');
+            errorDialog.close();
+            checks.push('dashboard launches the configured CLI directly and reports failures without a terminal');
+        } finally {
+            prefs.set_string('usagestat-cli-path', fixture);
+            executable.delete(null);
+            if (dashboardLog.query_exists(null)) dashboardLog.delete(null);
+            window.set_visible_page(page);
+        }
+        const bundled = {id: 'fixture-bundled', enabled: false};
+        const extension = {id: 'fixture-extension', enabled: false};
+        const customSource = {id: 'fixture-custom', enabled: false, customCommand: 'echo custom'};
+        const bundleRoot = `${GLib.get_user_cache_dir()}/grouping-cli`;
+        GLib.mkdir_with_parents(`${bundleRoot}/plugins/new-plugin`, 0o700);
+        Gio.File.new_for_path(`${bundleRoot}/plugins/new-plugin/plugin.json`).replace_contents(
+            JSON.stringify({id: bundled.id}), null, false, Gio.FileCreateFlags.NONE, null);
+        const bundleBinary = Gio.File.new_for_path(`${bundleRoot}/usagestat`);
+        bundleBinary.replace_contents(`#!/bin/sh\nexec ${GLib.shell_quote(fixture)} "$@"\n`, null, false, Gio.FileCreateFlags.NONE, null);
+        bundleBinary.set_attribute_uint32('unix::mode', 0o700, Gio.FileQueryInfoFlags.NONE, null);
+        prefs.set_string('usagestat-cli-path', bundleBinary.get_path());
+        await wait(() => page._bundledProviderIds.has(bundled.id));
+        page._config.providers.push(bundled, extension, customSource);
+        page._renderProviders();
+        const contains = (title, key) => all(row(page, title)).some(w => w._providerKey === key);
+        assert(contains('Bundled', bundled.id), 'New bundled plugin was classified as an extension');
+        assert(contains('Third-party extensions', extension.id));
+        assert(contains('Custom', customSource.id));
+        assert(!all(page).some(w => w instanceof Adw.PreferencesGroup && w.title === 'Plugin Providers'));
+        all(provider(page, bundled.id)).find(w => w instanceof Gtk.Switch).active = true;
+        assert(all(page._enabledList).some(w => w._providerKey === bundled.id));
+        assert(!contains('Bundled', bundled.id));
+        all(provider(page, bundled.id)).find(w => w instanceof Gtk.Switch).active = false;
+        assert(contains('Bundled', bundled.id));
+        assert(row(page, 'Bundled').expanded, 'Targeted disabled provider must reveal its category');
+        for (const {expander, list} of page._disabledCategories.values()) {
+            expander.expanded = false;
+            for (let child = list.get_first_child(); child; child = child.get_next_sibling()) child.get_child().expanded = false;
+        }
+        for (const dark of [false, true]) {
+            Adw.StyleManager.get_default().color_scheme = dark ? Adw.ColorScheme.FORCE_DARK : Adw.ColorScheme.FORCE_LIGHT;
+            row(page, 'Third-party extensions').expanded = true;
+            row(page, 'Custom').expanded = true;
+            await pause(1000);
+            const scroll = all(page).find(w => w instanceof Gtk.ScrolledWindow);
+            scroll.vadjustment.value = scroll.vadjustment.upper - scroll.vadjustment.page_size;
+            await pause(400);
+            scroll.vadjustment.value = scroll.vadjustment.upper - scroll.vadjustment.page_size;
+            await screenshot(`disabled-categories-${dark ? 'dark' : 'light'}`);
+        }
+        page._config.providers = page._config.providers.filter(p => ![bundled, extension, customSource].includes(p));
+        prefs.set_string('usagestat-cli-path', fixture);
+        page._save();
+        page._renderProviders();
+        for (const {expander} of page._disabledCategories.values()) expander.expanded = false;
+        checks.push('disabled providers are grouped by installed bundle, extensions and custom commands, and toggling preserves classification');
         const originalIcons = prefs.get_string('provider-usage-settings');
         const pluginIcon = `${ROOT}/assets/provider-icons/codex.svg`;
         page._manifests.set('typesafe', {name: 'TypeSafe', icon: {path: pluginIcon}});
@@ -83,6 +182,11 @@ app.connect('activate', () => {
             page._manifests.delete('fixture-plugin');
         }
         const choose = async (key, query, id) => {
+            const appearance = row(provider(page, key), 'Appearance');
+            assert(appearance instanceof Adw.ExpanderRow);
+            appearance.expanded = true;
+            equal(all(appearance).filter(w => w instanceof Adw.PreferencesRow && ['Style override', 'Icon library', 'Custom icon'].includes(w.title)).map(w => w.title),
+                ['Style override', 'Icon library', 'Custom icon']);
             button(row(provider(page, key), 'Icon library')).emit('clicked');
             const picker = page._iconPicker;
             assert(picker?.visible, 'Picker did not open');
@@ -93,6 +197,7 @@ app.connect('activate', () => {
             await wait(() => cells.find(w => w._iconId === id)?.get_child_visible() && cells.some(w => !w.get_child_visible()));
             cells.find(w => w._iconId === id).get_child().emit('clicked');
             await wait(() => !page._iconPicker);
+            assert(row(provider(page, key), 'Appearance').expanded, 'Appearance collapsed after selecting an icon');
         };
         await choose('codex', 'openrouter', 'openrouter');
         equal(savedIcons().codex.iconSource, 'openrouter');
@@ -121,17 +226,17 @@ app.connect('activate', () => {
         const path = `${GLib.get_user_cache_dir()}/custom.png`;
         const pixels = GdkPixbuf.Pixbuf.new(GdkPixbuf.Colorspace.RGB, true, 8, 40, 20);
         pixels.fill(0xff6600ff); pixels.savev(path, 'png', [], []);
-        entry(provider(page, 'codex'), 'Custom image', path).emit('activate');
+        entry(provider(page, 'codex'), 'Custom icon', path).emit('activate');
         equal(config().find(p => p.id === 'codex' && !p.instanceId).iconPath, path);
         const selected = page._providerIconFile(config().find(p => p.id === 'codex' && !p.instanceId));
         assert(selected.includes('/custom-icons/'), 'Custom image did not override the built-in provider');
-        button(row(provider(page, 'codex'), 'Custom image'), 'Clear custom icon').emit('clicked');
+        button(row(provider(page, 'codex'), 'Custom icon'), 'Clear custom icon').emit('clicked');
         assert(!config().find(p => p.id === 'codex' && !p.instanceId).iconPath);
         equal(savedIcons().codex.iconSource, 'openrouter');
         checks.push('built-in provider accepts a PNG override and clearing it restores the library choice');
 
-        entry(provider(page, 'codex'), 'Custom image', '/missing/image.svg');
-        assert(row(provider(page, 'codex'), 'Custom image').subtitle.includes('Image unavailable'));
+        entry(provider(page, 'codex'), 'Custom icon', '/missing/image.svg');
+        assert(row(provider(page, 'codex'), 'Custom icon').subtitle.includes('Image unavailable'));
         equal(page._providerIconFile(config().find(p => p.id === 'codex' && !p.instanceId)), 'openrouter.svg');
         button(row(provider(page, 'codex'), 'Icon library'), 'Use default icon').emit('clicked');
         assert(!savedIcons().codex?.iconSource);
@@ -140,6 +245,21 @@ app.connect('activate', () => {
 
         for (const dark of [false, true]) {
             Adw.StyleManager.get_default().color_scheme = dark ? Adw.ColorScheme.FORCE_DARK : Adw.ColorScheme.FORCE_LIGHT;
+            window.set_visible_page(toolsPage);
+            await screenshot(`tools-dashboard-${dark ? 'dark' : 'light'}`);
+            window.set_visible_page(page);
+            const appearance = row(provider(page, 'codex'), 'Appearance');
+            appearance.expanded = true;
+            button(row(appearance, 'Icon library')).grab_focus();
+            await screenshot(`provider-appearance-${dark ? 'dark' : 'light'}`);
+            const cliPage = all(window).find(w => w instanceof Adw.PreferencesPage && all(w).includes(binary));
+            window.set_visible_page(cliPage);
+            button(binary, 'Refresh binary version').grab_focus();
+            await pause(400);
+            const scroll = all(cliPage).find(w => w instanceof Gtk.ScrolledWindow);
+            scroll.vadjustment.value = scroll.vadjustment.upper - scroll.vadjustment.page_size;
+            await screenshot(`binary-refresh-${dark ? 'dark' : 'light'}`);
+            window.set_visible_page(page);
             button(row(provider(page, 'codex'), 'Icon library')).emit('clicked');
             const picker = page._iconPicker;
             await screenshot(`icon-library-${dark ? 'dark' : 'light'}`);
@@ -156,7 +276,7 @@ app.connect('activate', () => {
         window.close();
         await wait(() => page._closed && !page._iconPicker);
         checks.push('closing preferences also closes the icon picker');
-    })().catch(error => { failed = true; printerr(error.stack); }).finally(() => {
+    })().catch(error => { failed = true; printerr(`${error.message}\n${error.stack}`); }).finally(() => {
         Gio.File.new_for_path(`${out}/result.json`).replace_contents(JSON.stringify({passed: !failed, checks}, null, 2),
             null, false, Gio.FileCreateFlags.PRIVATE, null);
         for (const name of checks) print(`Passed: ${name}`);

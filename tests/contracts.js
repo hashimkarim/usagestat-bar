@@ -2,7 +2,7 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import System from 'system';
 import {assert, equal, rejects} from './assert.js';
-import {fetchProviderManifests, fetchProviderUsage, findAiUsage, normalizeBackendSnapshot,
+import {bundledProviderIds, fetchProviderManifests, fetchProviderUsage, findAiUsage, normalizeBackendSnapshot,
     normalizeCostSummary, parseUsageJson, runAsync} from '../cli.js';
 import {configPath, defaultConfig, enabledProviders, ensureProviderShape, formatConfigToml,
     loadConfig, parseConfigToml, providerBaseId, providerDisplayName, providerKey, saveConfig} from '../config.js';
@@ -235,6 +235,26 @@ test('a signalled process reports its signal status without a GLib assertion', a
 });
 
 const loop = new GLib.MainLoop(null, false);
+test('bundled catalog follows the CLI installation and discovers new plugin IDs through symlinks', () => {
+    const prefix = `${GLib.get_user_cache_dir()}/bundle-test`;
+    const write = (path, text) => {
+        GLib.mkdir_with_parents(GLib.path_get_dirname(path), 0o700);
+        Gio.File.new_for_path(path).replace_contents(text, null, false, Gio.FileCreateFlags.NONE, null);
+    };
+    write(`${prefix}/bin/usagestat`, 'fixture');
+    write(`${prefix}/share/usagestat/plugins/new-provider/plugin.json`, '{"id":"new-provider"}');
+    write(`${prefix}/share/usagestat/plugins/broken/plugin.json`, 'bad JSON');
+    write(`${prefix}/extensions/not-bundled/plugin.json`, '{"id":"not-bundled"}');
+    Gio.File.new_for_path(`${prefix}/linked-cli`).make_symbolic_link('bin/usagestat', null);
+    equal([...bundledProviderIds(`${prefix}/linked-cli`)], ['new-provider']);
+    write(`${prefix}/share/usagestat/plugins/later/plugin.json`, '{"id":"added-later"}');
+    equal([...bundledProviderIds(`${prefix}/linked-cli`)].sort(), ['added-later', 'new-provider']);
+    write(`${prefix}/archive/plugins/flat/plugin.json`, '{"id":"archive-provider"}');
+    equal([...bundledProviderIds(`${prefix}/archive/usagestat`)], ['archive-provider']);
+    write(`${prefix}/share/usagestat-dev/plugins/dev/plugin.json`, '{"id":"dev-provider"}');
+    equal([...bundledProviderIds(`${prefix}/bin/usagestat-dev`)], ['dev-provider']);
+});
+
 let failures = 0;
 async function run() {
     print(`1..${tests.length}`);

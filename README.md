@@ -71,18 +71,24 @@ If the CLI is in a non-standard location, set `USAGESTAT_CLI=/path/to/usagestat`
 - Search the bundled provider/product icon library or use your own image for any provider or account.
 - Keeps config private when saving.
 
+Disabled providers are grouped by source: **Bundled** uses the installed CLI's
+plugin catalog alongside the app's standard presets, **Third-party extensions**
+contains additional providers, and **Custom** contains command-backed sources.
+Enabling any source moves it into the same reorderable list; its origin does not
+change how tracking works.
+
 ### Choose a provider icon
 
 Open **Preferences → Providers**, expand a provider or one of its grouped
-sources, and select **Icon library → Choose…**. Search by provider or product
+sources, and select **Appearance → Icon library → Choose…**. Search by provider or product
 name, then select a mark. The picker shows the bundled version and mark count.
 The AgenticDriver library works offline;
-**Icon style** controls its colour or monochrome variant.
+**Style override** controls its colour or monochrome variant.
 Providers using the default automatically adopt matching icons added by later
 library updates, including TypeSafe. Custom image and library selections remain
 in effect until you clear them.
 
-Use **Custom image → Browse** to override the icon with a local SVG, PNG, JPEG
+Use **Custom icon → Browse** to override the icon with a local SVG, PNG, JPEG
 or WebP. Keep that file at its selected path. Clearing the image restores the
 library choice; **Use default icon** clears both overrides. Missing or invalid
 images fall back to the library/default icon. Each source has its own choice,

@@ -39,6 +39,47 @@ export function findAiUsage(override = '') {
     return null;
 }
 
+// Read the installed bundle instead of treating the desktop's preset IDs as
+// the complete CLI catalog. This also picks up new plugins after CLI upgrades.
+export function bundledProviderIds(binary) {
+    const ids = new Set();
+    if (!binary) return ids;
+    let executable = GLib.canonicalize_filename(binary, null);
+    const seen = new Set();
+    while (!seen.has(executable)) {
+        seen.add(executable);
+        try {
+            executable = GLib.canonicalize_filename(GLib.file_read_link(executable), GLib.path_get_dirname(executable));
+        } catch { break; }
+    }
+    const bin = GLib.path_get_dirname(executable);
+    const profile = GLib.path_get_basename(executable).includes('usagestat-dev') ? 'usagestat-dev' : 'usagestat';
+    const directories = [GLib.build_filenamev([bin, 'plugins'])];
+    if (GLib.path_get_basename(bin) === 'bin') {
+        const prefix = GLib.path_get_dirname(bin);
+        directories.push(...['share', 'lib'].map(dir => GLib.build_filenamev([prefix, dir, profile, 'plugins'])),
+            GLib.build_filenamev([prefix, 'plugins']));
+    }
+    if (GLib.path_get_basename(bin) === 'MacOS')
+        directories.push(GLib.build_filenamev([GLib.path_get_dirname(bin), 'Resources', 'plugins']));
+    for (const path of directories) {
+        let children;
+        try {
+            const directory = Gio.File.new_for_path(path);
+            children = directory.enumerate_children('standard::name', Gio.FileQueryInfoFlags.NONE, null);
+            for (let child; (child = children.next_file(null));) {
+                try {
+                    const file = directory.get_child(child.get_name()).get_child('plugin.json');
+                    const manifest = JSON.parse(new TextDecoder().decode(file.load_contents(null)[1]));
+                    if (typeof manifest.id === 'string') ids.add(manifest.id);
+                } catch { /* Non-plugin entries and unreadable manifests are not catalog entries. */ }
+            }
+        } catch { /* This installation layout is absent or unreadable. */ }
+        finally { children?.close(null); }
+    }
+    return ids;
+}
+
 export function runAsync(argv, cancellable, timeoutMs = COMMAND_TIMEOUT_SECONDS * 1000) {
     return new Promise((resolve, reject) => {
         cancellable?.set_error_if_cancelled();

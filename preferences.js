@@ -8,7 +8,7 @@ import Gtk from 'gi://Gtk';
 import Adw from 'gi://Adw';
 // Both GNOME's preferences host and the standalone Linux app use these pages.
 let _ = text => text;
-import {findAiUsage} from './cli.js';
+import {bundledProviderIds, findAiUsage} from './cli.js';
 import {configPath, DEFAULT_HIDDEN_IDS, loadConfig, makeProviderInstanceId, providerBaseId, providerDisplayName, providerKey, PROVIDERS, saveConfig} from './config.js';
 
 // Settings and theme objects outlive a preferences window in the Linux service.
@@ -38,7 +38,6 @@ function closePage(page) {
 
 
 const SOURCE_OPTIONS = ['auto', 'web', 'cli', 'oauth', 'api', 'local'];
-const BUILTIN_PROVIDER_IDS = new Set(PROVIDERS.map(([id]) => id));
 const CUSTOM_PROVIDER_VALUE = '__custom_provider__';
 const TIERS = ['primary', 'secondary', 'tertiary', 'quaternary'];
 const VALIDATION_TIMEOUT_SECONDS = 90;
@@ -347,7 +346,14 @@ class BehaviourPage extends Adw.PreferencesPage {
         const statusRow = new Adw.ActionRow({title: _('Status')});
         const spinner = new Gtk.Spinner({valign: Gtk.Align.CENTER});
         const statusIcon = new Gtk.Image({valign: Gtk.Align.CENTER});
-        const statusLabel = new Gtk.Label({valign: Gtk.Align.CENTER});
+        const statusLabel = new Gtk.Label({valign: Gtk.Align.CENTER, ellipsize: 3, max_width_chars: 40});
+        const refreshBtn = new Gtk.Button({
+            icon_name: 'view-refresh-symbolic',
+            valign: Gtk.Align.CENTER,
+            tooltip_text: _('Refresh binary version'),
+            css_classes: ['flat'],
+        });
+        statusRow.add_suffix(refreshBtn);
         statusRow.add_suffix(spinner);
         statusRow.add_suffix(statusIcon);
         statusRow.add_suffix(statusLabel);
@@ -356,7 +362,11 @@ class BehaviourPage extends Adw.PreferencesPage {
         let _resolvedBinary = '';
         copyBtn.connect('clicked', () => { if (_resolvedBinary) this.get_clipboard().set(_resolvedBinary); });
 
+        let checkGeneration = 0;
         const check = () => {
+            const generation = ++checkGeneration;
+            statusLabel.set_tooltip_text(null);
+            refreshBtn.set_sensitive(true);
             _resolvedBinary = findAiUsage(this._settings.get_string('usagestat-cli-path')) || '';
             detectedLabel.set_label(_resolvedBinary || _('Not found'));
             copyBtn.set_sensitive(Boolean(_resolvedBinary));
@@ -368,19 +378,22 @@ class BehaviourPage extends Adw.PreferencesPage {
                 statusLabel.set_label(_('Not found')); statusLabel.set_css_classes(['error']);
                 return;
             }
+            refreshBtn.set_sensitive(false);
             statusIcon.set_visible(false); statusLabel.set_label('');
             spinner.set_visible(true); spinner.start();
             try {
                 const proc = pageProcess(this, [_resolvedBinary, '--version'], Gio.SubprocessFlags.STDOUT_PIPE | Gio.SubprocessFlags.STDERR_PIPE);
                 proc.communicate_utf8_async(null, null, (_p, res) => {
                     this._processes.delete(_p);
-                    if (this._closed) return;
+                    if (this._closed || generation !== checkGeneration) return;
+                    refreshBtn.set_sensitive(true);
                     spinner.stop(); spinner.set_visible(false); statusIcon.set_visible(true);
                     try {
                         const [, stdout] = _p.communicate_utf8_finish(res);
+                        if (!_p.get_successful()) throw new Error('Version command failed');
                         const version = (stdout || '').trim().split('\n')[0] || _resolvedBinary;
                         statusIcon.set_from_icon_name('object-select-symbolic'); statusIcon.set_css_classes(['success']);
-                        statusLabel.set_label(version); statusLabel.set_css_classes(['success']);
+                        statusLabel.set_label(version); statusLabel.set_tooltip_text(version); statusLabel.set_css_classes(['success']);
                         expander.set_subtitle(`${version} · ${_resolvedBinary}`);
                     } catch {
                         statusIcon.set_from_icon_name('dialog-error-symbolic'); statusIcon.set_css_classes(['error']);
@@ -388,11 +401,13 @@ class BehaviourPage extends Adw.PreferencesPage {
                     }
                 });
             } catch {
+                refreshBtn.set_sensitive(true);
                 spinner.stop(); spinner.set_visible(false); statusIcon.set_visible(true);
                 statusIcon.set_from_icon_name('dialog-error-symbolic'); statusIcon.set_css_classes(['error']);
                 statusLabel.set_label(_('Failed to launch')); statusLabel.set_css_classes(['error']);
             }
         };
+        refreshBtn.connect('clicked', check);
         listen(this, this._settings, 'changed::usagestat-cli-path', check);
         check();
         return expander;
@@ -1342,6 +1357,7 @@ class ProvidersPage extends Adw.PreferencesPage {
         this._validationDebounceIds = new Map();
         this._curlHelpPrompts = new Set();
         this._manifests = new Map();
+        this._bundledProviderIds = bundledProviderIds(settingsBinary(settings));
         listen(this, this._settings, 'changed::provider-icon-style', () => this._refreshProviderIcons());
         listen(this, this._settings, 'changed::usagestat-cli-path', () => this._loadProviderManifests());
         listen(this, this._settings, 'changed::usagestat-plugin-dir', () => this._loadProviderManifests());
@@ -1354,16 +1370,6 @@ class ProvidersPage extends Adw.PreferencesPage {
             selection_mode: Gtk.SelectionMode.NONE,
         });
         this._enabledList.add_css_class('boxed-list');
-
-        this._disabledList = new Gtk.ListBox({
-            selection_mode: Gtk.SelectionMode.NONE,
-        });
-        this._disabledList.add_css_class('boxed-list');
-
-        this._pluginList = new Gtk.ListBox({
-            selection_mode: Gtk.SelectionMode.NONE,
-        });
-        this._pluginList.add_css_class('boxed-list');
 
         this._enabledGroup = new Adw.PreferencesGroup({
             title: _('Enabled Providers'),
@@ -1379,19 +1385,22 @@ class ProvidersPage extends Adw.PreferencesPage {
         this._addSourceGroup.add(this._buildAddProviderSourceRow());
         this.add(this._addSourceGroup);
 
-        this._pluginGroup = new Adw.PreferencesGroup({
-            title: _('Plugin Providers'),
-            description: _('Providers discovered from the plugin folder. Enable to start tracking.'),
-        });
-        this._pluginGroup.add(new Adw.PreferencesRow({child: this._pluginList}));
-        this._pluginGroup.set_visible(false);
-        this.add(this._pluginGroup);
-
         this._disabledGroup = new Adw.PreferencesGroup({
             title: _('Disabled Providers'),
-            description: _('Enable a provider to move it into the draggable list.'),
+            description: _('Enable a provider to start tracking it.'),
         });
-        this._disabledGroup.add(new Adw.PreferencesRow({child: this._disabledList}));
+        this._disabledCategories = new Map();
+        for (const [id, title, subtitle] of [
+            ['bundled', _('Bundled'), _('Providers shipped with usagestat.')],
+            ['extensions', _('Third-party extensions'), _('Additional providers not shipped with this CLI.')],
+            ['custom', _('Custom'), _('Your custom command-backed sources.')],
+        ]) {
+            const expander = new Adw.ExpanderRow({title, subtitle});
+            const list = new Gtk.ListBox({selection_mode: Gtk.SelectionMode.NONE});
+            expander.add_row(new Adw.PreferencesRow({child: list}));
+            this._disabledCategories.set(id, {expander, list});
+            this._disabledGroup.add(expander);
+        }
         this.add(this._disabledGroup);
 
         this._hiddenExpanderRow = new Adw.ExpanderRow({
@@ -1435,6 +1444,7 @@ class ProvidersPage extends Adw.PreferencesPage {
             if (!Array.isArray(providers))
                 return;
             this._manifests = new Map(providers.map(p => [p.id, p]));
+            this._bundledProviderIds = bundledProviderIds(binary);
 
             const knownIds = new Set(this._config.providers.map(p => p.id));
             let added = false;
@@ -1603,16 +1613,14 @@ class ProvidersPage extends Adw.PreferencesPage {
     _renderProviders(expandedId = null) {
         while (this._enabledList.get_first_child())
             this._enabledList.remove(this._enabledList.get_first_child());
-        while (this._pluginList.get_first_child())
-            this._pluginList.remove(this._pluginList.get_first_child());
-        while (this._disabledList.get_first_child())
-            this._disabledList.remove(this._disabledList.get_first_child());
+        for (const {list} of this._disabledCategories.values()) {
+            while (list.get_first_child()) list.remove(list.get_first_child());
+        }
         for (const oldRow of (this._hiddenRowsList || []))
             this._hiddenExpanderRow.remove(oldRow);
         this._hiddenRowsList = [];
 
-        const disabledBuiltin = [];
-        const disabledPlugin = [];
+        const disabled = [];
         const hiddenProviders = [];
 
         for (const provider of this._orderedProviders()) {
@@ -1621,24 +1629,24 @@ class ProvidersPage extends Adw.PreferencesPage {
             if (provider.hidden) {
                 hiddenProviders.push(provider);
             } else if (provider.enabled === false) {
-                const isPlugin = !BUILTIN_PROVIDER_IDS.has(providerBaseId(provider)) && !provider.customCommand;
-                if (isPlugin)
-                    disabledPlugin.push(provider);
-                else
-                    disabledBuiltin.push(provider);
+                disabled.push(provider);
             } else {
                 this._enabledList.append(this._buildProviderListRow(provider, expandedId, true));
             }
         }
 
-        disabledBuiltin.sort((a, b) => this._name(a).localeCompare(this._name(b)));
-        for (const provider of disabledBuiltin)
-            this._disabledList.append(this._buildProviderListRow(provider, expandedId, false));
-
-        disabledPlugin.sort((a, b) => this._name(a).localeCompare(this._name(b)));
-        for (const provider of disabledPlugin)
-            this._pluginList.append(this._buildProviderListRow(provider, expandedId, false));
-        this._pluginGroup.set_visible(disabledPlugin.length > 0);
+        disabled.sort((a, b) => this._name(a).localeCompare(this._name(b)));
+        for (const provider of disabled) {
+            const category = this._isCustomProvider(provider) ? 'custom'
+                : this._bundledProviderIds.has(providerBaseId(provider)) ||
+                    PROVIDERS.some(([id]) => id === providerBaseId(provider)) ? 'bundled' : 'extensions';
+            const {expander, list} = this._disabledCategories.get(category);
+            list.append(this._buildProviderListRow(provider, expandedId, false));
+            if (expandedId === providerKey(provider)) expander.expanded = true;
+        }
+        for (const {expander, list} of this._disabledCategories.values())
+            expander.set_visible(Boolean(list.get_first_child()));
+        this._disabledGroup.set_visible(disabled.length > 0);
 
         hiddenProviders.sort((a, b) => this._name(a).localeCompare(this._name(b)));
         this._hiddenExpanderRow.set_title(`${_('Hidden')} (${hiddenProviders.length})`);
@@ -1655,7 +1663,7 @@ class ProvidersPage extends Adw.PreferencesPage {
     }
 
     _expandedProviderId() {
-        for (const list of [this._enabledList, this._pluginList, this._disabledList]) {
+        for (const list of [this._enabledList, ...[...this._disabledCategories.values()].filter(category => category.expander.expanded).map(category => category.list)]) {
             for (let child = list.get_first_child(); child; child = child.get_next_sibling()) {
                 const row = child.get_child?.();
                 if (row?.get_expanded?.())
@@ -1741,7 +1749,7 @@ class ProvidersPage extends Adw.PreferencesPage {
             ? this._providerUsageSetting(provider, 'iconStyle')
             : 'auto';
         const row = combo(labels, labels[values.indexOf(selectedValue)]);
-        row.title = _('Icon style');
+        row.title = _('Style override');
         row.subtitle = _('Default follows the global Appearance setting.');
         row.connect('notify::selected', () => {
             const value = values[row.selected] || 'auto';
@@ -1752,9 +1760,20 @@ class ProvidersPage extends Adw.PreferencesPage {
     }
 
     _addIconRows(row, provider) {
-        row.add_row(this._providerIconSourceRow(provider));
-        row.add_row(this._customIconRow(provider));
-        row.add_row(this._providerIconStyleRow(provider));
+        this._expandedAppearance ??= new Set();
+        const key = providerKey(provider);
+        const appearance = new Adw.ExpanderRow({
+            title: _('Appearance'),
+            expanded: this._expandedAppearance.has(key),
+        });
+        appearance.connect('notify::expanded', () => {
+            if (appearance.expanded) this._expandedAppearance.add(key);
+            else this._expandedAppearance.delete(key);
+        });
+        appearance.add_row(this._providerIconStyleRow(provider));
+        appearance.add_row(this._providerIconSourceRow(provider));
+        appearance.add_row(this._customIconRow(provider));
+        row.add_row(appearance);
     }
 
     _selectProviderIcon(provider, id) {
@@ -1844,7 +1863,7 @@ class ProvidersPage extends Adw.PreferencesPage {
 
     _customIconRow(provider) {
         const row = new Adw.ActionRow({
-            title: _('Custom image'),
+            title: _('Custom icon'),
             subtitle: _('Overrides the library icon. SVG, PNG, JPEG or WebP.'),
         });
 
@@ -3162,14 +3181,55 @@ class MaintenancePage extends Adw.PreferencesPage {
             icon_name: 'applications-system-symbolic',
         });
         this._settings = settings;
+        this.add(this._buildDashboardGroup());
         this.add(this._buildTerminalGroup());
         this.add(this._buildGroup());
+    }
+
+    _buildDashboardGroup() {
+        const group = new Adw.PreferencesGroup({title: _('Dashboard')});
+        const row = new Adw.ActionRow({
+            title: _('Open usagestat dashboard'),
+            subtitle: _('Open the local dashboard in your browser.'),
+        });
+        const button = new Gtk.Button({
+            icon_name: 'web-browser-symbolic',
+            tooltip_text: _('Open dashboard'),
+            valign: Gtk.Align.CENTER,
+        });
+        button.connect('clicked', () => {
+            button.set_sensitive(false);
+            try {
+                const binary = settingsBinary(this._settings) || 'usagestat';
+                const process = pageProcess(this, [binary, 'dashboard'],
+                    Gio.SubprocessFlags.STDOUT_PIPE | Gio.SubprocessFlags.STDERR_PIPE);
+                process.communicate_utf8_async(null, null, (proc, result) => {
+                    this._processes.delete(proc);
+                    if (this._closed) return;
+                    button.set_sensitive(true);
+                    try {
+                        const [, , stderr] = proc.communicate_utf8_finish(result);
+                        if (!proc.get_successful())
+                            throw new Error(stderr.trim() || _('The dashboard command failed.'));
+                    } catch (error) {
+                        this._showError(_('Could not open dashboard'), error.message);
+                    }
+                });
+            } catch (error) {
+                button.set_sensitive(true);
+                this._showError(_('Could not open dashboard'), error.message);
+            }
+        });
+        row.add_suffix(button);
+        row.activatable_widget = button;
+        group.add(row);
+        return group;
     }
 
     _buildTerminalGroup() {
         const group = new Adw.PreferencesGroup({
             title: _('Terminal'),
-            description: _('Choose which terminal emulator opens Tools commands.'),
+            description: _('Choose which terminal emulator opens CLI commands.'),
         });
 
         const detected = this._terminalOptions();
