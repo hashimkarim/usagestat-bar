@@ -76,6 +76,8 @@ repositories. Each entry retains original SVG content and hashes; repository
 records pin the upstream commit and license notice. Capture new artwork from a
 clean, freshly updated reference checkout and review its geometry before adding
 an entry. Do not infer official branding from a provider filename alone.
+Its `artworks` section adds alternative artwork, such as a full-colour brand
+version, to an existing mark without replacing that mark's own source.
 
 ```sh
 npm run sync:inspiration

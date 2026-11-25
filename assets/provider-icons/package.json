@@ -1,6 +1,6 @@
 {
   "name": "@agenticdriver/provider-icons",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "AI provider and product icons for React, JavaScript and native apps",
   "type": "module",
   "license": "MIT",
@@ -54,7 +54,8 @@
     "react-names.js",
     "react",
     "CONTRIBUTING.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "fonts"
   ],
   "scripts": {
     "sync:lobehub": "python3 scripts/sync_lobehub.py",
@@ -68,7 +69,8 @@
     "release:prepare": "node scripts/release.mjs prepare",
     "release:verify": "node scripts/release.mjs verify",
     "release:npm": "node scripts/release.mjs publish",
-    "release:github": "node scripts/release.mjs github"
+    "release:github": "node scripts/release.mjs github",
+    "build:font": "python3 scripts/build_font.py"
   },
   "publishConfig": {
     "access": "public",

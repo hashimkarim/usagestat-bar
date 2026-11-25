@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.2.0 — 2026-11-25
+
+- Add 16 provider and product marks: Lobot from the updated LobeHub catalogue,
+  API Store from a reviewed LobeHub contribution, TrustedRouter and Qwen Cloud
+  from CodexBar, and 12 further marks from LobeHub and the UsageStat inspiration
+  repositories. The native font includes the new marks and preserves existing codepoints.
+- Add a full-colour Vertex AI brand artwork from CodexBar as an alternative to
+  the standard colour icon.
+- Add aliases: Claude Platform → Claude, Google Developer → Google,
+  SiliconFlow → SiliconCloud and Trae CN → Trae, so they share those marks' colour variants.
+- Group related marks as alternatives: Google with Gemini, Gemini CLI, Vertex AI,
+  Google Cloud, AI Studio, Gemma, Colab, NotebookLM and DeepMind; Muse with Meta
+  and Meta AI; Qwen with Qwen Cloud.
+- Reconcile oMLX with its merged LobeHub source.
+- Refresh the Recraft logo and wordmark, and adopt reviewed updates for Jotaid,
+  GPTZZZ, The Grid AI and AnyAPI.
+
 ## 1.1.0 — 2026-10-27
 
 - Add 40 provider and product icons from reviewed UsageStat inspiration

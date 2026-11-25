@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "packageVersion": "1.1.0",
+  "packageVersion": "1.2.0",
   "icons": {
     "abacus": {
       "name": "Abacus",
@@ -426,7 +426,16 @@
       "name": "Google AI Studio",
       "monochrome": "aistudio.svg",
       "alternatives": [
-        "aistudio"
+        "google",
+        "gemini",
+        "geminicli",
+        "vertexai",
+        "googlecloud",
+        "aistudio",
+        "gemma",
+        "colab",
+        "notebooklm",
+        "deepmind"
       ],
       "fullName": "AI Studio (Google)",
       "category": "provider",
@@ -773,6 +782,52 @@
       "artworks": {
         "text": {
           "monochrome": "apertis-text.svg"
+        }
+      }
+    },
+    "apiko": {
+      "name": "APIKO",
+      "monochrome": "apiko.svg",
+      "alternatives": [
+        "apiko"
+      ],
+      "fullName": "APIKO",
+      "category": "provider",
+      "searchTerms": [
+        "APIKO"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/473",
+      "primaryColour": "#5B5BD6",
+      "colourTheme": [
+        "#5B5BD6"
+      ],
+      "color": "apiko-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "apiko-text.svg"
+        }
+      }
+    },
+    "apistore": {
+      "name": "API Store",
+      "monochrome": "apistore.svg",
+      "alternatives": [
+        "apistore"
+      ],
+      "fullName": "API Store",
+      "category": "provider",
+      "searchTerms": [
+        "API Store"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/482",
+      "primaryColour": "#1662D9",
+      "colourTheme": [
+        "#1662D9"
+      ],
+      "color": "apistore-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "apistore-text.svg"
         }
       }
     },
@@ -1624,6 +1679,29 @@
         }
       }
     },
+    "cheapaimodel": {
+      "name": "cheapaimodel",
+      "monochrome": "cheapaimodel.svg",
+      "alternatives": [
+        "cheapaimodel"
+      ],
+      "fullName": "cheapaimodel",
+      "category": "provider",
+      "searchTerms": [
+        "cheapaimodel"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/456",
+      "primaryColour": "#FB6B12",
+      "colourTheme": [
+        "#FB6B12"
+      ],
+      "color": "cheapaimodel-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "cheapaimodel-text.svg"
+        }
+      }
+    },
     "cheaperinference": {
       "name": "Cheaper Inference",
       "monochrome": "cheaperinference.svg",
@@ -1833,6 +1911,18 @@
           "monochrome": "clipdrop-text.svg"
         }
       }
+    },
+    "cliproxyapi": {
+      "name": "CLIProxyAPI",
+      "monochrome": "cliproxyapi.svg",
+      "alternatives": [
+        "cliproxyapi"
+      ],
+      "searchTerms": [
+        "CLIProxyAPI"
+      ],
+      "upstreamUrl": "https://github.com/robinebers/openusage/blob/4152e020252ab35c25bbca5fd9ff830628e995de/Sources/OpenUsage/Resources/ProviderIcons/cliproxyapi.svg",
+      "colourTheme": []
     },
     "cloudflare": {
       "name": "Cloudflare",
@@ -2045,7 +2135,16 @@
       "name": "Colab",
       "monochrome": "colab.svg",
       "alternatives": [
-        "colab"
+        "google",
+        "gemini",
+        "geminicli",
+        "vertexai",
+        "googlecloud",
+        "aistudio",
+        "gemma",
+        "colab",
+        "notebooklm",
+        "deepmind"
       ],
       "fullName": "Colab (Google)",
       "category": "application",
@@ -2442,6 +2541,29 @@
         }
       }
     },
+    "deapi": {
+      "name": "deAPI",
+      "monochrome": "deapi.svg",
+      "alternatives": [
+        "deapi"
+      ],
+      "fullName": "deAPI",
+      "category": "provider",
+      "searchTerms": [
+        "deAPI"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/460",
+      "primaryColour": "#FFBA00",
+      "colourTheme": [
+        "#FFBA00"
+      ],
+      "color": "deapi-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "deapi-text.svg"
+        }
+      }
+    },
     "decart": {
       "name": "Decart",
       "monochrome": "decart.svg",
@@ -2572,6 +2694,15 @@
       "name": "DeepMind",
       "monochrome": "deepmind.svg",
       "alternatives": [
+        "google",
+        "gemini",
+        "geminicli",
+        "vertexai",
+        "googlecloud",
+        "aistudio",
+        "gemma",
+        "colab",
+        "notebooklm",
         "deepmind"
       ],
       "fullName": "DeepMind (Google)",
@@ -3385,7 +3516,16 @@
       "name": "Gemini",
       "monochrome": "gemini.svg",
       "alternatives": [
-        "gemini"
+        "google",
+        "gemini",
+        "geminicli",
+        "vertexai",
+        "googlecloud",
+        "aistudio",
+        "gemma",
+        "colab",
+        "notebooklm",
+        "deepmind"
       ],
       "fullName": "Gemini (Google)",
       "category": "model",
@@ -3409,7 +3549,16 @@
       "name": "Gemini CLI",
       "monochrome": "geminicli.svg",
       "alternatives": [
-        "geminicli"
+        "google",
+        "gemini",
+        "geminicli",
+        "vertexai",
+        "googlecloud",
+        "aistudio",
+        "gemma",
+        "colab",
+        "notebooklm",
+        "deepmind"
       ],
       "fullName": "Gemini CLI",
       "category": "application",
@@ -3432,7 +3581,16 @@
       "name": "Gemma",
       "monochrome": "gemma.svg",
       "alternatives": [
-        "gemma"
+        "google",
+        "gemini",
+        "geminicli",
+        "vertexai",
+        "googlecloud",
+        "aistudio",
+        "gemma",
+        "colab",
+        "notebooklm",
+        "deepmind"
       ],
       "fullName": "Gemma (Google)",
       "category": "model",
@@ -3649,7 +3807,16 @@
       "name": "Google",
       "monochrome": "google.svg",
       "alternatives": [
-        "google"
+        "google",
+        "gemini",
+        "geminicli",
+        "vertexai",
+        "googlecloud",
+        "aistudio",
+        "gemma",
+        "colab",
+        "notebooklm",
+        "deepmind"
       ],
       "fullName": "Google",
       "category": "provider",
@@ -3673,7 +3840,16 @@
       "name": "GoogleCloud",
       "monochrome": "googlecloud.svg",
       "alternatives": [
-        "googlecloud"
+        "google",
+        "gemini",
+        "geminicli",
+        "vertexai",
+        "googlecloud",
+        "aistudio",
+        "gemma",
+        "colab",
+        "notebooklm",
+        "deepmind"
       ],
       "fullName": "GoogleCloud",
       "category": "provider",
@@ -5339,6 +5515,28 @@
         }
       }
     },
+    "lobot": {
+      "name": "Lobot",
+      "monochrome": "lobot.svg",
+      "alternatives": [
+        "lobot"
+      ],
+      "fullName": "Lobot",
+      "category": "application",
+      "searchTerms": [
+        "Lobot"
+      ],
+      "upstreamUrl": "https://icons.lobehub.com/components/lobot",
+      "primaryColour": "#FD8B00",
+      "colourTheme": [
+        "#FD8B00"
+      ],
+      "artworks": {
+        "text": {
+          "monochrome": "lobot-text.svg"
+        }
+      }
+    },
     "longcat": {
       "name": "LongCat",
       "monochrome": "longcat.svg",
@@ -5638,7 +5836,9 @@
       "name": "Meta",
       "monochrome": "meta.svg",
       "alternatives": [
-        "meta"
+        "muse",
+        "meta",
+        "metaai"
       ],
       "fullName": "Meta",
       "category": "provider",
@@ -5665,6 +5865,8 @@
       "name": "MetaAI",
       "monochrome": "metaai.svg",
       "alternatives": [
+        "muse",
+        "meta",
         "metaai"
       ],
       "fullName": "MetaAI",
@@ -5962,7 +6164,9 @@
       "name": "Muse",
       "monochrome": "muse.svg",
       "alternatives": [
-        "muse"
+        "muse",
+        "meta",
+        "metaai"
       ],
       "fullName": "Muse (Meta)",
       "category": "model",
@@ -6037,6 +6241,29 @@
       "artworks": {
         "text": {
           "monochrome": "n8n-text.svg"
+        }
+      }
+    },
+    "nagaai": {
+      "name": "NagaAI",
+      "monochrome": "nagaai.svg",
+      "alternatives": [
+        "nagaai"
+      ],
+      "fullName": "NagaAI",
+      "category": "provider",
+      "searchTerms": [
+        "NagaAI"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/476",
+      "primaryColour": "#000000",
+      "colourTheme": [
+        "#000000"
+      ],
+      "color": "nagaai-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "nagaai-text.svg"
         }
       }
     },
@@ -6158,7 +6385,16 @@
       "name": "NotebookLM",
       "monochrome": "notebooklm.svg",
       "alternatives": [
-        "notebooklm"
+        "google",
+        "gemini",
+        "geminicli",
+        "vertexai",
+        "googlecloud",
+        "aistudio",
+        "gemma",
+        "colab",
+        "notebooklm",
+        "deepmind"
       ],
       "fullName": "NotebookLM",
       "category": "application",
@@ -6383,6 +6619,28 @@
         }
       }
     },
+    "omlx": {
+      "name": "oMLX",
+      "monochrome": "omlx.svg",
+      "alternatives": [
+        "omlx"
+      ],
+      "fullName": "oMLX",
+      "category": "provider",
+      "searchTerms": [
+        "oMLX"
+      ],
+      "upstreamUrl": "https://icons.lobehub.com/components/omlx",
+      "primaryColour": "#000000",
+      "colourTheme": [
+        "#000000"
+      ],
+      "artworks": {
+        "text": {
+          "monochrome": "omlx-text.svg"
+        }
+      }
+    },
     "openai": {
       "name": "ChatGPT / OpenAI",
       "monochrome": "openai.svg",
@@ -6492,6 +6750,18 @@
           "monochrome": "opencode-text.svg"
         }
       }
+    },
+    "opendesign": {
+      "name": "Open Design",
+      "monochrome": "opendesign.svg",
+      "alternatives": [
+        "opendesign"
+      ],
+      "searchTerms": [
+        "Open Design"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/1f6da9bec44455288ddee5ef6f3617a803d8eb2a/Sources/CodexBar/Resources/ProviderIcon-opendesign.svg",
+      "colourTheme": []
     },
     "openference": {
       "name": "Openference",
@@ -6603,6 +6873,29 @@
       "artworks": {
         "text": {
           "monochrome": "openwebui-text.svg"
+        }
+      }
+    },
+    "opper": {
+      "name": "Opper",
+      "monochrome": "opper.svg",
+      "alternatives": [
+        "opper"
+      ],
+      "fullName": "Opper",
+      "category": "provider",
+      "searchTerms": [
+        "Opper"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/458",
+      "primaryColour": "#1B2E40",
+      "colourTheme": [
+        "#1B2E40"
+      ],
+      "color": "opper-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "opper-text.svg"
         }
       }
     },
@@ -7146,7 +7439,8 @@
       "name": "Qwen",
       "monochrome": "qwen.svg",
       "alternatives": [
-        "qwen"
+        "qwen",
+        "qwencloud"
       ],
       "fullName": "Qwen (\u5343\u95ee)",
       "category": "model",
@@ -7165,6 +7459,19 @@
           "monochrome": "qwen-text.svg"
         }
       }
+    },
+    "qwencloud": {
+      "name": "Qwen Cloud",
+      "monochrome": "qwencloud.svg",
+      "alternatives": [
+        "qwen",
+        "qwencloud"
+      ],
+      "searchTerms": [
+        "Qwen Cloud"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/a26ca57b518667a659d69524c473af2735069612/Sources/CodexBar/Resources/ProviderIcon-qwencloud.svg",
+      "colourTheme": []
     },
     "railway": {
       "name": "Railway",
@@ -7219,6 +7526,29 @@
       "artworks": {
         "text": {
           "monochrome": "recraft-text.svg"
+        }
+      }
+    },
+    "reflection": {
+      "name": "Reflection",
+      "monochrome": "reflection.svg",
+      "alternatives": [
+        "reflection"
+      ],
+      "fullName": "Reflection",
+      "category": "provider",
+      "searchTerms": [
+        "Reflection"
+      ],
+      "upstreamUrl": "https://icons.lobehub.com/components/reflection",
+      "primaryColour": "#1E3207",
+      "colourTheme": [
+        "#1E3207"
+      ],
+      "color": "reflection-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "reflection-text.svg"
         }
       }
     },
@@ -7914,6 +8244,29 @@
         }
       }
     },
+    "standardcompute": {
+      "name": "Standard Compute",
+      "monochrome": "standardcompute.svg",
+      "alternatives": [
+        "standardcompute"
+      ],
+      "fullName": "Standard Compute",
+      "category": "provider",
+      "searchTerms": [
+        "Standard Compute"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/467",
+      "primaryColour": "#E2C07F",
+      "colourTheme": [
+        "#E2C07F"
+      ],
+      "color": "standardcompute-color.svg",
+      "artworks": {
+        "text": {
+          "monochrome": "standardcompute-text.svg"
+        }
+      }
+    },
     "statecloud": {
       "name": "StateCloud",
       "monochrome": "statecloud.svg",
@@ -7937,6 +8290,23 @@
           "monochrome": "statecloud-text.svg"
         }
       }
+    },
+    "steadyrouter": {
+      "name": "SteadyRouter",
+      "monochrome": "steadyrouter.svg",
+      "alternatives": [
+        "steadyrouter"
+      ],
+      "fullName": "SteadyRouter",
+      "category": "provider",
+      "searchTerms": [
+        "SteadyRouter"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/465",
+      "primaryColour": "#0F766E",
+      "colourTheme": [
+        "#0F766E"
+      ]
     },
     "stepfun": {
       "name": "Stepfun",
@@ -8243,15 +8613,15 @@
       }
     },
     "thegrid": {
-      "name": "The Grid",
+      "name": "The Grid AI",
       "monochrome": "thegrid.svg",
       "alternatives": [
         "thegrid"
       ],
-      "fullName": "The Grid",
+      "fullName": "The Grid AI",
       "category": "provider",
       "searchTerms": [
-        "The Grid"
+        "The Grid AI"
       ],
       "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/407",
       "primaryColour": "#0049E6",
@@ -8414,6 +8784,18 @@
           "monochrome": "tripo-text.svg"
         }
       }
+    },
+    "trustedrouter": {
+      "name": "TrustedRouter",
+      "monochrome": "trustedrouter.svg",
+      "alternatives": [
+        "trustedrouter"
+      ],
+      "searchTerms": [
+        "TrustedRouter"
+      ],
+      "upstreamUrl": "https://github.com/steipete/CodexBar/blob/a26ca57b518667a659d69524c473af2735069612/Sources/CodexBar/Resources/ProviderIcon-trustedrouter.svg",
+      "colourTheme": []
     },
     "turix": {
       "name": "TuriX",
@@ -8665,7 +9047,16 @@
       "name": "VertexAI",
       "monochrome": "vertexai.svg",
       "alternatives": [
-        "vertexai"
+        "google",
+        "gemini",
+        "geminicli",
+        "vertexai",
+        "googlecloud",
+        "aistudio",
+        "gemma",
+        "colab",
+        "notebooklm",
+        "deepmind"
       ],
       "fullName": "VertexAI (Google)",
       "category": "provider",
@@ -8682,6 +9073,10 @@
       "artworks": {
         "text": {
           "monochrome": "vertexai-text.svg"
+        },
+        "brand": {
+          "color": "vertexai-brand-color.svg",
+          "monochrome": "vertexai-brand.svg"
         }
       }
     },
@@ -8934,6 +9329,23 @@
           "monochrome": "windsurf-text.svg"
         }
       }
+    },
+    "wiro": {
+      "name": "Wiro AI",
+      "monochrome": "wiro.svg",
+      "alternatives": [
+        "wiro"
+      ],
+      "fullName": "Wiro AI",
+      "category": "provider",
+      "searchTerms": [
+        "Wiro AI"
+      ],
+      "upstreamUrl": "https://github.com/lobehub/lobe-icons/pull/470",
+      "primaryColour": "#000000",
+      "colourTheme": [
+        "#000000"
+      ]
     },
     "workbuddy": {
       "name": "WorkBuddy",
@@ -9434,6 +9846,10 @@
     "kimi-k2": "kimi",
     "jetbrains": "jetbrains-ai-assistant",
     "xai-responses": "xai",
-    "5dive": "fivedive"
+    "5dive": "fivedive",
+    "claudeplatform": "claude",
+    "googledeveloper": "google",
+    "siliconflow": "siliconcloud",
+    "traecn": "trae"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "commit": "8b7bbc433d38437fa2b0cca58ae896917162b812",
+  "commit": "05260484d9f4de68f90cc87a634ae68fa4043efd",
   "icons": {
     "ace": {
       "artworks": {
@@ -2366,6 +2366,17 @@
       },
       "name": "LobeHub"
     },
+    "lobot": {
+      "artworks": {
+        "icon": {
+          "monochrome": "lobot.svg"
+        },
+        "text": {
+          "monochrome": "lobot-text.svg"
+        }
+      },
+      "name": "Lobot"
+    },
     "longcat": {
       "artworks": {
         "icon": {
@@ -2859,6 +2870,17 @@
       },
       "name": "Ollama"
     },
+    "omlx": {
+      "artworks": {
+        "icon": {
+          "monochrome": "omlx.svg"
+        },
+        "text": {
+          "monochrome": "omlx-text.svg"
+        }
+      },
+      "name": "oMLX"
+    },
     "openai": {
       "artworks": {
         "icon": {
@@ -3221,6 +3243,18 @@
         }
       },
       "name": "Recraft"
+    },
+    "reflection": {
+      "artworks": {
+        "icon": {
+          "color": "reflection-color.svg",
+          "monochrome": "reflection.svg"
+        },
+        "text": {
+          "monochrome": "reflection-text.svg"
+        }
+      },
+      "name": "Reflection"
     },
     "reka": {
       "artworks": {
@@ -4248,5 +4282,5 @@
     }
   },
   "repository": "https://github.com/lobehub/lobe-icons",
-  "tocSha256": "8adf5748f65c98f3bbe01d441e495c8bea166f2e05aebda202bce1f3b9a944ad"
+  "tocSha256": "55d19851984f4cf7f01f0da95eac1b4de102a3bef3b5e53a0ad1b7c2c7b52a31"
 }

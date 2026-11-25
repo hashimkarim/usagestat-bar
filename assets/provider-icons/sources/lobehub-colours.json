@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/lobehub/lobe-icons",
-  "commit": "8b7bbc433d38437fa2b0cca58ae896917162b812",
+  "commit": "05260484d9f4de68f90cc87a634ae68fa4043efd",
   "files": {
     "ace": {
       "path": "src/Ace/style.ts",
@@ -1184,6 +1184,12 @@
       "sha256": "2a3116c57840270737ccb88367fae9e41ddae896434d238b13dda376efdbedfa",
       "content": "export const TITLE = 'LobeHub';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
     },
+    "lobot": {
+      "path": "src/Lobot/style.ts",
+      "gitBlob": "46c2dbeb4862f69c3a580185151e755014c5ea5b",
+      "sha256": "05a0ab03a787873cf1228e30224f599b2c5115c3aff3702b507e371dba14bb69",
+      "content": "export const TITLE = 'Lobot';\nexport const COMBINE_TEXT_MULTIPLE = 0.695;\nexport const COMBINE_SPACE_MULTIPLE = 0.154;\n// Shift the wordmark down relative to the icon size so its visual center\n// sits ~3/78 of the visible mark height below the mark center, as in the official lockup.\nexport const COMBINE_TEXT_SHIFT_MULTIPLE = 0.0345;\nexport const COLOR_PRIMARY = '#FD8B00';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 1;\n"
+    },
     "longcat": {
       "path": "src/LongCat/style.ts",
       "gitBlob": "dbcdb68e9887c9c9c4d68272d121057a64cfdb2d",
@@ -1436,6 +1442,12 @@
       "sha256": "443fb3e946f86d143c3a5a974c11abcb68272f49f965b393faf8d1465a30b2ab",
       "content": "export const TITLE = 'Ollama';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.1;\nexport const COLOR_PRIMARY = '#fff';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#000';\nexport const AVATAR_ICON_MULTIPLE = 0.75;\n"
     },
+    "omlx": {
+      "path": "src/OMLX/style.ts",
+      "gitBlob": "9e89ea125a33a582774f854e05a9aaefd1461bcf",
+      "sha256": "552c51dce0f4adbe29e74ca1321e379c3a4de5d3370a7e35eaa6bec43d23faa2",
+      "content": "export const TITLE = 'oMLX';\nexport const COMBINE_TEXT_MULTIPLE = 0.6;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.7;\n"
+    },
     "openai": {
       "path": "src/OpenAI/style.ts",
       "gitBlob": "b296fec917472f9d3a838a6818ab5ab941439da9",
@@ -1618,9 +1630,15 @@
     },
     "recraft": {
       "path": "src/Recraft/style.ts",
-      "gitBlob": "978c1f8908849c4b080a0a3b41355c010555e4c9",
-      "sha256": "e478671c13be85e7ae48c6e9f8a0156f9d8aee6337ca1f83109640f14e832692",
-      "content": "export const TITLE = 'Recraft';\nexport const COMBINE_TEXT_MULTIPLE = 0.7;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.6;\n"
+      "gitBlob": "096cb430dcca91fb1d56d177cb805817f0639711",
+      "sha256": "afbde179f1808eefcd2de3b7cd3f4b558cec50a23ce28251f4b23a7bf190e2ea",
+      "content": "export const TITLE = 'Recraft';\nexport const COMBINE_TEXT_MULTIPLE = 1;\nexport const COMBINE_SPACE_MULTIPLE = 0.2;\nexport const COLOR_PRIMARY = '#000';\n\n// Avatar constants\nexport const AVATAR_BACKGROUND = COLOR_PRIMARY;\nexport const AVATAR_COLOR = '#fff';\nexport const AVATAR_ICON_MULTIPLE = 0.57;\nexport const AVATAR_ICON_MULTIPLE_SQUARE = 0.71;\n"
+    },
+    "reflection": {
+      "path": "src/Reflection/style.ts",
+      "gitBlob": "dff0478cc5bb3b968a3289f03c0626b0f1fe6c80",
+      "sha256": "b971ad4ffc3f9898fe59eed0d813a97083ac1e1662089302dead0c8659f8000a",
+      "content": "export const TITLE = 'Reflection';\nexport const COMBINE_TEXT_MULTIPLE = 0.48;\nexport const COMBINE_SPACE_MULTIPLE = 0.14;\nexport const COLOR_PRIMARY = '#1E3207';\n\n// Official brand kit: https://reflection.ai/brand-kit\nexport const AVATAR_BACKGROUND = '#F8F6F0';\nexport const AVATAR_COLOR = '#1E3207';\nexport const AVATAR_ICON_MULTIPLE = 0.8;\n"
     },
     "reka": {
       "path": "src/Reka/style.ts",

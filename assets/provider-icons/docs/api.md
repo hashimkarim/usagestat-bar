@@ -112,7 +112,9 @@ own fallback. ChatGPT/OpenAI and Codex are alternatives; Anthropic, Claude and
 Claude Code are alternatives; Copilot and GitHub Copilot are alternatives.
 Grok now has its own mark, with xAI as an alternative. OpenCode now has its own
 mark, with the existing `opencode-go` mark as an alternative. The original IDs
-and artwork remain available.
+and artwork remain available. Google, Gemini, Gemini CLI, Vertex AI, Google
+Cloud, AI Studio, Gemma, Colab, NotebookLM and DeepMind are alternatives; Muse,
+Meta and Meta AI are alternatives; Qwen and Qwen Cloud are alternatives.
 
 `artwork` selects `icon` (default), `brand`, `text` or `text-cn` where available:
 
